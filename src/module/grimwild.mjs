@@ -244,7 +244,8 @@ Hooks.once("renderHotbar", function () {
 });
 
 Hooks.on("updateScene", (document, changed, options, userId) => {
-	if (document.flags?.grimwild?.quickPools) {
+	// Re-render suspense/quick pools when our flags change
+	if (document.flags?.["grimwild-action"]?.quickPools) {
 		SUSPENSE_TRACKER.render();
 	}
 });

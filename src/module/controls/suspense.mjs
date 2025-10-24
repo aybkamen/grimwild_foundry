@@ -179,43 +179,55 @@ class SuspenseTracker {
 
 			poolElement.querySelectorAll(".js-quick-pool-delete").forEach((element) => element.addEventListener("click", (event) => {
 				const { pool } = event.currentTarget.dataset;
+				const index = Number.parseInt(pool, 10);
 				const scene = getScene();
 				if (!scene) return;
-				const quickPools = scene.getFlag("grimwild-action", "quickPools");
-				quickPools.splice(pool, 1);
+				const quickPools = scene.getFlag("grimwild-action", "quickPools") ?? [];
+				if (!Array.isArray(quickPools) || Number.isNaN(index) || index < 0 || index >= quickPools.length) return;
+				quickPools.splice(index, 1);
 				scene.setFlag("grimwild-action", "quickPools", quickPools);
+				this.render();
 			}));
 
 			poolElement.querySelectorAll(".js-quick-pool-display").forEach((element) => element.addEventListener("click", (event) => {
 				const { pool } = event.currentTarget.dataset;
+				const index = Number.parseInt(pool, 10);
 				const scene = getScene();
 				if (!scene) return;
-				const quickPools = scene.getFlag("grimwild-action", "quickPools");
-				quickPools[pool].visible = !quickPools[pool].visible;
+				const quickPools = scene.getFlag("grimwild-action", "quickPools") ?? [];
+				if (!Array.isArray(quickPools) || Number.isNaN(index) || index < 0 || index >= quickPools.length) return;
+				quickPools[index].visible = !quickPools[index].visible;
 				scene.setFlag("grimwild-action", "quickPools", quickPools);
+				this.render();
 			}));
 
 			poolElement.querySelectorAll(".js-quick-pool-text").forEach((element) => element.addEventListener("focusout", (event) => {
 				const { pool, field } = event.currentTarget.dataset;
+				const index = Number.parseInt(pool, 10);
 				const scene = getScene();
 				if (!scene) return;
-				const quickPools = scene.getFlag("grimwild-action", "quickPools");
+				const quickPools = scene.getFlag("grimwild-action", "quickPools") ?? [];
 				let value = event.currentTarget.innerText;
 				// If value isn't a number on the pool field, exit early.
-				if (field === "diceNum" && !Number.isNumeric(value)) {
+				const isNumeric = Number.isNumeric ? Number.isNumeric(value) : !Number.isNaN(Number(value));
+				if (field === "diceNum" && !isNumeric) {
 					this.render();
 					return;
 				}
-				quickPools[pool][field] = value;
+				if (!Array.isArray(quickPools) || Number.isNaN(index) || index < 0 || index >= quickPools.length) return;
+				quickPools[index][field] = field === "diceNum" ? Number(value) : value;
 				scene.setFlag("grimwild-action", "quickPools", quickPools);
+				this.render();
 			}));
 
 			poolElement.querySelectorAll(".js-quick-pool-roll").forEach((element) => element.addEventListener("click", async (event) => {
 				let { visible, rollData, pool } = event.currentTarget.dataset;
-				rollData = Number.isNumeric(rollData) ? Number(rollData) : 0;
+				const index = Number.parseInt(pool, 10);
+				rollData = Number.isNumeric?.(rollData) ? Number(rollData) : Number(rollData);
 				const scene = getScene();
 				if (!scene || !rollData) return;
-				const quickPools = scene.getFlag("grimwild-action", "quickPools");
+				const quickPools = scene.getFlag("grimwild-action", "quickPools") ?? [];
+				if (!Array.isArray(quickPools) || Number.isNaN(index) || index < 0 || index >= quickPools.length) return;
 
 				if (rollData) {
 					const roll = new grimwild.diePools(`{${rollData}d6}`, {});
@@ -239,8 +251,9 @@ class SuspenseTracker {
 
 					rollData -= dropped.length;
 
-					quickPools[pool].diceNum = rollData;
+					quickPools[index].diceNum = rollData;
 					scene.setFlag("grimwild-action", "quickPools", quickPools);
+					this.render();
 				}
 			}));
 		}
