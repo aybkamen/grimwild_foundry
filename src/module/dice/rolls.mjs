@@ -98,6 +98,7 @@ export default class GrimwildRoll extends Roll {
         chatData.result = result;
         chatData.rawResult = result;
         chatData.isCut = false;
+        chatData.boons = boons;
 
         // Build annotated action + assists display preserving elimination/choice
         let remainingForMain = actionResults.slice();

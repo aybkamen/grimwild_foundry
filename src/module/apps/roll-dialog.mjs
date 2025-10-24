@@ -143,10 +143,53 @@ export class GrimwildRollDialog extends foundry.applications.api.DialogV2 {
 		const assistTotal = Array.from(assists).reduce((sum, assist) => sum + parseInt(assist.value || 0, 10), 0);
 		const stat = html.querySelector("#stat");
 		const statTotal = parseInt(stat.value || 0, 10);
+		const edgesInput = html.querySelector("#edges");
+		const edgesTotal = parseInt(edgesInput?.value || 0, 10);
 		const totalDiceEl = html.querySelector("#totalDice");
 		const totalDiceInputEl = html.querySelector("#totalDiceInput");
-		if (totalDiceEl) totalDiceEl.textContent = String(assistTotal + statTotal);
-		if (totalDiceInputEl) totalDiceInputEl.value = String(assistTotal + statTotal);
+		const totalInit = assistTotal + statTotal + edgesTotal;
+		if (totalDiceEl) totalDiceEl.textContent = String(totalInit);
+		if (totalDiceInputEl) totalDiceInputEl.value = String(totalInit);
+
+		// Add +/- buttons for Conditions and Difficulty (if present)
+		const addBumpers = (inputId) => {
+			const input = html.querySelector(`#${inputId}`);
+			if (!input) return;
+			const parent = input.parentElement;
+			if (!parent) return;
+			// Avoid duplicating controls
+			if (parent.querySelector('.bumpers')) return;
+			const wrap = document.createElement('div');
+			wrap.classList.add('bumpers');
+			wrap.style.display = 'inline-flex';
+			wrap.style.gap = '.25rem';
+			wrap.style.marginLeft = '.35rem';
+            const mkBtn = (label, delta) => {
+                const btn = document.createElement('button');
+                btn.type = 'button';
+                btn.textContent = label;
+                btn.style.width = '1.6rem';
+                btn.style.height = '1.6rem';
+                btn.style.lineHeight = '1.6rem';
+                btn.style.padding = '0';
+                btn.addEventListener('click', () => {
+                    const min = parseInt(input.getAttribute('min') || '0', 10);
+                    const prev = parseInt(input.value || '0', 10);
+                    const next = Math.max(min, prev + delta);
+                    input.value = String(next);
+                    // Trigger existing input pipeline to update totals
+                    input.dispatchEvent(new Event('input', { bubbles: true }));
+                });
+                return btn;
+            };
+			wrap.appendChild(mkBtn('-', -1));
+			wrap.appendChild(mkBtn('+', +1));
+			parent.appendChild(wrap);
+		};
+
+		addBumpers('conditions');
+		addBumpers('difficulty');
+		addBumpers('edges');
 	}
 
 	/**
@@ -163,7 +206,7 @@ export class GrimwildRollDialog extends foundry.applications.api.DialogV2 {
 		rollData.sparkArray = Array.from({ length: rollData.spark }, (_, i) => i);
 		rollData.assistants = game.actors.filter((a) => a.type === "character" && a.name !== rollData.name).map((a) => a.name);
 
-		options.content = await foundry.applications.handlebars.renderTemplate("systems/grimwild/templates/dialog/stat-roll.hbs", rollData);
+		options.content = await foundry.applications.handlebars.renderTemplate("systems/grimwild-action/templates/dialog/stat-roll.hbs", rollData);
 		options.render = this._render;
 		options.modal = true;
 		options.window = { title: "Grimwild Roll" };

@@ -129,9 +129,15 @@ h2 {
 		color: #999;
 	}
 
-	.divider {
-		background: none;
-		color: white;
+.divider {
+	background: none;
+	color: white;
+}
+
+	.results h2 .boons {
+		font-size: 0.9em;
+		opacity: .9;
+		margin-left: .25rem;
 	}
 
 	/* New: explicit action vs danger styling */
