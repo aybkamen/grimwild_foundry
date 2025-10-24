@@ -120,7 +120,7 @@ Hooks.once("init", function () {
 
 	// Custom settings.
 	if (game.modules.get("dice-so-nice")) {
-		game.settings.register("grimwild", "diceSoNiceOverride", {
+		game.settings.register("grimwild-action", "diceSoNiceOverride", {
 			name: game.i18n.localize("GRIMWILD.Settings.diceSoNiceOverride.name"),
 			hint: game.i18n.localize("GRIMWILD.Settings.diceSoNiceOverride.hint"),
 			scope: "client",
@@ -153,15 +153,16 @@ Hooks.once("init", function () {
 		formula = formula.replace(/\b(\d*)d\b/gi, (match, x) => {
 			// If "d" is alone, treat it as "d6"
 			const diceX = x || 1; // Default to 1 if no number is provided
-			return `{${diceX}d6kh, 0d8}`;
+			// Provide two groups: action and danger (0 by default)
+			return `{${diceX}d6, 0d6}`;
 		});
 
-		// Handle raw d6 + thorn rolls.
+		// Handle raw d6 + danger rolls (legacy "t" now means danger d6).
 		formula = formula.replace(/\b(\d*)d(\d*)t\b/gi, (match, x, y) => {
-			// Handle "1d1t" as "1d6 + 1d8"
+			// Handle "1d1t" as "1d6 + 1d6 (danger)"
 			const diceX = x || 1; // Default to 1 if no number is provided
 			const diceY = y || 1; // Default to 1 if no number is provided
-			return `{${diceX}d6kh, ${diceY}d8}`;
+			return `{${diceX}d6, ${diceY}d6}`;
 		});
 
 		// If we've made any changes, then this is a GrimwildRoll
@@ -176,7 +177,7 @@ Hooks.once("init", function () {
 	SUSPENSE_TRACKER.init();
 
 	// Enable harm pools.
-	game.settings.register("grimwild", "enableHarmPools", {
+	game.settings.register("grimwild-action", "enableHarmPools", {
 		name: game.i18n.localize("GRIMWILD.Settings.enableHarmPools.name"),
 		hint: game.i18n.localize("GRIMWILD.Settings.enableHarmPools.hint"),
 		scope: "world",
@@ -186,7 +187,7 @@ Hooks.once("init", function () {
 		requiresReload: true
 	});
 
-	game.settings.register("grimwild", "maxBloodied", {
+	game.settings.register("grimwild-action", "maxBloodied", {
 		name: game.i18n.localize("GRIMWILD.Settings.maxBloodied.name"),
 		hint: game.i18n.localize("GRIMWILD.Settings.maxBloodied.hint"),
 		scope: "world",
@@ -194,7 +195,7 @@ Hooks.once("init", function () {
 		type: Number
 	});
 
-	game.settings.register("grimwild", "maxRattled", {
+	game.settings.register("grimwild-action", "maxRattled", {
 		name: game.i18n.localize("GRIMWILD.Settings.maxRattled.name"),
 		hint: game.i18n.localize("GRIMWILD.Settings.maxRattled.hint"),
 		scope: "world",
@@ -221,7 +222,7 @@ Hooks.once("ready", function () {
 	Hooks.on("hotbarDrop", (bar, data, slot) => createDocMacro(data, slot));
 
 	// Handle sockets.
-	game.socket.on("system.grimwild", (options) => {
+	game.socket.on("system.grimwild-action", (options) => {
 		// Limit to the active GM.
 		if (game.users.activeGM.id === game.user.id) {
 			// Handle the updateMessage type.

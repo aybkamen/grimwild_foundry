@@ -175,10 +175,10 @@ export class GrimwildActorSheetVue extends VueRenderingMixin(GrimwildBaseVueActo
 		}
 
 		// Handle the custom harm homebrew.
-		if (game.settings.get("grimwild", "enableHarmPools")) {
+		if (game.settings.get("grimwild-action", "enableHarmPools")) {
 			context.enableHarm = true;
-			context.maxBloodied = game.settings.get("grimwild", "maxBloodied");
-			context.maxRattled = game.settings.get("grimwild", "maxRattled");
+			context.maxBloodied = game.settings.get("grimwild-action", "maxBloodied");
+			context.maxRattled = game.settings.get("grimwild-action", "maxRattled");
 		}
 
 		Hooks.callAll("grimwildActorSheetVuePrepareContext", this, context);

@@ -73,6 +73,7 @@ h2 {
 		width: 24px;
 		height: 24px;
 		line-height: 24px;
+		border: 1px solid transparent;
 	}
 
 	.d8 {
@@ -131,5 +132,35 @@ h2 {
 	.divider {
 		background: none;
 		color: white;
+	}
+
+	/* New: explicit action vs danger styling */
+	.action {
+		color: #111;
+		background: #f7f7f7;
+		border-color: rgba(0,0,0,.12);
+	}
+	.action.eliminated {
+		color: #888;
+		background: #ddd;
+		border-color: #ccc;
+		text-decoration: line-through;
+		opacity: .9;
+	}
+	.action.chosen {
+		color: #0a5;
+		font-weight: 800;
+		background: rgba(0,255,153,.10);
+		border-color: rgba(0,255,153,.35);
+	}
+
+	.danger {
+		color: #fff;
+		background: #000;
+		border-color: rgba(255,255,255,.15);
+	}
+	.danger.killer {
+		color: #ff4a4a;
+		font-weight: 800;
 	}
 }

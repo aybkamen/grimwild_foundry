@@ -8,9 +8,9 @@ export async function preloadHandlebarsTemplates() {
 	// Define template paths to load
 	const templatePaths = [
 		// Actor partials
-		"systems/grimwild/templates/actor/parts/character-header.hbs",
-		"systems/grimwild/templates/actor/parts/monster-header.hbs",
-		"systems/grimwild/templates/chat/roll-action.hbs"
+		"systems/grimwild-action/templates/actor/parts/character-header.hbs",
+		"systems/grimwild-action/templates/actor/parts/monster-header.hbs",
+		"systems/grimwild-action/templates/chat/roll-action.hbs"
 	];
 
 	const paths = {};
@@ -39,10 +39,10 @@ class GrimwildHandlebarsHelpers {
 
 	}
 
-	static grimwildThorn(die) {
+	static grimwildDanger(die) {
 		const total = Number(die);
 
-		if (total > 6) {
+		if (total >= 4) {
 			return "cut";
 		}
 
@@ -57,6 +57,6 @@ class GrimwildHandlebarsHelpers {
 export function registerHandlebarsHelpers() {
 	Handlebars.registerHelper({
 		grimwildDie: GrimwildHandlebarsHelpers.grimwildDie,
-		grimwildThorn: GrimwildHandlebarsHelpers.grimwildThorn
+		grimwildDanger: GrimwildHandlebarsHelpers.grimwildDanger
 	});
 }

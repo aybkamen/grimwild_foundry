@@ -74,7 +74,7 @@ export class GrimwildChatMessage extends ChatMessage {
 
 		// Handle event listeners.
 		const click = this.#onClick.bind(this);
-		const sparkTakenArray = this.getFlag("grimwild", "sparkTaken") ?? [];
+		const sparkTakenArray = this.getFlag("grimwild-action", "sparkTaken") ?? [];
 		const sparkTaken = sparkTakenArray.includes(game.user.id);
 		html.querySelectorAll("[data-action]")?.forEach((element) => {
 			const { action } = element.dataset;
@@ -145,17 +145,17 @@ export class GrimwildChatMessage extends ChatMessage {
 
 		if (needsUpdate) {
 			actor.update({ "system.spark": spark });
-			const sparkTakenArray = this.getFlag("grimwild", "sparkTaken") ?? [];
+			const sparkTakenArray = this.getFlag("grimwild-action", "sparkTaken") ?? [];
 			if (!sparkTakenArray.includes(game.user.id)) {
 				sparkTakenArray.push(game.user.id);
 			}
 			// If this is the GM, update the message directly.
 			if (game.user.isGM) {
-				this.setFlag("grimwild", "sparkTaken", sparkTakenArray);
+				this.setFlag("grimwild-action", "sparkTaken", sparkTakenArray);
 			}
 			// Otherwise, emit a socket so that the active GM can update it.
 			else {
-				game.socket.emit("system.grimwild", {
+				game.socket.emit("system.grimwild-action", {
 					type: "updateMessage",
 					flag: "grimwild.sparkTaken",
 					message: this.id,

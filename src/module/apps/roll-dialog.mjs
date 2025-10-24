@@ -16,7 +16,7 @@
 /**
  * @typedef {object} GrimwildRollDialogResponse
  * @property {number} dice                          The number of dice to roll
- * @property {number} thorns                        The number of thorns to roll
+ * @property {number} danger                        The number of danger dice to roll
  * @property {number} sparkUsed                     The number of spark used on the roll
  * @property {object} assisters                     An object with the key of the assister's name and
  *                                                  the value of the number of dice they roll
@@ -38,7 +38,7 @@
  *  }
  * });
  * const totalDice = dialog.dice;
- * const totalThorns = dialog.thorns;
+ * const totalDanger = dialog.danger;
  * const sparkUsed = dialog.sparkUsed;
  * const assistMap = dialog.assisters;
  * ```
@@ -51,11 +51,13 @@ export class GrimwildRollDialog extends foundry.applications.api.DialogV2 {
 		},
 		changeActions: {
 			updateDice: this._updateDiceTotal,
-			updateThorns: this._updateThornsTotal
+			updateThorns: this._updateThornsTotal,
+			updateDanger: this._updateDangerTotal
 		},
 		inputActions: {
 			updateDice: this._updateDiceTotal,
-			updateThorns: this._updateThornsTotal
+			updateThorns: this._updateThornsTotal,
+			updateDanger: this._updateDangerTotal
 		}
 	};
 
@@ -118,26 +120,33 @@ export class GrimwildRollDialog extends foundry.applications.api.DialogV2 {
 	}
 
 	/**
-	 * Render function to set the initial dice and thorns on the dialog
+	 * Render function to set the initial dice and danger on the dialog
 	 *
 	 * @param {any} event           The render event for the dialog
 	 * @param {any} application     Application instance.
 	 */
 	static _render(event, application) {
-		// set first thorns value
+		// set first danger value (prefer Danger UI; support old Thorns UI too)
 		const html = application.element;
 		const checkTotal = Array.from(html.querySelectorAll(".thornCheck")).reduce((sum, checkbox) => sum + (checkbox.checked ? 1 : 0), 0);
-		const numTotal = Array.from(html.querySelectorAll(".thornInput")).reduce((sum, number) => sum + parseInt(number.value || 0, 10), 0);
-		html.querySelector("#totalThorns").textContent = numTotal + checkTotal;
-		html.querySelector("#totalThornsInput").value = numTotal + checkTotal;
+		const numDangerInputs = html.querySelectorAll(".dangerInput");
+		const numThornInputs = html.querySelectorAll(".thornInput");
+		const numTotal = Array.from(numDangerInputs.length ? numDangerInputs : numThornInputs).reduce((sum, number) => sum + parseInt(number.value || 0, 10), 0);
+		const dangerTotal = numTotal + checkTotal;
+		const totalDangerEl = html.querySelector("#totalDanger") || html.querySelector("#totalThorns");
+		const totalDangerInputEl = html.querySelector("#totalDangerInput") || html.querySelector("#totalThornsInput");
+		if (totalDangerEl) totalDangerEl.textContent = String(dangerTotal);
+		if (totalDangerInputEl) totalDangerInputEl.value = String(dangerTotal);
 
 		// set first dice value
 		const assists = html.querySelectorAll(".assist-value");
 		const assistTotal = Array.from(assists).reduce((sum, assist) => sum + parseInt(assist.value || 0, 10), 0);
 		const stat = html.querySelector("#stat");
 		const statTotal = parseInt(stat.value || 0, 10);
-		html.querySelector("#totalDice").textContent = assistTotal + statTotal;
-		html.querySelector("#totalDiceInput").value = assistTotal + statTotal;
+		const totalDiceEl = html.querySelector("#totalDice");
+		const totalDiceInputEl = html.querySelector("#totalDiceInput");
+		if (totalDiceEl) totalDiceEl.textContent = String(assistTotal + statTotal);
+		if (totalDiceInputEl) totalDiceInputEl.value = String(assistTotal + statTotal);
 	}
 
 	/**
@@ -178,9 +187,11 @@ export class GrimwildRollDialog extends foundry.applications.api.DialogV2 {
 					});
 					const sparks = dialog.element.querySelectorAll(".sparkCheck");
 					const sparkUsed = Array.from(sparks).reduce((sum, checkbox) => sum + (checkbox.checked ? 1 : 0), 0);
+					const diceInput = dialog.element.querySelector("#totalDiceInput");
+					const dangerInput = dialog.element.querySelector("#totalDangerInput") || dialog.element.querySelector("#totalThornsInput");
 					return {
-						dice: button.form.elements.totalDiceInput.value,
-						thorns: button.form.elements.totalThornsInput.value,
+						dice: diceInput ? diceInput.value : 0,
+						danger: dangerInput ? dangerInput.value : 0,
 						assisters,
 						sparkUsed
 					};
@@ -230,8 +241,17 @@ export class GrimwildRollDialog extends foundry.applications.api.DialogV2 {
 
 	static async _updateThornsTotal(event, target) {
 		const dialog = document.querySelector("#grimwild-roll-dialog");
-		const totalDisplay = dialog.querySelector("#totalThorns");
-		const totalValue = dialog.querySelector("#totalThornsInput");
+		const totalDisplay = dialog.querySelector("#totalDanger") || dialog.querySelector("#totalThorns");
+		const totalValue = dialog.querySelector("#totalDangerInput") || dialog.querySelector("#totalThornsInput");
+		if (!totalDisplay || !totalValue) return;
+		handleUpdate(event, target, totalDisplay, totalValue);
+	}
+
+	static async _updateDangerTotal(event, target) {
+		const dialog = document.querySelector("#grimwild-roll-dialog");
+		const totalDisplay = dialog.querySelector("#totalDanger");
+		const totalValue = dialog.querySelector("#totalDangerInput");
+		if (!totalDisplay || !totalValue) return;
 		handleUpdate(event, target, totalDisplay, totalValue);
 	}
 

@@ -180,7 +180,7 @@ export default class GrimwildCharacter extends GrimwildActorBase {
 	}
 
 	async _preUpdate(changes, options, user) {
-		if (game.settings.get("grimwild", "enableHarmPools")) {
+		if (game.settings.get("grimwild-action", "enableHarmPools")) {
 			const checkPool = (change, source) => {
 				if (change) {
 					// Start the healing pool
@@ -290,11 +290,24 @@ export default class GrimwildCharacter extends GrimwildActorBase {
 			if (rollDialog === null) {
 				return;
 			}
-			rollData.thorns = rollDialog.thorns;
+			rollData.danger = rollDialog.danger;
 			rollData.statDice = rollDialog.dice;
 			options.assists = rollDialog.assisters;
-			const formula = "{(@statDice)d6kh, (@thorns)d8}";
+			const formula = "{(@statDice)d6, (@danger)d6}";
 			const roll = new grimwild.roll(formula, rollData, options);
+			// Evaluate early to access dice and apply Dice So Nice colors per pool
+			await roll.evaluate();
+			try {
+				if (game.dice3d) {
+					const setColorset = (die, colorset) => {
+						if (!die) return;
+						die.options = die.options ?? {};
+						die.options.appearance = { ...(die.options.appearance ?? {}), colorset };
+					};
+					setColorset(roll.dice?.[0], "white");
+					setColorset(roll.dice?.[1], "black");
+				}
+			} catch (err) { console.warn("Dice color set warning:", err); }
 
 			const updates = {};
 
@@ -346,7 +359,7 @@ export default class GrimwildCharacter extends GrimwildActorBase {
 			const combatant = combat?.getCombatantByActor(this.parent.id);
 			if (combatant) {
 				const actionCount = Number(combatant.flags?.grimwild?.actionCount ?? 0);
-				await combatant.setFlag("grimwild", "actionCount", actionCount + 1);
+				await combatant.setFlag("grimwild-action", "actionCount", actionCount + 1);
 
 				// Update the active turn.
 				const combatantTurn = combat.turns.findIndex((c) => c.id === combatant.id);

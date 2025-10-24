@@ -4,7 +4,7 @@
  * @returns {number}
  */
 function getSuspense() {
-	return game.settings.get("grimwild", "suspense");
+	return game.settings.get("grimwild-action", "suspense");
 }
 
 /**
@@ -12,7 +12,7 @@ function getSuspense() {
  * @param {number} value New suspense value.
  */
 function setSuspense(value) {
-	game.settings.set("grimwild", "suspense", value);
+	game.settings.set("grimwild-action", "suspense", value);
 }
 
 /**
@@ -24,7 +24,7 @@ function getScenePools() {
 	const scene = getScene();
 	if (!scene) return "";
 
-	const pools = scene.getFlag("grimwild", "quickPools") ?? [];
+const pools = scene.getFlag("grimwild-action", "quickPools") ?? [];
 	const editable = game.user.isGM ? "contentEditable=\"plaintext-only\"" : "";
 	const poolHtml = `
 	<div class="quick-pool-inner">
@@ -68,10 +68,10 @@ function addQuickPool() {
 	const scene = getScene();
 	if (!scene) return "";
 
-	const visibleDefault = game.settings.get("grimwild", "quickPoolsVisibleDefault");
-	const pools = scene.getFlag("grimwild", "quickPools") ?? [];
+	const visibleDefault = game.settings.get("grimwild-action", "quickPoolsVisibleDefault");
+	const pools = scene.getFlag("grimwild-action", "quickPools") ?? [];
 	pools.push({ diceNum: 4, label: "Label", visible: visibleDefault });
-	scene.setFlag("grimwild", "quickPools", pools);
+	scene.setFlag("grimwild-action", "quickPools", pools);
 	ui.hotbar.render();
 }
 
@@ -90,7 +90,7 @@ function getScene() {
 class SuspenseTracker {
 	init() {
 		console.log("Suspense: initialising");
-		game.settings.register("grimwild", "suspenseVisible", {
+		game.settings.register("grimwild-action", "suspenseVisible", {
 			name: game.i18n.localize("GRIMWILD.Settings.suspenseVisible.name"),
 			hint: game.i18n.localize("GRIMWILD.Settings.suspenseVisible.hint"),
 			scope: "world",
@@ -99,7 +99,7 @@ class SuspenseTracker {
 			default: true,
 			onChange: this.render
 		});
-		game.settings.register("grimwild", "quickPoolsVisible", {
+		game.settings.register("grimwild-action", "quickPoolsVisible", {
 			name: game.i18n.localize("GRIMWILD.Settings.quickPoolsVisible.name"),
 			hint: game.i18n.localize("GRIMWILD.Settings.quickPoolsVisible.hint"),
 			scope: "world",
@@ -108,7 +108,7 @@ class SuspenseTracker {
 			default: true,
 			onChange: this.render
 		});
-		game.settings.register("grimwild", "quickPoolsVisibleDefault", {
+		game.settings.register("grimwild-action", "quickPoolsVisibleDefault", {
 			name: game.i18n.localize("GRIMWILD.Settings.quickPoolsVisibleDefault.name"),
 			hint: game.i18n.localize("GRIMWILD.Settings.quickPoolsVisibleDefault.hint"),
 			scope: "world",
@@ -117,7 +117,7 @@ class SuspenseTracker {
 			default: false,
 			onChange: this.render
 		});
-		game.settings.register("grimwild", "suspense", {
+		game.settings.register("grimwild-action", "suspense", {
 			name: "Suspense",
 			scope: "world",
 			config: false,
@@ -129,8 +129,8 @@ class SuspenseTracker {
 
 	async render(value) {
 		const isGM = game.user.isGM;
-		const susVisibleToPlayers = game.settings.get("grimwild", "suspenseVisible");
-		const quickPoolsVisibleToPlayers = game.settings.get("grimwild", "quickPoolsVisible");
+		const susVisibleToPlayers = game.settings.get("grimwild-action", "suspenseVisible");
+		const quickPoolsVisibleToPlayers = game.settings.get("grimwild-action", "quickPoolsVisible");
 
 		let susControl = document.getElementById("sus-control");
 
@@ -181,25 +181,25 @@ class SuspenseTracker {
 				const { pool } = event.currentTarget.dataset;
 				const scene = getScene();
 				if (!scene) return;
-				const quickPools = scene.getFlag("grimwild", "quickPools");
+				const quickPools = scene.getFlag("grimwild-action", "quickPools");
 				quickPools.splice(pool, 1);
-				scene.setFlag("grimwild", "quickPools", quickPools);
+				scene.setFlag("grimwild-action", "quickPools", quickPools);
 			}));
 
 			poolElement.querySelectorAll(".js-quick-pool-display").forEach((element) => element.addEventListener("click", (event) => {
 				const { pool } = event.currentTarget.dataset;
 				const scene = getScene();
 				if (!scene) return;
-				const quickPools = scene.getFlag("grimwild", "quickPools");
+				const quickPools = scene.getFlag("grimwild-action", "quickPools");
 				quickPools[pool].visible = !quickPools[pool].visible;
-				scene.setFlag("grimwild", "quickPools", quickPools);
+				scene.setFlag("grimwild-action", "quickPools", quickPools);
 			}));
 
 			poolElement.querySelectorAll(".js-quick-pool-text").forEach((element) => element.addEventListener("focusout", (event) => {
 				const { pool, field } = event.currentTarget.dataset;
 				const scene = getScene();
 				if (!scene) return;
-				const quickPools = scene.getFlag("grimwild", "quickPools");
+				const quickPools = scene.getFlag("grimwild-action", "quickPools");
 				let value = event.currentTarget.innerText;
 				// If value isn't a number on the pool field, exit early.
 				if (field === "diceNum" && !Number.isNumeric(value)) {
@@ -207,7 +207,7 @@ class SuspenseTracker {
 					return;
 				}
 				quickPools[pool][field] = value;
-				scene.setFlag("grimwild", "quickPools", quickPools);
+				scene.setFlag("grimwild-action", "quickPools", quickPools);
 			}));
 
 			poolElement.querySelectorAll(".js-quick-pool-roll").forEach((element) => element.addEventListener("click", async (event) => {
@@ -215,7 +215,7 @@ class SuspenseTracker {
 				rollData = Number.isNumeric(rollData) ? Number(rollData) : 0;
 				const scene = getScene();
 				if (!scene || !rollData) return;
-				const quickPools = scene.getFlag("grimwild", "quickPools");
+				const quickPools = scene.getFlag("grimwild-action", "quickPools");
 
 				if (rollData) {
 					const roll = new grimwild.diePools(`{${rollData}d6}`, {});
@@ -240,7 +240,7 @@ class SuspenseTracker {
 					rollData -= dropped.length;
 
 					quickPools[pool].diceNum = rollData;
-					scene.setFlag("grimwild", "quickPools", quickPools);
+					scene.setFlag("grimwild-action", "quickPools", quickPools);
 				}
 			}));
 		}
