@@ -122,6 +122,12 @@ export default class GrimwildCharacter extends GrimwildActorBase {
 			}
 		);
 
+		// Two free-text flaws shown on the Details tab
+		schema.flaws = new fields.ArrayField(
+			new fields.StringField(),
+			{ initial: ["", ""] }
+		);
+
 		schema.bonds = new fields.ArrayField(
 			new fields.SchemaField({
 				name: new fields.StringField(),
@@ -404,10 +410,15 @@ export default class GrimwildCharacter extends GrimwildActorBase {
             while (wises.length < 4) wises.push("");
             return { name, wises };
         });
-        // Add missing background slots up to three
-        while (source.backgrounds.length < 3) {
-            source.backgrounds.push({ name: "", wises: ["", "", "", ""] });
-        }
+		// Add missing background slots up to three
+		while (source.backgrounds.length < 3) {
+			source.backgrounds.push({ name: "", wises: ["", "", "", ""] });
+		}
+
+		// Ensure flaws is an array of two strings
+		if (!Array.isArray(source.flaws)) source.flaws = ["", ""];
+		while (source.flaws.length < 2) source.flaws.push("");
+		if (source.flaws.length > 2) source.flaws = source.flaws.slice(0, 2);
 
 		return super.migrateData(source);
 	}

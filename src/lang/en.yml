@@ -142,6 +142,8 @@ GRIMWILD:
               label: Wises
         bonds:
           label: Bonds
+        flaws:
+          label: Flaws
         conditions:
           label: Conditions
           FIELDS:

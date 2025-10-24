@@ -239,7 +239,7 @@
 
 // Conditions.
 .conditions-fieldset {
-	position: relative;
+    position: relative;
 
 	.condition-create {
 		position: absolute;
@@ -257,6 +257,11 @@
 			margin: 0;
 		}
 	}
+}
+
+// Flaws: keep compact height matching its content
+.flaws-fieldset {
+    align-self: start;
 }
 
 .condition {

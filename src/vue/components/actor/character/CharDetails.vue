@@ -1,7 +1,7 @@
 <template>
 	<div class="grid grid-2col">
 		<!-- Backgrounds -->
-		<fieldset class="backgrounds grid-span-1 grid-row-span-2 grid-start-1">
+    <fieldset class="backgrounds grid-span-1 grid-row-span-2 grid-start-1">
 			<legend>{{ context.systemFields.backgrounds.label }}</legend>
 			<div :class="`background flexcol ${key === 0 ? 'stroke stroke-bottom' : ''}`" v-for="(background, key) in context.system.backgrounds" :key="key">
 				<div class="background-name form-group stacked">
@@ -80,8 +80,23 @@
 				</div>
 			</div>
 		</fieldset>
-		<!-- Bonds -->
-		<fieldset class="bonds-fieldset grid-span-1 grid-start-2 grid-row-start-2">
+    <!-- Flaws -->
+    <fieldset class="flaws-fieldset grid-span-1 grid-start-2">
+      <legend>{{ context.systemFields.flaws?.label ?? 'Flaws' }}</legend>
+      <div class="flaws form-group stacked">
+        <input type="text"
+               name="system.flaws.0"
+               v-model="context.system.flaws[0]"
+               placeholder="Flaw"/>
+        <input type="text"
+               name="system.flaws.1"
+               v-model="context.system.flaws[1]"
+               placeholder="Flaw"/>
+      </div>
+    </fieldset>
+
+    <!-- Bonds -->
+    <fieldset class="bonds-fieldset grid-span-1 grid-start-2">
 			<legend>{{ context.systemFields.bonds.label }}</legend>
 			<button class="bond-control bond-create"
 				title="Add bond"
