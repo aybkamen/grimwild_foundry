@@ -120,6 +120,17 @@ GRIMWILD:
       FIELDS:
         backpack:
           label: Backpack
+        treasure:
+          label: Treasure
+          FIELDS:
+            few:
+              label: Few coins
+            pouch:
+              label: a pouch of coins
+            bag:
+              label: a bag of coins
+            chest:
+              label: a chest of coins
         class:
           label: Class
         xp:

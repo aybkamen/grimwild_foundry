@@ -128,6 +128,14 @@ export default class GrimwildCharacter extends GrimwildActorBase {
 			{ initial: ["", "", "", "", "", "", "", "", "", ""] }
 		);
 
+		// Treasure: groups of checkboxes
+		schema.treasure = new fields.SchemaField({
+			few: new fields.ArrayField(new fields.BooleanField(), { initial: [false, false, false, false, false] }),
+			pouch: new fields.ArrayField(new fields.BooleanField(), { initial: [false, false, false, false, false] }),
+			bag: new fields.ArrayField(new fields.BooleanField(), { initial: [false, false, false] }),
+			chest: new fields.ArrayField(new fields.BooleanField(), { initial: [false] })
+		});
+
 		// Two free-text flaws shown on the Details tab
 		schema.flaws = new fields.ArrayField(
 			new fields.StringField(),
@@ -489,6 +497,20 @@ export default class GrimwildCharacter extends GrimwildActorBase {
 		if (!Array.isArray(source.backpack)) source.backpack = ["", "", "", "", "", "", "", "", "", ""];
 		while (source.backpack.length < 10) source.backpack.push("");
 		if (source.backpack.length > 10) source.backpack = source.backpack.slice(0, 10);
+
+		// Ensure treasure structure exists with proper lengths
+		source.treasure = source.treasure ?? {};
+		const ensureBools = (arr, len) => {
+			if (!Array.isArray(arr)) arr = [];
+			arr = arr.map(v => !!v);
+			while (arr.length < len) arr.push(false);
+			if (arr.length > len) arr = arr.slice(0, len);
+			return arr;
+		};
+		source.treasure.few = ensureBools(source.treasure.few, 5);
+		source.treasure.pouch = ensureBools(source.treasure.pouch, 5);
+		source.treasure.bag = ensureBools(source.treasure.bag, 3);
+		source.treasure.chest = ensureBools(source.treasure.chest, 1);
 
 		return super.migrateData(source);
 	}

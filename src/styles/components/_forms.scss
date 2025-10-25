@@ -413,6 +413,39 @@
     }
 }
 
+// Treasure layout
+.treasure-fieldset {
+    .treasure-rows {
+        display: grid;
+        grid-template-columns: max-content 1fr; // two columns: labels and checks
+        column-gap: 12px;
+        row-gap: 10px;
+        align-items: center;
+    }
+    // legacy row style no longer used but kept harmlessly
+    .treasure-row { display: contents; }
+    .treasure-label {
+        flex: 0 0 auto; // don't push checks to the right
+        font-family: $font-display;
+        font-size: 16px;
+        color: $c-dark; // stronger contrast on dark background
+        letter-spacing: 0.2px;
+        white-space: nowrap;
+        z-index: 1;
+        display: inline-block;
+    }
+    .treasure-checks {
+        display: flex;
+        gap: 6px;
+        flex: 0 0 auto; // stay next to label
+    }
+    .treasure-checks input[type="checkbox"] {
+        width: 20px;
+        height: 20px;
+        margin: 0;
+    }
+}
+
 // Generic hover tooltip for inputs
 .tooltip-wrapper { position: relative; }
 .tooltip-wrapper .tooltip {
