@@ -359,6 +359,13 @@
 	flex-direction: row;
 }
 
+// Right column wrapper to stack fieldsets tightly
+.details-right-col {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
 // XP
 .xp {
 	gap: 0;

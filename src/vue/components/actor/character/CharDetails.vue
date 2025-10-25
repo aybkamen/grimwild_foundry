@@ -1,7 +1,7 @@
 <template>
 	<div class="grid grid-2col">
 		<!-- Backgrounds -->
-    <fieldset class="backgrounds grid-span-1 grid-row-span-2 grid-start-1">
+    <fieldset class="backgrounds grid-span-1 grid-start-1">
 			<legend>{{ context.systemFields.backgrounds.label }}</legend>
 			<div :class="`background flexcol ${key === 0 ? 'stroke stroke-bottom' : ''}`" v-for="(background, key) in context.system.backgrounds" :key="key">
 				<div class="background-name form-group stacked">
@@ -37,8 +37,10 @@
 				</div>
 			</div>
 		</fieldset>
+		<!-- Right Column: conditions, flaws, assets, bonds -->
+		<div class="details-right-col grid-span-1 grid-start-2">
 		<!-- Conditions -->
-		<fieldset class="conditions-fieldset grid-span-1 grid-start-2">
+		<fieldset class="conditions-fieldset">
 			<legend>{{ context.systemFields.conditions.label }}</legend>
 			<button class="condition-control condition-create"
 				title="Add condition"
@@ -81,7 +83,7 @@
 			</div>
 		</fieldset>
     <!-- Flaws -->
-    <fieldset class="flaws-fieldset grid-span-1 grid-start-2">
+    <fieldset class="flaws-fieldset">
       <legend>{{ context.systemFields.flaws?.label ?? 'Flaws' }}</legend>
       <div class="flaws form-group stacked">
         <input type="text"
@@ -96,7 +98,7 @@
     </fieldset>
 
     <!-- Special Assets -->
-    <fieldset class="special-assets-fieldset grid-span-1 grid-start-2">
+    <fieldset class="special-assets-fieldset">
       <legend>{{ context.systemFields.specialAssets?.label ?? 'Special Assets' }}</legend>
       <div class="special-assets form-group stacked">
         <input type="text"
@@ -119,7 +121,7 @@
     </fieldset>
 
     <!-- Bonds -->
-    <fieldset class="bonds-fieldset grid-span-1 grid-start-2">
+		<fieldset class="bonds-fieldset">
 			<legend>{{ context.systemFields.bonds.label }}</legend>
 			<button class="bond-control bond-create"
 				title="Add bond"
@@ -145,6 +147,7 @@
 				</div>
 			</div>
 		</fieldset>
+		</div>
 	</div>
 </template>
 
