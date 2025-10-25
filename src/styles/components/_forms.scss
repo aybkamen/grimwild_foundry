@@ -124,6 +124,12 @@
 	gap: 2px;
 }
 
+// Compact list spacing for special assets and flaws
+.special-assets.form-group.stacked,
+.flaws.form-group.stacked {
+    gap: 2px;
+}
+
 // Add another fieldset.
 .add-another-entries {
 	position: relative;
@@ -261,6 +267,11 @@
 
 // Flaws: keep compact height matching its content
 .flaws-fieldset {
+    align-self: start;
+}
+
+// Special Assets: keep compact height matching its content
+.special-assets-fieldset {
     align-self: start;
 }
 

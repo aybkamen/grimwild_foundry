@@ -128,6 +128,12 @@ export default class GrimwildCharacter extends GrimwildActorBase {
 			{ initial: ["", ""] }
 		);
 
+		// Four free-text special assets shown on the Details tab
+		schema.specialAssets = new fields.ArrayField(
+			new fields.StringField(),
+			{ initial: ["", "", "", ""] }
+		);
+
 		schema.bonds = new fields.ArrayField(
 			new fields.SchemaField({
 				name: new fields.StringField(),
@@ -253,6 +259,15 @@ export default class GrimwildCharacter extends GrimwildActorBase {
 					const anyCurrentFlawText = Array.isArray(this._source?.flaws) && this._source.flaws.some((f) => (f ?? '').trim() !== '');
 					if (incomingFlawsEmpty && anyCurrentFlawText) {
 						delete changes.system.flaws;
+					}
+				}
+				// Special Assets: guard against accidental wipes
+				const incomingAssets = changes.system?.specialAssets;
+				if (Array.isArray(incomingAssets)) {
+					const incomingAssetsEmpty = incomingAssets.every((a) => (a ?? '').trim() === '');
+					const anyCurrentAssetText = Array.isArray(this._source?.specialAssets) && this._source.specialAssets.some((a) => (a ?? '').trim() !== '');
+					if (incomingAssetsEmpty && anyCurrentAssetText) {
+						delete changes.system.specialAssets;
 					}
 				}
 			}
@@ -458,6 +473,11 @@ export default class GrimwildCharacter extends GrimwildActorBase {
 		if (!Array.isArray(source.flaws)) source.flaws = ["", ""];
 		while (source.flaws.length < 2) source.flaws.push("");
 		if (source.flaws.length > 2) source.flaws = source.flaws.slice(0, 2);
+
+		// Ensure specialAssets is an array of four strings
+		if (!Array.isArray(source.specialAssets)) source.specialAssets = ["", "", "", ""];
+		while (source.specialAssets.length < 4) source.specialAssets.push("");
+		if (source.specialAssets.length > 4) source.specialAssets = source.specialAssets.slice(0, 4);
 
 		return super.migrateData(source);
 	}

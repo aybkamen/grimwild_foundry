@@ -95,6 +95,29 @@
       </div>
     </fieldset>
 
+    <!-- Special Assets -->
+    <fieldset class="special-assets-fieldset grid-span-1 grid-start-2">
+      <legend>{{ context.systemFields.specialAssets?.label ?? 'Special Assets' }}</legend>
+      <div class="special-assets form-group stacked">
+        <input type="text"
+               name="system.specialAssets.0"
+               v-model="context.system.specialAssets[0]"
+               placeholder="Asset 1"/>
+        <input type="text"
+               name="system.specialAssets.1"
+               v-model="context.system.specialAssets[1]"
+               placeholder="Asset 2"/>
+        <input type="text"
+               name="system.specialAssets.2"
+               v-model="context.system.specialAssets[2]"
+               placeholder="Asset 3"/>
+        <input type="text"
+               name="system.specialAssets.3"
+               v-model="context.system.specialAssets[3]"
+               placeholder="Asset 4"/>
+      </div>
+    </fieldset>
+
     <!-- Bonds -->
     <fieldset class="bonds-fieldset grid-span-1 grid-start-2">
 			<legend>{{ context.systemFields.bonds.label }}</legend>

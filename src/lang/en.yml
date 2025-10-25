@@ -142,6 +142,8 @@ GRIMWILD:
               label: Wises
         bonds:
           label: Bonds
+        specialAssets:
+          label: Special Assets
         flaws:
           label: Flaws
         conditions:
