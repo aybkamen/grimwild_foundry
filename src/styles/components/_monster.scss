@@ -185,6 +185,7 @@
 
 /* Compact read-only summary */
 .monster-summary {
+    color: $c-tan;
     font-size: 12px;
     line-height: 1.2;
     gap: 4px;
@@ -214,8 +215,29 @@
 
     .summary-tables { margin-top: 6px; }
     .summary-table { margin-bottom: 8px; }
-    .summary-table-title { font-weight: 700; text-transform: uppercase; border-top: 1px solid; padding-top: 4px; }
+    .summary-table-title { font-weight: 700; text-transform: uppercase; border-top: 1px solid $c-faint; padding-top: 4px; }
     .summary-table-instructions { font-style: italic; opacity: 0.9; }
-    .summary-table-columns { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 8px; }
-    .summary-table-col { margin: 0; padding-left: 16px; }
+    .summary-table-columns { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 8px; }
+    .summary-table-col { margin: 0; padding-left: 0; list-style: none; counter-reset: die; }
+    .summary-table-col li { list-style: none; display: flex; align-items: baseline; gap: 8px; margin: 2px 0; }
+    .summary-table-col li::before {
+        counter-increment: die;
+        content: counter(die);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 16px;
+        height: 16px;
+        min-width: 16px;
+        border-radius: 3px;
+        border: 1px solid rgba(255,255,255,0.35);
+        background: #ffffff22;
+        color: inherit;
+        font-weight: 700;
+        font-size: 10px;
+        line-height: 1;
+    }
+    body.theme-dark .summary-table-col li::before { border-color: rgba(255,255,255,0.25); background: #ffffff18; }
+    body.theme-light .summary-table-col li::before { border-color: rgba(0,0,0,0.25); background: rgba(0,0,0,0.06); }
+    hr { border-color: $c-faint; opacity: 1; }
 }
