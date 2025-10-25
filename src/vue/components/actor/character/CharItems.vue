@@ -9,7 +9,7 @@
             type="text"
             :name="`system.backpack.${i-1}`"
             v-model="context.system.backpack[i-1]"
-            placeholder="Backpack Item"
+            :placeholder="`Backpack Slot ${i}`"
           />
         </template>
       </div>
@@ -25,4 +25,3 @@ const props = defineProps(['actor', 'context']);
 <style lang="scss">
 
 </style>
-
