@@ -399,7 +399,49 @@
 }
 
 .standard-form {
-	.roll-pool {
-		flex-wrap: nowrap;
-	}
+    .roll-pool {
+        flex-wrap: nowrap;
+    }
 }
+
+// Backpack styling (Items tab)
+.backpack-fieldset {
+    .form-group.stacked { gap: 4px; }
+    input.backpack-slot {
+        font-size: 12px; // slightly smaller to fit more text
+        font-weight: 400; // lighter weight for density
+    }
+}
+
+// Generic hover tooltip for inputs
+.tooltip-wrapper { position: relative; }
+.tooltip-wrapper .tooltip {
+    position: absolute;
+    left: 0;
+    top: calc(100% + 4px); // place below input to avoid clipping by tab's overflow
+    transform: none;
+    background: rgba(0,0,0,0.9);
+    color: #fff;
+    border: 1px solid #6b5b53;
+    border-radius: 6px;
+    padding: 6px 8px;
+    max-width: 320px;
+    white-space: normal; // allow wrapping
+    line-height: 1.2;
+    z-index: 10000; // ensure above tabs and strokes
+    pointer-events: none;
+    // delayed fade-in, quick fade-out
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 120ms ease-in-out;
+}
+body.theme-light .tooltip-wrapper .tooltip {
+    background: #fff;
+    color: #222;
+}
+.tooltip-wrapper:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 180ms; // slight hover delay before showing
+}
+.tooltip-wrapper .tooltip:empty { display: none !important; }

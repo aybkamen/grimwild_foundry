@@ -1,16 +1,20 @@
 <template>
   <div class="grid grid-2col">
-    <!-- Backpack -->
-    <fieldset class="backpack-fieldset grid-span-2">
+    <!-- Backpack (left column) -->
+    <fieldset class="backpack-fieldset grid-span-1 grid-start-1">
       <legend>{{ context.systemFields.backpack?.label ?? 'Backpack' }}</legend>
       <div class="form-group stacked">
         <template v-for="i in 10" :key="i">
-          <input
-            type="text"
-            :name="`system.backpack.${i-1}`"
-            v-model="context.system.backpack[i-1]"
-            :placeholder="`Backpack Slot ${i}`"
-          />
+          <div class="tooltip-wrapper bp-slot">
+            <input
+              type="text"
+              class="backpack-slot"
+              :name="`system.backpack.${i-1}`"
+              v-model="context.system.backpack[i-1]"
+              :placeholder="`Backpack Slot ${i}`"
+            />
+            <span class="tooltip">{{ context.system.backpack[i-1] }}</span>
+          </div>
         </template>
       </div>
     </fieldset>
