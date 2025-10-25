@@ -16,6 +16,10 @@
 				<!-- Tab links -->
 				<Tabs :tabs="tabs.primary" no-span="true"/>
 				<section class="section--fields flexcol">
+					<!-- Summary (MONSTERS ONLY) -->
+					<Tab v-if="context.actor.type === 'monster'" group="primary" :tab="tabs.primary.summary">
+						<MonsterSummary :context="context" />
+					</Tab>
 					<!-- Biography (MONSTERS ONLY) -->
 					<Tab v-if="context.actor.type === 'monster'" group="primary" :tab="tabs.primary.biography">
 						<MonsterBiography :context="context" />
@@ -59,6 +63,7 @@ import {
 	MonsterHeader,
 	MonsterChallenges,
 	MonsterBiography,
+	MonsterSummary,
 	MonsterTables,
 	MonsterTraitsMoves,
 	MonsterDesires,

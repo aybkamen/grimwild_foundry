@@ -101,6 +101,7 @@ GRIMWILD:
       other: Others
     Tabs:
       # Current
+      Summary: Summary
       Details: Details
       Items: Items
       Biography: Biography

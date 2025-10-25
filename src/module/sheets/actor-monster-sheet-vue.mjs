@@ -162,6 +162,12 @@ export class GrimwildActorMonsterSheetVue extends GrimwildActorSheetVue {
 
 		// Tabs available to all actors.
 		if (this.document.type === "monster") {
+			// Summary tab first
+			context.tabs.primary.summary = {
+				key: "summary",
+				label: game.i18n.localize("GRIMWILD.Actor.Tabs.Summary"),
+				active: true
+			};
 			context.tabs.primary.biography = {
 				key: "biography",
 				label: game.i18n.localize("GRIMWILD.Actor.Tabs.Biography"),
@@ -186,7 +192,7 @@ export class GrimwildActorMonsterSheetVue extends GrimwildActorSheetVue {
 		context.tabs.primary.challenges = {
 			key: "challenges",
 			label: game.i18n.localize("GRIMWILD.Actor.Tabs.Challenges"),
-			active: true
+			active: false
 		};
 
 		context.tabs.primary.notes = {
