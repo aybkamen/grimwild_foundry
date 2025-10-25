@@ -37,6 +37,12 @@
 						<Tab v-if="context.actor.type === 'character'" group="primary" :tab="tabs.primary.talents">
 							<CharTalents :actor="context.actor" :context="context"/>
 						</Tab>
+
+
+						<!-- Items fields -->
+						<Tab v-if="context.actor.type === 'character'" group="primary" :tab="tabs.primary.items">
+							<CharItems :actor="context.actor" :context="context" />
+						</Tab>
 		
 						<!-- @todo Active effects disabled for now. -->
 						<!-- Active Effect Fields -->
@@ -60,6 +66,7 @@ import {
 	CharDetails,
 	CharTalents,
 	CharEffects,
+	CharItems,
 	Prosemirror
 } from '@/components';
 import { reactive, toRaw } from 'vue';

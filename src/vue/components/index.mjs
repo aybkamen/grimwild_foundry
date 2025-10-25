@@ -4,6 +4,7 @@ export { default as CharHeader } from "@/components/actor/character/CharHeader.v
 export { default as CharDetails } from "@/components/actor/character/CharDetails.vue";
 export { default as CharTalents } from "@/components/actor/character/CharTalents.vue";
 export { default as CharEffects } from "@/components/actor/character/CharEffects.vue";
+export { default as CharItems } from "@/components/actor/character/CharItems.vue";
 // Monster.
 export { default as MonsterHeader } from "@/components/actor/monster/MonsterHeader.vue";
 export { default as MonsterChallenges } from "@/components/actor/monster/MonsterChallenges.vue";

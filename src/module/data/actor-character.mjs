@@ -122,6 +122,12 @@ export default class GrimwildCharacter extends GrimwildActorBase {
 			}
 		);
 
+		// Backpack: 10 text slots
+		schema.backpack = new fields.ArrayField(
+			new fields.StringField(),
+			{ initial: ["", "", "", "", "", "", "", "", "", ""] }
+		);
+
 		// Two free-text flaws shown on the Details tab
 		schema.flaws = new fields.ArrayField(
 			new fields.StringField(),
@@ -478,6 +484,11 @@ export default class GrimwildCharacter extends GrimwildActorBase {
 		if (!Array.isArray(source.specialAssets)) source.specialAssets = ["", "", "", ""];
 		while (source.specialAssets.length < 4) source.specialAssets.push("");
 		if (source.specialAssets.length > 4) source.specialAssets = source.specialAssets.slice(0, 4);
+
+		// Ensure backpack is an array of ten strings
+		if (!Array.isArray(source.backpack)) source.backpack = ["", "", "", "", "", "", "", "", "", ""];
+		while (source.backpack.length < 10) source.backpack.push("");
+		if (source.backpack.length > 10) source.backpack = source.backpack.slice(0, 10);
 
 		return super.migrateData(source);
 	}

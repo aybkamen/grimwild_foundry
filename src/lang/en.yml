@@ -102,6 +102,7 @@ GRIMWILD:
     Tabs:
       # Current
       Details: Details
+      Items: Items
       Biography: Biography
       Notes: Notes
       Talents: Talents
@@ -117,6 +118,8 @@ GRIMWILD:
           label: Notes
     Character:
       FIELDS:
+        backpack:
+          label: Backpack
         class:
           label: Class
         xp:

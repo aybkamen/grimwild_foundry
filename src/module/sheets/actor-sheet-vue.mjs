@@ -272,6 +272,13 @@ export class GrimwildActorSheetVue extends VueRenderingMixin(GrimwildBaseVueActo
 				label: game.i18n.localize("GRIMWILD.Actor.Tabs.Talents"),
 				active: false
 			};
+
+			// New: Items tab (empty content for now)
+			context.tabs.primary.items = {
+				key: "items",
+				label: game.i18n.localize("GRIMWILD.Actor.Tabs.Items"),
+				active: false
+			};
 		}
 
 		// Tabs available to all actors.
