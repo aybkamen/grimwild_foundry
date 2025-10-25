@@ -237,6 +237,8 @@ Hooks.once("ready", function () {
 			}
 		}
 	});
+
+    // debug hooks removed
 });
 
 Hooks.once("renderHotbar", function () {

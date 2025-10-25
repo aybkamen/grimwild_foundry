@@ -82,6 +82,8 @@ export class GrimwildActorSheetVue extends VueRenderingMixin(GrimwildBaseVueActo
 		// using render key to prevent redundant events.
 	}
 
+    // (debug submit override removed; rely on DataModel guard in _preUpdate)
+
 	/**
 	 * Attach listeners to the application frame.
 	 */
@@ -124,8 +126,9 @@ export class GrimwildActorSheetVue extends VueRenderingMixin(GrimwildBaseVueActo
 			limited: this.document.limited,
 			// Add the actor document.
 			actor: this.actor.toObject(),
-			// Add the actor's data to context.data for easier access, as well as flags.
-			system: this.actor.system,
+			// Add a POJO copy of system data for form binding to avoid
+			// reactive mutations wiping fields on unrelated updates (e.g., after rolls)
+			system: this.actor.toObject().system,
 			flags: this.actor.flags,
 			// Roll data.
 			rollData: this.actor.getRollData() ?? {},

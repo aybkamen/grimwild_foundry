@@ -225,6 +225,40 @@ export default class GrimwildCharacter extends GrimwildActorBase {
 		};
 		checkSteps(changes.system?.spark, this._source.spark);
 		checkSteps(changes.system?.story, this._source.story);
+
+		// Guard against accidental wipes of text arrays coming from stray form submits
+		try {
+			if (this.parent?.type === 'character') {
+				// Backgrounds: if update attempts to set all empty while current has content, drop the change
+				const incomingBgs = changes.system?.backgrounds;
+				if (Array.isArray(incomingBgs)) {
+					const allIncomingEmpty = incomingBgs.every((bg) => {
+						const n = (bg?.name ?? '').trim();
+						const w = Array.isArray(bg?.wises) ? bg.wises.every((w) => (w ?? '').trim() === '') : true;
+						return n === '' && w;
+					});
+					const anyCurrentHasText = Array.isArray(this._source?.backgrounds) && this._source.backgrounds.some((bg) => {
+						const n = (bg?.name ?? '').trim();
+						const w = Array.isArray(bg?.wises) ? bg.wises.some((w) => (w ?? '').trim() !== '') : false;
+						return n !== '' || w;
+					});
+					if (allIncomingEmpty && anyCurrentHasText) {
+						delete changes.system.backgrounds;
+					}
+				}
+				// Flaws: same guard
+				const incomingFlaws = changes.system?.flaws;
+				if (Array.isArray(incomingFlaws)) {
+					const incomingFlawsEmpty = incomingFlaws.every((f) => (f ?? '').trim() === '');
+					const anyCurrentFlawText = Array.isArray(this._source?.flaws) && this._source.flaws.some((f) => (f ?? '').trim() !== '');
+					if (incomingFlawsEmpty && anyCurrentFlawText) {
+						delete changes.system.flaws;
+					}
+				}
+			}
+		} catch (e) {
+			/* guard failed; continue without blocking */
+		}
 	}
 
 	prepareDerivedData() {
@@ -319,21 +353,21 @@ export default class GrimwildCharacter extends GrimwildActorBase {
 
 			// Remove used spark.
 			if (rollDialog.sparkUsed > 0) {
-				let sparkUsed = rollDialog.sparkUsed;
-				const newSpark = {
-					steps: this.spark.steps
-				};
+				const sparkUsed = rollDialog.sparkUsed;
+				// Clone current steps to avoid mutating the live model reference
+				const newSteps = Array.isArray(this.spark.steps) ? [...this.spark.steps] : [false, false];
 				// All of your spark is used.
 				if (sparkUsed > 1 || this.spark.value === 1) {
-					newSpark.steps[0] = false;
-					newSpark.steps[1] = false;
+					newSteps[0] = false;
+					newSteps[1] = false;
 				}
 				// If half of your spark is used.
 				else if (sparkUsed === 1 && this.spark.value > 1) {
-					newSpark.steps[0] = true;
-					newSpark.steps[1] = false;
+					newSteps[0] = true;
+					newSteps[1] = false;
 				}
-				updates["system.spark"] = newSpark;
+				// Update only the steps path to avoid accidental overwrites
+				updates["system.spark.steps"] = newSteps;
 			}
 
 			// Remove marks.
@@ -343,8 +377,13 @@ export default class GrimwildCharacter extends GrimwildActorBase {
 
 			// Handle the updates.
 			const actor = game.actors.get(this.parent.id);
-			await actor.update(updates);
-			actor.sheet.render(true);
+			// Commit any pending form inputs (e.g., text fields that haven't lost focus)
+			// so they are not lost when the sheet re-renders after this update.
+			try {
+				if (actor?.sheet) await actor.sheet.submit({ preventRender: true });
+			} catch (err) { /* best-effort */ }
+			// Apply only the minimal, targeted update and let Foundry re-render naturally
+			await actor.update(updates, { render: true });
 
 			await roll.toMessage({
 				actor: this,
