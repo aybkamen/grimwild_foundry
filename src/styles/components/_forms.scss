@@ -124,6 +124,16 @@
 	gap: 2px;
 }
 
+// Conditions: tighter inputs and smaller text
+.conditions {
+    input[type="text"],
+    select {
+        font-size: 13px; // smaller to fit more text
+        line-height: 1.4; // reduce vertical height (~5px vs default)
+        padding: 4px 8px; // compact padding
+    }
+}
+
 // Compact list spacing for special assets and flaws
 .special-assets.form-group.stacked,
 .flaws.form-group.stacked {

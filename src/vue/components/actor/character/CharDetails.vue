@@ -66,12 +66,16 @@
 							>{{ choice }}</option>
 						</select>
 					</div>
-					<!-- Name -->
-					<input type="text"
-						:name="`system.conditions.${key}.name`"
-						v-model="condition.name"
-						placeholder="Condition name"
-					/>
+					<!-- Name with tooltip -->
+					<div class="tooltip-wrapper">
+						<input type="text"
+							:name="`system.conditions.${key}.name`"
+							v-model="condition.name"
+							:title="condition.name"
+							placeholder="Condition name"
+						/>
+						<div class="tooltip">{{ condition.name }}</div>
+					</div>
 					<!-- Remove -->
 					<a class="condition-control condition-delete"
 						title="Delete condition"
