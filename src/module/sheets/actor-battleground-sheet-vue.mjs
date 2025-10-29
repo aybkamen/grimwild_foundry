@@ -25,7 +25,8 @@ export class GrimwildActorBattlegroundSheetVue extends GrimwildActorSheetVue {
             createDoc: this._createDoc,
             deleteDoc: this._deleteDoc,
             viewDoc: this._viewDoc,
-            rollPool: this._rollPool
+            rollPool: this._rollPool,
+            adjustEnemyCount: this._adjustEnemyCount
         },
         changeActions: {},
         dragDrop: [{ dragSelector: "[data-drag]", dropSelector: null }],
@@ -34,10 +35,15 @@ export class GrimwildActorBattlegroundSheetVue extends GrimwildActorSheetVue {
 
     _prepareTabs(context) {
         context.tabs = { primary: {} };
+        context.tabs.primary.summary = {
+            key: "summary",
+            label: game.i18n.localize("GRIMWILD.Actor.Tabs.Summary"),
+            active: true
+        };
         context.tabs.primary.featuresThreats = {
             key: "featuresThreats",
             label: game.i18n.localize("GRIMWILD.Actor.Tabs.FeaturesThreats"),
-            active: true
+            active: false
         };
         context.tabs.primary.challenges = {
             key: "challenges",
@@ -54,5 +60,21 @@ export class GrimwildActorBattlegroundSheetVue extends GrimwildActorSheetVue {
             label: game.i18n.localize("GRIMWILD.Actor.Tabs.Notes"),
             active: false
         };
+    }
+
+    /**
+     * Increment/decrement an enemy fixed count.
+     */
+    static async _adjustEnemyCount(event, target) {
+        event.preventDefault();
+        const { key, delta } = target.dataset;
+        if (key === undefined) return;
+        // Clone to plain object to avoid reactive issues
+        const enemies = this.document.toObject().system.enemies ?? [];
+        const idx = Number(key);
+        if (!enemies[idx]) return;
+        const newVal = Math.max(1, Number(enemies[idx].count ?? 1) + Number(delta ?? 0));
+        enemies[idx].count = newVal;
+        await this.document.update({ "system.enemies": enemies });
     }
 }

@@ -6,6 +6,10 @@
       <div class="section--main flexcol">
         <Tabs :tabs="tabs.primary" no-span="true"/>
         <section class="section--fields flexcol">
+          <!-- Summary -->
+          <Tab group="primary" :tab="tabs.primary.summary">
+            <BattlegroundSummary :context="context" />
+          </Tab>
           <!-- Features / Threats -->
           <Tab group="primary" :tab="tabs.primary.featuresThreats">
             <BattlegroundFeaturesThreats :context="context"/>
@@ -44,6 +48,7 @@ import {
 } from '@/components';
 import BattlegroundFeaturesThreats from '@/components/actor/battleground/BattlegroundFeaturesThreats.vue';
 import BattlegroundEnemies from '@/components/actor/battleground/BattlegroundEnemies.vue';
+import BattlegroundSummary from '@/components/actor/battleground/BattlegroundSummary.vue';
 import { reactive, toRaw } from 'vue';
 
 const props = defineProps(['context']);
