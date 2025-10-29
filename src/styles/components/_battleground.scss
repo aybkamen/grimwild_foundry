@@ -1,0 +1,43 @@
+&.battleground {
+  .battleground-summary {
+    color: $c-tan;
+    font-size: 14px;
+    line-height: 1.4;
+    padding-right: 2px;
+
+    .summary-line {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      align-items: center;
+      gap: 8px;
+      margin: 4px 0;
+    }
+
+    strong {
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    .summary-threats { display: flex; flex-direction: column; gap: 6px; }
+    .summary-threat { display: flex; align-items: center; gap: 8px; }
+    input[type="checkbox"] { margin: 0; }
+
+    .summary-enemies { margin-top: 6px; display: flex; flex-direction: column; gap: 8px; }
+    .summary-enemy { display: flex; align-items: center; gap: 8px; }
+
+    /* Compact RollPool in summary rows */
+    .roll-pool { gap: 4px; }
+    .roll-pool-button { padding: 4px; height: auto; line-height: 1; }
+    .roll-pool-suffix { padding-right: 4px; border-right: 1px solid; }
+
+    .enemy-minus, .enemy-plus {
+      width: 20px; height: 20px; line-height: 20px;
+      display: inline-flex; align-items: center; justify-content: center;
+      border: 1px solid; border-radius: 4px; background: transparent;
+    }
+    .enemy-count { width: 36px; text-align: center; }
+
+    hr { border-color: $c-faint; opacity: 1; margin: 8px 0; }
+  }
+}

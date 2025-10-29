@@ -39,7 +39,7 @@
     </div>
 
     <hr/>
-
+    <div class="summary-line"><strong>Enemies</strong><span></span></div>
     <!-- Enemies -->
     <div class="summary-enemies">
       <div class="summary-enemy" v-for="(enemy, key) in context.system.enemies" :key="key">
@@ -70,4 +70,3 @@
 import { RollPoolInput } from '@/components';
 const props = defineProps(['context']);
 </script>
-
