@@ -134,6 +134,38 @@
     }
 }
 
+// Conditions controls: shrink roll button, dice input and severity selector
+.conditions .condition-duration {
+    .roll-pool-button {
+        height: 20px; // more compact button height
+        padding: 0 2px; // very tight padding
+        line-height: 20px;
+        font-size: 11px;
+        box-sizing: border-box;
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        i { font-size: 11px; margin: 0; }
+        strong { font-size: 11px; }
+    }
+    .roll-pool-input {
+        width: 32px !important;
+        height: 24px;
+        line-height: 24px; // match select height
+        font-size: 12px;
+        padding: 0;
+        text-align: center;
+        box-sizing: border-box;
+    }
+    .roll-pool-suffix { font-size: 12px; height: 24px; line-height: 24px; display: inline-block; }
+    select {
+        height: 24px;
+        line-height: 24px;
+        font-size: 12px;
+        padding: 0 8px;
+    }
+}
+
 // Compact list spacing for special assets and flaws
 .special-assets.form-group.stacked,
 .flaws.form-group.stacked {
@@ -322,6 +354,7 @@
 	flex-direction: row;
 	flex-wrap: nowrap;
 	gap: 8px;
+	align-items: center; // align icons, input and select vertically
 }
 
 .condition-roll,

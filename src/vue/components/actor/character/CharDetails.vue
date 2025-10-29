@@ -71,7 +71,6 @@
 						<input type="text"
 							:name="`system.conditions.${key}.name`"
 							v-model="condition.name"
-							:title="condition.name"
 							placeholder="Condition name"
 						/>
 						<div class="tooltip">{{ condition.name }}</div>
