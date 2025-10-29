@@ -26,9 +26,10 @@
             <template v-else>
               <RollPoolInput
                 button-action="rollPool"
+                input-action="updateThreatPool"
                 field="threats"
                 :field-key="key"
-                :field-name="`system.threats.${key}.pool.diceNum`"
+                :field-name="''"
                 :pool="threat.pool"
                 :min="0"/>
               <span class="threat-name">{{ threat.name }}</span>
@@ -47,16 +48,19 @@
         <template v-if="enemy.type === 'fixed'">
           <button type="button" class="enemy-minus" data-action="adjustEnemyCount" :data-key="key" data-delta="-1">-</button>
           <input class="enemy-count" type="number" min="1"
-                 :name="`system.enemies.${key}.count`" v-model.number="enemy.count" />
+                 data-action-change="updateEnemyCount"
+                 :data-key="key"
+                 :value="enemy.count" />
           <button type="button" class="enemy-plus" data-action="adjustEnemyCount" :data-key="key" data-delta="1">+</button>
         </template>
         <!-- Pool/Challenge group pool -->
         <template v-else>
           <RollPoolInput
             button-action="rollPool"
+            input-action="updateEnemyPool"
             field="enemies"
             :field-key="key"
-            :field-name="`system.enemies.${key}.pool.diceNum`"
+            :field-name="''"
             :pool="enemy.pool"
             :min="0"/>
         </template>

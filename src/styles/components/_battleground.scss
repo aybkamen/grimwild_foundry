@@ -40,4 +40,41 @@
 
     hr { border-color: $c-faint; opacity: 1; margin: 8px 0; }
   }
+
+  /* Challenges list: 3-column grid like monsters */
+  .items.challenges {
+    .items-list {
+      columns: 3;
+      column-gap: 8px;
+      padding: 8px 0;
+    }
+
+    .challenge {
+      background: #dbd2bca9;
+      border-radius: 4px;
+      break-inside: avoid-column;
+      padding: 4px;
+
+      body.theme-dark & { background: var(--background); }
+
+      .item-summary {
+        background: #ffffff44;
+        padding: 0 2px;
+        body.theme-dark & { background: #ffffff11; }
+      }
+    }
+
+    /* Responsive columns */
+    @media (max-width: 1100px) {
+      .items-list { columns: 2; }
+    }
+    @media (max-width: 700px) {
+      .items-list { columns: 1; }
+    }
+
+    /* Left-align contents */
+    text-align: left;
+    .challenge .item-name { justify-content: flex-start; }
+    .challenge .item-description-content { text-align: left; }
+  }
 }
