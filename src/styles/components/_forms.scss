@@ -356,20 +356,34 @@
 
 // Threats layout: first row compact, second row wide name
 .threat {
-    .threat-row {
-        display: flex;
-        flex-direction: row;
-        align-items: end;
-        gap: 12px;
-
-        .threat-type { min-width: 160px; }
-        .timer, .suspense { flex: 1; }
-
-        .threat-actions { margin-left: auto; }
-    }
-
     position: relative;
     &:hover { .threat-delete { display: block; } }
+
+    .threat-line {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+        padding: 2px 0;
+    }
+
+    .threat-type {
+        width: 80px;
+        flex: 0 0 80px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+
+    .suspense-step {
+        width: 20px;
+        height: 20px;
+    }
+
+    .threat-timer { flex: 0; white-space: nowrap; }
+
+    .threat-name-input { flex: 1; }
+
     .threat-delete {
         display: none;
         position: absolute;
