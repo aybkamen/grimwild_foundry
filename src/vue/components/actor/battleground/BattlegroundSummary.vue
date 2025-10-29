@@ -15,10 +15,14 @@
             <!-- Suspense -->
             <template v-if="threat.type === 'suspense'">
               <input type="checkbox"
-                     :name="`system.threats.${key}.suspense.steps.0`"
+                     data-action-change="updateThreatSuspenseStep"
+                     :data-key="key"
+                     data-step="0"
                      v-model="threat.suspense.steps[0]"/>
               <input type="checkbox"
-                     :name="`system.threats.${key}.suspense.steps.1`"
+                     data-action-change="updateThreatSuspenseStep"
+                     :data-key="key"
+                     data-step="1"
                      v-model="threat.suspense.steps[1]"/>
               <span class="threat-name">{{ threat.name }}</span>
             </template>

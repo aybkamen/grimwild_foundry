@@ -31,7 +31,8 @@ export class GrimwildActorBattlegroundSheetVue extends GrimwildActorSheetVue {
         changeActions: {
             updateThreatPool: this._updateThreatPool,
             updateEnemyPool: this._updateEnemyPool,
-            updateEnemyCount: this._updateEnemyCount
+            updateEnemyCount: this._updateEnemyCount,
+            updateThreatSuspenseStep: this._updateThreatSuspenseStep
         },
         dragDrop: [{ dragSelector: "[data-drag]", dropSelector: null }],
         form: { submitOnChange: true, submitOnClose: true }
@@ -91,6 +92,31 @@ export class GrimwildActorBattlegroundSheetVue extends GrimwildActorSheetVue {
         if (!threats[idx]) return;
         threats[idx].pool = threats[idx].pool || {};
         threats[idx].pool.diceNum = Number(target.value ?? 0);
+        await this.document.update({ "system.threats": threats });
+    }
+
+    /** Update a threat's suspense step from Summary */
+    static async _updateThreatSuspenseStep(event, target) {
+        const { key, step } = target.dataset;
+        if (key === undefined || step === undefined) return;
+        const threats = this.document.toObject().system.threats ?? [];
+        const idx = Number(key);
+        const sIdx = Number(step);
+        if (!threats[idx]) return;
+        threats[idx].suspense = threats[idx].suspense || { steps: [] };
+        const steps = Array.isArray(threats[idx].suspense.steps) ? threats[idx].suspense.steps : [];
+        // Ensure at least two steps exist
+        while (steps.length < 2) steps.push(false);
+
+        // Apply the toggle from the checkbox
+        const checked = !!target.checked;
+        steps[sIdx] = checked;
+
+        // Optional guard: ensure step 1 implies step 0, and clearing 0 clears 1
+        if (sIdx === 1 && checked && !steps[0]) steps[0] = true;
+        if (sIdx === 0 && !checked && steps[1]) steps[1] = false;
+
+        threats[idx].suspense.steps = steps;
         await this.document.update({ "system.threats": threats });
     }
 
