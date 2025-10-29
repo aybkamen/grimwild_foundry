@@ -307,6 +307,86 @@
 	}
 }
 
+// Battleground: Features/Threats fieldsets share the same add-button placement as Conditions
+.features-fieldset,
+.threats-fieldset {
+    position: relative;
+
+    .feature-create,
+    .threat-create {
+        position: absolute;
+        top: -20px;
+        right: 16px;
+        width: 20px;
+        height: 20px;
+        text-align: center;
+        line-height: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        i { margin: 0; }
+    }
+}
+
+// Features: allow delete icon at right like conditions
+.feature {
+    position: relative;
+
+    &:hover { .feature-delete { display: block; } }
+
+    .feature-delete {
+        display: none;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: -16px;
+        margin: auto;
+        background: black;
+        width: 20px;
+        height: 20px;
+        text-align: center;
+        line-height: 20px;
+        border: 1px solid;
+        border-radius: 4px;
+
+        &:hover, &:focus { color: #ba0505; text-shadow: none; }
+    }
+}
+
+// Threats layout: first row compact, second row wide name
+.threat {
+    .threat-row {
+        display: flex;
+        flex-direction: row;
+        align-items: end;
+        gap: 12px;
+
+        .threat-type { min-width: 160px; }
+        .timer, .suspense { flex: 1; }
+
+        .threat-actions { margin-left: auto; }
+    }
+
+    position: relative;
+    &:hover { .threat-delete { display: block; } }
+    .threat-delete {
+        display: none;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: -16px;
+        margin: auto;
+        background: black;
+        width: 20px;
+        height: 20px;
+        text-align: center;
+        line-height: 20px;
+        border: 1px solid;
+        border-radius: 4px;
+    }
+}
+
 // Flaws: keep compact height matching its content
 .flaws-fieldset {
     align-self: start;

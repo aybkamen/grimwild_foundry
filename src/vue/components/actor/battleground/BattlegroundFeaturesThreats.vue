@@ -32,52 +32,44 @@
 
       <div class="threats form-group stacked">
         <div class="threat form-group" v-for="(threat, key) in context.system.threats" :key="key">
-          <!-- Name -->
-          <div class="form-group stacked">
-            <label>Name</label>
-            <input type="text"
-                   :name="`system.threats.${key}.name`"
-                   v-model="threat.name"
-                   placeholder="Threat name"/>
-          </div>
-          <!-- Type -->
-          <div class="form-group stacked">
-            <label>Type</label>
-            <select :name="`system.threats.${key}.type`" v-model="threat.type">
-              <option value="suspense">Suspense</option>
-              <option value="timer">Timer</option>
-            </select>
-          </div>
-          <!-- Suspense controls -->
-          <div v-if="threat.type === 'suspense'" class="suspense form-group stacked">
-            <label>Suspense</label>
-            <div class="form-inputs">
-              <input type="checkbox"
-                     :name="`system.threats.${key}.suspense.steps.0`"
-                     v-model="threat.suspense.steps[0]"/>
-              <input type="checkbox"
-                     :name="`system.threats.${key}.suspense.steps.1`"
-                     v-model="threat.suspense.steps[1]"/>
+          <!-- Row 1: type + control + delete -->
+          <div class="threat-row flexrow">
+            <div class="form-group stacked threat-type">
+              <label>Type</label>
+              <select :name="`system.threats.${key}.type`" v-model="threat.type">
+                <option value="suspense">Suspense</option>
+                <option value="timer">Timer</option>
+              </select>
+            </div>
+            <div v-if="threat.type === 'suspense'" class="suspense form-group stacked">
+              <label>Suspense</label>
+              <div class="form-inputs">
+                <input type="checkbox" :name="`system.threats.${key}.suspense.steps.0`" v-model="threat.suspense.steps[0]"/>
+                <input type="checkbox" :name="`system.threats.${key}.suspense.steps.1`" v-model="threat.suspense.steps[1]"/>
+              </div>
+            </div>
+            <div v-else class="timer form-group stacked">
+              <label>Timer</label>
+              <RollPoolInput
+                button-action="rollPool"
+                field="threats"
+                :field-key="key"
+                :field-name="`system.threats.${key}.pool.diceNum`"
+                :pool="threat.pool"
+                :min="0"/>
+            </div>
+            <div class="threat-actions">
+              <a class="threat-control threat-delete"
+                 title="Delete threat"
+                 data-action="deleteArrayEntry"
+                 data-field="threats"
+                 :data-key="key"><i class="fas fa-trash"></i></a>
             </div>
           </div>
-          <!-- Timer controls -->
-          <div v-else class="timer form-group stacked">
-            <label>Timer</label>
-            <RollPoolInput
-              button-action="rollPool"
-              field="threats"
-              :field-key="key"
-              :field-name="`system.threats.${key}.pool.diceNum`"
-              :pool="threat.pool"
-              :min="0"/>
-          </div>
-          <!-- Remove threat -->
-          <div class="form-group">
-            <a class="threat-control threat-delete"
-               title="Delete threat"
-               data-action="deleteArrayEntry"
-               data-field="threats"
-               :data-key="key"><i class="fas fa-trash"></i></a>
+          <!-- Row 2: name wide -->
+          <div class="form-group stacked threat-name">
+            <label>Name</label>
+            <input type="text" :name="`system.threats.${key}.name`" v-model="threat.name" placeholder="Threat name"/>
           </div>
           <hr/>
         </div>
@@ -90,4 +82,3 @@
 import { RollPoolInput } from '@/components';
 const props = defineProps(['context']);
 </script>
-
