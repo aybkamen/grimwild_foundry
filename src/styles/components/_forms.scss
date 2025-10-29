@@ -329,6 +329,46 @@
     }
 }
 
+// Enemies fieldset add button like conditions
+.enemies-fieldset {
+    position: relative;
+    .enemy-create {
+        position: absolute;
+        top: -20px;
+        right: 16px;
+        width: 20px;
+        height: 20px;
+        text-align: center;
+        line-height: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        i { margin: 0; }
+    }
+}
+
+.enemy {
+    position: relative;
+    &:hover { .enemy-delete { display: block; } }
+    .enemy-line {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    .enemy-type { width: 100px; flex: 0 0 100px; }
+    .enemy-count { width: 48px; }
+    .enemy-pool { flex: 0; white-space: nowrap; }
+    .enemy-name { flex: 1; }
+    .enemy-delete {
+        display: none;
+        position: absolute;
+        top: 0; bottom: 0; right: -16px;
+        margin: auto;
+        background: black; width: 20px; height: 20px;
+        text-align: center; line-height: 20px; border: 1px solid; border-radius: 4px;
+    }
+}
+
 // Features: allow delete icon at right like conditions
 .feature {
     position: relative;

@@ -16,6 +16,11 @@
             <MonsterChallenges :context="context"/>
           </Tab>
 
+          <!-- Enemies -->
+          <Tab group="primary" :tab="tabs.primary.enemies">
+            <BattlegroundEnemies :context="context"/>
+          </Tab>
+
           <!-- Notes -->
           <Tab group="primary" :tab="tabs.primary.notes">
             <fieldset class="fieldset-prose-mirror">
@@ -38,10 +43,10 @@ import {
   Prosemirror,
 } from '@/components';
 import BattlegroundFeaturesThreats from '@/components/actor/battleground/BattlegroundFeaturesThreats.vue';
+import BattlegroundEnemies from '@/components/actor/battleground/BattlegroundEnemies.vue';
 import { reactive, toRaw } from 'vue';
 
 const props = defineProps(['context']);
 const rawTabs = toRaw(props.context.tabs);
 const tabs = reactive({ ...rawTabs });
 </script>
-

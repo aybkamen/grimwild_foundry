@@ -30,6 +30,21 @@ export default class GrimwildBattleground extends GrimwildActorBase {
             })
         );
 
+        // Enemies: fixed count, pooled group, or challenge with optional pool indicator
+        schema.enemies = new fields.ArrayField(
+            new fields.SchemaField({
+                name: new fields.StringField(),
+                // Stored UUID or empty; for now UI edits name directly
+                uuid: new fields.StringField({ required: false, blank: true }),
+                type: new fields.StringField({
+                    choices: { fixed: "Fixed", pool: "Pool", challenge: "Challenge" },
+                    initial: "fixed"
+                }),
+                count: new fields.NumberField({ integer: true, min: 1, initial: 1 }),
+                pool: new DicePoolField()
+            })
+        );
+
         return schema;
     }
 
@@ -48,6 +63,12 @@ export default class GrimwildBattleground extends GrimwildActorBase {
             // Ensure pool exists for timer threats (diceNum defaults to 0 via DicePoolField)
             if (!this.threats[i].pool) this.threats[i].pool = { diceNum: 0 };
         }
+
+        // Ensure enemies have defaults
+        for (const [i, e] of this.enemies.entries()) {
+            if (!e.type) this.enemies[i].type = "fixed";
+            if (!this.enemies[i].count) this.enemies[i].count = 1;
+            if (!this.enemies[i].pool) this.enemies[i].pool = { diceNum: 0 };
+        }
     }
 }
-

@@ -44,6 +44,11 @@ export class GrimwildActorBattlegroundSheetVue extends GrimwildActorSheetVue {
             label: game.i18n.localize("GRIMWILD.Actor.Tabs.Challenges"),
             active: false
         };
+        context.tabs.primary.enemies = {
+            key: "enemies",
+            label: game.i18n.localize("GRIMWILD.Actor.Tabs.Enemies"),
+            active: false
+        };
         context.tabs.primary.notes = {
             key: "notes",
             label: game.i18n.localize("GRIMWILD.Actor.Tabs.Notes"),
