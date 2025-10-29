@@ -27,7 +27,7 @@
     .summary-enemy { display: flex; align-items: center; gap: 8px; }
 
     /* Compact RollPool in summary rows */
-    .roll-pool { gap: 4px; }
+    .roll-pool { display: inline-flex; gap: 4px; flex: 0 0 auto; width: 90px; }
     .roll-pool-button { padding: 4px; height: auto; line-height: 1; }
     .roll-pool-suffix { padding-right: 4px; border-right: 1px solid; }
 
