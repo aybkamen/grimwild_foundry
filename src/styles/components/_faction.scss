@@ -3,16 +3,57 @@
 
   .resources-fieldset, .goals-fieldset {
     position: relative;
-    .resource-create, .goal-create { position: absolute; right: 6px; top: 4px; }
+    .resource-create,
+    .goal-create {
+      position: absolute;
+      top: -20px;
+      right: 16px;
+      width: 20px;
+      height: 20px;
+      text-align: center;
+      line-height: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      i { margin: 0; }
+    }
   }
 
-  .goals .goal-line,
   .resources .resource { display: flex; align-items: center; gap: 10px; }
 
-  .goal-pool .roll-pool-button { padding: 4px; }
-  .goal-term {
-    width: 120px; // narrower selector to favor goal text width
-    flex: 0 0 120px;
+  // Goals row layout: 15% (pool) / 20% (term) / 65% (name)
+  .goals .goal { position: relative; }
+  .goals .goal-line {
+    display: grid;
+    grid-template-columns: 15% 20% 65%;
+    align-items: center;
+    column-gap: 10px;
+    padding-right: 25px;
   }
-  .goal-name { flex: 1; }
+
+  .goal-pool { width: 100%; }
+  .goal-pool .roll-pool { width: 100%; }
+  .goal-pool .roll-pool-button { padding: 4px; }
+
+  .goal-term { width: 100%; min-width: 0; }
+  .goal-name { width: 100%; min-width: 0; }
+  .goal-name input { width: 100%; }
+
+  // Hover delete at right edge like other lists
+  .goal-delete {
+    display: none;
+    position: absolute;
+    right: -16px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    border: 1px solid;
+    border-radius: 4px;
+    background: black;
+  }
+  .goal:hover .goal-delete { display: block; }
 }
