@@ -1,6 +1,27 @@
 &.faction {
   .faction-summary { padding-right: 2px; }
 
+  // Summary formatting similar to battleground
+  .faction-summary {
+    color: $c-tan;
+    font-size: 14px;
+    line-height: 1.4;
+    .summary-line { display: grid; grid-template-columns: max-content 1fr; align-items: start; gap: 10px; margin: 4px 0; }
+    strong { text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; }
+    .summary-bullets { margin: 0; padding-left: 18px; }
+    .summary-goals { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+    .summary-goal { display: flex; align-items: flex-start; gap: 6px; }
+    .summary-goal .goal-sep { opacity: 0.8; }
+
+    /* Compact RollPool in summary rows to eliminate dead space */
+    .roll-pool { display: inline-flex; gap: 4px; flex: 0 0 auto; width: 90px; }
+    .roll-pool-button { padding: 4px; height: auto; line-height: 1; }
+    .roll-pool-suffix { padding-right: 4px; }
+
+    // Allow goal text to wrap across multiple lines
+    .goal-text { flex: 1 1 auto; white-space: normal; overflow-wrap: anywhere; word-break: break-word; }
+  }
+
   .resources-fieldset, .goals-fieldset {
     position: relative;
     .resource-create,

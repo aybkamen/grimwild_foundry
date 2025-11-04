@@ -27,6 +27,9 @@ export class GrimwildActorFactionSheetVue extends GrimwildActorSheetVue {
             viewDoc: this._viewDoc,
             rollPool: this._rollPool
         },
+        changeActions: {
+            updateGoalPool: this._updateGoalPool
+        },
         dragDrop: [{ dragSelector: "[data-drag]", dropSelector: null }],
         form: { submitOnChange: true, submitOnClose: true }
     };
@@ -58,6 +61,18 @@ export class GrimwildActorFactionSheetVue extends GrimwildActorSheetVue {
             label: game.i18n.localize("GRIMWILD.Actor.Tabs.Notes"),
             active: false
         };
+    }
+
+    /** Update a goal's pool diceNum from Summary or Goals tab */
+    static async _updateGoalPool(event, target) {
+        const { key } = target.dataset;
+        if (key === undefined) return;
+        const goals = this.document.toObject().system.goals ?? [];
+        const idx = Number(key);
+        if (!goals[idx]) return;
+        goals[idx].pool = goals[idx].pool || {};
+        goals[idx].pool.diceNum = Number(target.value ?? 0);
+        await this.document.update({ "system.goals": goals });
     }
 }
 

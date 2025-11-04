@@ -8,7 +8,7 @@
         <section class="section--fields flexcol">
           <!-- Summary (blank for now) -->
           <Tab group="primary" :tab="tabs.primary.summary">
-            <section class="faction-summary flexcol"></section>
+            <FactionSummary :context="context" />
           </Tab>
 
           <!-- Resources -->
@@ -49,6 +49,7 @@ import {
 } from '@/components';
 import FactionResources from '@/components/actor/faction/FactionResources.vue';
 import FactionGoals from '@/components/actor/faction/FactionGoals.vue';
+import FactionSummary from '@/components/actor/faction/FactionSummary.vue';
 import { reactive, toRaw } from 'vue';
 
 const props = defineProps(['context']);
