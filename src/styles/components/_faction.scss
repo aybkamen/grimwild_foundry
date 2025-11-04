@@ -7,8 +7,12 @@
   }
 
   .goals .goal-line,
-  .resources .resource { display: flex; align-items: center; gap: 8px; }
+  .resources .resource { display: flex; align-items: center; gap: 10px; }
 
   .goal-pool .roll-pool-button { padding: 4px; }
-  .goal-term { min-width: 130px; }
+  .goal-term {
+    width: 120px; // narrower selector to favor goal text width
+    flex: 0 0 120px;
+  }
+  .goal-name { flex: 1; }
 }

@@ -26,10 +26,13 @@
               <option value="long">Long Term</option>
             </select>
 
-            <input type="text" class="goal-name"
-                   :name="`system.goals.${key}.name`"
-                   v-model="goal.name"
-                   placeholder="Goal name"/>
+            <div class="tooltip-wrapper goal-name">
+              <input type="text"
+                     :name="`system.goals.${key}.name`"
+                     v-model="goal.name"
+                     placeholder="Goal name"/>
+              <div class="tooltip">{{ goal.name }}</div>
+            </div>
 
             <a class="goal-control goal-delete"
                title="Delete goal"
