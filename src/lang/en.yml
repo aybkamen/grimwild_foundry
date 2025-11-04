@@ -268,3 +268,9 @@ TYPES:
     talent: Talent
     arcana: Arcana
     challenge: Challenge
+  Faction:
+    Goal:
+      Term:
+        short: Short Term
+        medium: Medium Term
+        long: Long Term

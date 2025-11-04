@@ -18,6 +18,10 @@ export default class GrimwildFaction extends GrimwildActorBase {
         schema.goals = new fields.ArrayField(
             new fields.SchemaField({
                 name: new fields.StringField(),
+                term: new fields.StringField({
+                    choices: { short: "Short", medium: "Medium", long: "Long" },
+                    initial: "short"
+                }),
                 pool: new DicePoolField()
             })
         );
@@ -29,6 +33,7 @@ export default class GrimwildFaction extends GrimwildActorBase {
         // Ensure each goal has a pool object
         for (const [i, g] of this.goals.entries()) {
             if (!this.goals[i].pool) this.goals[i].pool = { diceNum: 0 };
+            if (!this.goals[i].term) this.goals[i].term = "short";
         }
     }
 }

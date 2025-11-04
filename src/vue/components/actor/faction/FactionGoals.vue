@@ -19,6 +19,13 @@
               :pool="goal.pool"
               :min="0"/>
 
+            <!-- Term selector: short / medium / long -->
+            <select class="goal-term" :name="`system.goals.${key}.term`" v-model="goal.term">
+              <option value="short">Short Term</option>
+              <option value="medium">Medium Term</option>
+              <option value="long">Long Term</option>
+            </select>
+
             <input type="text" class="goal-name"
                    :name="`system.goals.${key}.name`"
                    v-model="goal.name"
