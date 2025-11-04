@@ -8,6 +8,7 @@ import { GrimwildActorSheet } from "./sheets/actor-sheet.mjs";
 import { GrimwildActorSheetVue } from "./sheets/actor-sheet-vue.mjs";
 import { GrimwildActorMonsterSheetVue } from "./sheets/actor-monster-sheet-vue.mjs";
 import { GrimwildActorBattlegroundSheetVue } from "./sheets/actor-battleground-sheet-vue.mjs";
+import { GrimwildActorFactionSheetVue } from "./sheets/actor-faction-sheet-vue.mjs";
 import { GrimwildItemSheet } from "./sheets/item-sheet.mjs";
 import { GrimwildItemSheetVue } from "./sheets/item-sheet-vue.mjs";
 // Import helper/utility classes and constants.
@@ -77,7 +78,8 @@ Hooks.once("init", function () {
         character: models.GrimwildCharacter,
         monster: models.GrimwildMonster,
         linkedChallenge: models.GrimwildLinkedChallenge,
-        battleground: models.GrimwildBattleground
+        battleground: models.GrimwildBattleground,
+        faction: models.GrimwildFaction
     };
 	CONFIG.Item.documentClass = GrimwildItem;
 	CONFIG.Item.dataModels = {
@@ -104,6 +106,11 @@ Hooks.once("init", function () {
         makeDefault: true,
         label: "Battleground Sheet",
         types: ["battleground"]
+    });
+    foundry.documents.collections.Actors.registerSheet("grimwild", GrimwildActorFactionSheetVue, {
+        makeDefault: true,
+        label: "Faction Sheet",
+        types: ["faction"]
     });
 	foundry.documents.collections.Actors.registerSheet("grimwild", GrimwildActorSheetVue, {
 		makeDefault: true,

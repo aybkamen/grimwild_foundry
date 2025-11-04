@@ -1,0 +1,14 @@
+&.faction {
+  .faction-summary { padding-right: 2px; }
+
+  .resources-fieldset, .goals-fieldset {
+    position: relative;
+    .resource-create, .goal-create { position: absolute; right: 6px; top: 4px; }
+  }
+
+  .goals .goal-line,
+  .resources .resource { display: flex; align-items: center; gap: 8px; }
+
+  .goal-pool .roll-pool-button { padding: 4px; }
+}
+

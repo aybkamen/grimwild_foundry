@@ -38,6 +38,10 @@ documentTypes:
       htmlFields:
       - biography
       - notes
+    faction:
+      htmlFields:
+      - biography
+      - notes
   Item:
     talent:
       htmlFields:

@@ -99,10 +99,13 @@ GRIMWILD:
       monster: Monsters
       linkedChallenge: Challenges
       battleground: Battlegrounds
+      faction: Factions
       other: Others
     Tabs:
       # Current
       Summary: Summary
+      Resources: Resources
+      Goals: Goals
       Details: Details
       Items: Items
       Biography: Biography
@@ -258,6 +261,8 @@ TYPES:
     character: Character
     monster: Monster
     linkedChallenge: Linked Challenge
+    battleground: Battleground
+    faction: Faction
     other: Other
   Item:
     talent: Talent
