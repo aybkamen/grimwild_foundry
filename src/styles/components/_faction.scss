@@ -40,7 +40,10 @@
     }
   }
 
-  .resources .resource { display: flex; align-items: center; gap: 10px; }
+  .resources .resource { position: relative; display: flex; align-items: center; gap: 10px; padding-right: 25px; }
+  .resources .resource input { flex: 1 1 auto; width: 100%; }
+  .resources .resource .resource-delete { display: block; position: absolute; right: -16px; top: 0; bottom: 0; margin: auto; width: 20px; height: 20px; line-height: 20px; text-align: center; border: 1px solid; border-radius: 4px; background: black; }
+
 
   // Goals row layout: 15% (pool) / 20% (term) / 65% (name)
   .goals .goal { position: relative; }
@@ -77,4 +80,37 @@
     background: black;
   }
   .goal:hover .goal-delete { display: block; }
+
+  /* Challenges list: 3-column grid like battlegrounds */
+  .items.challenges {
+    .items-list {
+      columns: 3;
+      column-gap: 8px;
+      padding: 8px 0;
+    }
+
+    .challenge {
+      background: #dbd2bca9;
+      border-radius: 4px;
+      break-inside: avoid-column;
+      padding: 4px;
+
+      body.theme-dark & { background: var(--background); }
+
+      .item-summary {
+        background: #ffffff44;
+        padding: 0 2px;
+        body.theme-dark & { background: #ffffff11; }
+      }
+    }
+
+    /* Responsive columns */
+    @media (max-width: 1100px) { .items-list { columns: 2; } }
+    @media (max-width: 700px) { .items-list { columns: 1; } }
+
+    /* Left-align contents */
+    text-align: left;
+    .challenge .item-name { justify-content: flex-start; }
+    .challenge .item-description-content { text-align: left; }
+  }
 }
