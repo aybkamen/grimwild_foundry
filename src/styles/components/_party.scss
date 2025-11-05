@@ -3,8 +3,39 @@
     color: $c-tan;
     font-size: 14px;
     line-height: 1.4;
-    .members-list { margin: 0; padding: 0; }
+    .members-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      width: 100%;
+    }
     .member-name { overflow-wrap: anywhere; }
+    .member {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid $c-faint;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.05);
+      transition: background 120ms ease-in-out, border-color 120ms ease-in-out;
+      display: grid;
+      grid-template-columns: 64px 1fr 24px;
+      gap: 8px;
+      align-items: center;
+      height: 70px;
+      width: 100%;
+      padding: 4px 8px;
+      border-radius: 6px;
+    }
+    .member:hover {
+      background: rgba(255,255,255,0.09);
+      border-color: lighten($c-faint, 8%);
+    }
+    .member-img { border-radius: 4px; width: 64px; height: 64px; object-fit: cover; }
+    .member-text { min-width: 0; overflow: hidden; }
+    .member-row { display: flex; align-items: center; gap: 16px; min-width: 0; }
+    .member-title { font-weight: 700; font-size: 1.6em; line-height: 1; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; }
+    .member-meta { opacity: 0.9; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; }
+    .member-remove { background: black; display: inline-flex; width: 24px; height: 24px; align-items: center; justify-content: center; border: 1px solid; border-radius: 4px; font-size: 12px; line-height: 1; }
   }
 }
-
