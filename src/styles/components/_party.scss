@@ -5,10 +5,19 @@
     line-height: 1.4;
     .hint { opacity: 0.8; margin: 0 0 6px; }
     // Concept rows: icon + text input
-    .concept { display: flex; align-items: center; gap: 8px; }
-    .concept-icon { flex: 0 0 20px; width: 20px; display: inline-flex; align-items: center; justify-content: center; }
-    .concept.are .concept-icon { color: var(--color-level-success); }
-    .concept.not .concept-icon { color: var(--color-level-error); }
+    // Grid layout for icon + selector rows
+    .concepts-grid {
+      display: grid;
+      grid-template-columns: 25px 1fr; // icon | selector
+      column-gap: 6px;
+      row-gap: 6px;
+      align-items: center;
+      width: 100%;
+    }
+    .concept-icon { width: 25px; display: inline-flex; align-items: center; justify-content: center; font-size: 16px; }
+    .concept-icon.are i { color: var(--color-level-success) !important; }
+    .concept-icon.not i { color: var(--color-level-error) !important; }
+    .concepts-grid input[type="text"] { width: 100%; }
   }
   .party-members {
     color: $c-tan;

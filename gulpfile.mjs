@@ -102,17 +102,16 @@ function buildCode() {
  * Build style sheets
  */
 function buildStyles() {
-	return gulp.src([`${stylesDirectory}/**/*.${stylesExtension}`], { base: `${stylesDirectory}/src` })
+	// Compile only the entrypoint to a stable path expected by system.json
+	return gulp.src([`${stylesDirectory}/grimwild.${stylesExtension}`])
 		.pipe(sourcemaps.init({ loadMaps: true }))
 		.pipe(sass({
 			outputStyle: "compressed",
 			silenceDeprecations: ['legacy-js-api', 'import'],
 		}).on("error", sass.logError))
-		.pipe(prefix({
-			cascade: false
-		}))
+		.pipe(prefix({ cascade: false }))
 		.pipe(sourcemaps.write("."))
-		.pipe(gulp.dest(`${distDirectory}/styles/dist`));
+		.pipe(gulp.dest(`${distDirectory}/styles`));
 }
 
 /**

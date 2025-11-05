@@ -89,6 +89,7 @@ esmodules:
   - module/grimwild.mjs
 styles:
   - styles/grimwild.css
+  - vue/styles.vue.css
 languages:
   - lang: en
     name: English
