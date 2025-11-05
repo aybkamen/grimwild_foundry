@@ -1,4 +1,10 @@
 &.party {
+  .party-details {
+    color: $c-tan;
+    font-size: 14px;
+    line-height: 1.4;
+    .hint { opacity: 0.8; margin: 0 0 6px; }
+  }
   .party-members {
     color: $c-tan;
     font-size: 14px;

@@ -39,6 +39,11 @@ export class GrimwildActorPartySheetVue extends GrimwildActorSheetVue {
             label: game.i18n.localize("GRIMWILD.Actor.Tabs.GroupMembers"),
             active: true
         };
+        context.tabs.primary.details = {
+            key: "details",
+            label: game.i18n.localize("GRIMWILD.Actor.Tabs.Details"),
+            active: false
+        };
         context.tabs.primary.notes = {
             key: "notes",
             label: game.i18n.localize("GRIMWILD.Actor.Tabs.Notes"),

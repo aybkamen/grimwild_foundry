@@ -90,6 +90,19 @@ GRIMWILD:
     toggles: Toggles
     text: Text
     suspense: Suspense
+  Concepts:
+    avengers: Avengers
+    conquerors: Conquerors
+    disciples: Disciples
+    explorers: Explorers
+    heroes: Heroes
+    mercenaries: Mercenaries
+    mystics: Mystics
+    outsiders: Outsiders
+    renegades: Renegades
+    scoundrels: Scoundrels
+    vassals: Vassals
+    wardens: Wardens
   SheetLabels:
     Actor: Grimwild Actor Sheet
     Item: Grimwild Item Sheet
@@ -157,31 +170,10 @@ GRIMWILD:
           label: Traits
         desires:
           label: Desires
-        backgrounds:
-          label: Backgrounds
-          placeholder: Background name
-          FIELDS:
-            wises:
-              label: Wises
-        bonds:
-          label: Bonds
-        specialAssets:
-          label: Special Assets
-        flaws:
-          label: Flaws
-        conditions:
-          label: Conditions
-          FIELDS:
-            severity:
-              FIELDS:
-                urgent:
-                  label: Urgent
-                shortTerm:
-                  label: Short Term
-                longTerm:
-                  label: Long Term
-                permanent:
-                  label: Permanent
+    Party:
+      FIELDS:
+        concepts:
+          label: Concept
 
     Monster:
       FIELDS:

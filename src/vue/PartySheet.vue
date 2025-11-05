@@ -11,6 +11,11 @@
             <PartyMembers :context="context" />
           </Tab>
 
+          <!-- Details -->
+          <Tab group="primary" :tab="tabs.primary.details">
+            <PartyDetails :context="context" />
+          </Tab>
+
           <!-- Notes -->
           <Tab group="primary" :tab="tabs.primary.notes">
             <fieldset class="fieldset-prose-mirror">
@@ -32,10 +37,10 @@ import {
   Prosemirror,
 } from '@/components';
 import PartyMembers from '@/components/actor/party/PartyMembers.vue';
+import PartyDetails from '@/components/actor/party/PartyDetails.vue';
 import { reactive, toRaw } from 'vue';
 
 const props = defineProps(['context']);
 const rawTabs = toRaw(props.context.tabs);
 const tabs = reactive({ ...rawTabs });
 </script>
-

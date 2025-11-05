@@ -13,7 +13,21 @@ export default class GrimwildParty extends GrimwildActorBase {
         // Members: array of Actor or Token UUID strings
         schema.members = new fields.ArrayField(new fields.StringField());
 
+        // Concepts: choose 2 that the party is and 1 that it definitely isn't
+        schema.concepts = new fields.ArrayField(
+            new fields.SchemaField({
+                are: new fields.BooleanField(),
+                value: new fields.StringField()
+            }),
+            {
+                initial: [
+                    { are: true, value: "" },
+                    { are: true, value: "" },
+                    { are: false, value: "" }
+                ]
+            }
+        );
+
         return schema;
     }
 }
-

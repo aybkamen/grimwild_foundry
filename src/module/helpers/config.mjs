@@ -48,6 +48,22 @@ GRIMWILD.desires = {
 	wisdom: "GRIMWILD.Desires.wisdom"
 };
 
+// Party concepts options
+GRIMWILD.concepts = {
+    avengers: "GRIMWILD.Concepts.avengers",
+    conquerors: "GRIMWILD.Concepts.conquerors",
+    disciples: "GRIMWILD.Concepts.disciples",
+    explorers: "GRIMWILD.Concepts.explorers",
+    heroes: "GRIMWILD.Concepts.heroes",
+    mercenaries: "GRIMWILD.Concepts.mercenaries",
+    mystics: "GRIMWILD.Concepts.mystics",
+    outsiders: "GRIMWILD.Concepts.outsiders",
+    renegades: "GRIMWILD.Concepts.renegades",
+    scoundrels: "GRIMWILD.Concepts.scoundrels",
+    vassals: "GRIMWILD.Concepts.vassals",
+    wardens: "GRIMWILD.Concepts.wardens"
+};
+
 export const isPhysicalStat = (stat) => {
 	return stat === "bra" || stat === "agi";
 };
