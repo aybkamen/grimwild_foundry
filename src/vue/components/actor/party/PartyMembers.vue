@@ -5,7 +5,9 @@
       <p class="hint">Drag a character or token onto this sheet to add them.</p>
       <ul class="members-list" style="list-style:none; padding:0; margin:8px 0 0; display:flex; flex-direction:column; gap:8px; width:100%;">
         <li class="member" v-for="(m, key) in members" :key="m.uuid" :title="`${m.name}; ${m.path}${m.bgList ? ` (${m.bgList})` : ''}`" :style="{ display:'grid', gridTemplateColumns:'64px 1fr 24px', gap:'8px', alignItems:'center', height:'70px', width:'100%', padding:'4px 8px', borderRadius:'6px', background:'rgba(255,255,255,0.06)', border:'1px solid var(--gw-faint, rgba(255,255,255,0.15))', boxShadow:'inset 0 0 0 1px rgba(255,255,255,0.05)' }">
-          <img class="member-img" :src="m.img" width="64" height="64" style="border-radius:4px; object-fit:cover;"/>
+          <a class="member-open" title="Open" data-action="openMember" :data-uuid="m.uuid" style="display:block; height:64px; width:64px;">
+            <img class="member-img" :src="m.img" width="64" height="64" style="border-radius:4px; object-fit:cover; cursor:pointer;"/>
+          </a>
           <div class="member-text">
             <div class="member-row">
               <strong class="member-title" style="font-weight:700; font-size:1.6em; line-height:1; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">{{ m.name }}</strong>

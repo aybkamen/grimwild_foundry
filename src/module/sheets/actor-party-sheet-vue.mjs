@@ -25,7 +25,8 @@ export class GrimwildActorPartySheetVue extends GrimwildActorSheetVue {
             createDoc: this._createDoc,
             deleteDoc: this._deleteDoc,
             viewDoc: this._viewDoc,
-            removeMember: this._removeMember
+            removeMember: this._removeMember,
+            openMember: this._openMember
         },
         dragDrop: [{ dragSelector: "[data-drag]", dropSelector: null }],
         form: { submitOnChange: true, submitOnClose: true }
@@ -84,5 +85,18 @@ export class GrimwildActorPartySheetVue extends GrimwildActorSheetVue {
         members.splice(idx, 1);
         await this.document.update({ "system.members": members });
     }
-}
 
+    /** Open a member's actor sheet from a uuid (Actor or Token) */
+    static async _openMember(event, target) {
+        event.preventDefault();
+        const { uuid } = target.dataset;
+        if (!uuid) return;
+        try {
+            const doc = await fromUuid(uuid);
+            const actor = doc?.documentName === "Actor" ? doc : doc?.actor;
+            actor?.sheet?.render(true);
+        } catch (err) {
+            console.warn("Failed to open member", uuid, err);
+        }
+    }
+}
