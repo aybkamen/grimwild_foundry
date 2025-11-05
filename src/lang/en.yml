@@ -100,10 +100,12 @@ GRIMWILD:
       linkedChallenge: Challenges
       battleground: Battlegrounds
       faction: Factions
+      party: Parties
       other: Others
     Tabs:
       # Current
       Summary: Summary
+      GroupMembers: Group Members
       Resources: Resources
       Goals: Goals
       Details: Details
@@ -263,6 +265,7 @@ TYPES:
     linkedChallenge: Linked Challenge
     battleground: Battleground
     faction: Faction
+    party: Party
     other: Other
   Item:
     talent: Talent

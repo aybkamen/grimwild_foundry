@@ -42,6 +42,10 @@ documentTypes:
       htmlFields:
       - biography
       - notes
+    party:
+      htmlFields:
+      - biography
+      - notes
   Item:
     talent:
       htmlFields:

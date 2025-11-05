@@ -1,0 +1,10 @@
+&.party {
+  .party-members {
+    color: $c-tan;
+    font-size: 14px;
+    line-height: 1.4;
+    .members-list { margin: 0; padding: 0; }
+    .member-name { overflow-wrap: anywhere; }
+  }
+}
+

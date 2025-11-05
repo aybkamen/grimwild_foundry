@@ -1,0 +1,88 @@
+import { PartySheetVue } from "../../vue/components.vue.es.mjs";
+import { GrimwildActorSheetVue } from "./actor-sheet-vue.mjs";
+
+const { DOCUMENT_OWNERSHIP_LEVELS } = CONST;
+
+export class GrimwildActorPartySheetVue extends GrimwildActorSheetVue {
+    vueParts = {
+        "party-sheet": {
+            component: PartySheetVue,
+            template: "<party-sheet :context=\"context\">Vue rendering for sheet failed.</party-sheet>"
+        }
+    };
+
+    /** @override */
+    static DEFAULT_OPTIONS = {
+        classes: ["grimwild", "actor", "party"],
+        document: null,
+        viewPermission: DOCUMENT_OWNERSHIP_LEVELS.LIMITED,
+        editPermission: DOCUMENT_OWNERSHIP_LEVELS.OWNER,
+        position: { width: 640, height: 680 },
+        window: { resizable: true },
+        tag: "form",
+        actions: {
+            onEditImage: this._onEditImage,
+            createDoc: this._createDoc,
+            deleteDoc: this._deleteDoc,
+            viewDoc: this._viewDoc,
+            removeMember: this._removeMember
+        },
+        dragDrop: [{ dragSelector: "[data-drag]", dropSelector: null }],
+        form: { submitOnChange: true, submitOnClose: true }
+    };
+
+    _prepareTabs(context) {
+        context.tabs = { primary: {} };
+        context.tabs.primary.members = {
+            key: "members",
+            label: game.i18n.localize("GRIMWILD.Actor.Tabs.GroupMembers"),
+            active: true
+        };
+        context.tabs.primary.notes = {
+            key: "notes",
+            label: game.i18n.localize("GRIMWILD.Actor.Tabs.Notes"),
+            active: false
+        };
+    }
+
+    // Enable drag/drop for adding members
+    _canDragStart() { return this.isEditable; }
+    _canDragDrop() { return this.isEditable; }
+
+    async _onDrop(event) {
+        const data = foundry.applications.ux.TextEditor.implementation.getDragEventData(event);
+        if (!this.actor.isOwner) return false;
+
+        let actor = null;
+        try {
+            if (data.type === "Actor") {
+                actor = await fromUuid(data.uuid);
+            } else if (data.type === "Token") {
+                const token = await fromUuid(data.uuid);
+                actor = token?.actor ?? null;
+            }
+        } catch (err) {
+            console.warn(err);
+        }
+
+        if (!actor || actor.documentName !== "Actor") return false;
+        if (actor.type !== "character") return false;
+
+        const members = this.document.toObject().system.members ?? [];
+        const uuid = actor.uuid;
+        if (!members.includes(uuid)) members.push(uuid);
+        await this.document.update({ "system.members": members });
+        this.render();
+    }
+
+    static async _removeMember(event, target) {
+        const { key } = target.dataset;
+        if (key === undefined) return;
+        const members = this.document.toObject().system.members ?? [];
+        const idx = Number(key);
+        if (isNaN(idx) || !members[idx]) return;
+        members.splice(idx, 1);
+        await this.document.update({ "system.members": members });
+    }
+}
+
