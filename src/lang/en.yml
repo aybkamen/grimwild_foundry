@@ -140,6 +140,20 @@ GRIMWILD:
           label: Notes
     Character:
       FIELDS:
+        backgrounds:
+          label: Backgrounds
+          placeholder: Background
+          FIELDS:
+            wises:
+              label: Wise
+        flaws:
+          label: Flaws
+        specialAssets:
+          label: Special Assets
+        bonds:
+          label: Bonds
+        conditions:
+          label: Conditions
         backpack:
           label: Backpack
         treasure:
