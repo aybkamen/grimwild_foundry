@@ -57,6 +57,9 @@ documentTypes:
     challenge:
       htmlFields:
       - description
+    setup:
+      htmlFields:
+      - description
 
 flags:
   hotReload:

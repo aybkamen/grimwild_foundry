@@ -87,7 +87,8 @@ Hooks.once("init", function () {
 	CONFIG.Item.dataModels = {
 		talent: models.GrimwildTalent,
 		arcana: models.GrimwildArcana,
-		challenge: models.GrimwildChallenge
+		challenge: models.GrimwildChallenge,
+		setup: models.GrimwildSetup
 	};
 
 	// Override chat message class.
@@ -132,7 +133,7 @@ Hooks.once("init", function () {
 	foundry.documents.collections.Items.registerSheet("grimwild", GrimwildItemSheetVue, {
 		makeDefault: true,
 		label: "Grimwild Vue Sheet",
-		types: ["talent", "challenge"]
+		types: ["talent", "challenge", "setup"]
 	});
 
 	// Handlebars utilities.

@@ -214,6 +214,10 @@ GRIMWILD:
       Attributes: Attributes
       Description: Description
       Effects: Effects
+    Setup:
+      FIELDS:
+        elements:
+          label: Elements
     Arcana:
       FIELDS:
         rollFormula:
@@ -277,6 +281,7 @@ TYPES:
     talent: Talent
     arcana: Arcana
     challenge: Challenge
+    setup: Setup
   Faction:
     Goal:
       Term:
