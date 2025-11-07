@@ -99,3 +99,18 @@ const filteredChallenges = computed(() => {
 
 const header = computed(() => props.group === 'pressure' ? 'Pressure' : 'Challenges');
 </script>
+
+<style scoped>
+.items-list {
+  columns: 3;
+  column-gap: 8px;
+  padding: 8px 0;
+}
+.challenge { break-inside: avoid-column; background: #dbd2bca9; border-radius: 4px; padding: 4px; }
+body.theme-dark .challenge { background: var(--background); }
+.item-summary { background: #ffffff44; padding: 0 2px; }
+body.theme-dark .item-summary { background: #ffffff11; }
+.item-summary .item-name { border-bottom: 1px solid; padding: 4px 0; gap: 2px; cursor: inherit; }
+.item-description-content { padding: 4px 8px; margin: 4px; background: var(--color-dark-2); border-radius: 4px; }
+.suspense-controls { padding: 4px 2px 2px; }
+</style>

@@ -1,7 +1,7 @@
 <template>
   <section class="storykit-pieces flexcol">
     <div class="flexrow items-header">
-      <div class="item-name">{{ $t?.('GRIMWILD.Actor.StoryKit.Tabs.Pieces') ?? 'Useful Pieces' }}</div>
+      <div class="item-name">{{ game.i18n.localize('GRIMWILD.Actor.StoryKit.Tabs.Pieces') }}</div>
       <div class="item-controls" v-if="context.editable">
         <button class="item-control item-create" title="Add piece"
                 data-action="createArrayEntry" data-field="system.pieces">
@@ -27,4 +27,3 @@
 import { Prosemirror } from '@/components';
 const props = defineProps(['context']);
 </script>
-

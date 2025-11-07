@@ -1,7 +1,7 @@
 <template>
   <section class="storykit-setups flexcol">
     <div class="flexrow items-header">
-      <div class="item-name">{{ $t?.('GRIMWILD.Actor.StoryKit.Tabs.Setups') ?? 'Set it Up' }}</div>
+      <div class="item-name">{{ game.i18n.localize('GRIMWILD.Actor.StoryKit.Tabs.Setups') }}</div>
       <div class="item-controls" v-if="context.editable">
         <button class="item-control item-create"
                 title="Create setup"
@@ -33,4 +33,3 @@
 <script setup>
 const props = defineProps(['context']);
 </script>
-

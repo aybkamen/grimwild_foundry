@@ -1,7 +1,7 @@
 <template>
   <section class="storykit-mix flexcol">
     <fieldset class="mix-fieldset">
-      <legend>{{ $t?.('GRIMWILD.Actor.StoryKit.Tabs.MixItUp') ?? 'Mix it up' }}</legend>
+      <legend>{{ game.i18n.localize('GRIMWILD.Actor.StoryKit.Tabs.MixItUp') }}</legend>
       <button class="mix-control mix-create" title="Add" data-action="createArrayEntry" data-field="system.mixItUp"><i class="fas fa-plus"></i></button>
       <div class="mix-list form-group stacked">
         <div class="mix form-group" v-for="(m, key) in context.system.mixItUp" :key="key">
@@ -16,4 +16,3 @@
 <script setup>
 const props = defineProps(['context']);
 </script>
-

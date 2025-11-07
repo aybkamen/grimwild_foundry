@@ -1,12 +1,55 @@
-// Basic layout tweaks for StoryKit three-column lists
-.storykit .items-list,
-.storykit-pieces .items-list,
-.storykit-setups .items-list {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 8px;
+// StoryKit actor sheet layout and grids
+&.storykit {
+  .items-header { justify-content: flex-end; }
+
+  // Use CSS columns for challenge cards like monsters
+  .items-list {
+    columns: 3;
+    column-gap: 8px;
+    padding: 8px 0;
+
+    .challenge {
+      background: #dbd2bca9;
+      border-radius: 4px;
+      break-inside: avoid-column;
+      padding: 4px;
+
+      body.theme-dark & { background: var(--background); }
+
+      .item-summary {
+        background: #ffffff44;
+        padding: 0 2px;
+        body.theme-dark & { background: #ffffff11; }
+
+        .item-name {
+          border-bottom: 1px solid;
+          padding: 4px 0;
+          gap: 2px;
+          cursor: inherit;
+          &:hover { color: inherit; }
+        }
+      }
+
+      .suspense-controls { padding: 4px 2px 2px; }
+      .challenge-pool { flex: 0 0 auto; }
+      .challenge-fields-wrapper { width: 100%; padding: 8px 4px 4px; }
+      .item-description-content {
+        padding: 4px 8px; margin: 4px; background: var(--color-dark-2); border-radius: 4px;
+      }
+      hr { margin: 2px 0; }
+      .item-trait { font-style: italic; }
+      .item-move { list-style-type: disc; font-weight: bold; text-transform: uppercase; }
+      .roll-pool { gap: 2px; }
+      .roll-pool-button { padding: 4px; line-height: 1; height: auto; }
+      .roll-pool-suffix { border-right: 1px solid; padding-right: 4px; }
+      .item-failure { padding: 0; list-style-type: none; }
+      .item-fail { font-style: italic; font-weight: bold; }
+    }
+  }
+
+  // Useful Pieces grid
+  .storykit-pieces .items-list,
+  .storykit-setups .items-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .storykit-pieces .item-name { display: flex; gap: 6px; align-items: center; }
+  .storykit-pieces .item-description { margin-top: 4px; }
 }
-
-.storykit-pieces .item-name { display: flex; gap: 6px; align-items: center; }
-.storykit-pieces .item-description { margin-top: 4px; }
-

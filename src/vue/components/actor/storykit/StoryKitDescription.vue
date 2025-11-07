@@ -1,7 +1,7 @@
 <template>
   <section class="storykit-description flexcol">
     <fieldset class="hooks-fieldset form-group stacked">
-      <legend>{{ $t?.('GRIMWILD.Actor.StoryKit.FIELDS.hooks.label') ?? 'Hooks' }}</legend>
+      <legend>{{ game.i18n.localize('GRIMWILD.Actor.StoryKit.FIELDS.hooks.label') }}</legend>
       <button class="hook-control hook-create" title="Add hook"
               data-action="createArrayEntry" data-field="system.hooks"><i class="fas fa-plus"></i></button>
       <div class="hooks form-group stacked">
@@ -27,4 +27,3 @@
 import { Prosemirror } from '@/components';
 const props = defineProps(['context']);
 </script>
-
