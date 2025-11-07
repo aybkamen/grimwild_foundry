@@ -46,6 +46,10 @@ documentTypes:
       htmlFields:
       - biography
       - notes
+    storykit:
+      htmlFields:
+      - biography
+      - notes
   Item:
     talent:
       htmlFields:

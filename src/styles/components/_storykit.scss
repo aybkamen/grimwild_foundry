@@ -1,0 +1,12 @@
+// Basic layout tweaks for StoryKit three-column lists
+.storykit .items-list,
+.storykit-pieces .items-list,
+.storykit-setups .items-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.storykit-pieces .item-name { display: flex; gap: 6px; align-items: center; }
+.storykit-pieces .item-description { margin-top: 4px; }
+

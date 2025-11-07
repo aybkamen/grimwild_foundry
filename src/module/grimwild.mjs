@@ -9,6 +9,7 @@ import { GrimwildActorSheetVue } from "./sheets/actor-sheet-vue.mjs";
 import { GrimwildActorMonsterSheetVue } from "./sheets/actor-monster-sheet-vue.mjs";
 import { GrimwildActorBattlegroundSheetVue } from "./sheets/actor-battleground-sheet-vue.mjs";
 import { GrimwildActorFactionSheetVue } from "./sheets/actor-faction-sheet-vue.mjs";
+import { GrimwildActorStoryKitSheetVue } from "./sheets/actor-storykit-sheet-vue.mjs";
 import { GrimwildActorPartySheetVue } from "./sheets/actor-party-sheet-vue.mjs";
 import { GrimwildItemSheet } from "./sheets/item-sheet.mjs";
 import { GrimwildItemSheetVue } from "./sheets/item-sheet-vue.mjs";
@@ -81,9 +82,16 @@ Hooks.once("init", function () {
         linkedChallenge: models.GrimwildLinkedChallenge,
         battleground: models.GrimwildBattleground,
         faction: models.GrimwildFaction,
-        party: models.GrimwildParty
+        party: models.GrimwildParty,
+        storykit: models.GrimwildStoryKit
     };
-	CONFIG.Item.documentClass = GrimwildItem;
+    // Ensure type label is present in creation dialog
+    CONFIG.Actor.typeLabels = {
+        ...(CONFIG.Actor.typeLabels ?? {}),
+        storykit: game.i18n?.localize?.("TYPES.Actor.storykit") ?? "StoryKit"
+    };
+
+    CONFIG.Item.documentClass = GrimwildItem;
 	CONFIG.Item.dataModels = {
 		talent: models.GrimwildTalent,
 		arcana: models.GrimwildArcana,
@@ -120,6 +128,11 @@ Hooks.once("init", function () {
         label: "Party Sheet",
         types: ["party"]
     });
+    foundry.documents.collections.Actors.registerSheet("grimwild", GrimwildActorStoryKitSheetVue, {
+        makeDefault: true,
+        label: "StoryKit Sheet",
+        types: ["storykit"]
+    });
 	foundry.documents.collections.Actors.registerSheet("grimwild", GrimwildActorSheetVue, {
 		makeDefault: true,
 		label: "GRIMWILD.SheetLabels.Actor",
@@ -134,13 +147,13 @@ Hooks.once("init", function () {
 		makeDefault: true,
 		label: "Grimwild Vue Sheet",
 		types: ["talent", "challenge", "setup"]
-	});
+    });
 
-	// Handlebars utilities.
+    // Handlebars utilities.
 	utils.preloadHandlebarsTemplates();
 	utils.registerHandlebarsHelpers();
 
-	// Custom settings.
+    // Custom settings.
 	if (game.modules.get("dice-so-nice")) {
 		game.settings.register("grimwild-action", "diceSoNiceOverride", {
 			name: game.i18n.localize("GRIMWILD.Settings.diceSoNiceOverride.name"),

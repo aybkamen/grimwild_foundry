@@ -7,20 +7,26 @@ export default class GrimwildChallenge extends GrimwildItemBase {
 		"GRIMWILD.Item.Challenge"
 	];
 
-	static defineSchema() {
-		const fields = foundry.data.fields;
-		const schema = super.defineSchema();
+    static defineSchema() {
+        const fields = foundry.data.fields;
+        const schema = super.defineSchema();
 
-		// Obsolete
-		schema.roll = new DicePoolField();
+        // Obsolete
+        schema.roll = new DicePoolField();
 
-		// New
-		schema.pool = new DicePoolField();
-		schema.suspense = new fields.SchemaField({
-			steps: new fields.ArrayField(new fields.BooleanField(), {
-				initial: [true, true]
-			})
-		});
+        // New
+        schema.pool = new DicePoolField();
+        // Optional grouping for StoryKits (pressure vs challenges)
+        schema.group = new fields.StringField({
+            blank: true,
+            required: false,
+            choices: { "": "", pressure: "Pressure", challenge: "Challenge" }
+        });
+        schema.suspense = new fields.SchemaField({
+            steps: new fields.ArrayField(new fields.BooleanField(), {
+                initial: [true, true]
+            })
+        });
 
 		schema.traits = new fields.ArrayField(
 			new fields.StringField(),

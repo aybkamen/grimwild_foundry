@@ -114,10 +114,12 @@ GRIMWILD:
       battleground: Battlegrounds
       faction: Factions
       party: Parties
+      storykit: StoryKits
       other: Others
     Tabs:
       # Current
       Summary: Summary
+      Description: Description
       GroupMembers: Group Members
       Resources: Resources
       Goals: Goals
@@ -188,6 +190,16 @@ GRIMWILD:
       FIELDS:
         concepts:
           label: Concept
+
+    StoryKit:
+      Tabs:
+        Pressure: Pressure
+        Pieces: Useful Pieces
+        Setups: Set it Up
+        MixItUp: Mix it up
+      FIELDS:
+        hooks:
+          label: Hooks
 
     Monster:
       FIELDS:
@@ -276,6 +288,7 @@ TYPES:
     battleground: Battleground
     faction: Faction
     party: Party
+    storykit: StoryKit
     other: Other
   Item:
     talent: Talent
