@@ -20,7 +20,7 @@
           :data-item-id="item.id"
           data-document-class="Item">
         <div class="item-name">
-          <span>{{ item.name }}</span>
+          <span class="setup-title">{{ item.name }}</span>
           <div class="item-controls">
             <a class="item-control item-edit" data-action="viewDoc"><i class="fas fa-edit"></i></a>
             <a class="item-control item-delete" v-if="context.editable" data-action="deleteDoc"><i class="fas fa-trash"></i></a>
@@ -29,6 +29,14 @@
         <div class="item-description" v-if="item.system.description?.length">
           <div class="item-description-content" v-html="context.editors[`items.${item.id}.system.description`].enriched"></div>
         </div>
+        <ul class="setup-elements" v-if="(item.system.elements?.length ?? 0) > 0">
+          <li v-for="(el, key) in (item.system.elements || []).filter(e => e?.state === 'yes' || e?.state === 'no')"
+              :key="key"
+              :class="el.state">
+            <i :class="el.state === 'yes' ? 'fas fa-check' : 'fas fa-times'" aria-hidden="true"></i>
+            <span>{{ el.label }}</span>
+          </li>
+        </ul>
       </li>
     </ol>
   </section>

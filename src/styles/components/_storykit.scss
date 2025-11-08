@@ -53,6 +53,13 @@
   .storykit-pieces .item-name { display: flex; gap: 6px; align-items: center; }
   .storykit-setups .item-name { display: flex; gap: 6px; align-items: center; justify-content: space-between; }
   .storykit-pieces .item-description { margin-top: 4px; }
+
+  // Setups: title + elements list styling
+  .storykit-setups .setup-title { font-weight: 700; font-family: $font-display; font-size: 1.2em; }
+  .storykit-setups .setup-elements { list-style: none; padding: 0; margin: 6px 0 0; display: flex; flex-direction: column; gap: 4px; }
+  .storykit-setups .setup-elements li { display: flex; align-items: center; gap: 6px; }
+  .storykit-setups .setup-elements li.yes { color: var(--color-level-success); }
+  .storykit-setups .setup-elements li.no { color: var(--color-level-error); }
 }
 
 // Ensure grid layout inside Vue sheets as well
