@@ -55,11 +55,48 @@
   .storykit-pieces .item-description { margin-top: 4px; }
 
   // Setups: title + elements list styling
-  .storykit-setups .setup-title { font-weight: 700; font-family: $font-display; font-size: 1.2em; }
+  .storykit-setups .setup-title {
+    font-weight: 700;
+    font-family: $font-display;
+    font-size: 1.2em;
+    line-height: 1.1;
+    flex: 1 1 auto;
+    min-width: 0;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
   .storykit-setups .setup-elements { list-style: none; padding: 0; margin: 6px 0 0; display: flex; flex-direction: column; gap: 4px; }
   .storykit-setups .setup-elements li { display: flex; align-items: center; gap: 6px; }
   .storykit-setups .setup-elements li.yes { color: var(--color-level-success); }
   .storykit-setups .setup-elements li.no { color: var(--color-level-error); }
+
+  // Setups: card look and hover controls
+  .storykit-setups .items-list > .item {
+    background: var(--color-dark-2);
+    border: 1px solid $c-faint;
+    border-radius: 6px;
+    padding: 8px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-height: 180px; // altura mínima para alinear filas
+  }
+  .storykit-setups .item-name { margin-bottom: 2px; }
+  .storykit-setups .item-description { margin-top: 2px; text-align: left; }
+  .storykit-setups .setup-elements { text-align: left; }
+  .storykit-setups .setup-title { flex: 1; min-width: 0; display: block; }
+  .storykit-setups .item-controls {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 120ms ease-in-out;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    flex: 0 0 auto;
+  }
+  .storykit-setups .item:hover .item-controls { opacity: 1; pointer-events: auto; }
 }
 
 // Ensure grid layout inside Vue sheets as well
