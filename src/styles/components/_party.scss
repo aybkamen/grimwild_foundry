@@ -49,7 +49,9 @@
     }
     .member:hover {
       background: rgba(255,255,255,0.09);
-      border-color: lighten($c-faint, 8%);
+      // Sass can't lighten CSS custom properties; use CSS color-mix with a fallback
+      border-color: $c-faint; // fallback
+      border-color: color-mix(in oklab, var(--grimwild-c-faint), white 8%);
     }
     .member-img { border-radius: 4px; width: 64px; height: 64px; object-fit: cover; }
     .member-text { min-width: 0; overflow: hidden; }

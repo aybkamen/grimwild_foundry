@@ -51,5 +51,13 @@
   .storykit-pieces .items-list,
   .storykit-setups .items-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
   .storykit-pieces .item-name { display: flex; gap: 6px; align-items: center; }
+  .storykit-setups .item-name { display: flex; gap: 6px; align-items: center; justify-content: space-between; }
   .storykit-pieces .item-description { margin-top: 4px; }
+}
+
+// Ensure grid layout inside Vue sheets as well
+.grimwild-vue .storykit-setups .items-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
 }

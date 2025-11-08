@@ -14,7 +14,11 @@
       </div>
     </div>
     <ol class="items-list grid-span-3">
-      <li v-for="(item, id) in (context.itemTypes.setup || [])" :key="id" class="item flexcol" :data-item-id="item._id">
+      <li v-for="(item, id) in (context.itemTypes.setup || [])"
+          :key="id"
+          class="item flexcol"
+          :data-item-id="item.id"
+          data-document-class="Item">
         <div class="item-name">
           <span>{{ item.name }}</span>
           <div class="item-controls">
