@@ -29,10 +29,10 @@
             <div class="item-description-content" v-html="context.editors[`items.${item.id}.system.description`].enriched"></div>
           </div>
           <ul class="setup-elements" v-if="(item.system.elements?.length ?? 0) > 0">
-            <li v-for="(el, key) in (item.system.elements || []).filter(e => e?.state === 'yes' || e?.state === 'no')"
+            <li v-for="(el, key) in (item.system.elements || [])"
                 :key="key"
-                :class="el.state">
-              <i :class="el.state === 'yes' ? 'fas fa-check' : 'fas fa-times'" aria-hidden="true"></i>
+                :class="(el?.state === 'yes' || el?.state === 'no') ? el.state : 'maybe'">
+              <i :class="el?.state === 'yes' ? 'fas fa-square-check' : (el?.state === 'no' ? 'fas fa-square-xmark' : 'fas fa-square')" aria-hidden="true"></i>
               <span>{{ el.label }}</span>
             </li>
           </ul>

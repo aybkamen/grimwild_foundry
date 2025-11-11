@@ -69,8 +69,10 @@
   }
   .storykit-setups .setup-elements { list-style: none; padding: 0; margin: 6px 0 0; display: flex; flex-direction: column; gap: 4px; }
   .storykit-setups .setup-elements li { display: flex; align-items: center; gap: 6px; }
-  .storykit-setups .setup-elements li.yes { color: var(--color-level-success); }
-  .storykit-setups .setup-elements li.no { color: var(--color-level-error); }
+  .storykit-setups .setup-elements li.yes { color: var(--color-level-success); font-size: 0.8em; }
+  .storykit-setups .setup-elements li.no { color: var(--color-level-error); font-size: 0.8em; }
+  .storykit-setups .setup-elements li.maybe { color: #999999; font-size: 0.7em; }
+  body.theme-light .storykit-setups .setup-elements li.maybe { color: #444444; }
 
   // Setups: card look and hover controls
   .storykit-setups .items-list > .item {
