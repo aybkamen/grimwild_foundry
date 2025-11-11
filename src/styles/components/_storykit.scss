@@ -97,6 +97,23 @@
     flex: 0 0 auto;
   }
   .storykit-setups .item:hover .item-controls { opacity: 1; pointer-events: auto; }
+
+  // Setups: floating + button like Conditions
+  .setups-fieldset { position: relative; }
+  .setups-fieldset .setup-create {
+    position: absolute;
+    top: -20px;
+    right: 16px;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    i { margin: 0; }
+  }
 }
 
 // Ensure grid layout inside Vue sheets as well
