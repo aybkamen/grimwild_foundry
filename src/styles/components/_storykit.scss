@@ -82,13 +82,20 @@
     padding: 8px 10px;
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
     gap: 6px;
     min-height: 180px; // altura mínima para alinear filas
   }
-  .storykit-setups .item-name { margin-bottom: 2px; }
+  // Prevent base .items-list rules from stretching child blocks vertically
+  .storykit-setups .item-name,
+  .storykit-setups .item-description,
+  .storykit-setups .setup-elements { flex: 0 0 auto; }
+  .storykit-setups .item-name { margin-bottom: 2px; text-align: left; }
   .storykit-setups .item-description { margin-top: 2px; text-align: left; }
+  .storykit-setups .item-description p { text-align: left; }
   .storykit-setups .setup-elements { text-align: left; }
-  .storykit-setups .setup-title { flex: 1; min-width: 0; display: block; }
+  .storykit-setups .setup-title { flex: 1; min-width: 0; display: block; text-align: left; }
   .storykit-setups .item-controls {
     opacity: 0;
     pointer-events: none;

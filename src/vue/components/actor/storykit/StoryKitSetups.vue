@@ -12,12 +12,12 @@
         <i class="fas fa-plus"></i>
       </button>
 
-      <ol class="items-list grid-span-3">
-        <li v-for="(item, id) in (context.itemTypes.setup || [])"
-            :key="id"
-            class="item flexcol"
-            :data-item-id="item.id"
-            data-document-class="Item">
+      <div class="items-list grid-span-3">
+        <div v-for="(item, id) in (context.itemTypes.setup || [])"
+             :key="id"
+             class="item flexcol"
+             :data-item-id="item.id"
+             data-document-class="Item">
           <div class="item-name">
             <span class="setup-title">{{ item.name }}</span>
             <div class="item-controls">
@@ -36,8 +36,8 @@
               <span>{{ el.label }}</span>
             </li>
           </ul>
-        </li>
-      </ol>
+        </div>
+      </div>
     </fieldset>
   </section>
 </template>
