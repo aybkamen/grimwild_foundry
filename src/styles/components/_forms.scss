@@ -655,3 +655,30 @@ body.theme-light .tooltip-wrapper .tooltip {
     transition-delay: 180ms; // slight hover delay before showing
 }
 .tooltip-wrapper .tooltip:empty { display: none !important; }
+
+// Setup Elements: 20% selector + 80% input layout
+.setup-elements-fieldset {
+    .element.entry .flexrow {
+        // keep a tidy inline row
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    // selector takes 20% of the row
+    .element.entry .flexrow > select.element-state {
+        flex: 0 0 20%;
+        min-width: 0; // avoid overflow in flex containers
+    }
+
+    // text input takes the remaining 80%
+    .element.entry .flexrow > input[type="text"] {
+        flex: 1 1 70%;
+        min-width: 0; // allow shrinking without overflow
+    }
+
+    // delete button keeps natural width
+    .element.entry .flexrow > a.entry-delete {
+        flex: 0 0 auto;
+    }
+}
