@@ -11,6 +11,11 @@
             <FactionSummary :context="context" />
           </Tab>
 
+          <!-- Description -->
+          <Tab group="primary" :tab="tabs.primary.description">
+            <FactionDescription :context="context" />
+          </Tab>
+
           <!-- Resources -->
           <Tab group="primary" :tab="tabs.primary.resources">
             <FactionResources :context="context"/>
@@ -50,6 +55,7 @@ import {
 import FactionResources from '@/components/actor/faction/FactionResources.vue';
 import FactionGoals from '@/components/actor/faction/FactionGoals.vue';
 import FactionSummary from '@/components/actor/faction/FactionSummary.vue';
+import FactionDescription from '@/components/actor/faction/FactionDescription.vue';
 import { reactive, toRaw } from 'vue';
 
 const props = defineProps(['context']);

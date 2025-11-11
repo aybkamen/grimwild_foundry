@@ -1,5 +1,10 @@
 <template>
   <section class="faction-summary flexcol">
+    <!-- Description (enriched, read-only) -->
+    <div class="summary-description" v-html="context.editors['system.description']?.enriched || ''"></div>
+
+    <hr />
+
     <strong>Resources</strong>
     <!-- Resources line -->
     <div class="summary-line">

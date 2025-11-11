@@ -4,6 +4,20 @@ import { GrimwildActorSheetVue } from "./actor-sheet-vue.mjs";
 const { DOCUMENT_OWNERSHIP_LEVELS } = CONST;
 
 export class GrimwildActorFactionSheetVue extends GrimwildActorSheetVue {
+    // Include description as a rich text editor for Factions
+    enrichmentOptions = {
+        documentFields: [
+            "biography",
+            "notes",
+            "description"
+        ],
+        itemFields: {
+            talent: [
+                "description",
+                "notes.description"
+            ]
+        }
+    };
     vueParts = {
         "faction-sheet": {
             component: FactionSheetVue,
@@ -40,6 +54,11 @@ export class GrimwildActorFactionSheetVue extends GrimwildActorSheetVue {
             key: "summary",
             label: game.i18n.localize("GRIMWILD.Actor.Tabs.Summary"),
             active: true
+        };
+        context.tabs.primary.description = {
+            key: "description",
+            label: game.i18n.localize("GRIMWILD.Actor.Tabs.Description"),
+            active: false
         };
         context.tabs.primary.resources = {
             key: "resources",

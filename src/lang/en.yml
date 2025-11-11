@@ -191,6 +191,11 @@ GRIMWILD:
         concepts:
           label: Concept
 
+    Faction:
+      FIELDS:
+        description:
+          label: Description
+
     StoryKit:
       Tabs:
         Pressure: Pressure

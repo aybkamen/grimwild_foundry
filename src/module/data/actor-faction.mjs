@@ -11,6 +11,9 @@ export default class GrimwildFaction extends GrimwildActorBase {
         const fields = foundry.data.fields;
         const schema = super.defineSchema();
 
+        // Description: rich text (HTML)
+        schema.description = new fields.HTMLField({ required: true, blank: true });
+
         // Resources: simple list of strings (like Battleground features)
         schema.resources = new fields.ArrayField(new fields.StringField());
 
