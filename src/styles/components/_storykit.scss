@@ -54,6 +54,42 @@
   .storykit-setups .item-name { display: flex; gap: 6px; align-items: center; justify-content: space-between; }
   .storykit-pieces .item-description { margin-top: 4px; }
 
+  // Pieces: card style and inner width
+  .storykit-pieces .items-list > .item {
+    background: var(--color-dark-2);
+    border: 1px solid $c-faint;
+    border-radius: 6px; // rounded border for the mini card
+    padding: 8px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 6px;
+    min-height: 180px; // maintain room for editor
+  }
+  // Keep children from stretching vertically in grid contexts
+  .storykit-pieces .item-name,
+  .storykit-pieces .item-description { flex: 0 0 auto; }
+  // Make the main controls use ~95% of the item width
+  .storykit-pieces .item-name input[type="text"],
+  .storykit-pieces .item-description .prose-mirror-wrapper {
+    max-width: 95%;
+    margin: 0 auto; // center within the card
+  }
+  // Make the description area always occupy space so it's clickable even when empty
+  .storykit-pieces .item-description .prose-mirror-wrapper {
+    min-height: 140px;
+    display: flex;
+    width: 95%;
+  }
+  .storykit-pieces .item-description .prosemirror-preview {
+    flex: 1 1 auto;
+    min-height: 120px;
+    width: 100%;
+    cursor: text;
+  }
+  .storykit-pieces .item-description .prosemirror-preview { cursor: text; }
+  .storykit-pieces .item-name input[type="text"] { flex: 1 1 auto; }
+
   // Setups: title + elements list styling
   .storykit-setups .setup-title {
     font-weight: 700;
@@ -127,6 +163,13 @@
 
 // Ensure grid layout inside Vue sheets as well
 .grimwild-vue .storykit-setups .items-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+// Mirror grid for Useful Pieces in Vue sheets
+.grimwild-vue .storykit-pieces .items-list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 8px;
