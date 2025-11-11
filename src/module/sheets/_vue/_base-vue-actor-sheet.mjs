@@ -179,7 +179,8 @@ export class GrimwildBaseVueActorSheet extends ActorSheetV2 {
 	 * @returns {Item | ActiveEffect} The embedded Item or ActiveEffect
 	 */
 	_getEmbeddedDocument(target) {
-		const docRow = target.closest("li[data-document-class]");
+		// Support both legacy <li> rows and new <div> rows
+		const docRow = target.closest("[data-document-class]");
 		if (docRow.dataset.documentClass === "Item") {
 			return this.actor.items.get(docRow.dataset.itemId);
 		}
