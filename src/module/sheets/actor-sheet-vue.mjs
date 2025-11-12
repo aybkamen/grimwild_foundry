@@ -318,26 +318,30 @@ export class GrimwildActorSheetVue extends VueRenderingMixin(GrimwildBaseVueActo
 	 *
 	 **************/
 
-	static async _openPack(event, target) {
-		event.preventDefault();
-		const { pack } = target.dataset;
-		const compendium = game.packs.get(pack);
+    static async _openPack(event, target) {
+        event.preventDefault();
+        const { pack } = target.dataset;
+        const compendium = game.packs.get(pack);
+        if (!compendium) return;
 
-		if (compendium?.apps?.[0]) {
-			// Open the character's relevant path, if one exists.
-			const path = this.document.system.path;
-			const folder = compendium.folders.find((f) => {
-				return f.name.trim().toLocaleLowerCase() === path.trim().toLocaleLowerCase();
-			});
-			if (folder) {
-				const otherFolders = compendium.folders.filter((f) => f.id !== folder.id);
-				game.folders._expanded[folder.uuid] = true;
-				otherFolders.forEach((f) => delete game.folders._expanded[f.uuid]);
-			}
-			// Render the pack.
-			compendium.apps[0].render(true);
-		}
-	}
+        // Always render the compendium, creating the app if needed.
+        compendium.render(true);
+
+        // If an app instance exists, expand the character's path folder.
+        const app = compendium?.apps?.[0];
+        if (app) {
+            const path = this.document.system.path;
+            const folder = compendium.folders.find((f) => {
+                return f.name.trim().toLocaleLowerCase() === path.trim().toLocaleLowerCase();
+            });
+            if (folder) {
+                const otherFolders = compendium.folders.filter((f) => f.id !== folder.id);
+                game.folders._expanded[folder.uuid] = true;
+                otherFolders.forEach((f) => delete game.folders._expanded[f.uuid]);
+            }
+            app.render(true);
+        }
+    }
 
 	/**
 	 * Handle creating a new bond entry.
