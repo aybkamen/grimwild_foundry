@@ -231,6 +231,14 @@ GRIMWILD:
       Attributes: Attributes
       Description: Description
       Effects: Effects
+    Background:
+      FIELDS:
+        wises:
+          label: Wises
+        flaws:
+          label: Flaws
+        quests:
+          label: Quests
     Setup:
       FIELDS:
         elements:
@@ -300,6 +308,7 @@ TYPES:
     arcana: Arcana
     challenge: Challenge
     setup: Setup
+    background: Background
   Faction:
     Goal:
       Term:

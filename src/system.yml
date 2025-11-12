@@ -64,6 +64,9 @@ documentTypes:
     setup:
       htmlFields:
       - description
+    background:
+      htmlFields:
+      - description
 
 flags:
   hotReload:
