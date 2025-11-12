@@ -29,22 +29,37 @@ export class GrimwildActorStoryKitSheetVue extends GrimwildActorSheetVue {
             relativeTo: this.actor
         };
         const editorDefaults = {
-            toggled: true,
-            collaborate: true,
-            documentUUID: this.document.uuid,
+            // Start collapsed to avoid race conditions while the sheet
+            // re-renders after array updates; user can click to open.
+            toggled: false,
+            // Disable collaborative editor wiring for pieces to avoid
+            // update broadcasts racing while elements are mounting.
+            collaborate: false,
+            // Avoid autosave so the toolbar reflects dirty state and
+            // the user can explicitly save & close.
+            autosave: false,
             height: 220
         };
         const pieces = this.document.system.pieces ?? [];
         for (let i = 0; i < pieces.length; i++) {
             const fieldPath = `system.pieces.${i}.description`;
             const value = pieces[i]?.description ?? "";
+            const element = foundry.applications.elements.HTMLProseMirrorElement.create({
+                ...editorDefaults,
+                name: fieldPath,
+                value
+            });
+            // Force collapsed state at creation time to avoid opening
+            // when the sheet initializes after a reload.
+            try {
+                element.removeAttribute?.("open");
+                element.classList?.remove("active");
+                element.classList?.add("inactive");
+                element.dataset.startOpen = "false";
+            } catch (e) { /* noop */ }
             context.editors[fieldPath] = {
                 enriched: await foundry.applications.ux.TextEditor.implementation.enrichHTML(value, enrichmentOptions),
-                element: foundry.applications.elements.HTMLProseMirrorElement.create({
-                    ...editorDefaults,
-                    name: fieldPath,
-                    value
-                })
+                element
             };
         }
 

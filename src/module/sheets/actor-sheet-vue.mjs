@@ -361,21 +361,52 @@ export class GrimwildActorSheetVue extends VueRenderingMixin(GrimwildBaseVueActo
 			: foundry.utils.getProperty(this.document, field);
 		// Retrieve the schema.
 		const schema = this.document.system.schema.fields?.[field];
-		const fieldConstructor = fieldType ?? schema?.element.constructor.name;
+		const fieldConstructor = fieldType ?? schema?.element?.constructor?.name;
 		if (!fieldConstructor) return;
 		// Determine the default value of the new entry.
 		let defaultValue = {};
+		// Helper to derive a sane default for a Field instance
+		const defaultForField = (fld) => {
+			const ctor = fld?.constructor?.name;
+			switch (ctor) {
+				case "StringField":
+				case "HTMLField":
+					return "";
+				case "BooleanField":
+					return false;
+				case "NumberField":
+					return 0;
+				case "ArrayField":
+					return Array.isArray(fld?.options?.initial) ? [...fld.options.initial] : [];
+				case "SchemaField": {
+					const out = {};
+					for (const [k, sub] of Object.entries(fld.fields ?? {})) {
+						out[k] = defaultForField(sub);
+					}
+					return out;
+				}
+				default:
+					return null;
+			}
+		};
+
 		switch (fieldConstructor) {
 			case "StringField":
 				defaultValue = "";
 				break;
 
 			case "ArrayField":
-				defaultValue = [];
+				// Create a default entry matching the element type of the array
+				defaultValue = defaultForField(schema?.element);
+				break;
+
+			case "SchemaField":
+				// Build object based on the field schema
+				defaultValue = defaultForField(schema);
 				break;
 
 			default:
-				break;
+				defaultValue = null;
 		}
 
 		// If we're adding multiple entries at once, such as an 6 strings,
@@ -407,11 +438,10 @@ export class GrimwildActorSheetVue extends VueRenderingMixin(GrimwildBaseVueActo
 		}
 
 		// Perform the update.
-		await this.document.update({
-			[`system.${field}`]: entries
-		});
+		const updatePath = field.startsWith("system.") ? field : `system.${field}`;
+		await this.document.update({ [updatePath]: entries }, { render: false });
 		this._arrayEntryKey++;
-		this.render();
+		this.render(true);
 	}
 
 	/**
@@ -447,9 +477,8 @@ export class GrimwildActorSheetVue extends VueRenderingMixin(GrimwildBaseVueActo
 		}
 
 		// Perform the update.
-		await this.document.update({
-			[`system.${field}`]: entries
-		});
+		const updatePath = field.startsWith("system.") ? field : `system.${field}`;
+		await this.document.update({ [updatePath]: entries }, { render: false });
 		this._arrayEntryKey++;
 		this.render(true);
 	}

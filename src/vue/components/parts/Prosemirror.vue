@@ -12,12 +12,20 @@ let observer = null;
 
 function isEditorOpen(el) {
   if (!el) return false;
+  // One‑time override from creator (sheet can set dataset.startOpen)
+  if (el.dataset && typeof el.dataset.startOpen !== 'undefined') {
+    const wantOpen = el.dataset.startOpen === 'true';
+    // consume the hint so subsequent checks follow the element state
+    delete el.dataset.startOpen;
+    return wantOpen;
+  }
   // Foundry often toggles 'inactive' class when collapsed
   if (el.classList?.contains('inactive')) return false;
   if (el.hasAttribute?.('open')) return true;
   // fallback: if it has 'active' treat as open
   if (el.classList?.contains('active')) return true;
-  return true; // default to visible if unsure
+  // Default to closed if unsure to prevent editors staying open
+  return false;
 }
 
 function updateVisibility() {
@@ -70,6 +78,8 @@ function renderContent() {
     // Insert the live ProseMirror custom element so it keeps state
     wrapper.value.appendChild(props.field.element);
     attachObserver();
+    // Update immediately and also on the next tick once the element upgrades
+    updateVisibility();
     nextTick(updateVisibility);
   } else {
     // Render enriched HTML when not editable
