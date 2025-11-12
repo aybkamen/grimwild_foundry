@@ -35,7 +35,7 @@
             </li>
           </ul>
         </div>
-        <div class="item-controls">
+        <div class="item-controls" data-controls="background">
           <a class="item-control item-edit"
              :title="game.i18n.format('DOCUMENT.Edit', {type: 'background'})"
              data-action="viewDoc"
@@ -43,7 +43,7 @@
           <a class="item-control item-delete"
              v-if="context.editable"
              :title="game.i18n.format('DOCUMENT.Delete', {type: 'background'})"
-             data-action="deleteDoc"
+             data-action="deleteBackground"
           ><i class="fas fa-trash"></i></a>
         </div>
       </div>

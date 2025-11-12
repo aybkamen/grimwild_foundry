@@ -46,6 +46,7 @@ export class GrimwildActorSheetVue extends VueRenderingMixin(GrimwildBaseVueActo
 			viewDoc: this._viewDoc,
 			createDoc: this._createDoc,
 			deleteDoc: this._deleteDoc,
+			deleteBackground: this._deleteBackground,
 			editEffect: this._viewEffect,
 			createEffect: this._createEffect,
 			deleteEffect: this._deleteEffect,
@@ -446,6 +447,24 @@ export class GrimwildActorSheetVue extends VueRenderingMixin(GrimwildBaseVueActo
 		await this.document.update({ [updatePath]: entries }, { render: false });
 		this._arrayEntryKey++;
 		this.render(true);
+	}
+
+	/**
+	 * Delete a Background item with confirmation.
+	 *
+	 * @param {PointerEvent} event
+	 * @param {HTMLElement} target
+	 */
+	static async _deleteBackground(event, target) {
+		const doc = this._getEmbeddedDocument(target);
+		if (!doc) return;
+		const name = foundry.utils.escapeHTML(doc.name ?? "Background");
+		const confirmed = await Dialog.confirm({
+			title: game.i18n.localize?.("Confirm") ?? "Confirm",
+			content: `<p>${game.i18n.localize?.("AreYouSure") ?? "Are you sure?"} ${name}</p>`
+		});
+		if (!confirmed) return;
+		await doc.delete();
 	}
 
 	/**

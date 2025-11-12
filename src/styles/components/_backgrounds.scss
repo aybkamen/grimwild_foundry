@@ -48,6 +48,9 @@
 	background: transparent;
 	// Override default list item divider
 	border-bottom: none;
+	position: relative;
+	// Reserve space on the right for the vertical controls
+	padding-right: 48px;
 
 	.item-name { font-variant: small-caps; letter-spacing: 0.5px; }
 	.wise-list { color: $c-tan; font-size: 0.95em; }
@@ -55,4 +58,27 @@
 	// Hide controls until hover
 	.item-controls { opacity: 0; pointer-events: none; transition: opacity .15s ease-in-out; }
 	&:hover .item-controls { opacity: 1; pointer-events: auto; }
+
+	// Controls to the right, vertical layout
+	.item-controls[data-controls="background"] {
+		position: absolute;
+		top: 8px;
+		bottom: 8px;
+		right: 8px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: center;
+		gap: 8px;
+	}
+
+	.item-controls a {
+		width: 26px;
+		height: 26px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.item-controls a i { font-size: 16px; }
 }
