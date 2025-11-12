@@ -64,7 +64,7 @@
     flex-direction: column;
     align-items: stretch;
     gap: 6px;
-    min-height: 180px; // maintain room for editor
+    min-height: 360px; // doubled height for larger editing area
   }
   // Keep children from stretching vertically in grid contexts
   .storykit-pieces .item-name,
@@ -75,17 +75,26 @@
     max-width: 95%;
     margin: 0 auto; // center within the card
   }
+  // Title in small caps (versalitas)
+  .storykit-pieces .item-name input[type="text"] {
+    font-variant: small-caps;
+  }
   // Make the description area always occupy space so it's clickable even when empty
   .storykit-pieces .item-description .prose-mirror-wrapper {
-    min-height: 140px;
+    min-height: 300px; // taller editing/preview area to match card
     display: flex;
     width: 95%;
   }
   .storykit-pieces .item-description .prosemirror-preview {
     flex: 1 1 auto;
-    min-height: 120px;
+    min-height: 280px;
     width: 100%;
     cursor: text;
+    font-size: 0.75em; // smaller preview text
+  }
+  // Also reduce font-size for the live editor content
+  .storykit-pieces .item-description prose-mirror .editor-container {
+    font-size: 0.75em;
   }
   .storykit-pieces .item-description .prosemirror-preview { cursor: text; }
   .storykit-pieces .item-name input[type="text"] { flex: 1 1 auto; }
