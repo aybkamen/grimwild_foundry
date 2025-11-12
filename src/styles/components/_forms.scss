@@ -371,21 +371,26 @@
 
 // Background item: Wises, Flaws, Quests layout
 .wises-fieldset {
+	width: 95%;
   .wise-active { width: 25px; flex: 0 0 25px; }
-  .wise input[type="text"] { flex: 1 1 auto; }
+  .wise .flexrow { flex-wrap: nowrap; }
+  .wise input[type="text"] { flex: 1 1 0; min-width: 0; width: auto; }
 }
 
 .flaws-fieldset {
   // Occupy full available width, including grids
-  width: 100%;
+  width: 95%;
   grid-column: 1 / -1;
   .flaw-active { width: 25px; flex: 0 0 25px; }
-  .flaw input[type="text"] { flex: 1 1 auto; }
+  .flaw .flexrow { flex-wrap: nowrap; }
+  .flaw input[type="text"] { flex: 1 1 0; min-width: 0; width: auto; }
 }
 
 .quests-fieldset {
+	width: 95%;
   .quest-active { width: 25px; flex: 0 0 25px; }
-  .quest input[type="text"] { flex: 1 1 auto; }
+  .quest .flexrow { flex-wrap: nowrap; }
+  .quest input[type="text"] { flex: 1 1 0; min-width: 0; width: auto; }
   // Milestone checkboxes sized consistently
   input[name*="system.quests."][name*=".milestones."] { width: 25px; flex: 0 0 25px; }
 }
