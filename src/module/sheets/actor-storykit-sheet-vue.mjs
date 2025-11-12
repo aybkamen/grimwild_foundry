@@ -69,7 +69,9 @@ export class GrimwildActorStoryKitSheetVue extends GrimwildActorSheetVue {
         // Disable submit-on-change so ProseMirror doesn't auto-save
         // each keystroke; this lets the editor toolbar reflect dirty state
         // and close after an explicit save.
-        form: { submitOnChange: false, submitOnClose: true }
+        // Changes for StoryKit pieces are applied directly via dialog
+        // updates; avoid form auto-submission overwriting arrays on close.
+        form: { submitOnChange: false, submitOnClose: false }
     };
 
     _prepareTabs(context) {
