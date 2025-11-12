@@ -13,6 +13,7 @@ export { default as MonsterSummary } from "@/components/actor/monster/MonsterSum
 export { default as MonsterTables } from "@/components/actor/monster/MonsterTables.vue";
 export { default as MonsterTraitsMoves } from "@/components/actor/monster/MonsterTraitsMoves.vue";
 export { default as MonsterDesires } from "@/components/actor/monster/MonsterDesires.vue";
+export { default as CharBackgrounds } from "@/components/actor/character/CharBackgrounds.vue";
 // Items.
 export { default as ItemDescription } from "@/components/item/ItemDescription.vue";
 export { default as ItemHeader } from "@/components/item/ItemHeader.vue";

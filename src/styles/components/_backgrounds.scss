@@ -31,8 +31,14 @@
 				input[type="text"] {
 					font-size: 0.9em; // slightly smaller for wises
 					font-weight: 200; // lighter than bold
-				}
+			}
 
 			}
 		}
 	}
+
+// Mini-card list for Background items on character sheet
+.items-list .item.background {
+	.item-name { font-variant: small-caps; letter-spacing: 0.5px; }
+	.wise-list { color: $c-tan; font-size: 0.95em; }
+}

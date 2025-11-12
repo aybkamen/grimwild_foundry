@@ -1,0 +1,56 @@
+<template>
+  <section class="grid grid-1col grid-span-1 grid-start-1">
+    <ol class="items-list grid-span-1">
+      <!-- Header row -->
+      <li class="flexrow items-header stroke stroke-bottom">
+        <div class="item-name">{{ context.systemFields.backgrounds.label }}</div>
+        <div class="item-controls">
+          <template v-if="context.editable">
+            <button class="item-control item-create"
+                    title="Create background"
+                    data-action="createDoc"
+                    data-document-class="Item"
+                    data-type="background"
+                    type="button">
+              <i class="fas fa-plus"></i><span>Add</span>
+            </button>
+          </template>
+        </div>
+      </li>
+      <!-- Background mini-cards -->
+      <li v-for="(item, id) in (context.itemTypes.background || [])" :key="id"
+          :class="`item background flexcol stroke stroke-bottom`"
+          :data-item-id="item._id"
+          data-drag="true"
+          draggable="true"
+          data-document-class="Item">
+        <!-- Summary -->
+        <div class="item-summary flexcol" style="gap: 4px;">
+          <div class="item-name" style="font-variant: small-caps; letter-spacing: 0.5px;">
+            <div data-action="toggleItem" :data-item-id="item._id">{{ item.name }}</div>
+          </div>
+          <ul class="wise-list" style="margin: 0; padding-left: 18px;">
+            <li v-for="(wise, i) in (item.system?.wises ?? []).filter(w => !!w?.active && !!w?.label)" :key="i">
+              {{ wise.label }}
+            </li>
+          </ul>
+        </div>
+        <div class="item-controls">
+          <a class="item-control item-edit"
+             :title="game.i18n.format('DOCUMENT.Edit', {type: 'background'})"
+             data-action="viewDoc"
+          ><i class="fas fa-edit"></i></a>
+          <a class="item-control item-delete"
+             v-if="context.editable"
+             :title="game.i18n.format('DOCUMENT.Delete', {type: 'background'})"
+             data-action="deleteDoc"
+          ><i class="fas fa-trash"></i></a>
+        </div>
+      </li>
+    </ol>
+  </section>
+</template>
+
+<script setup>
+const props = defineProps(['actor', 'context']);
+</script>

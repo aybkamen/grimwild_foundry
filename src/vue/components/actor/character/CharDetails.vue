@@ -1,42 +1,7 @@
 <template>
 	<div class="grid grid-2col">
-		<!-- Backgrounds -->
-    <fieldset class="backgrounds grid-span-1 grid-start-1">
-			<legend>{{ context.systemFields.backgrounds.label }}</legend>
-			<div :class="`background flexcol ${key === 0 ? 'stroke stroke-bottom' : ''}`" v-for="(background, key) in context.system.backgrounds" :key="key">
-				<div class="background-name form-group stacked">
-					<input type="text"
-						:name="`system.backgrounds.${key}.name`"
-						v-model="background.name"
-						:placeholder="game.i18n.localize('GRIMWILD.Actor.Character.FIELDS.backgrounds.placeholder')"
-					/>
-				</div>
-				<div class="wises form-group stacked">
-					<div class="form-group stacked">
-						<input type="text"
-							:name="`system.backgrounds.${key}.wises.${0}`"
-							v-model="background.wises[0]"
-							:placeholder="game.i18n.localize('GRIMWILD.Actor.Character.FIELDS.backgrounds.FIELDS.wises.label')"
-						/>
-						<input type="text"
-							:name="`system.backgrounds.${key}.wises.${1}`"
-							v-model="background.wises[1]"
-							:placeholder="game.i18n.localize('GRIMWILD.Actor.Character.FIELDS.backgrounds.FIELDS.wises.label')"
-						/>
-						<input type="text"
-							:name="`system.backgrounds.${key}.wises.${2}`"
-							v-model="background.wises[2]"
-							:placeholder="game.i18n.localize('GRIMWILD.Actor.Character.FIELDS.backgrounds.FIELDS.wises.label')"
-						/>
-						<input type="text"
-							:name="`system.backgrounds.${key}.wises.${3}`"
-							v-model="background.wises[3]"
-							:placeholder="game.i18n.localize('GRIMWILD.Actor.Character.FIELDS.backgrounds.FIELDS.wises.label')"
-						/>
-					</div>
-				</div>
-			</div>
-		</fieldset>
+		<!-- Backgrounds as items -->
+    <CharBackgrounds :actor="actor" :context="context" />
 		<!-- Right Column: conditions, flaws, assets, bonds -->
 		<div class="details-right-col grid-span-1 grid-start-2">
 		<!-- Conditions -->
@@ -156,7 +121,8 @@
 
 <script setup>
 import {
-	RollPoolInput
+	RollPoolInput,
+	CharBackgrounds
 } from '@/components';
 const props = defineProps(['actor', 'context']);
 </script>
