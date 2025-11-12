@@ -9,6 +9,7 @@ const props = defineProps(['field', 'editable']);
 const wrapper = ref(null);
 let previewDiv = null;
 let observer = null;
+let inserted = false; // whether the editor element is in the DOM
 
 function isEditorOpen(el) {
   if (!el) return false;
@@ -34,7 +35,17 @@ function updateVisibility() {
   if (!el) return;
   const open = isEditorOpen(el);
   if (previewDiv) previewDiv.style.display = open ? 'none' : '';
-  el.style.display = open ? '' : 'none';
+  // Only attach the editor element when open; remove it when closed
+  if (open) {
+    if (!inserted) {
+      try { wrapper.value.appendChild(el); inserted = true; } catch (_) {}
+    }
+    el.style.display = '';
+  } else {
+    if (inserted) {
+      try { wrapper.value.removeChild(el); inserted = false; } catch (_) {}
+    }
+  }
 }
 
 function attachObserver() {
@@ -48,6 +59,10 @@ function attachObserver() {
 function openEditor() {
   const el = props.field?.element;
   if (!el) return;
+  // Ensure the element is attached before toggling open states
+  if (!inserted && wrapper.value) {
+    try { wrapper.value.appendChild(el); inserted = true; } catch (_) {}
+  }
   el.setAttribute?.('open', '');
   el.classList?.remove('inactive');
   el.classList?.add('active');
@@ -75,10 +90,17 @@ function renderContent() {
   wrapper.value.appendChild(previewDiv);
 
   if (props.editable && props.field.element) {
-    // Insert the live ProseMirror custom element so it keeps state
-    wrapper.value.appendChild(props.field.element);
+    // Do not insert the editor element until opened by the user
+    inserted = false;
     attachObserver();
-    // Update immediately and also on the next tick once the element upgrades
+    // Force it to start closed regardless of its internal default
+    try {
+      const el = props.field.element;
+      el.removeAttribute?.('open');
+      el.classList?.remove('active');
+      el.classList?.add('inactive');
+    } catch (_) {}
+    // Ensure preview shows and editor is not attached
     updateVisibility();
     nextTick(updateVisibility);
   } else {
@@ -90,5 +112,5 @@ function renderContent() {
 onMounted(renderContent);
 watch(() => [props.field, props.editable], renderContent);
 watch(() => props.field?.enriched, (v) => { if (previewDiv) previewDiv.innerHTML = v ?? ''; });
-onBeforeUnmount(() => { if (observer) observer.disconnect(); if (wrapper.value) wrapper.value.innerHTML = ''; });
+onBeforeUnmount(() => { if (observer) observer.disconnect(); if (wrapper.value) wrapper.value.innerHTML = ''; inserted = false; });
 </script>

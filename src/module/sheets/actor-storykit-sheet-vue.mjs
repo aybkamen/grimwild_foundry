@@ -1,4 +1,5 @@
 import { StoryKitSheetVue } from "../../vue/components.vue.es.mjs";
+import { StoryKitPieceDialog } from "../apps/storykit-piece-dialog.mjs";
 import { GrimwildActorSheetVue } from "./actor-sheet-vue.mjs";
 
 const { DOCUMENT_OWNERSHIP_LEVELS } = CONST;
@@ -28,38 +29,15 @@ export class GrimwildActorStoryKitSheetVue extends GrimwildActorSheetVue {
             rollData: this.actor.getRollData() ?? {},
             relativeTo: this.actor
         };
-        const editorDefaults = {
-            // Start collapsed to avoid race conditions while the sheet
-            // re-renders after array updates; user can click to open.
-            toggled: false,
-            // Disable collaborative editor wiring for pieces to avoid
-            // update broadcasts racing while elements are mounting.
-            collaborate: false,
-            // Avoid autosave so the toolbar reflects dirty state and
-            // the user can explicitly save & close.
-            autosave: false,
-            height: 220
-        };
+        // We only need enriched HTML for the list preview.
+        // The live editor will be provided in a dialog when editing.
         const pieces = this.document.system.pieces ?? [];
         for (let i = 0; i < pieces.length; i++) {
             const fieldPath = `system.pieces.${i}.description`;
             const value = pieces[i]?.description ?? "";
-            const element = foundry.applications.elements.HTMLProseMirrorElement.create({
-                ...editorDefaults,
-                name: fieldPath,
-                value
-            });
-            // Force collapsed state at creation time to avoid opening
-            // when the sheet initializes after a reload.
-            try {
-                element.removeAttribute?.("open");
-                element.classList?.remove("active");
-                element.classList?.add("inactive");
-                element.dataset.startOpen = "false";
-            } catch (e) { /* noop */ }
             context.editors[fieldPath] = {
                 enriched: await foundry.applications.ux.TextEditor.implementation.enrichHTML(value, enrichmentOptions),
-                element
+                element: null
             };
         }
 
@@ -80,14 +58,18 @@ export class GrimwildActorStoryKitSheetVue extends GrimwildActorSheetVue {
             createDoc: this._createDoc,
             deleteDoc: this._deleteDoc,
             viewDoc: this._viewDoc,
-            rollPool: this._rollPool
+            rollPool: this._rollPool,
+            editPiece: this._editPiece
         },
         changeActions: {
             updateItemField: this._updateItemField,
             updateChallengePool: this._updateChallengePool
         },
         dragDrop: [{ dragSelector: "[data-drag]", dropSelector: null }],
-        form: { submitOnChange: true, submitOnClose: true }
+        // Disable submit-on-change so ProseMirror doesn't auto-save
+        // each keystroke; this lets the editor toolbar reflect dirty state
+        // and close after an explicit save.
+        form: { submitOnChange: false, submitOnClose: true }
     };
 
     _prepareTabs(context) {
@@ -158,5 +140,19 @@ export class GrimwildActorStoryKitSheetVue extends GrimwildActorSheetVue {
         const item = this.document.items.get(itemId);
         if (!item) return;
         await item.update({ "system.pool.diceNum": Number(target.value) });
+    }
+
+    static async _editPiece(event, target) {
+        event.preventDefault();
+        if (!this.isEditable) return;
+        const key = Number(target.dataset.key);
+        const pieces = this.document.system.pieces ?? [];
+        const piece = pieces[key] ?? { title: "", description: "" };
+        const result = await StoryKitPieceDialog.open({ piece });
+        if (!result) return; // canceled
+        const update = foundry.utils.duplicate(pieces);
+        update[key] = { title: result.title ?? "", description: result.description ?? "" };
+        await this.document.update({ "system.pieces": update }, { render: false });
+        this.render(true);
     }
 }

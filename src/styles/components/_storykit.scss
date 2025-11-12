@@ -51,6 +51,7 @@
   .storykit-pieces .items-list,
   .storykit-setups .items-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
   .storykit-pieces .item-name { display: flex; gap: 6px; align-items: center; }
+  .storykit-pieces .piece-title { font-variant: small-caps; font-weight: 700; letter-spacing: 0.02em; }
   .storykit-setups .item-name { display: flex; gap: 6px; align-items: center; justify-content: space-between; }
   .storykit-pieces .item-description { margin-top: 4px; }
 
@@ -75,10 +76,8 @@
     max-width: 95%;
     margin: 0 auto; // center within the card
   }
-  // Title in small caps (versalitas)
-  .storykit-pieces .item-name input[type="text"] {
-    font-variant: small-caps;
-  }
+  // Title in small caps (versalitas) legacy input support
+  .storykit-pieces .item-name input[type="text"] { font-variant: small-caps; }
   // Make the description area always occupy space so it's clickable even when empty
   .storykit-pieces .item-description .prose-mirror-wrapper {
     min-height: 300px; // taller editing/preview area to match card
