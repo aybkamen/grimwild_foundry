@@ -38,7 +38,21 @@
 	}
 
 // Mini-card list for Background items on character sheet
-.items-list .item.background {
+.items-list .item.background,
+.items .item.background {
+	// Card frame styling
+	border: 1px solid;
+	border-radius: 6px;
+	padding: 6px 8px;
+	margin: 6px 0;
+	background: transparent;
+	// Override default list item divider
+	border-bottom: none;
+
 	.item-name { font-variant: small-caps; letter-spacing: 0.5px; }
 	.wise-list { color: $c-tan; font-size: 0.95em; }
+
+	// Hide controls until hover
+	.item-controls { opacity: 0; pointer-events: none; transition: opacity .15s ease-in-out; }
+	&:hover .item-controls { opacity: 1; pointer-events: auto; }
 }

@@ -1,8 +1,8 @@
 <template>
-  <section class="grid grid-1col grid-span-1 grid-start-1">
-    <ol class="items-list grid-span-1">
+  <section>
+    <div class="items">
       <!-- Header row -->
-      <li class="flexrow items-header stroke stroke-bottom">
+      <div class="flexrow items-header stroke stroke-bottom">
         <div class="item-name">{{ context.systemFields.backgrounds.label }}</div>
         <div class="item-controls">
           <template v-if="context.editable">
@@ -16,14 +16,14 @@
             </button>
           </template>
         </div>
-      </li>
+      </div>
       <!-- Background mini-cards -->
-      <li v-for="(item, id) in (context.itemTypes.background || [])" :key="id"
-          :class="`item background flexcol stroke stroke-bottom`"
-          :data-item-id="item._id"
-          data-drag="true"
-          draggable="true"
-          data-document-class="Item">
+      <div v-for="(item, id) in (context.itemTypes.background || [])" :key="id"
+           :class="`item background flexcol`"
+           :data-item-id="item._id"
+           data-drag="true"
+           draggable="true"
+           data-document-class="Item">
         <!-- Summary -->
         <div class="item-summary flexcol" style="gap: 4px;">
           <div class="item-name" style="font-variant: small-caps; letter-spacing: 0.5px;">
@@ -46,8 +46,8 @@
              data-action="deleteDoc"
           ><i class="fas fa-trash"></i></a>
         </div>
-      </li>
-    </ol>
+      </div>
+    </div>
   </section>
 </template>
 

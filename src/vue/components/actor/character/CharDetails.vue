@@ -1,7 +1,9 @@
 <template>
 	<div class="grid grid-2col">
 		<!-- Backgrounds as items -->
-    <CharBackgrounds :actor="actor" :context="context" />
+	    <section class="details-left-col">
+	        <CharBackgrounds :actor="actor" :context="context" />
+	    </section>
 		<!-- Right Column: conditions, flaws, assets, bonds -->
 		<div class="details-right-col grid-span-1 grid-start-2">
 		<!-- Conditions -->
