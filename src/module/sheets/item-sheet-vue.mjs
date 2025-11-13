@@ -137,6 +137,13 @@ export class GrimwildItemSheetVue extends VueRenderingMixin(GrimwildBaseVueItemS
 					value: editorValue ?? ""
 				})
 			};
+
+			// Hint the wrapper to start open for easy editing, especially when empty
+			try {
+				if (context.editors[`system.${field}`]?.element) {
+					context.editors[`system.${field}`].element.dataset.startOpen = "true";
+				}
+			} catch (_) {}
 		}
 	}
 
