@@ -151,7 +151,9 @@ export class GrimwildActorStoryKitSheetVue extends GrimwildActorSheetVue {
         const pieces = this.document.system.pieces ?? [];
         const piece = pieces[key] ?? { title: "", description: "" };
         const result = await StoryKitPieceDialog.open({ piece });
-        if (!result) return; // canceled
+        // Only proceed on an explicit Save result. DialogV2 may resolve
+        // with an empty object on cancel/close; require expected fields.
+        if (!result || typeof result !== 'object' || !('title' in result) || !('description' in result)) return;
         const update = foundry.utils.duplicate(pieces);
         update[key] = { title: result.title ?? "", description: result.description ?? "" };
         await this.document.update({ "system.pieces": update }, { render: false });
