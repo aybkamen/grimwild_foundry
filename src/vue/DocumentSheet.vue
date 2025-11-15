@@ -12,12 +12,84 @@
 					<Tabs :tabs="tabs.primary" no-span="true"/>
 
 					<section class="section--fields flexcol">
-						<!-- Biography / Notes -->
+						<!-- Biography / Story Arcs / Advancements -->
 						<Tab group="primary" :tab="tabs.primary.biography">
-							<fieldset class="fieldset-prose-mirror">
-								<legend>{{ context.systemFields.biography.label }}</legend>
-								<Prosemirror :editable="context.editable" :field="context.editors['system.biography']"/>
-							</fieldset>
+							<section class="bio-layout">
+								<!-- Row 1: Story Arcs / Quests -->
+								<section class="bio-section bio-story-arcs">
+									<h3 class="bio-section-title">
+										{{ game.i18n.localize('GRIMWILD.Actor.Character.FIELDS.storyArcs.label') }}
+									</h3>
+									<div class="bio-section-body">
+										<!-- TODO: Story Arcs / Quests content -->
+									</div>
+								</section>
+
+								<!-- Row 2: Biography + Advancements -->
+								<section class="bio-row-bottom">
+									<section class="bio-section bio-biography">
+										<h3 class="bio-section-title">
+											{{ context.systemFields.biography.label }}
+										</h3>
+										<div class="bio-section-body fieldset-prose-mirror">
+											<Prosemirror :editable="context.editable" :field="context.editors['system.biography']"/>
+										</div>
+									</section>
+
+									<section class="bio-section bio-advancements">
+										<h3 class="bio-section-title">
+											{{ game.i18n.localize('GRIMWILD.Actor.Character.FIELDS.advancements.label') }}
+										</h3>
+										<div class="bio-section-body">
+											<div class="advancements-wrapper">
+												<button
+													class="advancement-control advancement-create"
+													type="button"
+													title="Add advancement"
+													data-action="createArrayEntry"
+													data-field="advancements"
+												>
+													<i class="fas fa-plus"></i><span>Add</span>
+												</button>
+												<div class="advancements form-group stacked">
+													<div
+														class="advancement form-group"
+														v-for="(advancement, key) in (context.system.advancements || [])"
+														:key="key"
+													>
+														<select
+															:name="`system.advancements.${key}`"
+															v-model="context.system.advancements[key]"
+														>
+															<option :value="'newBackground'">
+																{{ game.i18n.localize('GRIMWILD.Actor.Character.FIELDS.advancements.choices.newBackground') }}
+															</option>
+															<option :value="'wises2'">
+																{{ game.i18n.localize('GRIMWILD.Actor.Character.FIELDS.advancements.choices.wises2') }}
+															</option>
+															<option :value="'extraSpark'">
+																{{ game.i18n.localize('GRIMWILD.Actor.Character.FIELDS.advancements.choices.extraSpark') }}
+															</option>
+															<option :value="'extraStory'">
+																{{ game.i18n.localize('GRIMWILD.Actor.Character.FIELDS.advancements.choices.extraStory') }}
+															</option>
+														</select>
+														<a
+															class="advancement-control advancement-delete"
+															title="Delete advancement"
+															data-action="deleteArrayEntry"
+															data-field="advancements"
+															:data-key="key"
+														>
+															<i class="fas fa-trash"></i>
+														</a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</section>
+								</section>
+							</section>
 						</Tab>
 
 						<!-- Notes fields -->

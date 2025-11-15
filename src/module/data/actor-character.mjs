@@ -63,6 +63,12 @@ export default class GrimwildCharacter extends GrimwildActorBase {
 			steps: new fields.ArrayField(new fields.BooleanField())
 		});
 
+		// Character advancements chosen over time
+		schema.advancements = new fields.ArrayField(
+			new fields.StringField(),
+			{ initial: [] }
+		);
+
 		// Iterate over stat names and create a new SchemaField for each.
 		schema.stats = new fields.SchemaField(
 			Object.keys(CONFIG.GRIMWILD.stats).reduce((obj, stat) => {

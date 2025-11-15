@@ -4,9 +4,40 @@
   data-group='primary'
   data-tab='biography'
 >
-  {{! Editors must receive enriched text data from getData to properly handle rolls, UUID links, etc. }}
-  {{#if editable}} 
-    {{formInput systemFields.biography toggled=true value=system.biography}}
-  {{else}} {{{enrichedBiography}}}
-  {{/if}}
+  <section class='bio-layout'>
+    {{!-- Row 1: Story Arcs (full width) --}}
+    <section class='bio-section bio-story-arcs'>
+      <h3 class='bio-section-title'>
+        {{localize 'GRIMWILD.Actor.Character.FIELDS.storyArcs.label'}}
+      </h3>
+      <div class='bio-section-body'>
+        {{!-- TODO: Story Arcs / Quests content --}}
+      </div>
+    </section>
+
+    {{!-- Row 2: Biography (60%) + Advancements (40%) --}}
+    <section class='bio-row-bottom'>
+      <section class='bio-section bio-biography'>
+        <h3 class='bio-section-title'>
+          {{localize 'GRIMWILD.Actor.base.FIELDS.biography.label'}}
+        </h3>
+        <div class='bio-section-body'>
+          {{! Editors must receive enriched text data from getData to properly handle rolls, UUID links, etc. }}
+          {{#if editable}} 
+            {{formInput systemFields.biography toggled=true value=system.biography}}
+          {{else}} {{{enrichedBiography}}}
+          {{/if}}
+        </div>
+      </section>
+
+      <section class='bio-section bio-advancements'>
+        <h3 class='bio-section-title'>
+          {{localize 'GRIMWILD.Actor.Character.FIELDS.advancements.label'}}
+        </h3>
+        <div class='bio-section-body'>
+          {{!-- TODO: Advancements content --}}
+        </div>
+      </section>
+    </section>
+  </section>
 </section>

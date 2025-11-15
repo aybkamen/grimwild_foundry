@@ -182,10 +182,19 @@ GRIMWILD:
           label: Spark
         story:
           label: Story
+        storyArcs:
+          label: Story Arcs
         traits:
           label: Traits
         desires:
           label: Desires
+        advancements:
+          label: Advancements
+          choices:
+            newBackground: New background
+            wises2: +2 Wises
+            extraSpark: Extra Spark
+            extraStory: Extra Story Point
     Party:
       FIELDS:
         concepts:
