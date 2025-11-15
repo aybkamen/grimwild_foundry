@@ -93,6 +93,14 @@
 						name="system.spark.steps.1"
 						v-model="context.system.spark.steps[1]"
 					/>
+					<input type="checkbox"
+						name="system.spark.steps.2"
+						v-model="context.system.spark.steps[2]"
+					/>
+					<input type="checkbox"
+						name="system.spark.steps.3"
+						v-model="context.system.spark.steps[3]"
+					/>
 				</div>
 			</div>
 			<div class="story form-group stacked">

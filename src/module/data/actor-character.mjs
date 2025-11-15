@@ -340,7 +340,9 @@ export default class GrimwildCharacter extends GrimwildActorBase {
 		// Handle getters.
 		data.isBloodied = this.isBloodied;
 		data.isRattled = this.isRattled;
-		data.spark = this.spark.value;
+		// Spark: number of active steps (supports 0–4+ sparks)
+		const sparkSteps = Array.isArray(this.spark?.steps) ? this.spark.steps : [];
+		data.spark = sparkSteps.filter((s) => !!s).length;
 		data.id = this.parent.id;
 
 		return data;
@@ -389,18 +391,12 @@ export default class GrimwildCharacter extends GrimwildActorBase {
 			// Remove used spark.
 			if (rollDialog.sparkUsed > 0) {
 				const sparkUsed = rollDialog.sparkUsed;
-				// Clone current steps to avoid mutating the live model reference
-				const newSteps = Array.isArray(this.spark.steps) ? [...this.spark.steps] : [false, false];
-				// All of your spark is used.
-				if (sparkUsed > 1 || this.spark.value === 1) {
-					newSteps[0] = false;
-					newSteps[1] = false;
-				}
-				// If half of your spark is used.
-				else if (sparkUsed === 1 && this.spark.value > 1) {
-					newSteps[0] = true;
-					newSteps[1] = false;
-				}
+				// Current spark as an array of booleans (supports 2+ steps)
+				const currentSteps = Array.isArray(this.spark?.steps) ? this.spark.steps.map((s) => !!s) : [];
+				const currentTotal = currentSteps.filter((s) => s).length;
+				const remainingTotal = Math.max(currentTotal - sparkUsed, 0);
+				// Build a new steps array: first N true, rest false, preserving length
+				const newSteps = currentSteps.map((_, idx) => idx < remainingTotal);
 				// Update only the steps path to avoid accidental overwrites
 				updates["system.spark.steps"] = newSteps;
 			}
