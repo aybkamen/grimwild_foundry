@@ -135,6 +135,87 @@
 
 	.bio-story-arcs {
 		flex: 0 0 auto;
+
+		.story-arcs-wrapper {
+			display: flex;
+			flex-direction: column;
+			gap: 6px;
+		}
+
+		.story-arc-create {
+			align-self: flex-end;
+			margin-bottom: 4px;
+			display: inline-flex;
+			align-items: center;
+			gap: 4px;
+		}
+
+		.story-arcs {
+			display: flex;
+			flex-direction: column;
+			gap: 6px;
+		}
+
+		.story-arc-card {
+			position: relative;
+			display: grid;
+			row-gap: 4px;
+			padding: 8px 10px;
+			border-radius: 8px;
+			background: rgba(0, 0, 0, 0.45);
+
+			body.theme-light & {
+				background: #ffffff22;
+			}
+		}
+
+		.story-arc-grid {
+			display: flex;
+			flex-direction: column;
+			gap: 4px;
+		}
+
+		.story-arc-row {
+			display: grid;
+			grid-template-columns: 1fr max-content;
+			column-gap: 8px;
+			align-items: center;
+		}
+
+		.story-arc-title-row {
+			grid-template-columns: 1fr;
+		}
+
+		.story-arc-milestone-label {
+			width: 100%;
+		}
+
+		.story-arc-milestone-check {
+			display: inline-flex;
+			align-items: center;
+			gap: 4px;
+			white-space: nowrap;
+		}
+
+		.story-arc-delete {
+			display: none;
+			position: absolute;
+			top: 4px;
+			right: 4px;
+			width: 20px;
+			height: 20px;
+			line-height: 20px;
+			text-align: center;
+			border-radius: 4px;
+			border: 1px solid;
+			background: black;
+		}
+
+		.story-arc-card:hover .story-arc-delete {
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+		}
 	}
 
 	.bio-biography {

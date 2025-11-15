@@ -481,6 +481,16 @@ export class GrimwildActorSheetVue extends VueRenderingMixin(GrimwildBaseVueActo
 			field,
 			key
 		} = target.dataset;
+
+		// For story arcs, ask for confirmation before deleting
+		if (field === "storyArcs") {
+			const confirmed = await Dialog.confirm({
+				title: game.i18n.localize?.("Confirm") ?? "Confirm",
+				content: `<p>${game.i18n.localize?.("AreYouSure") ?? "Are you sure?"}</p>`
+			});
+			if (!confirmed) return;
+		}
+
 		// Retrieve the current field value.
 		const entries = !field.startsWith("system.")
 			? this.document.system[field]

@@ -63,6 +63,28 @@ export default class GrimwildCharacter extends GrimwildActorBase {
 			steps: new fields.ArrayField(new fields.BooleanField())
 		});
 
+		// Story arcs: free-form arcs with three milestones each
+		schema.storyArcs = new fields.ArrayField(
+			new fields.SchemaField({
+				title: new fields.StringField(),
+				milestones: new fields.ArrayField(
+					new fields.SchemaField({
+						label: new fields.StringField(),
+						done: new fields.BooleanField()
+					}),
+					{
+						// Three milestones per arc by default
+						initial: [
+							{ label: "", done: false },
+							{ label: "", done: false },
+							{ label: "", done: false }
+						]
+					}
+				)
+			}),
+			{ initial: [] }
+		);
+
 		// Character advancements chosen over time
 		schema.advancements = new fields.ArrayField(
 			new fields.StringField(),
@@ -513,6 +535,23 @@ export default class GrimwildCharacter extends GrimwildActorBase {
 		source.treasure.pouch = ensureBools(source.treasure.pouch, 5);
 		source.treasure.bag = ensureBools(source.treasure.bag, 3);
 		source.treasure.chest = ensureBools(source.treasure.chest, 1);
+
+		// Normalize story arcs structure: array of arcs with three milestones
+		if (!Array.isArray(source.storyArcs)) source.storyArcs = [];
+		source.storyArcs = source.storyArcs.map((arc) => {
+			const normalized = arc && typeof arc === "object" ? { ...arc } : {};
+			normalized.title = normalized.title ?? "";
+			let milestones = Array.isArray(normalized.milestones) ? normalized.milestones : [];
+			// Ensure exactly three milestones
+			milestones = milestones.map((m) => (m && typeof m === "object" ? { ...m } : {}));
+			while (milestones.length < 3) milestones.push({});
+			if (milestones.length > 3) milestones = milestones.slice(0, 3);
+			normalized.milestones = milestones.map((m) => ({
+				label: m.label ?? "",
+				done: !!m.done
+			}));
+			return normalized;
+		});
 
 		return super.migrateData(source);
 	}
