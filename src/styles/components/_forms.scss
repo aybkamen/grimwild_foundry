@@ -57,6 +57,47 @@
 	height: 100%;
 }
 
+// Prosemirror / rich text fields
+.fieldset-prose-mirror {
+	position: relative;
+
+	.prose-mirror-wrapper {
+		position: relative;
+	}
+
+	.prosemirror-edit-button {
+		position: absolute;
+		top: 4px;
+		right: 8px;
+		width: 20px;
+		height: 20px;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		border-radius: 4px;
+		border: 1px solid;
+		background: rgba(0, 0, 0, 0.75);
+		color: inherit;
+		padding: 0;
+		cursor: pointer;
+		opacity: 0;
+		pointer-events: none;
+		transition: opacity 120ms ease-in-out;
+
+		i {
+			margin: 0;
+			font-size: 11px;
+			line-height: 1;
+		}
+	}
+
+	.prose-mirror-wrapper:hover .prosemirror-edit-button,
+	.prosemirror-edit-button:focus-visible {
+		opacity: 1;
+		pointer-events: auto;
+	}
+}
+
 .tab.biography {
 	flex: 1;
 

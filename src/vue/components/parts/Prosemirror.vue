@@ -8,12 +8,13 @@ import { ref, onMounted, watch, onBeforeUnmount, nextTick } from 'vue';
 const props = defineProps(['field', 'editable']);
 const wrapper = ref(null);
 let previewDiv = null;
+let editButton = null;
 let observer = null;
 let inserted = false; // whether the editor element is in the DOM
 
 function isEditorOpen(el) {
   if (!el) return false;
-  // One‑time override from creator (sheet can set dataset.startOpen)
+  // One-time override from creator (sheet can set dataset.startOpen)
   if (el.dataset && typeof el.dataset.startOpen !== 'undefined') {
     const wantOpen = el.dataset.startOpen === 'true';
     // consume the hint so subsequent checks follow the element state
@@ -35,6 +36,7 @@ function updateVisibility() {
   if (!el) return;
   const open = isEditorOpen(el);
   if (previewDiv) previewDiv.style.display = open ? 'none' : '';
+  if (editButton) editButton.style.display = open ? 'none' : '';
   // Only attach the editor element when open; remove it when closed
   if (open) {
     if (!inserted) {
@@ -72,24 +74,27 @@ function openEditor() {
 
 function renderContent() {
   if (!wrapper.value || !props.field) return;
-  // Clear previous content
+  // Clear previous content and references
   wrapper.value.innerHTML = '';
   previewDiv = document.createElement('div');
   previewDiv.className = 'prosemirror-preview';
   previewDiv.innerHTML = props.field.enriched ?? '';
-  // Allow clicking preview or empty area to edit
-  previewDiv.addEventListener('click', openEditor);
-  // Also make the wrapper clickable (covers empty previews)
-  wrapper.value.addEventListener('click', (ev) => {
-    // If the editor is visible, ignore
-    const el = props.field?.element;
-    if (!el) return;
-    const open = isEditorOpen(el) && el.style.display !== 'none';
-    if (!open) openEditor();
-  });
   wrapper.value.appendChild(previewDiv);
 
+  // Only show edit affordances when the field is editable
   if (props.editable && props.field.element) {
+    editButton = document.createElement('button');
+    editButton.type = 'button';
+    editButton.className = 'prosemirror-edit-button';
+    editButton.setAttribute('aria-label', 'Edit text');
+    editButton.innerHTML = '<i class="fas fa-pen-to-square"></i>';
+    editButton.addEventListener('click', (ev) => {
+      ev.preventDefault();
+      ev.stopPropagation();
+      openEditor();
+    });
+    wrapper.value.appendChild(editButton);
+
     // Do not insert the editor element until opened by the user
     inserted = false;
     attachObserver();
