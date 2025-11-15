@@ -124,6 +124,7 @@
 		border: 1px solid var(--color-fieldset-border);
 		border-radius: 8px;
 		padding: 8px 10px;
+		position: relative;
 		display: flex;
 		flex-direction: column;
 		background: rgba(0, 0, 0, 0.25);
@@ -135,6 +136,9 @@
 
 	.bio-story-arcs {
 		flex: 0 0 auto;
+		position: relative;
+		margin-top: 16px;
+		padding-top: 12px;
 
 		.story-arcs-wrapper {
 			display: flex;
@@ -143,11 +147,23 @@
 		}
 
 		.story-arc-create {
-			align-self: flex-end;
-			margin-bottom: 4px;
-			display: inline-flex;
+			position: absolute;
+			top: -20px;
+			right: 16px;
+			width: 20px;
+			height: 20px;
+			text-align: center;
+			line-height: 20px;
+			display: flex;
 			align-items: center;
-			gap: 4px;
+			justify-content: center;
+			border: 1px solid var(--color-fieldset-border);
+			border-radius: 4px;
+			background: transparent;
+
+			i {
+				margin: 0;
+			}
 		}
 
 		.story-arcs {
@@ -224,39 +240,51 @@
 
 	.bio-advancements {
 		flex: 2 1 0;
-	}
-
-	.bio-advancements .advancements-wrapper {
 		position: relative;
-		display: flex;
-		flex-direction: column;
-		gap: 6px;
-		height: 100%;
-	}
 
-	.bio-advancements .advancement-create {
-		align-self: flex-end;
-		margin-bottom: 4px;
-		display: inline-flex;
-		align-items: center;
-		gap: 4px;
-	}
+		.advancements-wrapper {
+			display: flex;
+			flex-direction: column;
+			gap: 6px;
+			height: 100%;
+		}
 
-	.bio-advancements .advancements {
-		flex: 0 0 auto;
-		display: block;
-	}
+		.advancement-create {
+			position: absolute;
+			top: -20px;
+			right: 16px;
+			width: 20px;
+			height: 20px;
+			text-align: center;
+			line-height: 20px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			border: 1px solid var(--color-fieldset-border);
+			border-radius: 4px;
+			background: transparent;
 
-	.bio-advancements .advancement {
-		position: relative;
-		display: flex;
-		align-items: center;
-		gap: 8px;
-		margin-bottom: 6px;
-	}
+			i {
+				margin: 0;
+			}
+		}
 
-	.bio-advancements .advancement select {
-		flex: 1 1 auto;
+		.advancements {
+			flex: 0 0 auto;
+			display: block;
+		}
+
+		.advancement {
+			position: relative;
+			display: flex;
+			align-items: center;
+			gap: 8px;
+			margin-bottom: 6px;
+		}
+
+		.advancement select {
+			flex: 1 1 auto;
+		}
 	}
 
 	.bio-advancements .advancement-delete {
@@ -286,6 +314,15 @@
 		font-variant: small-caps;
 		font-size: 16px;
 		margin: 0 0 4px;
+	}
+
+	// Story Arcs header styled like a legend, sitting on the frame
+	.bio-story-arcs .bio-section-title {
+		position: absolute;
+		top: -14px;
+		left: 16px;
+		z-index: 1;
+		margin: 0;
 	}
 
 	.bio-section-body {

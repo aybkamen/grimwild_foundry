@@ -345,7 +345,7 @@ export class GrimwildActorSheetVue extends VueRenderingMixin(GrimwildBaseVueActo
     }
 
 	/**
-	 * Handle creating a new bond entry.
+	 * Handle creating a new array entry (backgrounds, bonds, story arcs, etc.)
 	 *
 	 * @this GrimwildActorSheet
 	 * @param {PointerEvent} event   The originating click event
@@ -354,6 +354,14 @@ export class GrimwildActorSheetVue extends VueRenderingMixin(GrimwildBaseVueActo
 	 */
 	static async _createArrayEntry(event, target) {
 		event.preventDefault();
+
+		// Best-effort: commit any in-flight form changes (e.g., Story Arcs text)
+		// before mutating array fields so unrelated edits are not lost.
+		try {
+			await this.submit({ preventRender: true });
+		}
+		catch (err) { /* ignore; continue with targeted update */ }
+
 		const {
 			field,
 			fieldType,
@@ -364,12 +372,15 @@ export class GrimwildActorSheetVue extends VueRenderingMixin(GrimwildBaseVueActo
 		const entries = !field.startsWith("system.")
 			? this.document.system[field]
 			: foundry.utils.getProperty(this.document, field);
+
 		// Retrieve the schema.
 		const schema = this.document.system.schema.fields?.[field];
 		const fieldConstructor = fieldType ?? schema?.element?.constructor?.name;
 		if (!fieldConstructor) return;
+
 		// Determine the default value of the new entry.
 		let defaultValue = {};
+
 		// Helper to derive a sane default for a Field instance
 		const defaultForField = (fld) => {
 			const ctor = fld?.constructor?.name;
@@ -414,7 +425,7 @@ export class GrimwildActorSheetVue extends VueRenderingMixin(GrimwildBaseVueActo
 				defaultValue = null;
 		}
 
-		// If we're adding multiple entries at once, such as an 6 strings,
+		// If we're adding multiple entries at once, such as 6 strings,
 		// handle that now.
 		let entry = null;
 		if (count) {
@@ -468,7 +479,7 @@ export class GrimwildActorSheetVue extends VueRenderingMixin(GrimwildBaseVueActo
 	}
 
 	/**
-	 * Handle deleting an existing bond entry.
+	 * Handle deleting an existing array entry.
 	 *
 	 * @this GrimwildActorSheet
 	 * @param {PointerEvent} event   The originating click event
@@ -477,6 +488,14 @@ export class GrimwildActorSheetVue extends VueRenderingMixin(GrimwildBaseVueActo
 	 */
 	static async _deleteArrayEntry(event, target) {
 		event.preventDefault();
+
+		// Best-effort: commit any in-flight form changes (e.g., Story Arcs text)
+		// before mutating array fields so unrelated edits are not lost.
+		try {
+			await this.submit({ preventRender: true });
+		}
+		catch (err) { /* ignore; continue with targeted update */ }
+
 		const {
 			field,
 			key

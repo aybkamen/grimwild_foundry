@@ -29,7 +29,7 @@
 												data-action="createArrayEntry"
 												data-field="storyArcs"
 											>
-												<i class="fas fa-plus"></i><span>Add</span>
+												<i class="fas fa-plus"></i>
 											</button>
 											<div class="story-arcs">
 												<div
@@ -107,7 +107,7 @@
 													data-action="createArrayEntry"
 													data-field="advancements"
 												>
-													<i class="fas fa-plus"></i><span>Add</span>
+													<i class="fas fa-plus"></i>
 												</button>
 												<div class="advancements form-group stacked">
 													<div

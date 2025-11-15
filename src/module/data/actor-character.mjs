@@ -276,44 +276,84 @@ export default class GrimwildCharacter extends GrimwildActorBase {
 
 		// Guard against accidental wipes of text arrays coming from stray form submits
 		try {
-			if (this.parent?.type === 'character') {
+			if (this.parent?.type === "character" && changes.system) {
 				// Backgrounds: if update attempts to set all empty while current has content, drop the change
-				const incomingBgs = changes.system?.backgrounds;
+				const incomingBgs = changes.system.backgrounds;
 				if (Array.isArray(incomingBgs)) {
 					const allIncomingEmpty = incomingBgs.every((bg) => {
-						const n = (bg?.name ?? '').trim();
-						const w = Array.isArray(bg?.wises) ? bg.wises.every((w) => (w ?? '').trim() === '') : true;
-						return n === '' && w;
+						const n = (bg?.name ?? "").trim();
+						const w = Array.isArray(bg?.wises)
+							? bg.wises.every((w) => (w ?? "").trim() === "")
+							: true;
+						return n === "" && w;
 					});
-					const anyCurrentHasText = Array.isArray(this._source?.backgrounds) && this._source.backgrounds.some((bg) => {
-						const n = (bg?.name ?? '').trim();
-						const w = Array.isArray(bg?.wises) ? bg.wises.some((w) => (w ?? '').trim() !== '') : false;
-						return n !== '' || w;
-					});
+					const anyCurrentHasText = Array.isArray(this._source?.backgrounds)
+						&& this._source.backgrounds.some((bg) => {
+							const n = (bg?.name ?? "").trim();
+							const w = Array.isArray(bg?.wises)
+								? bg.wises.some((w) => (w ?? "").trim() !== "")
+								: false;
+							return n !== "" || w;
+						});
 					if (allIncomingEmpty && anyCurrentHasText) {
 						delete changes.system.backgrounds;
 					}
 				}
+
 				// Flaws: same guard
-				const incomingFlaws = changes.system?.flaws;
+				const incomingFlaws = changes.system.flaws;
 				if (Array.isArray(incomingFlaws)) {
-					const incomingFlawsEmpty = incomingFlaws.every((f) => (f ?? '').trim() === '');
-					const anyCurrentFlawText = Array.isArray(this._source?.flaws) && this._source.flaws.some((f) => (f ?? '').trim() !== '');
+					const incomingFlawsEmpty = incomingFlaws.every((f) => (f ?? "").trim() === "");
+					const anyCurrentFlawText = Array.isArray(this._source?.flaws)
+						&& this._source.flaws.some((f) => (f ?? "").trim() !== "");
 					if (incomingFlawsEmpty && anyCurrentFlawText) {
 						delete changes.system.flaws;
 					}
 				}
+
 				// Special Assets: guard against accidental wipes
-				const incomingAssets = changes.system?.specialAssets;
+				const incomingAssets = changes.system.specialAssets;
 				if (Array.isArray(incomingAssets)) {
-					const incomingAssetsEmpty = incomingAssets.every((a) => (a ?? '').trim() === '');
-					const anyCurrentAssetText = Array.isArray(this._source?.specialAssets) && this._source.specialAssets.some((a) => (a ?? '').trim() !== '');
+					const incomingAssetsEmpty = incomingAssets.every((a) => (a ?? "").trim() === "");
+					const anyCurrentAssetText = Array.isArray(this._source?.specialAssets)
+						&& this._source.specialAssets.some((a) => (a ?? "").trim() !== "");
 					if (incomingAssetsEmpty && anyCurrentAssetText) {
 						delete changes.system.specialAssets;
 					}
 				}
+
+				// Story arcs: protect against the entire array being wiped by a form submit
+				// that sends only empty titles/milestones while the actor currently has data.
+				const incomingStoryArcs = changes.system.storyArcs;
+				if (Array.isArray(incomingStoryArcs)) {
+					const incomingAllEmpty = incomingStoryArcs.every((arc) => {
+						const title = (arc?.title ?? "").trim();
+						const milestones = Array.isArray(arc?.milestones) ? arc.milestones : [];
+						const labelsAllEmpty = milestones.every((m) => (m?.label ?? "").trim() === "");
+						const anyDone = milestones.some((m) => !!m?.done);
+						return title === "" && labelsAllEmpty && !anyDone;
+					});
+
+					const sourceStoryArcs = this._source?.storyArcs;
+					const anySourceHasContent = Array.isArray(sourceStoryArcs)
+						&& sourceStoryArcs.some((arc) => {
+							const title = (arc?.title ?? "").trim();
+							const milestones = Array.isArray(arc?.milestones) ? arc.milestones : [];
+							const labelsAnyText = milestones.some((m) => (m?.label ?? "").trim() !== "");
+							const anyDone = milestones.some((m) => !!m?.done);
+							return title !== "" || labelsAnyText || anyDone;
+						});
+
+					// If actor currently has at least one non-empty story arc and the incoming
+					// change tries to replace them with only-empty arcs, treat it as a stray
+					// submit and drop the change entirely.
+					if (incomingAllEmpty && anySourceHasContent) {
+						delete changes.system.storyArcs;
+					}
+				}
 			}
-		} catch (e) {
+		}
+		catch (e) {
 			/* guard failed; continue without blocking */
 		}
 	}
