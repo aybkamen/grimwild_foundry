@@ -85,21 +85,12 @@
 			<div class="spark form-group stacked">
 				<label><i class="fas fa-bolt"></i> {{ context.systemFields.spark.label }}</label>
 				<div class="form-inputs">
-					<input type="checkbox"
-						name="system.spark.steps.0"
-						v-model="context.system.spark.steps[0]"
-					/>
-					<input type="checkbox"
-						name="system.spark.steps.1"
-						v-model="context.system.spark.steps[1]"
-					/>
-					<input type="checkbox"
-						name="system.spark.steps.2"
-						v-model="context.system.spark.steps[2]"
-					/>
-					<input type="checkbox"
-						name="system.spark.steps.3"
-						v-model="context.system.spark.steps[3]"
+					<input
+						v-for="i in sparkSlots"
+						:key="i"
+						type="checkbox"
+						:name="`system.spark.steps.${i}`"
+						v-model="context.system.spark.steps[i]"
 					/>
 				</div>
 			</div>
@@ -121,8 +112,17 @@
 </template>
 
 <script setup>
-import { inject } from "vue";
+import { inject, computed } from "vue";
 import { RollPoolInput } from "@/components";
 const props = defineProps(["context"]);
 const actor = inject("rawDocument");
+
+const sparkSlots = computed(() => {
+	const system = props.context?.system ?? {};
+	const advancements = Array.isArray(system.advancements) ? system.advancements : [];
+	const extraSparkCount = advancements.filter((a) => a === "extraSpark").length;
+	const total = Math.min(2 + extraSparkCount, 4);
+	// return indices [0, total-1]
+	return Array.from({ length: total }, (_, i) => i);
+});
 </script>
