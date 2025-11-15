@@ -347,7 +347,10 @@ export default class GrimwildCharacter extends GrimwildActorBase {
 					// If actor currently has at least one non-empty story arc and the incoming
 					// change tries to replace them with only-empty arcs, treat it as a stray
 					// submit and drop the change entirely.
-					if (incomingAllEmpty && anySourceHasContent) {
+					// Only treat this as an accidental wipe if there is at least one
+					// incoming arc (length > 0). An intentional delete of all arcs
+					// should still be allowed (incoming array length === 0).
+					if (incomingStoryArcs.length > 0 && incomingAllEmpty && anySourceHasContent) {
 						delete changes.system.storyArcs;
 					}
 				}

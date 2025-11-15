@@ -355,18 +355,21 @@ export class GrimwildActorSheetVue extends VueRenderingMixin(GrimwildBaseVueActo
 	static async _createArrayEntry(event, target) {
 		event.preventDefault();
 
-		// Best-effort: commit any in-flight form changes (e.g., Story Arcs text)
-		// before mutating array fields so unrelated edits are not lost.
-		try {
-			await this.submit({ preventRender: true });
-		}
-		catch (err) { /* ignore; continue with targeted update */ }
-
 		const {
 			field,
 			fieldType,
 			count
 		} = target.dataset;
+
+		// Best-effort: commit in-flight changes only for Story Arcs,
+		// to avoid wiping them when other arrays (like advancements)
+		// are modified.
+		if (field === "storyArcs") {
+			try {
+				await this.submit({ preventRender: true });
+			}
+			catch (err) { /* ignore; continue with targeted update */ }
+		}
 
 		// Retrieve the current field value.
 		const entries = !field.startsWith("system.")
@@ -441,21 +444,19 @@ export class GrimwildActorSheetVue extends VueRenderingMixin(GrimwildBaseVueActo
 		// Push the new entry.
 		entries.push(entry);
 
-		// Build our final data.
-		let updateData = null;
-		let systemField = field;
-		if (field.startsWith("system.")) {
-			systemField = field.split(".")[1];
-			updateData = this.document.system[systemField];
-			foundry.utils.setProperty(updateData, field.split("system.")[1], entries);
-		}
-		else {
-			updateData = entries;
+		// Build our final update payload.
+		const update = {};
+		const updatePath = field.startsWith("system.") ? field : `system.${field}`;
+		update[updatePath] = entries;
+
+		// When changing advancements, explicitly preserve the current storyArcs
+		// stored on the document so they are not affected by this update.
+		if (field === "advancements") {
+			update["system.storyArcs"] = this.document.system.storyArcs;
 		}
 
 		// Perform the update.
-		const updatePath = field.startsWith("system.") ? field : `system.${field}`;
-		await this.document.update({ [updatePath]: entries }, { render: false });
+		await this.document.update(update, { render: false });
 		this._arrayEntryKey++;
 		this.render(true);
 	}
@@ -489,17 +490,20 @@ export class GrimwildActorSheetVue extends VueRenderingMixin(GrimwildBaseVueActo
 	static async _deleteArrayEntry(event, target) {
 		event.preventDefault();
 
-		// Best-effort: commit any in-flight form changes (e.g., Story Arcs text)
-		// before mutating array fields so unrelated edits are not lost.
-		try {
-			await this.submit({ preventRender: true });
-		}
-		catch (err) { /* ignore; continue with targeted update */ }
-
 		const {
 			field,
 			key
 		} = target.dataset;
+
+		// Best-effort: commit in-flight changes only for Story Arcs,
+		// to avoid wiping them when other arrays (like advancements)
+		// are modified.
+		if (field === "storyArcs") {
+			try {
+				await this.submit({ preventRender: true });
+			}
+			catch (err) { /* ignore; continue with targeted update */ }
+		}
 
 		// For story arcs, ask for confirmation before deleting
 		if (field === "storyArcs") {
@@ -516,21 +520,19 @@ export class GrimwildActorSheetVue extends VueRenderingMixin(GrimwildBaseVueActo
 			: foundry.utils.getProperty(this.document, field);
 		entries.splice(key, 1);
 
-		// Build our final data.
-		let updateData = null;
-		let systemField = field;
-		if (field.startsWith("system.")) {
-			systemField = field.split(".")[1];
-			updateData = this.document.system[systemField];
-			foundry.utils.setProperty(updateData, field.split("system.")[1], entries);
-		}
-		else {
-			updateData = entries;
+		// Build our final update payload.
+		const update = {};
+		const updatePath = field.startsWith("system.") ? field : `system.${field}`;
+		update[updatePath] = entries;
+
+		// When changing advancements, explicitly preserve the current storyArcs
+		// stored on the document so they are not affected by this update.
+		if (field === "advancements") {
+			update["system.storyArcs"] = this.document.system.storyArcs;
 		}
 
 		// Perform the update.
-		const updatePath = field.startsWith("system.") ? field : `system.${field}`;
-		await this.document.update({ [updatePath]: entries }, { render: false });
+		await this.document.update(update, { render: false });
 		this._arrayEntryKey++;
 		this.render(true);
 	}
