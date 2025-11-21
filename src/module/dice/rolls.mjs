@@ -48,11 +48,19 @@ export default class GrimwildRoll extends Roll {
         chatData.actionDiceCount = actionResults.length;
         chatData.dangerDiceCount = dangerResults.length;
 
-        // Determine killers (danger 4-6)
-        const killerIdxDanger = new Set(danger.map((v, i) => (v >= 4 ? i : null)).filter((i) => i !== null));
-        const elimCount = Math.min(killerIdxDanger.size, action.length);
+        // Determine killers:
+        // - normal mode: danger 4-6
+        // - soft danger dice: danger 5-6
+        const softDangerDice = game.settings.get("grimwild-action", "softDangerDice");
+        const dangerThreshold = softDangerDice ? 5 : 4;
+        const killerIdxDanger = new Set(
+            danger
+                .map((v, i) => (v >= dangerThreshold ? i : null))
+                .filter((i) => i !== null)
+        );
 
-        // Eliminate highest action dice equal to elimCount
+        // Eliminate highest action dice equal to number of killer danger dice
+        const elimCount = Math.min(killerIdxDanger.size, action.length);
         const actionWithIndex = action.map((v, idx) => ({ v, idx })).sort((a, b) => b.v - a.v);
         const eliminatedActionIdx = new Set(actionWithIndex.slice(0, elimCount).map((o) => o.idx));
 

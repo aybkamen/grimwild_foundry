@@ -238,6 +238,16 @@ Hooks.once("init", function () {
 		config: true,
 		type: Number
 	});
+
+	// Soft danger dice mode.
+	game.settings.register("grimwild-action", "softDangerDice", {
+		name: game.i18n.localize("GRIMWILD.Settings.softDangerDice.name"),
+		hint: game.i18n.localize("GRIMWILD.Settings.softDangerDice.hint"),
+		scope: "world",
+		config: true,
+		type: Boolean,
+		default: false
+	});
 });
 
 /* -------------------------------------------- */

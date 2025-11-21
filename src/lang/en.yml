@@ -25,6 +25,9 @@ GRIMWILD:
     maxRattled:
       name: "[Homebrew] Max rattled value"
       hint: Maximum value to use for the Rattled input if harm pools are enabled.
+    softDangerDice:
+      name: Enable soft danger dice
+      hint: Danger dice only eliminate action dice showing 5-6 instead of 4-6.
   Stat:
     bra:
       long: Brawn
