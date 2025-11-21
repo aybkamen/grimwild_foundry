@@ -11,6 +11,11 @@
             <PartyMembers :context="context" />
           </Tab>
 
+          <!-- Story Arcs / Quests -->
+          <Tab group="primary" :tab="tabs.primary.storyArcs">
+            <PartyStoryArcs :context="context" />
+          </Tab>
+
           <!-- Details -->
           <Tab group="primary" :tab="tabs.primary.details">
             <PartyDetails :context="context" />
@@ -38,6 +43,7 @@ import {
 } from '@/components';
 import PartyMembers from '@/components/actor/party/PartyMembers.vue';
 import PartyDetails from '@/components/actor/party/PartyDetails.vue';
+import PartyStoryArcs from '@/components/actor/party/PartyStoryArcs.vue';
 import { reactive, toRaw } from 'vue';
 
 const props = defineProps(['context']);
