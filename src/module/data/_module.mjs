@@ -15,3 +15,4 @@ export { default as GrimwildArcana } from "./item-arcana.mjs";
 export { default as GrimwildChallenge } from "./item-challenge.mjs";
 export { default as GrimwildSetup } from "./item-setup.mjs";
 export { default as GrimwildBackground } from "./item-background.mjs";
+export { default as GrimwildQuest } from "./item-quest.mjs";

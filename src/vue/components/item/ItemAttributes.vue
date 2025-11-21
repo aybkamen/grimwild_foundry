@@ -3,6 +3,7 @@
 	<ChallengeTraitsMoves v-if="context.item.type === 'challenge'" :context="context" />
 	<SetupElements v-if="context.item.type === 'setup'" :context="context" />
     <BackgroundFields v-if="context.item.type === 'background'" :context="context" />
+	<QuestFields v-if="context.item.type === 'quest'" :context="context" />
 </template>
 
 <script setup>
@@ -11,7 +12,8 @@ import {
 	TalentTrackers,
 	ChallengeTraitsMoves,
 	SetupElements,
-    BackgroundFields
+    BackgroundFields,
+	QuestFields
 } from '@/components';
 const props = defineProps(['context']);
 const actor = inject('rawDocument');

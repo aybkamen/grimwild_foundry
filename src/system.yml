@@ -67,6 +67,9 @@ documentTypes:
     background:
       htmlFields:
       - description
+    quest:
+      htmlFields:
+      - description
 
 flags:
   hotReload:

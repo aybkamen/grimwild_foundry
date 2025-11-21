@@ -295,6 +295,16 @@ GRIMWILD:
           label: Failure States
         suspense:
           label: Suspense
+    Quest:
+      FIELDS:
+        completed:
+          label: Completed
+        abandoned:
+          label: Abandoned
+        size:
+          label: Size
+        milestones:
+          label: Milestones
   Effect:
     Source: Source
     Toggle: Toggle Effect
@@ -321,6 +331,7 @@ TYPES:
     challenge: Challenge
     setup: Setup
     background: Background
+    quest: Quest
   Faction:
     Goal:
       Term:

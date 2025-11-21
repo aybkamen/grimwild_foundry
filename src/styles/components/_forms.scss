@@ -662,6 +662,42 @@
   input[name*="system.quests."][name*=".milestones."] { width: 25px; flex: 0 0 25px; }
 }
 
+// Quest item layout
+.quest-meta-fieldset {
+	width: 95%;
+	.quest-meta-row {
+		gap: 12px;
+		align-items: center;
+	}
+	.quest-size {
+		display: flex;
+		align-items: center;
+		gap: 6px;
+	}
+}
+
+.quest-milestones-fieldset {
+	width: 95%;
+	.milestone-active {
+		width: 25px;
+		flex: 0 0 25px;
+	}
+	.quest .flexrow {
+		flex-wrap: nowrap;
+	}
+	.quest input[type="text"] {
+		flex: 1 1 0;
+		min-width: 0;
+		width: auto;
+	}
+	.milestone-done-label {
+		display: inline-flex;
+		align-items: center;
+		gap: 4px;
+		white-space: nowrap;
+	}
+}
+
 // Features: allow delete icon at right like conditions
 .feature {
     position: relative;

@@ -22,6 +22,7 @@ export { default as TalentTrackers } from "@/components/item/talent/TalentTracke
 export { default as ChallengeTraitsMoves } from "@/components/item/challenge/ChallengeTraitsMoves.vue";
 export { default as SetupElements } from "@/components/item/setup/SetupElements.vue";
 export { default as BackgroundFields } from "@/components/item/background/BackgroundFields.vue";
+export { default as QuestFields } from "@/components/item/quest/QuestFields.vue";
 // Parts.
 export { default as Tabs } from "@/components/parts/Tabs.vue";
 export { default as Tab } from "@/components/parts/Tab.vue";
