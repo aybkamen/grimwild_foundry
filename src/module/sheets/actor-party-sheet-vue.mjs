@@ -24,6 +24,7 @@ export class GrimwildActorPartySheetVue extends GrimwildActorSheetVue {
             onEditImage: this._onEditImage,
             createDoc: this._createDoc,
             deleteDoc: this._deleteDoc,
+            deleteQuest: this._deleteQuest,
             viewDoc: this._viewDoc,
             removeMember: this._removeMember,
             openMember: this._openMember
@@ -108,5 +109,25 @@ export class GrimwildActorPartySheetVue extends GrimwildActorSheetVue {
         } catch (err) {
             console.warn("Failed to open member", uuid, err);
         }
+    }
+
+    /**
+     * Delete a quest item from the Party sheet with confirmation.
+     *
+     * @param {PointerEvent} event
+     * @param {HTMLElement} target
+     * @private
+     */
+    static async _deleteQuest(event, target) {
+        event.preventDefault();
+        const confirmed = await Dialog.confirm({
+            title: game.i18n.localize?.("Confirm") ?? "Confirm",
+            content: `<p>${game.i18n.localize?.("AreYouSure") ?? "Are you sure?"}</p>`
+        });
+        if (!confirmed) return;
+
+        const doc = this._getEmbeddedDocument(target);
+        if (!doc) return;
+        await doc.delete();
     }
 }

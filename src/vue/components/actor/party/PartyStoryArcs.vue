@@ -57,7 +57,7 @@
               v-if="context.editable"
               class="item-control item-delete"
               title="Remove quest"
-              data-action="deleteDoc"
+              data-action="deleteQuest"
             >
               <i class="fas fa-trash"></i>
             </a>
@@ -193,4 +193,3 @@ const quests = computed(() => {
   font-style: italic;
 }
 </style>
-
