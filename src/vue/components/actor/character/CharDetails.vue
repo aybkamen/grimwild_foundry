@@ -56,14 +56,12 @@
     <fieldset class="flaws-fieldset">
       <legend>{{ context.systemFields.flaws?.label ?? 'Flaws' }}</legend>
       <div class="flaws form-group stacked">
-        <input type="text"
-               name="system.flaws.0"
-               v-model="context.system.flaws[0]"
-               placeholder="Flaw"/>
-        <input type="text"
-               name="system.flaws.1"
-               v-model="context.system.flaws[1]"
-               placeholder="Flaw"/>
+        <ul class="active-flaws" v-if="activeBackgroundFlaws.length">
+          <li v-for="(flaw, i) in activeBackgroundFlaws" :key="`af-${i}`">
+            <span class="flaw-icon">!</span>{{ flaw }}
+          </li>
+        </ul>
+        <p v-else class="flaws-empty">No active flaws</p>
       </div>
     </fieldset>
 
@@ -126,5 +124,38 @@ import {
 	RollPoolInput,
 	CharBackgrounds
 } from '@/components';
+import { computed } from "vue";
 const props = defineProps(['actor', 'context']);
+
+const activeBackgroundFlaws = computed(() => {
+	const backgrounds = props.context?.itemTypes?.background ?? [];
+	return backgrounds.flatMap((bg) => {
+		const flaws = bg.system?.flaws ?? [];
+		return flaws
+			.filter((f) => !!f?.active && !!f?.label)
+			.map((f) => f.label);
+	});
+});
 </script>
+
+<style scoped>
+.active-flaws {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--gw-danger, #e74c3c);
+}
+
+.active-flaws li {
+  font-size: inherit;
+}
+
+.flaw-icon {
+  font-weight: 700;
+  margin-right: 6px;
+}
+
+.flaws-empty {
+  opacity: 0.8;
+  margin: 0;
+}
+</style>
