@@ -51,6 +51,7 @@ export class GrimwildActorSheetVue extends VueRenderingMixin(GrimwildBaseVueActo
 			createEffect: this._createEffect,
 			deleteEffect: this._deleteEffect,
 			toggleEffect: this._toggleEffect,
+			deleteQuest: this._deleteQuest,
 			openPack: this._openPack,
 			createArrayEntry: this._createArrayEntry,
 			deleteArrayEntry: this._deleteArrayEntry,
@@ -93,6 +94,48 @@ export class GrimwildActorSheetVue extends VueRenderingMixin(GrimwildBaseVueActo
 		// Attach event listeners in here to prevent duplicate calls.
 		const change = this.#onChange.bind(this);
 		this.element.addEventListener("change", change);
+	}
+
+	/**
+	 * Handle dropping quest items onto the character sheet to add them as tracked arcs.
+	 *
+	 * @param {DragEvent} event
+	 * @returns {Promise<Item[]|boolean>}
+	 */
+	async _onDrop(event) {
+		const data = foundry.applications.ux.TextEditor.implementation.getDragEventData(event);
+		if (!this.actor.isOwner) return false;
+
+		if (data.type === "Item") {
+			const quest = await this._onDropQuest(data);
+			if (quest) return quest;
+		}
+
+		return super._onDrop(event);
+	}
+
+	/**
+	 * Create a quest item on the actor when dropped from elsewhere.
+	 *
+	 * @param {object} data Drag data from Foundry
+	 * @returns {Promise<Item[]|boolean>}
+	 * @private
+	 */
+	async _onDropQuest(data) {
+		try {
+			const item = await Item.implementation.fromDropData(data);
+			if (!item || item.type !== "quest") return false;
+
+			// If the quest already belongs to this actor, ignore the drop.
+			if (item.parent?.uuid === this.actor.uuid) return false;
+
+			const created = await this.actor.createEmbeddedDocuments("Item", [item]);
+			this.render();
+			return created;
+		} catch (err) {
+			console.warn("Failed to drop quest onto character sheet", err);
+			return false;
+		}
 	}
 
 	/**
@@ -476,6 +519,25 @@ export class GrimwildActorSheetVue extends VueRenderingMixin(GrimwildBaseVueActo
 			content: `<p>${game.i18n.localize?.("AreYouSure") ?? "Are you sure?"} ${name}</p>`
 		});
 		if (!confirmed) return;
+		await doc.delete();
+	}
+
+	/**
+	 * Delete a quest item from the character sheet with confirmation.
+	 *
+	 * @param {PointerEvent} event
+	 * @param {HTMLElement} target
+	 */
+	static async _deleteQuest(event, target) {
+		event.preventDefault();
+		const confirmed = await Dialog.confirm({
+			title: game.i18n.localize?.("Confirm") ?? "Confirm",
+			content: `<p>${game.i18n.localize?.("AreYouSure") ?? "Are you sure?"}</p>`
+		});
+		if (!confirmed) return;
+
+		const doc = this._getEmbeddedDocument(target);
+		if (!doc) return;
 		await doc.delete();
 	}
 

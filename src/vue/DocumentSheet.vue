@@ -21,65 +21,7 @@
 										{{ game.i18n.localize('GRIMWILD.Actor.Character.FIELDS.storyArcs.label') }}
 									</h3>
 									<div class="bio-section-body">
-										<div class="story-arcs-wrapper">
-											<button
-												class="story-arc-control story-arc-create"
-												type="button"
-												title="Add story arc"
-												data-action="createArrayEntry"
-												data-field="storyArcs"
-											>
-												<i class="fas fa-plus"></i>
-											</button>
-											<div class="story-arcs">
-												<div
-													class="story-arc-card"
-													v-for="(arc, arcIndex) in (context.system.storyArcs || [])"
-													:key="arcIndex"
-												>
-													<div class="story-arc-grid">
-														<div class="story-arc-row story-arc-title-row">
-															<input
-																type="text"
-																:name="`system.storyArcs.${arcIndex}.title`"
-																v-model="arc.title"
-																placeholder="Title"
-															/>
-														</div>
-														<div
-															class="story-arc-row story-arc-milestone-row"
-															v-for="mIndex in [0,1,2]"
-															:key="mIndex"
-														>
-															<input
-																type="text"
-																class="story-arc-milestone-label"
-																:name="`system.storyArcs.${arcIndex}.milestones.${mIndex}.label`"
-																v-model="arc.milestones[mIndex].label"
-																:placeholder="`Milestone ${mIndex + 1}`"
-															/>
-															<label class="story-arc-milestone-check">
-																<input
-																	type="checkbox"
-																	:name="`system.storyArcs.${arcIndex}.milestones.${mIndex}.done`"
-																	v-model="arc.milestones[mIndex].done"
-																/>
-																<span>done</span>
-															</label>
-														</div>
-													</div>
-													<a
-														class="story-arc-control story-arc-delete"
-														title="Delete story arc"
-														data-action="deleteArrayEntry"
-														data-field="storyArcs"
-														:data-key="arcIndex"
-													>
-														<i class="fas fa-trash"></i>
-													</a>
-												</div>
-											</div>
-										</div>
+										<CharStoryArcs :context="context" />
 									</div>
 								</section>
 
@@ -197,6 +139,7 @@ import {
 	CharTalents,
 	CharEffects,
 	CharItems,
+	CharStoryArcs,
 	Prosemirror
 } from '@/components';
 import { reactive, toRaw } from 'vue';
