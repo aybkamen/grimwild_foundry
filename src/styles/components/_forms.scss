@@ -686,9 +686,9 @@
 		flex-wrap: nowrap;
 	}
 	.quest input[type="text"] {
-		flex: 1 1 0;
+		flex: 1 1 80%;
 		min-width: 0;
-		width: auto;
+		width: 80%;
 	}
 	.milestone-done-label {
 		display: inline-flex;

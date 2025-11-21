@@ -3,7 +3,7 @@
     <fieldset>
       <legend>{{ $t?.('GRIMWILD.Actor.Character.FIELDS.storyArcs.label') ?? 'Story Arcs' }}</legend>
       <div class="party-story-arcs-header">
-        <p class="hint">Track this party's ongoing quests and progress.</p>
+        <p class="hint">Track this party's ongoing quests and progress. Drag quests here or click "Add quest".</p>
         <button
           v-if="context.editable"
           class="item-control item-create"

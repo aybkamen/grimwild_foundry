@@ -58,6 +58,7 @@
 							type="text"
 							:name="`system.milestones.${key}.label`"
 							v-model="context.system.milestones[key].label"
+							:title="context.system.milestones[key].label"
 							:placeholder="`Milestone ${key + 1}`" />
 
 						<!-- Done checkbox -->

@@ -65,6 +65,12 @@ export class GrimwildActorPartySheetVue extends GrimwildActorSheetVue {
         const data = foundry.applications.ux.TextEditor.implementation.getDragEventData(event);
         if (!this.actor.isOwner) return false;
 
+        // Allow dropping quest items anywhere on the sheet to add them to the party story arcs tab.
+        if (data.type === "Item") {
+            const quest = await this._onDropQuest(data);
+            if (quest) return quest;
+        }
+
         let actor = null;
         try {
             if (data.type === "Actor") {
@@ -95,6 +101,30 @@ export class GrimwildActorPartySheetVue extends GrimwildActorSheetVue {
         if (isNaN(idx) || !members[idx]) return;
         members.splice(idx, 1);
         await this.document.update({ "system.members": members });
+    }
+
+    /**
+     * Handle dropping a quest item onto the party sheet.
+     *
+     * @param {object} data Drag data from Foundry
+     * @returns {Promise<Item[]|boolean>}
+     * @private
+     */
+    async _onDropQuest(data) {
+        try {
+            const item = await Item.implementation.fromDropData(data);
+            if (!item || item.type !== "quest") return false;
+
+            // If the quest is already on this actor, no need to duplicate it.
+            if (item.parent?.uuid === this.actor.uuid) return false;
+
+            const created = await this.actor.createEmbeddedDocuments("Item", [item]);
+            this.render();
+            return created;
+        } catch (err) {
+            console.warn("Failed to drop quest onto party sheet", err);
+            return false;
+        }
     }
 
     /** Open a member's actor sheet from a uuid (Actor or Token) */
