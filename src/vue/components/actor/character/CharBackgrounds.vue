@@ -25,8 +25,8 @@
            draggable="true"
            data-document-class="Item">
         <!-- Summary -->
-        <div class="item-summary flexcol" style="gap: 4px;">
-          <div class="item-name" style="font-variant: small-caps; letter-spacing: 0.5px;">
+        <div class="item-summary flexcol">
+          <div class="item-name">
             <div data-action="toggleItem" :data-item-id="item._id">{{ item.name }}</div>
           </div>
           <ul class="wise-list">
@@ -61,15 +61,28 @@ const props = defineProps(['actor', 'context']);
 </script>
 
 <style scoped>
+.item-summary {
+  gap: 4px;
+}
+
+.item-name {
+  font-variant: small-caps;
+  letter-spacing: 0.5px;
+}
+
 .wise-list,
 .flaw-list {
   margin: 0;
   padding-left: 18px;
-  font-size: inherit;
+  font-size: 0.8em;
 }
 
 .flaw-list {
   color: var(--gw-danger, #e74c3c);
+}
+
+.wise-list {
+  color: var(--gw-accent2, #34db85);
 }
 
 .flaw-icon {
