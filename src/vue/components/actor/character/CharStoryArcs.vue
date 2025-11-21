@@ -1,22 +1,17 @@
 <template>
   <section class="character-story-arcs">
-    <fieldset>
-      <legend>{{ $t?.("GRIMWILD.Actor.Character.FIELDS.storyArcs.label") ?? "Story Arcs" }}</legend>
-      <div class="story-arcs-header">
-        <p class="hint">Anade y lleva el progreso de las misiones de este personaje.</p>
-        <button
-          v-if="context.editable"
-          class="item-control item-create"
-          type="button"
-          title="Add quest"
-          data-action="createDoc"
-          data-document-class="Item"
-          data-type="quest"
-        >
-          <i class="fas fa-plus"></i>
-          <span>Add quest</span>
-        </button>
-      </div>
+    <fieldset class="story-arcs-frame">
+      <button
+        v-if="context.editable"
+        class="item-control item-create add-quest"
+        type="button"
+        title="Add quest"
+        data-action="createDoc"
+        data-document-class="Item"
+        data-type="quest"
+      >
+        <i class="fas fa-plus"></i>
+      </button>
 
       <div v-if="quests.length === 0" class="empty-hint">
         No quests added yet. Drag a quest here or click "Add quest".
@@ -110,21 +105,23 @@ const quests = computed(() => {
 </script>
 
 <style scoped>
-.character-story-arcs fieldset {
+.story-arcs-frame {
   width: 100%;
+  position: relative;
+  padding-top: 10px;
 }
 
-.story-arcs-header {
-  display: flex;
-  justify-content: space-between;
+.add-quest {
+  position: absolute;
+  top: -10px;
+  right: 8px;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: inline-flex;
   align-items: center;
-  gap: 8px;
-  margin-bottom: 6px;
-}
-
-.hint {
-  opacity: 0.8;
-  margin: 0;
+  justify-content: center;
+  z-index: 1;
 }
 
 .quests-list {
