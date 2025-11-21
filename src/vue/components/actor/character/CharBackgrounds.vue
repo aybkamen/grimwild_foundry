@@ -29,9 +29,14 @@
           <div class="item-name" style="font-variant: small-caps; letter-spacing: 0.5px;">
             <div data-action="toggleItem" :data-item-id="item._id">{{ item.name }}</div>
           </div>
-          <ul class="wise-list" style="margin: 0; padding-left: 18px;">
+          <ul class="wise-list">
             <li v-for="(wise, i) in (item.system?.wises ?? []).filter(w => !!w?.active && !!w?.label)" :key="i">
               {{ wise.label }}
+            </li>
+          </ul>
+          <ul class="flaw-list">
+            <li v-for="(flaw, i) in (item.system?.flaws ?? []).filter(f => !!f?.active && !!f?.label)" :key="`f-${i}`">
+              <span class="flaw-icon">!</span>{{ flaw.label }}
             </li>
           </ul>
         </div>
@@ -54,3 +59,21 @@
 <script setup>
 const props = defineProps(['actor', 'context']);
 </script>
+
+<style scoped>
+.wise-list,
+.flaw-list {
+  margin: 0;
+  padding-left: 18px;
+  font-size: inherit;
+}
+
+.flaw-list {
+  color: var(--gw-danger, #e74c3c);
+}
+
+.flaw-icon {
+  font-weight: 700;
+  margin-right: 6px;
+}
+</style>
