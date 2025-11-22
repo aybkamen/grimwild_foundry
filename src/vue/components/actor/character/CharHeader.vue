@@ -95,7 +95,16 @@
 				</div>
 			</div>
 			<div class="story form-group stacked">
-				<label><i class="fas fa-book"></i> {{ context.systemFields.story.label }}</label>
+				<button
+					type="button"
+					class="story-roll-button"
+					data-action="roll"
+					data-roll-type="story"
+				>
+					<i class="fas fa-book"></i>
+					<i class="fas fa-dice-d6"></i>
+					{{ context.systemFields.story.label }}
+				</button>
 				<div class="form-inputs">
 					<input type="checkbox"
 						name="system.story.steps.0"
@@ -126,3 +135,23 @@ const sparkSlots = computed(() => {
 	return Array.from({ length: total }, (_, i) => i);
 });
 </script>
+
+<style scoped>
+.story-roll-button {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	padding: 0;
+	margin: 0;
+	background: none;
+	border: none;
+	color: inherit;
+	font: inherit;
+	text-align: left;
+	cursor: pointer;
+}
+
+.story-roll-button i {
+	margin: 0;
+}
+</style>

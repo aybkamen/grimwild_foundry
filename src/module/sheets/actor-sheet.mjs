@@ -394,6 +394,9 @@ export class GrimwildActorSheet extends api.HandlebarsApplicationMixin(
 			case "stat":
 				await this.document.system.roll({ stat: dataset.stat });
 				break;
+			case "story":
+				await this.document.system.rollStory();
+				break;
 		}
 
 		// Handle rolls that supply the formula directly.

@@ -1,6 +1,8 @@
 import GrimwildActorBase from "./base-actor.mjs";
 import { DicePoolField } from "../helpers/schema.mjs";
 import { GrimwildRollDialog } from "../apps/roll-dialog.mjs";
+import { GrimwildStoryRollDialog } from "../apps/story-roll-dialog.mjs";
+import GrimwildStoryRoll from "../dice/story-roll.mjs";
 
 export default class GrimwildCharacter extends GrimwildActorBase {
 	static LOCALIZATION_PREFIXES = [
@@ -499,6 +501,67 @@ export default class GrimwildCharacter extends GrimwildActorBase {
 			await this.updateCombatActionCount();
 
 		}
+	}
+
+	async rollStory(options = {}) {
+		const rollData = this.getRollData();
+		const clampMin = (value, min) => Math.max(value, min);
+		const defaultDice = clampMin(Number(options?.diceDefault ?? rollData?.story?.value ?? 2) || 2, 1);
+
+		const rollDialog = await GrimwildStoryRollDialog.open({
+			rollData: {
+				name: this?.name ?? this?.parent?.name,
+				spark: rollData?.spark,
+				diceDefault: defaultDice
+			}
+		});
+
+		if (rollDialog === null) {
+			return;
+		}
+
+		const baseDice = clampMin(Number(rollDialog.baseDice ?? defaultDice) || defaultDice, 1);
+		const sparkUsed = Number(rollDialog.sparkUsed || 0);
+		const totalDice = Math.max(Number(rollDialog.dice ?? baseDice + sparkUsed) || baseDice + sparkUsed, 1);
+		const flavor = options?.flavor
+			?? `${game.i18n.localize?.("GRIMWILD.Actor.Character.FIELDS.story.label") ?? "Story"} Roll`;
+		const rollOptions = { ...(options ?? {}), flavor };
+		const roll = new GrimwildStoryRoll(`${totalDice}d6`, { ...rollData, storyDice: totalDice }, rollOptions);
+		await roll.evaluate();
+		try {
+			if (game.dice3d) {
+				const die = roll.dice?.[0];
+				if (die) {
+					die.options = die.options ?? {};
+					die.options.appearance = { ...(die.options.appearance ?? {}), colorset: "white" };
+				}
+			}
+		} catch (err) { console.warn("Dice color set warning:", err); }
+
+		const updates = {};
+
+		if (sparkUsed > 0) {
+			const currentSteps = Array.isArray(this.spark?.steps) ? this.spark.steps.map((s) => !!s) : [];
+			const currentTotal = currentSteps.filter((s) => s).length;
+			const remainingTotal = Math.max(currentTotal - sparkUsed, 0);
+			const newSteps = currentSteps.map((_, idx) => idx < remainingTotal);
+			updates["system.spark.steps"] = newSteps;
+		}
+
+		const actor = game.actors.get(this.parent.id);
+		if (Object.keys(updates).length > 0) {
+			try {
+				if (actor?.sheet) await actor.sheet.submit({ preventRender: true });
+			} catch (err) { /* best-effort */ }
+			await actor.update(updates, { render: true });
+		}
+
+		await roll.toMessage({
+			actor: this,
+			speaker: ChatMessage.getSpeaker({ actor: this }),
+			rollMode: game.settings.get("core", "rollMode"),
+			flavor
+		});
 	}
 
 	/**

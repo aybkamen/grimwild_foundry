@@ -1,0 +1,22 @@
+{{#unless isPrivate}}
+<section class="grimwild-chat grimwild-roll story-roll {{result}} stroke stroke-top">
+  <div class="results">
+    <h2>{{localize (concat "GRIMWILD.Dice.results." result)}}</h2>
+    {{#if flavor}}<em>{{flavor}}</em>{{/if}}
+  </div>
+  <div class="dice-tooltip expanded">
+    <section class="tooltip-part">
+      <div class="dice">
+        <div class="dice-row">
+          <span>{{localize "GRIMWILD.Actor.Character.FIELDS.story.label"}} ({{actionDiceCount}}d6):</span>
+          <ul class="dice-rolls">
+            {{#each dice as |die key|}}
+              <li class="roll die d6 action {{#if die.chosen}}chosen{{/if}}">{{die.result}}</li>
+            {{/each}}
+          </ul>
+        </div>
+      </div>
+    </section>
+  </div>
+</section>
+{{/unless}}

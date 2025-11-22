@@ -10,7 +10,8 @@ export async function preloadHandlebarsTemplates() {
 		// Actor partials
 		"systems/grimwild-action/templates/actor/parts/character-header.hbs",
 		"systems/grimwild-action/templates/actor/parts/monster-header.hbs",
-		"systems/grimwild-action/templates/chat/roll-action.hbs"
+		"systems/grimwild-action/templates/chat/roll-action.hbs",
+		"systems/grimwild-action/templates/chat/roll-story.hbs"
 	];
 
 	const paths = {};

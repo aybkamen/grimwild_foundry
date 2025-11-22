@@ -1,0 +1,41 @@
+<div id="grimwild-story-roll-dialog">
+	<section class="grid grid-1col">
+		<fieldset class="flexcol">
+			<legend>{{localize "GRIMWILD.Actor.Character.FIELDS.story.label"}}</legend>
+			<div class="dialog-dice grimwild-form-group">
+				<label for="storyDice">{{localize "GRIMWILD.Dice.dice"}}</label>
+				<div class="dice-stepper flexrow" style="align-items:center; gap:6px;">
+					<button type="button" class="dice-stepper-btn" data-action="changeDice" data-delta="-1">-</button>
+					<input
+						type="number"
+						class="rollDice rollDiceInput"
+						id="storyDice"
+						name="storyDice"
+						data-prev="{{diceDefault}}"
+						data-action-input="updateDice"
+						value="{{diceDefault}}"
+						min="1"
+						style="width: 72px; text-align: center;"
+					>
+					<button type="button" class="dice-stepper-btn" data-action="changeDice" data-delta="1">+</button>
+				</div>
+			</div>
+			<div class="dialog-spark grimwild-form-group">
+				<label for="spark">{{localize "GRIMWILD.Actor.Character.FIELDS.spark.label"}}</label>
+				{{#if hasSpark}}
+					{{#each sparkArray}}
+						<input type="checkbox" class="spark sparkCheck" id="spark-{{this}}" name="spark[{{this}}]" data-action-change="updateDice" value="1">
+					{{/each}}
+				{{else}}
+					<p>None</p>
+				{{/if}}
+			</div>
+			<div class="dialog-total grimwild-form-group">
+				<label class="total">{{localize "GRIMWILD.Dice.total"}}</label>
+				<span id="totalDice" class="total">0</span>
+				<input type="hidden" id="totalDiceInput" name="totalDice">
+			</div>
+			<p class="hint">No danger dice or edges apply to a story roll.</p>
+		</fieldset>
+	</section>
+</div>
