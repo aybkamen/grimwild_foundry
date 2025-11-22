@@ -36,11 +36,11 @@
             </div>
             <div class="quest-fields">
               <div class="quest-field">
-                <span class="label">Next milestone</span>
+                <span class="label">Next</span>
                 <span class="value">{{ q.nextMilestone || '—' }}</span>
               </div>
               <div class="quest-field">
-                <span class="label">Milestones completed</span>
+                <span class="label">Completed</span>
                 <span class="value">{{ q.completed }} / {{ q.total }}</span>
               </div>
             </div>
@@ -165,8 +165,13 @@ const quests = computed(() => {
 }
 
 .quest-field .label {
-  opacity: 0.8;
+  color: #aaaaaa;
+  font-style: italic;
   margin-right: 4px;
+}
+
+.quest-field .value {
+  font-weight: 700;
 }
 
 .quest-controls {
