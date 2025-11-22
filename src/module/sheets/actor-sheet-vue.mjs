@@ -94,6 +94,20 @@ export class GrimwildActorSheetVue extends VueRenderingMixin(GrimwildBaseVueActo
 		// Attach event listeners in here to prevent duplicate calls.
 		const change = this.#onChange.bind(this);
 		this.element.addEventListener("change", change);
+
+		// Prevent Enter from submitting the form (which can wipe items due to empty payloads).
+		this._enterHandler = (event) => {
+			if (event.key !== "Enter") return;
+			const target = event.target;
+			// Allow Enter in textareas and contenteditable elements (e.g., ProseMirror).
+			if (target?.tagName === "TEXTAREA" || target?.isContentEditable) return;
+			// Allow explicit submit/buttons.
+			const type = target?.type?.toLowerCase?.();
+			if (type === "submit" || type === "button") return;
+			event.preventDefault();
+			event.stopPropagation();
+		};
+		this.element.addEventListener("keydown", this._enterHandler, true);
 	}
 
 	/**

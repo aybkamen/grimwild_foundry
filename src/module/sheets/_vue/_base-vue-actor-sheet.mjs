@@ -116,6 +116,22 @@ export class GrimwildBaseVueActorSheet extends ActorSheetV2 {
 		context.activeItems = this.activeItems;
 	}
 
+	/**
+	 * Process form submissions while avoiding accidental wipes of embedded docs when no item data is present.
+	 *
+	 * @override
+	 */
+	async _processSubmitData(event, form, submitData) {
+		const overrides = foundry.utils.flattenObject(this.actor.overrides);
+		for (const key of Object.keys(overrides)) delete submitData[key];
+
+		// Ignore embedded document payloads; this sheet updates items and effects via explicit actions.
+		delete submitData.items;
+		delete submitData.effects;
+
+		await this.document.update(submitData);
+	}
+
 	/* -------------------------------------------- */
 
 	/** ************

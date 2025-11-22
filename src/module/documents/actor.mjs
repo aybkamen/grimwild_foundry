@@ -58,4 +58,23 @@ export class GrimwildActor extends Actor {
 			});
 		}
 	}
+
+	/**
+	 * Prevent empty item payloads from wiping owned items (e.g., form submits with no item data).
+	 *
+	 * @override
+	 */
+	async _preUpdate(changes, options, user) {
+		await super._preUpdate(changes, options, user);
+
+		const incomingItems = changes?.items;
+		const hasItems = this.items?.size > 0;
+		const itemsEmpty = Array.isArray(incomingItems)
+			? incomingItems.length === 0
+			: incomingItems && foundry.utils.isEmpty(incomingItems);
+
+		if (hasItems && itemsEmpty) {
+			delete changes.items;
+		}
+	}
 }
