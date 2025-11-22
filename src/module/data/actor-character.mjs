@@ -164,6 +164,15 @@ export default class GrimwildCharacter extends GrimwildActorBase {
 			chest: new fields.ArrayField(new fields.BooleanField(), { initial: [false] })
 		});
 
+		// Resources: rollable pools with labels (Items tab)
+		schema.resources = new fields.ArrayField(
+			new fields.SchemaField({
+				label: new fields.StringField(),
+				pool: new DicePoolField()
+			}),
+			{ initial: [] }
+		);
+
 		// Two free-text flaws shown on the Details tab
 		schema.flaws = new fields.ArrayField(
 			new fields.StringField(),
@@ -578,6 +587,25 @@ export default class GrimwildCharacter extends GrimwildActorBase {
 		source.treasure.pouch = ensureBools(source.treasure.pouch, 5);
 		source.treasure.bag = ensureBools(source.treasure.bag, 3);
 		source.treasure.chest = ensureBools(source.treasure.chest, 1);
+
+		// Ensure resources is an array of { label, pool }
+		if (!Array.isArray(source.resources)) source.resources = [];
+		source.resources = source.resources.map((res) => {
+			const normalized = res && typeof res === "object" ? { ...res } : {};
+			const label = typeof normalized.label === "string"
+				? normalized.label
+				: (typeof normalized.name === "string" ? normalized.name : "");
+			const pool = normalized.pool && typeof normalized.pool === "object" ? { ...normalized.pool } : {};
+			const diceNum = Number.isFinite(pool.diceNum) ? Math.max(0, Math.floor(pool.diceNum)) : 0;
+			const max = Number.isFinite(pool.max) ? Math.max(0, Math.floor(pool.max)) : undefined;
+			return {
+				label,
+				pool: {
+					diceNum,
+					...(max !== undefined ? { max } : {})
+				}
+			};
+		});
 
 		// Normalize story arcs structure: array of arcs with three milestones
 		if (!Array.isArray(source.storyArcs)) source.storyArcs = [];

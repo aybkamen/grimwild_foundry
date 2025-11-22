@@ -581,8 +581,8 @@ export class GrimwildActorSheetVue extends VueRenderingMixin(GrimwildBaseVueActo
 			catch (err) { /* ignore; continue with targeted update */ }
 		}
 
-		// For story arcs, ask for confirmation before deleting
-		if (field === "storyArcs") {
+		// For destructive fields, ask for confirmation before deleting
+		if (field === "storyArcs" || field === "resources") {
 			const confirmed = await Dialog.confirm({
 				title: game.i18n.localize?.("Confirm") ?? "Confirm",
 				content: `<p>${game.i18n.localize?.("AreYouSure") ?? "Are you sure?"}</p>`
@@ -727,8 +727,8 @@ export class GrimwildActorSheetVue extends VueRenderingMixin(GrimwildBaseVueActo
 		else {
 			fieldData = this.document.system?.[field] ?? null;
 			if (!fieldData) return;
-			pool = key !== undefined ? fieldData[key]?.pool : fieldData?.pool;
-			if (!pool.diceNum) return;
+			pool = key !== undefined ? fieldData?.[key]?.pool : fieldData?.pool;
+			if (!pool?.diceNum) return;
 		}
 
 		// Handle roll.
@@ -741,9 +741,12 @@ export class GrimwildActorSheetVue extends VueRenderingMixin(GrimwildBaseVueActo
 			// Initialize chat data.
 			const speaker = ChatMessage.getSpeaker({ actor: this.actor });
 			const rollMode = game.settings.get("core", "rollMode");
+			const fieldLabel = key !== undefined
+				? (fieldData?.[key]?.name ?? fieldData?.[key]?.label ?? "")
+				: (fieldData?.name ?? fieldData?.label ?? "");
 			const label = item
 				? `[${item.type}] ${item.name}`
-				: `[${field}] ${fieldData[key]?.name ?? ""}`;
+				: `[${field}] ${fieldLabel}`;
 			// Send to chat.
 			const msg = await roll.toMessage({
 				speaker: speaker,
