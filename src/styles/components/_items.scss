@@ -25,6 +25,21 @@
 	}
 }
 
+.item-description,
+.item-notes-description,
+.prosemirror-preview,
+.editor-container {
+	strong {
+		color: #ff8a00;
+		font-weight: 700;
+	}
+
+	em {
+		font-style: italic;
+		color: #7b6327;
+	}
+}
+
 // -----------------------------------------
 // Items Lists
 // -----------------------------------------

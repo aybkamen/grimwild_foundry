@@ -329,6 +329,11 @@
 		flex: 1 1 auto;
 		display: flex;
 		flex-direction: column;
+
+		strong {
+			color: #ff8a00;
+			font-weight: 700;
+		}
 	}
 }
 
