@@ -1,0 +1,148 @@
+folder: null
+name: Captain
+type: monster
+img: icons/svg/mystery-man.svg
+system:
+  biography: >-
+    <p>A seasoned leader who always scans for advantage and weakness. They balance strategy
+    and discipline, wearing scars like medals.</p>
+  notes: ''
+  role: overseer
+  tier: tough
+  traits:
+    - Coordinates allies
+    - Raises morale
+    - Seasoned combatant
+  moves:
+    - Assess Battlefield
+    - Issue Command
+    - Exploit Weakness
+  desires:
+    - value: to follow their orders exactly.
+      are: false
+    - value: their subordinates to disobey.
+      are: false
+  sensories:
+    colors:
+      - name: Navy Blue
+        color: '#1b2a49'
+      - name: Polished Steel
+        color: '#b0c4de'
+      - name: Clean White
+        color: '#f5f5f5'
+    sights: signals, maintained gear, precise movements
+    sounds: barked orders, pacing, clashing steel
+    smells: oiled leather, tobacco, fine spices
+  pool:
+    diceNum: 4
+    max: null
+  tables:
+    - name: Notable Past
+      instructions: ''
+      table:
+        - - Sole survivor of a catastrophic naval disaster.
+          - Proved a hero, after proving themself at sea.
+          - Exiled noble, cast out after leading rebels.
+          - Kin to a legendary hero, forever in that shadow.
+          - Bearer of a cursed banner, said to bring doom.
+          - Captured and escaped from enemy hands.
+prototypeToken:
+  name: Captain
+  displayName: 0
+  actorLink: false
+  appendNumber: false
+  prependAdjective: false
+  width: 1
+  height: 1
+  texture:
+    src: icons/svg/mystery-man.svg
+    anchorX: 0.5
+    anchorY: 0.5
+    offsetX: 0
+    offsetY: 0
+    fit: contain
+    scaleX: 1
+    scaleY: 1
+    rotation: 0
+    tint: '#ffffff'
+    alphaThreshold: 0.75
+  lockRotation: false
+  rotation: 0
+  alpha: 1
+  disposition: -1
+  displayBars: 0
+  bar1:
+    attribute: health
+  bar2:
+    attribute: power
+  light:
+    negative: false
+    priority: 0
+    alpha: 0.5
+    angle: 360
+    bright: 0
+    color: null
+    coloration: 1
+    dim: 0
+    attenuation: 0.5
+    luminosity: 0.5
+    saturation: 0
+    contrast: 0
+    shadows: 0
+    animation:
+      type: null
+      speed: 5
+      intensity: 5
+      reverse: false
+    darkness:
+      min: 0
+      max: 1
+  sight:
+    enabled: false
+    range: 0
+    angle: 360
+    visionMode: basic
+    color: null
+    attenuation: 0.1
+    brightness: 0
+    saturation: 0
+    contrast: 0
+  detectionModes: []
+  occludable:
+    radius: 0
+  ring:
+    enabled: false
+    colors:
+      ring: null
+      background: null
+    effects: 1
+    subject:
+      scale: 1
+      texture: null
+  flags: {}
+  randomImg: false
+  turnMarker:
+    mode: 1
+    animation: null
+    src: null
+    disposition: false
+  movementAction: null
+items: []
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.345'
+  systemId: grimwild
+  systemVersion: 0.1.7
+  createdTime: 1764026637847
+  modifiedTime: 1764026637847
+  lastModifiedBy: jgipq2YBy9KMjQWt
+ownership:
+  default: 0
+  jgipq2YBy9KMjQWt: 3
+_id: fShfjFHjMaYFZtfD
+sort: 0
+_key: '!actors!fShfjFHjMaYFZtfD'

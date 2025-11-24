@@ -1,0 +1,148 @@
+folder: null
+name: Cultist
+type: monster
+img: icons/svg/mystery-man.svg
+system:
+  biography: >-
+    <p>They're driven by dark faith or promises of power. They lack strong magic of their
+    own, and thus rely on ritual, relics, and alliance to achieve their goals.</p>
+  notes: ''
+  role: brute
+  tier: tough
+  traits:
+    - Fanatic loyalty
+    - Forbidden knowledge
+    - Minor invocation
+  moves:
+    - Call Curse
+    - Lash Out with Zeal
+    - Contribute to Ritual
+  desires:
+    - value: to fulfill the will of their dark patron.
+      are: false
+    - value: to be isolated from their cult.
+      are: false
+  sensories:
+    colors:
+      - name: Deep Crimson
+        color: '#8b0000'
+      - name: Bone White
+        color: '#f5f5dc'
+      - name: Coal Black
+        color: '#1c1c1c'
+    sights: stained robes, symbols of ash or ichor, melted candles
+    sounds: whispered prayer, dead language, shuffling feet
+    smells: burnt offering, tainted incense, melted wax
+  pool:
+    diceNum: 2
+    max: null
+  tables:
+    - name: Evil Patron
+      instructions: ''
+      table:
+        - - Lady of Dreams, weaving nightmares to enthrall.
+          - Drowned King, raising an army of bloated corpses.
+          - Crimson Hand, demon who whispers war and fear.
+          - The Hollow, an ancient god of oblivion.
+          - Eternal Song, the melody that can end the world.
+          - Azure Serpent, hoarding forbidden knowledge.
+prototypeToken:
+  name: Cultist
+  displayName: 0
+  actorLink: false
+  appendNumber: false
+  prependAdjective: false
+  width: 1
+  height: 1
+  texture:
+    src: icons/svg/mystery-man.svg
+    anchorX: 0.5
+    anchorY: 0.5
+    offsetX: 0
+    offsetY: 0
+    fit: contain
+    scaleX: 1
+    scaleY: 1
+    rotation: 0
+    tint: '#ffffff'
+    alphaThreshold: 0.75
+  lockRotation: false
+  rotation: 0
+  alpha: 1
+  disposition: -1
+  displayBars: 0
+  bar1:
+    attribute: health
+  bar2:
+    attribute: power
+  light:
+    negative: false
+    priority: 0
+    alpha: 0.5
+    angle: 360
+    bright: 0
+    color: null
+    coloration: 1
+    dim: 0
+    attenuation: 0.5
+    luminosity: 0.5
+    saturation: 0
+    contrast: 0
+    shadows: 0
+    animation:
+      type: null
+      speed: 5
+      intensity: 5
+      reverse: false
+    darkness:
+      min: 0
+      max: 1
+  sight:
+    enabled: false
+    range: 0
+    angle: 360
+    visionMode: basic
+    color: null
+    attenuation: 0.1
+    brightness: 0
+    saturation: 0
+    contrast: 0
+  detectionModes: []
+  occludable:
+    radius: 0
+  ring:
+    enabled: false
+    colors:
+      ring: null
+      background: null
+    effects: 1
+    subject:
+      scale: 1
+      texture: null
+  flags: {}
+  randomImg: false
+  turnMarker:
+    mode: 1
+    animation: null
+    src: null
+    disposition: false
+  movementAction: null
+items: []
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.345'
+  systemId: grimwild
+  systemVersion: 0.1.7
+  createdTime: 1764026637847
+  modifiedTime: 1764026637847
+  lastModifiedBy: jgipq2YBy9KMjQWt
+ownership:
+  default: 0
+  jgipq2YBy9KMjQWt: 3
+_id: ifolSuqvaafKb8Bk
+sort: 0
+_key: '!actors!ifolSuqvaafKb8Bk'
