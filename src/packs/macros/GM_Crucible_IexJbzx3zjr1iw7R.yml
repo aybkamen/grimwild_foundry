@@ -4,30 +4,34 @@ _id: IexJbzx3zjr1iw7R
 author: Dl5Tvf37OuEHwdAh
 img: icons/svg/dice-target.svg
 scope: global
-command: >-
+command: |-
   // Macro to roll two different rolltables from a compendium called "crucibles"
   // Accepts optional params (positional or object): table1Name, table2Name, compendiumName, title
 
 
-  const macroArgs = typeof args !== "undefined" ? args : [];
-  const isOptionsObject = macroArgs[0] && typeof macroArgs[0] === "object" && !Array.isArray(macroArgs[0]);
-  const options = isOptionsObject ? macroArgs[0] : {};
+  // Foundry pasa args como array; execute(scope, opciones) deja scope en arguments[0] y opciones en arguments[1]
+  const hasArgs = typeof args !== "undefined";
+  const rawArgs = hasArgs ? args : [];
+  const rawArguments = typeof arguments !== "undefined" ? Array.from(arguments) : [];
 
-  const rolltable1Name =
-    options.table1Name ?? options.table1 ?? (!isOptionsObject ? macroArgs[0] : undefined) ?? "GM Crucible 1";
+  const globalOptions = typeof globalThis !== "undefined" ? globalThis.__gmCrucibleOptions : null;
 
-  const rolltable2Name =
-    options.table2Name ?? options.table2 ?? (!isOptionsObject ? macroArgs[1] : undefined) ?? "GM Crucible 2";
+  const options =
+    (globalOptions && typeof globalOptions === "object" ? globalOptions : null) ||
+    (hasArgs && Array.isArray(rawArgs) && typeof rawArgs[0] === "object" ? rawArgs[0] : null) ||
+    (hasArgs && !Array.isArray(rawArgs) && rawArgs && typeof rawArgs === "object" ? rawArgs : null) ||
+    (rawArguments.length > 1 && typeof rawArguments[1] === "object" ? rawArguments[1] : null) ||
+    (rawArguments.length > 0 && typeof rawArguments[0] === "object" ? rawArguments[0] : null) ||
+    {};
+
+  const rolltable1Name = options.table1Name ?? options.table1 ?? "GM Crucible 1";
+
+  const rolltable2Name = options.table2Name ?? options.table2 ?? "GM Crucible 2";
 
   const compendiumName =
-    options.compendiumName ??
-    options.compendium ??
-    (!isOptionsObject ? macroArgs[2] : undefined) ??
-    "grimwild-action.crucibles"; // Adjust to the correct namespace for your system
+    options.compendiumName ?? options.compendium ?? "grimwild-action.crucibles"; // Adjust to the correct namespace for your system
 
-  const crucibleTitle = options.title ?? options.name ?? (!isOptionsObject ? macroArgs[3] : undefined) ?? "GM Crucible";
-
-
+  const crucibleTitle = options.title ?? options.name ?? "GM Crucible";
   // Function to roll a table by name
 
   async function rollTable(compendiumName, tableName) {
@@ -70,6 +74,11 @@ command: >-
 
   const result1 = await rollTable(compendiumName, rolltable1Name);
   const result2 = await rollTable(compendiumName, rolltable2Name);
+
+  // Limpiar opciones globales si las pusimos desde el selector
+  if (globalThis.__gmCrucibleOptions) {
+    delete globalThis.__gmCrucibleOptions;
+  }
 
   if (result1 && result2) {
     ChatMessage.create({
