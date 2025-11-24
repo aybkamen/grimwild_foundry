@@ -6,11 +6,27 @@ img: icons/svg/dice-target.svg
 scope: global
 command: >-
   // Macro para tirar el Crisol del GM (dos tablas) y mostrar el resultado
+  // Acepta parametros opcionales (posicionales u objeto): table1Name, table2Name, compendiumName, title
 
 
-  const compendiumName = "grimwild-action.crucibles";
-  const rolltable1Name = "Crisol del GM 1";
-  const rolltable2Name = "Crisol del GM 2";
+  const macroArgs = typeof args !== "undefined" ? args : [];
+  const esObjetoOpciones = macroArgs[0] && typeof macroArgs[0] === "object" && !Array.isArray(macroArgs[0]);
+  const opciones = esObjetoOpciones ? macroArgs[0] : {};
+
+  const rolltable1Name =
+    opciones.table1Name ?? opciones.table1 ?? (!esObjetoOpciones ? macroArgs[0] : undefined) ?? "Crisol del GM 1";
+
+  const rolltable2Name =
+    opciones.table2Name ?? opciones.table2 ?? (!esObjetoOpciones ? macroArgs[1] : undefined) ?? "Crisol del GM 2";
+
+  const compendiumName =
+    opciones.compendiumName ??
+    opciones.compendium ??
+    (!esObjetoOpciones ? macroArgs[2] : undefined) ??
+    "grimwild-action.crucibles";
+
+  const tituloCrisol =
+    opciones.title ?? opciones.name ?? opciones.titulo ?? (!esObjetoOpciones ? macroArgs[3] : undefined) ?? "Crisol del GM";
 
 
   async function rollTable(compendiumName, tableName) {
@@ -44,7 +60,7 @@ command: >-
 
   if (result1 && result2) {
     ChatMessage.create({
-      content: `<b>Crisol del GM</b><br><i>Elige dos y combínalos</i><br><b>${result2}</b><br><b>${result1}</b>`
+      content: `<b>${tituloCrisol}</b><br><i>Elige dos y combinalos</i><br><b>${result2}</b><br><b>${result1}</b>`
     });
   }
 folder: null

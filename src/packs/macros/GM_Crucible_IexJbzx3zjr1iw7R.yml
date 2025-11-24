@@ -6,18 +6,26 @@ img: icons/svg/dice-target.svg
 scope: global
 command: >-
   // Macro to roll two different rolltables from a compendium called "crucibles"
+  // Accepts optional params (positional or object): table1Name, table2Name, compendiumName, title
 
 
-  // Define the compendium and the rolltable names
+  const macroArgs = typeof args !== "undefined" ? args : [];
+  const isOptionsObject = macroArgs[0] && typeof macroArgs[0] === "object" && !Array.isArray(macroArgs[0]);
+  const options = isOptionsObject ? macroArgs[0] : {};
 
-  const compendiumName = "grimwild-action.crucibles"; // Adjust to the correct
-  namespace for your system
+  const rolltable1Name =
+    options.table1Name ?? options.table1 ?? (!isOptionsObject ? macroArgs[0] : undefined) ?? "GM Crucible 1";
 
-  const rolltable1Name = "GM Crucible 1"; // Replace with the name of the first
-  rolltable
+  const rolltable2Name =
+    options.table2Name ?? options.table2 ?? (!isOptionsObject ? macroArgs[1] : undefined) ?? "GM Crucible 2";
 
-  const rolltable2Name = "GM Crucible 2"; // Replace with the name of the second
-  rolltable
+  const compendiumName =
+    options.compendiumName ??
+    options.compendium ??
+    (!isOptionsObject ? macroArgs[2] : undefined) ??
+    "grimwild-action.crucibles"; // Adjust to the correct namespace for your system
+
+  const crucibleTitle = options.title ?? options.name ?? (!isOptionsObject ? macroArgs[3] : undefined) ?? "GM Crucible";
 
 
   // Function to roll a table by name
@@ -61,13 +69,13 @@ command: >-
   // Roll both tables
 
   const result1 = await rollTable(compendiumName, rolltable1Name);
-
   const result2 = await rollTable(compendiumName, rolltable2Name);
 
-  ChatMessage.create({
-    content: `<b>GM Crucible</b><br><i>Pick two and smash them together</i><br>
-    <b>${result1}</b><br><b>${result2}</b>`
-  });
+  if (result1 && result2) {
+    ChatMessage.create({
+      content: `<b>${crucibleTitle}</b><br><i>Pick two and smash them together</i><br><b>${result1}</b><br><b>${result2}</b>`
+    });
+  }
 folder: null
 sort: 0
 ownership:
