@@ -5,20 +5,12 @@ author: Dl5Tvf37OuEHwdAh
 img: icons/svg/dice-target.svg
 scope: global
 command: >-
-  // Dialogo para elegir un Crisol y ejecutar la macro "GM Crucible" con los parametros adecuados
+  // Dialogo para elegir un Crisol y ejecutar la macro "Crisol del GM" con los parametros adecuados
 
-  const gmMacroName = "GM Crucible";
+  const gmMacroName = "Crisol del GM";
 
   const crucibles = [
-    { id: "gm-en", label: "GM Crucible (EN)", table1: "GM Crucible 1", table2: "GM Crucible 2", title: "GM Crucible", compendium: "grimwild-action.crucibles" },
-    { id: "dangers-en", label: "Dangers Crucible", table1: "Dangers Crucible 1", table2: "Dangers Crucible 2", title: "Dangers Crucible", compendium: "grimwild-action.crucibles" },
-    { id: "building-en", label: "Building Crucible", table1: "Building Crucible 1", table2: "Building Crucible 2", title: "Building Crucible", compendium: "grimwild-action.crucibles" },
-    { id: "barrier-en", label: "Barrier Crucible", table1: "Barrier Crucible 1", table2: "Barrier Crucible 2", title: "Barrier Crucible", compendium: "grimwild-action.crucibles" },
-    { id: "sites-en", label: "Sites Crucible", table1: "Sites Crucible 1", table2: "Sites Crucible 2", title: "Sites Crucible", compendium: "grimwild-action.crucibles" },
-    { id: "settlement-en", label: "Settlement Crucible", table1: "Settlement Crucible 1", table2: "Settlement Crucible 2", title: "Settlement Crucible", compendium: "grimwild-action.crucibles" },
-    { id: "factions-en", label: "Factions Crucible", table1: "Factions Crucible 1", table2: "Factions Crucible 2", title: "Factions Crucible", compendium: "grimwild-action.crucibles" },
-    { id: "curiosities-en", label: "Curiosities Crucible", table1: "Curiosities Crucible 1", table2: "Curiosities Crucible 2", title: "Curiosities Crucible", compendium: "grimwild-action.crucibles" },
-    { id: "gm-es", label: "Crisol del GM (ES)", table1: "Crisol del GM 1", table2: "Crisol del GM 2", title: "Crisol del GM", compendium: "grimwild-action.crucibles" },
+    { id: "gm-es", label: "Crisol del GM", table1: "Crisol del GM 1", table2: "Crisol del GM 2", title: "Crisol del GM", compendium: "grimwild-action.crucibles" },
     { id: "peligros-es", label: "Crisol de Peligros", table1: "Crisol de Peligros 1", table2: "Crisol de Peligros 2", title: "Crisol de Peligros", compendium: "grimwild-action.crucibles" },
     { id: "sitios-es", label: "Crisol de Sitios", table1: "Crisol de Sitios 1", table2: "Crisol de Sitios 2", title: "Crisol de Sitios", compendium: "grimwild-action.crucibles" },
     { id: "asentamientos-es", label: "Crisol de Asentamientos", table1: "Crisol de Asentamientos 1", table2: "Crisol de Asentamientos 2", title: "Crisol de Asentamientos", compendium: "grimwild-action.crucibles" },
