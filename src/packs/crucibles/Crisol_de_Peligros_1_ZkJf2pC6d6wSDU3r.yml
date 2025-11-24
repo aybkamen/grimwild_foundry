@@ -1,0 +1,817 @@
+name: Crisol de Peligros 1
+img: icons/svg/d20-grey.svg
+description: <p>Tira esto junto con Crisol de Peligros 2, combínalos e interpreta.</p>
+results:
+  - type: text
+    weight: 1
+    range:
+      - 1
+      - 1
+    drawn: false
+    _id: Rg5BvLwNnQ1m2oA9
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Salvaje
+    name: ''
+    _key: '!tables.results!ZkJf2pC6d6wSDU3r.Rg5BvLwNnQ1m2oA9'
+  - type: text
+    weight: 1
+    range:
+      - 2
+      - 2
+    drawn: false
+    _id: Qk2cJf7Sd9e0TzLm
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Maldito
+    name: ''
+    _key: '!tables.results!ZkJf2pC6d6wSDU3r.Qk2cJf7Sd9e0TzLm'
+  - type: text
+    weight: 1
+    range:
+      - 3
+      - 3
+    drawn: false
+    _id: Hx7ZpBf8Vy1RtWc4
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Enfurecido
+    name: ''
+    _key: '!tables.results!ZkJf2pC6d6wSDU3r.Hx7ZpBf8Vy1RtWc4'
+  - type: text
+    weight: 1
+    range:
+      - 4
+      - 4
+    drawn: false
+    _id: S3nVd9yQm4Bt1gKx
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Oculto
+    name: ''
+    _key: '!tables.results!ZkJf2pC6d6wSDU3r.S3nVd9yQm4Bt1gKx'
+  - type: text
+    weight: 1
+    range:
+      - 5
+      - 5
+    drawn: false
+    _id: e0KfWw2Hs9yGqU1p
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Venenoso
+    name: ''
+    _key: '!tables.results!ZkJf2pC6d6wSDU3r.e0KfWw2Hs9yGqU1p'
+  - type: text
+    weight: 1
+    range:
+      - 6
+      - 6
+    drawn: false
+    _id: Mz8eJk2h0SqL5wBr
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Implacable
+    name: ''
+    _key: '!tables.results!ZkJf2pC6d6wSDU3r.Mz8eJk2h0SqL5wBr'
+  - type: text
+    weight: 1
+    range:
+      - 7
+      - 7
+    drawn: false
+    _id: pG3RkLb1sYw7dX9q
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Inmundo
+    name: ''
+    _key: '!tables.results!ZkJf2pC6d6wSDU3r.pG3RkLb1sYw7dX9q'
+  - type: text
+    weight: 1
+    range:
+      - 8
+      - 8
+    drawn: false
+    _id: bV4uYg7qD1tP0WJc
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Embrujado
+    name: ''
+    _key: '!tables.results!ZkJf2pC6d6wSDU3r.bV4uYg7qD1tP0WJc'
+  - type: text
+    weight: 1
+    range:
+      - 9
+      - 9
+    drawn: false
+    _id: Yj5Frx8Lq2zCv7Nm
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Caótico
+    name: ''
+    _key: '!tables.results!ZkJf2pC6d6wSDU3r.Yj5Frx8Lq2zCv7Nm'
+  - type: text
+    weight: 1
+    range:
+      - 10
+      - 10
+    drawn: false
+    _id: Vc0XyL6oPq7nSf5H
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Sombrío
+    name: ''
+    _key: '!tables.results!ZkJf2pC6d6wSDU3r.Vc0XyL6oPq7nSf5H'
+  - type: text
+    weight: 1
+    range:
+      - 11
+      - 11
+    drawn: false
+    _id: Wp6sNz1vKf5m3Rz9
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Prohibido
+    name: ''
+    _key: '!tables.results!ZkJf2pC6d6wSDU3r.Wp6sNz1vKf5m3Rz9'
+  - type: text
+    weight: 1
+    range:
+      - 12
+      - 12
+    drawn: false
+    _id: mD2oZk7Yj1Pf9qSx
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Feral
+    name: ''
+    _key: '!tables.results!ZkJf2pC6d6wSDU3r.mD2oZk7Yj1Pf9qSx'
+  - type: text
+    weight: 1
+    range:
+      - 13
+      - 13
+    drawn: false
+    _id: cN9yUk5hL3tV8pQw
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Vil
+    name: ''
+    _key: '!tables.results!ZkJf2pC6d6wSDU3r.cN9yUk5hL3tV8pQw'
+  - type: text
+    weight: 1
+    range:
+      - 14
+      - 14
+    drawn: false
+    _id: gE4sHp1mVx8QzR2k
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Corrupto
+    name: ''
+    _key: '!tables.results!ZkJf2pC6d6wSDU3r.gE4sHp1mVx8QzR2k'
+  - type: text
+    weight: 1
+    range:
+      - 15
+      - 15
+    drawn: false
+    _id: aJ0rPq3nL5bV6yTx
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Enloquecedor
+    name: ''
+    _key: '!tables.results!ZkJf2pC6d6wSDU3r.aJ0rPq3nL5bV6yTx'
+  - type: text
+    weight: 1
+    range:
+      - 16
+      - 16
+    drawn: false
+    _id: hK7mQw5eZx4uDf2p
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Oscurecido
+    name: ''
+    _key: '!tables.results!ZkJf2pC6d6wSDU3r.hK7mQw5eZx4uDf2p'
+  - type: text
+    weight: 1
+    range:
+      - 17
+      - 17
+    drawn: false
+    _id: Ls6JvN3cQw2fRk9t
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Sediento de sangre
+    name: ''
+    _key: '!tables.results!ZkJf2pC6d6wSDU3r.Ls6JvN3cQw2fRk9t'
+  - type: text
+    weight: 1
+    range:
+      - 18
+      - 18
+    drawn: false
+    _id: Zp3XoV7rBq6dCf0h
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Antiguo
+    name: ''
+    _key: '!tables.results!ZkJf2pC6d6wSDU3r.Zp3XoV7rBq6dCf0h'
+  - type: text
+    weight: 1
+    range:
+      - 19
+      - 19
+    drawn: false
+    _id: tR1mKs5fEw8yVb4n
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Retorcido
+    name: ''
+    _key: '!tables.results!ZkJf2pC6d6wSDU3r.tR1mKs5fEw8yVb4n'
+  - type: text
+    weight: 1
+    range:
+      - 20
+      - 20
+    drawn: false
+    _id: fM8eQk2bU1zLs5wY
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Temerario
+    name: ''
+    _key: '!tables.results!ZkJf2pC6d6wSDU3r.fM8eQk2bU1zLs5wY'
+  - type: text
+    weight: 1
+    range:
+      - 21
+      - 21
+    drawn: false
+    _id: jS4kWn6dHc2pVr0m
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Brutal
+    name: ''
+    _key: '!tables.results!ZkJf2pC6d6wSDU3r.jS4kWn6dHc2pVr0m'
+  - type: text
+    weight: 1
+    range:
+      - 22
+      - 22
+    drawn: false
+    _id: qN5eTf3bYp7rLk9s
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Acechante
+    name: ''
+    _key: '!tables.results!ZkJf2pC6d6wSDU3r.qN5eTf3bYp7rLk9s'
+  - type: text
+    weight: 1
+    range:
+      - 23
+      - 23
+    drawn: false
+    _id: Xk9pGm2sVt4yJc8n
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Olvidado
+    name: ''
+    _key: '!tables.results!ZkJf2pC6d6wSDU3r.Xk9pGm2sVt4yJc8n'
+  - type: text
+    weight: 1
+    range:
+      - 24
+      - 24
+    drawn: false
+    _id: Bp3yLh7qSw6rUo1v
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Atrapante
+    name: ''
+    _key: '!tables.results!ZkJf2pC6d6wSDU3r.Bp3yLh7qSw6rUo1v'
+  - type: text
+    weight: 1
+    range:
+      - 25
+      - 25
+    drawn: false
+    _id: Uz4tWn1rKg8sQf0e
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Aullante
+    name: ''
+    _key: '!tables.results!ZkJf2pC6d6wSDU3r.Uz4tWn1rKg8sQf0e'
+  - type: text
+    weight: 1
+    range:
+      - 26
+      - 26
+    drawn: false
+    _id: nD8fRq6vLp5kGt2s
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Hambriento
+    name: ''
+    _key: '!tables.results!ZkJf2pC6d6wSDU3r.nD8fRq6vLp5kGt2s'
+  - type: text
+    weight: 1
+    range:
+      - 27
+      - 27
+    drawn: false
+    _id: Jg1eHk7qVw4sXf9d
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Desenfrenado
+    name: ''
+    _key: '!tables.results!ZkJf2pC6d6wSDU3r.Jg1eHk7qVw4sXf9d'
+  - type: text
+    weight: 1
+    range:
+      - 28
+      - 28
+    drawn: false
+    _id: Fm4pCv0sRk9tLh2w
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Inquieto
+    name: ''
+    _key: '!tables.results!ZkJf2pC6d6wSDU3r.Fm4pCv0sRk9tLh2w'
+  - type: text
+    weight: 1
+    range:
+      - 29
+      - 29
+    drawn: false
+    _id: dL9uSx3pKf7nWv1g
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Hirviendo
+    name: ''
+    _key: '!tables.results!ZkJf2pC6d6wSDU3r.dL9uSx3pKf7nWv1g'
+  - type: text
+    weight: 1
+    range:
+      - 30
+      - 30
+    drawn: false
+    _id: oB2mYh5sPg8rLq0n
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Malévolo
+    name: ''
+    _key: '!tables.results!ZkJf2pC6d6wSDU3r.oB2mYh5sPg8rLq0n'
+  - type: text
+    weight: 1
+    range:
+      - 31
+      - 31
+    drawn: false
+    _id: iE6cVq9uLs3bWj4t
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Serpenteante
+    name: ''
+    _key: '!tables.results!ZkJf2pC6d6wSDU3r.iE6cVq9uLs3bWj4t'
+  - type: text
+    weight: 1
+    range:
+      - 32
+      - 32
+    drawn: false
+    _id: yA7nFr2sXc5pLk9h
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Chillón
+    name: ''
+    _key: '!tables.results!ZkJf2pC6d6wSDU3r.yA7nFr2sXc5pLk9h'
+  - type: text
+    weight: 1
+    range:
+      - 33
+      - 33
+    drawn: false
+    _id: uP4rKd8bGh2qMw7v
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Cruel
+    name: ''
+    _key: '!tables.results!ZkJf2pC6d6wSDU3r.uP4rKd8bGh2qMw7v'
+  - type: text
+    weight: 1
+    range:
+      - 34
+      - 34
+    drawn: false
+    _id: kH5tWc1mNs9vRp3y
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Silencioso
+    name: ''
+    _key: '!tables.results!ZkJf2pC6d6wSDU3r.kH5tWc1mNs9vRp3y'
+  - type: text
+    weight: 1
+    range:
+      - 35
+      - 35
+    drawn: false
+    _id: zN6yBg4tQf2mLp8k
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Acechador
+    name: ''
+    _key: '!tables.results!ZkJf2pC6d6wSDU3r.zN6yBg4tQf2mLp8k'
+  - type: text
+    weight: 1
+    range:
+      - 36
+      - 36
+    drawn: false
+    _id: sC8qVn1pLw5kFt0d
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Violento
+    name: ''
+    _key: '!tables.results!ZkJf2pC6d6wSDU3r.sC8qVn1pLw5kFt0d'
+replacement: true
+displayRoll: false
+folder: null
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '13.345'
+  systemId: grimwild
+  systemVersion: 0.1.0
+  createdTime: 1738000003000
+  modifiedTime: 1738000003000
+  lastModifiedBy: SzSkbfMxPopuu3Ec
+  exportSource: null
+formula: 1d36
+_id: ZkJf2pC6d6wSDU3r
+sort: 0
+ownership:
+  default: 0
+  SzSkbfMxPopuu3Ec: 3
+_key: '!tables!ZkJf2pC6d6wSDU3r'

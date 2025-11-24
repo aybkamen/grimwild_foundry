@@ -1,0 +1,817 @@
+name: Dangers Crucible 2
+img: icons/svg/d20-grey.svg
+description: <p>Roll this along with Dangers Crucible 1, smash them together and interpret!</p>
+results:
+  - type: text
+    weight: 1
+    range:
+      - 1
+      - 1
+    drawn: false
+    _id: GvN3sdbd1j3qV8mL
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Beasts
+    name: ''
+    _key: '!tables.results!YujSe4W0w42vYuxM.GvN3sdbd1j3qV8mL'
+  - type: text
+    weight: 1
+    range:
+      - 2
+      - 2
+    drawn: false
+    _id: Av5O9xtFmi5b3zWb
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Spirits
+    name: ''
+    _key: '!tables.results!YujSe4W0w42vYuxM.Av5O9xtFmi5b3zWb'
+  - type: text
+    weight: 1
+    range:
+      - 3
+      - 3
+    drawn: false
+    _id: tib0McQ4dX4gwudG
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Caverns
+    name: ''
+    _key: '!tables.results!YujSe4W0w42vYuxM.tib0McQ4dX4gwudG'
+  - type: text
+    weight: 1
+    range:
+      - 4
+      - 4
+    drawn: false
+    _id: mlV2h0vIM1s16Yor
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Ruins
+    name: ''
+    _key: '!tables.results!YujSe4W0w42vYuxM.mlV2h0vIM1s16Yor'
+  - type: text
+    weight: 1
+    range:
+      - 5
+      - 5
+    drawn: false
+    _id: iAgs1F2L3rvYI5yp
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Storm
+    name: ''
+    _key: '!tables.results!YujSe4W0w42vYuxM.iAgs1F2L3rvYI5yp'
+  - type: text
+    weight: 1
+    range:
+      - 6
+      - 6
+    drawn: false
+    _id: V3qsdb1ElpG3YUZ0
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Woods
+    name: ''
+    _key: '!tables.results!YujSe4W0w42vYuxM.V3qsdb1ElpG3YUZ0'
+  - type: text
+    weight: 1
+    range:
+      - 7
+      - 7
+    drawn: false
+    _id: rF6pGJg1f2z0K5hX
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Monsters
+    name: ''
+    _key: '!tables.results!YujSe4W0w42vYuxM.rF6pGJg1f2z0K5hX'
+  - type: text
+    weight: 1
+    range:
+      - 8
+      - 8
+    drawn: false
+    _id: H5y7XMU6SRxFyTrl
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Bog
+    name: ''
+    _key: '!tables.results!YujSe4W0w42vYuxM.H5y7XMU6SRxFyTrl'
+  - type: text
+    weight: 1
+    range:
+      - 9
+      - 9
+    drawn: false
+    _id: nFTkB8hY7H9aK2Sb
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Abyss
+    name: ''
+    _key: '!tables.results!YujSe4W0w42vYuxM.nFTkB8hY7H9aK2Sb'
+  - type: text
+    weight: 1
+    range:
+      - 10
+      - 10
+    drawn: false
+    _id: wfsopQ5G8R8lZq5b
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Wraiths
+    name: ''
+    _key: '!tables.results!YujSe4W0w42vYuxM.wfsopQ5G8R8lZq5b'
+  - type: text
+    weight: 1
+    range:
+      - 11
+      - 11
+    drawn: false
+    _id: TwQkQfl5p1shp33Y
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Marsh
+    name: ''
+    _key: '!tables.results!YujSe4W0w42vYuxM.TwQkQfl5p1shp33Y'
+  - type: text
+    weight: 1
+    range:
+      - 12
+      - 12
+    drawn: false
+    _id: F1L8wDt3uZtFzLKQ
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Swarm
+    name: ''
+    _key: '!tables.results!YujSe4W0w42vYuxM.F1L8wDt3uZtFzLKQ'
+  - type: text
+    weight: 1
+    range:
+      - 13
+      - 13
+    drawn: false
+    _id: mJ4K4A5K3W3mJmZq
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Brigands
+    name: ''
+    _key: '!tables.results!YujSe4W0w42vYuxM.mJ4K4A5K3W3mJmZq'
+  - type: text
+    weight: 1
+    range:
+      - 14
+      - 14
+    drawn: false
+    _id: YChJ2UiVduOgiZgV
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Cults
+    name: ''
+    _key: '!tables.results!YujSe4W0w42vYuxM.YChJ2UiVduOgiZgV'
+  - type: text
+    weight: 1
+    range:
+      - 15
+      - 15
+    drawn: false
+    _id: cZ29ts6UrtV7RPIo
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Behemoth
+    name: ''
+    _key: '!tables.results!YujSe4W0w42vYuxM.cZ29ts6UrtV7RPIo'
+  - type: text
+    weight: 1
+    range:
+      - 16
+      - 16
+    drawn: false
+    _id: F5N4L1rPj0tX5Wbg
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Crevice
+    name: ''
+    _key: '!tables.results!YujSe4W0w42vYuxM.F5N4L1rPj0tX5Wbg'
+  - type: text
+    weight: 1
+    range:
+      - 17
+      - 17
+    drawn: false
+    _id: F2p3dYkY3yXDzrT7
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Gorge
+    name: ''
+    _key: '!tables.results!YujSe4W0w42vYuxM.F2p3dYkY3yXDzrT7'
+  - type: text
+    weight: 1
+    range:
+      - 18
+      - 18
+    drawn: false
+    _id: qe4wpW4Pc2x0dxG1
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Mire
+    name: ''
+    _key: '!tables.results!YujSe4W0w42vYuxM.qe4wpW4Pc2x0dxG1'
+  - type: text
+    weight: 1
+    range:
+      - 19
+      - 19
+    drawn: false
+    _id: x1iRM1JcEg4SFQTX
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Shadows
+    name: ''
+    _key: '!tables.results!YujSe4W0w42vYuxM.x1iRM1JcEg4SFQTX'
+  - type: text
+    weight: 1
+    range:
+      - 20
+      - 20
+    drawn: false
+    _id: Uj2gaSY4AJtTY0U3
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Crypt
+    name: ''
+    _key: '!tables.results!YujSe4W0w42vYuxM.Uj2gaSY4AJtTY0U3'
+  - type: text
+    weight: 1
+    range:
+      - 21
+      - 21
+    drawn: false
+    _id: kU6TBu4nFhQkR5hr
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Fiends
+    name: ''
+    _key: '!tables.results!YujSe4W0w42vYuxM.kU6TBu4nFhQkR5hr'
+  - type: text
+    weight: 1
+    range:
+      - 22
+      - 22
+    drawn: false
+    _id: t3uW8SAxW3d7MJ7i
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Wilds
+    name: ''
+    _key: '!tables.results!YujSe4W0w42vYuxM.t3uW8SAxW3d7MJ7i'
+  - type: text
+    weight: 1
+    range:
+      - 23
+      - 23
+    drawn: false
+    _id: YhYz9ZR8jhWg4frH
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Tangle
+    name: ''
+    _key: '!tables.results!YujSe4W0w42vYuxM.YhYz9ZR8jhWg4frH'
+  - type: text
+    weight: 1
+    range:
+      - 24
+      - 24
+    drawn: false
+    _id: OKSXS7vF5kuK2MiT
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Mists
+    name: ''
+    _key: '!tables.results!YujSe4W0w42vYuxM.OKSXS7vF5kuK2MiT'
+  - type: text
+    weight: 1
+    range:
+      - 25
+      - 25
+    drawn: false
+    _id: m0bey9Cq8yD0Grzp
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Specters
+    name: ''
+    _key: '!tables.results!YujSe4W0w42vYuxM.m0bey9Cq8yD0Grzp'
+  - type: text
+    weight: 1
+    range:
+      - 26
+      - 26
+    drawn: false
+    _id: nOq4FboM5QaJ0ckn
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Forest
+    name: ''
+    _key: '!tables.results!YujSe4W0w42vYuxM.nOq4FboM5QaJ0ckn'
+  - type: text
+    weight: 1
+    range:
+      - 27
+      - 27
+    drawn: false
+    _id: pF6Zqjvzsbv3XssS
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Serpents
+    name: ''
+    _key: '!tables.results!YujSe4W0w42vYuxM.pF6Zqjvzsbv3XssS'
+  - type: text
+    weight: 1
+    range:
+      - 28
+      - 28
+    drawn: false
+    _id: b9iAuK3Mt7z4Qm6F
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Graveyard
+    name: ''
+    _key: '!tables.results!YujSe4W0w42vYuxM.b9iAuK3Mt7z4Qm6F'
+  - type: text
+    weight: 1
+    range:
+      - 29
+      - 29
+    drawn: false
+    _id: pF2dWZ4e1QCh6uZm
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Depths
+    name: ''
+    _key: '!tables.results!YujSe4W0w42vYuxM.pF2dWZ4e1QCh6uZm'
+  - type: text
+    weight: 1
+    range:
+      - 30
+      - 30
+    drawn: false
+    _id: WJqGb6gGYzvpTflB
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Crags
+    name: ''
+    _key: '!tables.results!YujSe4W0w42vYuxM.WJqGb6gGYzvpTflB'
+  - type: text
+    weight: 1
+    range:
+      - 31
+      - 31
+    drawn: false
+    _id: XlRHlV3j3yRMuus3
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Demons
+    name: ''
+    _key: '!tables.results!YujSe4W0w42vYuxM.XlRHlV3j3yRMuus3'
+  - type: text
+    weight: 1
+    range:
+      - 32
+      - 32
+    drawn: false
+    _id: as3f0LR6x0t5KpFW
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Cliffs
+    name: ''
+    _key: '!tables.results!YujSe4W0w42vYuxM.as3f0LR6x0t5KpFW'
+  - type: text
+    weight: 1
+    range:
+      - 33
+      - 33
+    drawn: false
+    _id: uPVVd9D3TZGxfAmN
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Warriors
+    name: ''
+    _key: '!tables.results!YujSe4W0w42vYuxM.uPVVd9D3TZGxfAmN'
+  - type: text
+    weight: 1
+    range:
+      - 34
+      - 34
+    drawn: false
+    _id: p9QnK1R3CicHX2TB
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Shades
+    name: ''
+    _key: '!tables.results!YujSe4W0w42vYuxM.p9QnK1R3CicHX2TB'
+  - type: text
+    weight: 1
+    range:
+      - 35
+      - 35
+    drawn: false
+    _id: ZzvO6Jdb0A5MNjP6
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Pathways
+    name: ''
+    _key: '!tables.results!YujSe4W0w42vYuxM.ZzvO6Jdb0A5MNjP6'
+  - type: text
+    weight: 1
+    range:
+      - 36
+      - 36
+    drawn: false
+    _id: aXzv3cKpnxU1GUh5
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Fog
+    name: ''
+    _key: '!tables.results!YujSe4W0w42vYuxM.aXzv3cKpnxU1GUh5'
+replacement: true
+displayRoll: false
+folder: null
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '13.345'
+  systemId: grimwild
+  systemVersion: 0.1.0
+  createdTime: 1738000001000
+  modifiedTime: 1738000001000
+  lastModifiedBy: SzSkbfMxPopuu3Ec
+  exportSource: null
+formula: 1d36
+_id: YujSe4W0w42vYuxM
+sort: 0
+ownership:
+  default: 0
+  SzSkbfMxPopuu3Ec: 3
+_key: '!tables!YujSe4W0w42vYuxM'

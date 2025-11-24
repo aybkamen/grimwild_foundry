@@ -1,0 +1,817 @@
+name: Crisol de Peligros 2
+img: icons/svg/d20-grey.svg
+description: <p>Tira esto junto con Crisol de Peligros 1, combínalos e interpreta.</p>
+results:
+  - type: text
+    weight: 1
+    range:
+      - 1
+      - 1
+    drawn: false
+    _id: qE5sVn1pLz6rJw8k
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Bestias
+    name: ''
+    _key: '!tables.results!pO6KJfz4mYCD6aF2.qE5sVn1pLz6rJw8k'
+  - type: text
+    weight: 1
+    range:
+      - 2
+      - 2
+    drawn: false
+    _id: yT4pHk7dFw2qLs9m
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Espíritus
+    name: ''
+    _key: '!tables.results!pO6KJfz4mYCD6aF2.yT4pHk7dFw2qLs9m'
+  - type: text
+    weight: 1
+    range:
+      - 3
+      - 3
+    drawn: false
+    _id: gR2mBk8vUx5cJq0n
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Cavernas
+    name: ''
+    _key: '!tables.results!pO6KJfz4mYCD6aF2.gR2mBk8vUx5cJq0n'
+  - type: text
+    weight: 1
+    range:
+      - 4
+      - 4
+    drawn: false
+    _id: hM9eLf1sPv3tWx6y
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Ruinas
+    name: ''
+    _key: '!tables.results!pO6KJfz4mYCD6aF2.hM9eLf1sPv3tWx6y'
+  - type: text
+    weight: 1
+    range:
+      - 5
+      - 5
+    drawn: false
+    _id: uC7qFv2pKx4sLn8t
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Tormenta
+    name: ''
+    _key: '!tables.results!pO6KJfz4mYCD6aF2.uC7qFv2pKx4sLn8t'
+  - type: text
+    weight: 1
+    range:
+      - 6
+      - 6
+    drawn: false
+    _id: oS1bYk6wGq5rMd9c
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Bosques
+    name: ''
+    _key: '!tables.results!pO6KJfz4mYCD6aF2.oS1bYk6wGq5rMd9c'
+  - type: text
+    weight: 1
+    range:
+      - 7
+      - 7
+    drawn: false
+    _id: iE3mVz9pLt4yHw7f
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Monstruos
+    name: ''
+    _key: '!tables.results!pO6KJfz4mYCD6aF2.iE3mVz9pLt4yHw7f'
+  - type: text
+    weight: 1
+    range:
+      - 8
+      - 8
+    drawn: false
+    _id: zL4yBk2rSp7qVj0m
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Pantano
+    name: ''
+    _key: '!tables.results!pO6KJfz4mYCD6aF2.zL4yBk2rSp7qVj0m'
+  - type: text
+    weight: 1
+    range:
+      - 9
+      - 9
+    drawn: false
+    _id: fN8eQg6vKx5tLp1s
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Abismo
+    name: ''
+    _key: '!tables.results!pO6KJfz4mYCD6aF2.fN8eQg6vKx5tLp1s'
+  - type: text
+    weight: 1
+    range:
+      - 10
+      - 10
+    drawn: false
+    _id: aP9rTn3bLs6qYw4k
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Apariciones
+    name: ''
+    _key: '!tables.results!pO6KJfz4mYCD6aF2.aP9rTn3bLs6qYw4k'
+  - type: text
+    weight: 1
+    range:
+      - 11
+      - 11
+    drawn: false
+    _id: vB1mYk5pGx8rQz2n
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Ciénaga
+    name: ''
+    _key: '!tables.results!pO6KJfz4mYCD6aF2.vB1mYk5pGx8rQz2n'
+  - type: text
+    weight: 1
+    range:
+      - 12
+      - 12
+    drawn: false
+    _id: sJ7dWc2nHp4tLu9q
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Enjambre
+    name: ''
+    _key: '!tables.results!pO6KJfz4mYCD6aF2.sJ7dWc2nHp4tLu9q'
+  - type: text
+    weight: 1
+    range:
+      - 13
+      - 13
+    drawn: false
+    _id: kD5sHp8rQx1mVf6y
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Bandidos
+    name: ''
+    _key: '!tables.results!pO6KJfz4mYCD6aF2.kD5sHp8rQx1mVf6y'
+  - type: text
+    weight: 1
+    range:
+      - 14
+      - 14
+    drawn: false
+    _id: mQ0rLk4vSw7pGj2t
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Cultos
+    name: ''
+    _key: '!tables.results!pO6KJfz4mYCD6aF2.mQ0rLk4vSw7pGj2t'
+  - type: text
+    weight: 1
+    range:
+      - 15
+      - 15
+    drawn: false
+    _id: Jb8fTs1pLw5qRy9c
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Coloso
+    name: ''
+    _key: '!tables.results!pO6KJfz4mYCD6aF2.Jb8fTs1pLw5qRy9c'
+  - type: text
+    weight: 1
+    range:
+      - 16
+      - 16
+    drawn: false
+    _id: dZ6qVk3sHy9mLf0w
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Grieta
+    name: ''
+    _key: '!tables.results!pO6KJfz4mYCD6aF2.dZ6qVk3sHy9mLf0w'
+  - type: text
+    weight: 1
+    range:
+      - 17
+      - 17
+    drawn: false
+    _id: bH4mXq8rPj2tWv6n
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Desfiladero
+    name: ''
+    _key: '!tables.results!pO6KJfz4mYCD6aF2.bH4mXq8rPj2tWv6n'
+  - type: text
+    weight: 1
+    range:
+      - 18
+      - 18
+    drawn: false
+    _id: pK1eGf7sLx5qNv0t
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Lodazal
+    name: ''
+    _key: '!tables.results!pO6KJfz4mYCD6aF2.pK1eGf7sLx5qNv0t'
+  - type: text
+    weight: 1
+    range:
+      - 19
+      - 19
+    drawn: false
+    _id: Lm9yJk5pQx3rSv7w
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Sombras
+    name: ''
+    _key: '!tables.results!pO6KJfz4mYCD6aF2.Lm9yJk5pQx3rSv7w'
+  - type: text
+    weight: 1
+    range:
+      - 20
+      - 20
+    drawn: false
+    _id: cP0nTq4sVx7lGb2r
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Cripta
+    name: ''
+    _key: '!tables.results!pO6KJfz4mYCD6aF2.cP0nTq4sVx7lGb2r'
+  - type: text
+    weight: 1
+    range:
+      - 21
+      - 21
+    drawn: false
+    _id: wR6bFy9nHq2mKp1d
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Engendros
+    name: ''
+    _key: '!tables.results!pO6KJfz4mYCD6aF2.wR6bFy9nHq2mKp1d'
+  - type: text
+    weight: 1
+    range:
+      - 22
+      - 22
+    drawn: false
+    _id: nA5yVx3pLs8qTd7w
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Yermos
+    name: ''
+    _key: '!tables.results!pO6KJfz4mYCD6aF2.nA5yVx3pLs8qTd7w'
+  - type: text
+    weight: 1
+    range:
+      - 23
+      - 23
+    drawn: false
+    _id: sF8cLm2rPv4tQk0e
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Maraña
+    name: ''
+    _key: '!tables.results!pO6KJfz4mYCD6aF2.sF8cLm2rPv4tQk0e'
+  - type: text
+    weight: 1
+    range:
+      - 24
+      - 24
+    drawn: false
+    _id: xE1pHv7sLw5qRz9d
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Brumas
+    name: ''
+    _key: '!tables.results!pO6KJfz4mYCD6aF2.xE1pHv7sLw5qRz9d'
+  - type: text
+    weight: 1
+    range:
+      - 25
+      - 25
+    drawn: false
+    _id: jZ3nCk5bGt8sLp2y
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Espectros
+    name: ''
+    _key: '!tables.results!pO6KJfz4mYCD6aF2.jZ3nCk5bGt8sLp2y'
+  - type: text
+    weight: 1
+    range:
+      - 26
+      - 26
+    drawn: false
+    _id: rU9fBk1pHq6mXv4t
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Selva
+    name: ''
+    _key: '!tables.results!pO6KJfz4mYCD6aF2.rU9fBk1pHq6mXv4t'
+  - type: text
+    weight: 1
+    range:
+      - 27
+      - 27
+    drawn: false
+    _id: lN6yMk3sPw4qGh8v
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Serpientes
+    name: ''
+    _key: '!tables.results!pO6KJfz4mYCD6aF2.lN6yMk3sPw4qGh8v'
+  - type: text
+    weight: 1
+    range:
+      - 28
+      - 28
+    drawn: false
+    _id: mG5pVr8nLk1tSy2q
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Cementerio
+    name: ''
+    _key: '!tables.results!pO6KJfz4mYCD6aF2.mG5pVr8nLk1tSy2q'
+  - type: text
+    weight: 1
+    range:
+      - 29
+      - 29
+    drawn: false
+    _id: aV8tCk2bRw5pLh0s
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Profundidades
+    name: ''
+    _key: '!tables.results!pO6KJfz4mYCD6aF2.aV8tCk2bRw5pLh0s'
+  - type: text
+    weight: 1
+    range:
+      - 30
+      - 30
+    drawn: false
+    _id: eQ1rLw6sHx9mTv3p
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Riscos
+    name: ''
+    _key: '!tables.results!pO6KJfz4mYCD6aF2.eQ1rLw6sHx9mTv3p'
+  - type: text
+    weight: 1
+    range:
+      - 31
+      - 31
+    drawn: false
+    _id: iS7dXk5pMw2qVg8n
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Demonios
+    name: ''
+    _key: '!tables.results!pO6KJfz4mYCD6aF2.iS7dXk5pMw2qVg8n'
+  - type: text
+    weight: 1
+    range:
+      - 32
+      - 32
+    drawn: false
+    _id: tC9bJm3sPw5rNy0q
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Acantilados
+    name: ''
+    _key: '!tables.results!pO6KJfz4mYCD6aF2.tC9bJm3sPw5rNy0q'
+  - type: text
+    weight: 1
+    range:
+      - 33
+      - 33
+    drawn: false
+    _id: oF6tWk1mLx8qRv4g
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Guerreros
+    name: ''
+    _key: '!tables.results!pO6KJfz4mYCD6aF2.oF6tWk1mLx8qRv4g'
+  - type: text
+    weight: 1
+    range:
+      - 34
+      - 34
+    drawn: false
+    _id: yM2cHq7sPv9tLb1n
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Ánimas
+    name: ''
+    _key: '!tables.results!pO6KJfz4mYCD6aF2.yM2cHq7sPv9tLb1n'
+  - type: text
+    weight: 1
+    range:
+      - 35
+      - 35
+    drawn: false
+    _id: pB4nLs6vGx1qTy8r
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Senderos
+    name: ''
+    _key: '!tables.results!pO6KJfz4mYCD6aF2.pB4nLs6vGx1qTy8r'
+  - type: text
+    weight: 1
+    range:
+      - 36
+      - 36
+    drawn: false
+    _id: eL9rWc3mKs7tQv0p
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Niebla
+    name: ''
+    _key: '!tables.results!pO6KJfz4mYCD6aF2.eL9rWc3mKs7tQv0p'
+replacement: true
+displayRoll: false
+folder: null
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '13.345'
+  systemId: grimwild
+  systemVersion: 0.1.0
+  createdTime: 1738000004000
+  modifiedTime: 1738000004000
+  lastModifiedBy: SzSkbfMxPopuu3Ec
+  exportSource: null
+formula: 1d36
+_id: pO6KJfz4mYCD6aF2
+sort: 0
+ownership:
+  default: 0
+  SzSkbfMxPopuu3Ec: 3
+_key: '!tables!pO6KJfz4mYCD6aF2'

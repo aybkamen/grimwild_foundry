@@ -10,7 +10,7 @@ command: >-
 
   // Define the compendium and the rolltable names
 
-  const compendiumName = "grimwild.crucibles"; // Adjust to the correct
+  const compendiumName = "grimwild-action.crucibles"; // Adjust to the correct
   namespace for your system
 
   const rolltable1Name = "GM Crucible 1"; // Replace with the name of the first
