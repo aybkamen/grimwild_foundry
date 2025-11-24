@@ -1,0 +1,817 @@
+name: Crisol del GM 2
+img: icons/svg/d20-grey.svg
+description: <p>Tira esto junto con Crisol del GM 1, combínalos e interpreta.</p>
+results:
+  - type: text
+    weight: 1
+    range:
+      - 1
+      - 1
+    drawn: false
+    _id: CEBJywMhbqBV4c9s
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Viaje
+    name: ''
+    _key: '!tables.results!GMEs2qW5rT8yU3x.CEBJywMhbqBV4c9s'
+  - type: text
+    weight: 1
+    range:
+      - 2
+      - 2
+    drawn: false
+    _id: VYTRLYtTx21yipSb
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Encrucijada - Temblor
+    name: ''
+    _key: '!tables.results!GMEs2qW5rT8yU3x.VYTRLYtTx21yipSb'
+  - type: text
+    weight: 1
+    range:
+      - 3
+      - 3
+    drawn: false
+    _id: q4eW3lw013lFXTHl
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Grieta - Santuario
+    name: ''
+    _key: '!tables.results!GMEs2qW5rT8yU3x.q4eW3lw013lFXTHl'
+  - type: text
+    weight: 1
+    range:
+      - 4
+      - 4
+    drawn: false
+    _id: CxWslcW3rbnTLeKe
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Plan - Cima
+    name: ''
+    _key: '!tables.results!GMEs2qW5rT8yU3x.CxWslcW3rbnTLeKe'
+  - type: text
+    weight: 1
+    range:
+      - 5
+      - 5
+    drawn: false
+    _id: 2Q2DnRDW6XNNTT0p
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Nexo - Territorio
+    name: ''
+    _key: '!tables.results!GMEs2qW5rT8yU3x.2Q2DnRDW6XNNTT0p'
+  - type: text
+    weight: 1
+    range:
+      - 6
+      - 6
+    drawn: false
+    _id: aVMyQ3YGfhfUkOCZ
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Equipo - Dilema
+    name: ''
+    _key: '!tables.results!GMEs2qW5rT8yU3x.aVMyQ3YGfhfUkOCZ'
+  - type: text
+    weight: 1
+    range:
+      - 7
+      - 7
+    drawn: false
+    _id: smXu944SXTwbfIsQ
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Temblor - Viaje
+    name: ''
+    _key: '!tables.results!GMEs2qW5rT8yU3x.smXu944SXTwbfIsQ'
+  - type: text
+    weight: 1
+    range:
+      - 8
+      - 8
+    drawn: false
+    _id: wHYJIDjCTgjeTzH1
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Escombros
+    name: ''
+    _key: '!tables.results!GMEs2qW5rT8yU3x.wHYJIDjCTgjeTzH1'
+  - type: text
+    weight: 1
+    range:
+      - 9
+      - 9
+    drawn: false
+    _id: ivdSUrqOYbEEWCVU
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Símbolo - Traición
+    name: ''
+    _key: '!tables.results!GMEs2qW5rT8yU3x.ivdSUrqOYbEEWCVU'
+  - type: text
+    weight: 1
+    range:
+      - 10
+      - 10
+    drawn: false
+    _id: Y2q7hnfHcSCpBLCe
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Cicatriz - Umbral
+    name: ''
+    _key: '!tables.results!GMEs2qW5rT8yU3x.Y2q7hnfHcSCpBLCe'
+  - type: text
+    weight: 1
+    range:
+      - 11
+      - 11
+    drawn: false
+    _id: llHCqfYbcSUyAdYA
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Archivo - Rumor
+    name: ''
+    _key: '!tables.results!GMEs2qW5rT8yU3x.llHCqfYbcSUyAdYA'
+  - type: text
+    weight: 1
+    range:
+      - 12
+      - 12
+    drawn: false
+    _id: KWE10CKStlMNcGRo
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Abismo - Tradición
+    name: ''
+    _key: '!tables.results!GMEs2qW5rT8yU3x.KWE10CKStlMNcGRo'
+  - type: text
+    weight: 1
+    range:
+      - 13
+      - 13
+    drawn: false
+    _id: RSJiyKuqinvMTqe8
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Santuario - Grieta
+    name: ''
+    _key: '!tables.results!GMEs2qW5rT8yU3x.RSJiyKuqinvMTqe8'
+  - type: text
+    weight: 1
+    range:
+      - 14
+      - 14
+    drawn: false
+    _id: TszRjxdFidhVQTYd
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Traición - Símbolo
+    name: ''
+    _key: '!tables.results!GMEs2qW5rT8yU3x.TszRjxdFidhVQTYd'
+  - type: text
+    weight: 1
+    range:
+      - 15
+      - 15
+    drawn: false
+    _id: F2Cp6MYZb4XKz7U2
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Sendero
+    name: ''
+    _key: '!tables.results!GMEs2qW5rT8yU3x.F2Cp6MYZb4XKz7U2'
+  - type: text
+    weight: 1
+    range:
+      - 16
+      - 16
+    drawn: false
+    _id: djfGrjsDaXRL8A3Q
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Páramo - Linde
+    name: ''
+    _key: '!tables.results!GMEs2qW5rT8yU3x.djfGrjsDaXRL8A3Q'
+  - type: text
+    weight: 1
+    range:
+      - 17
+      - 17
+    drawn: false
+    _id: xYf0dQ4yGuhE8sHe
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Ayuda - Punto muerto
+    name: ''
+    _key: '!tables.results!GMEs2qW5rT8yU3x.xYf0dQ4yGuhE8sHe'
+  - type: text
+    weight: 1
+    range:
+      - 18
+      - 18
+    drawn: false
+    _id: 1uIfjoYcvXhO7Q3U
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Misterio - Bote
+    name: ''
+    _key: '!tables.results!GMEs2qW5rT8yU3x.1uIfjoYcvXhO7Q3U'
+  - type: text
+    weight: 1
+    range:
+      - 19
+      - 19
+    drawn: false
+    _id: i3B6LxTT6rjeTjoB
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Cima - Plan
+    name: ''
+    _key: '!tables.results!GMEs2qW5rT8yU3x.i3B6LxTT6rjeTjoB'
+  - type: text
+    weight: 1
+    range:
+      - 20
+      - 20
+    drawn: false
+    _id: jATzyF1aXfDFJrPj
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Umbral - Cicatriz
+    name: ''
+    _key: '!tables.results!GMEs2qW5rT8yU3x.jATzyF1aXfDFJrPj'
+  - type: text
+    weight: 1
+    range:
+      - 21
+      - 21
+    drawn: false
+    _id: iAybrTlwP2Ec0Id4
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Linde - Páramo
+    name: ''
+    _key: '!tables.results!GMEs2qW5rT8yU3x.iAybrTlwP2Ec0Id4'
+  - type: text
+    weight: 1
+    range:
+      - 22
+      - 22
+    drawn: false
+    _id: jckobfzCu6Q0Jvp6
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Baliza
+    name: ''
+    _key: '!tables.results!GMEs2qW5rT8yU3x.jckobfzCu6Q0Jvp6'
+  - type: text
+    weight: 1
+    range:
+      - 23
+      - 23
+    drawn: false
+    _id: QKf0rGbIyU5VtHHl
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Secreto - Conflicto
+    name: ''
+    _key: '!tables.results!GMEs2qW5rT8yU3x.QKf0rGbIyU5VtHHl'
+  - type: text
+    weight: 1
+    range:
+      - 24
+      - 24
+    drawn: false
+    _id: 1QHTW2b0PLSgvzfh
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Muro - Presagio
+    name: ''
+    _key: '!tables.results!GMEs2qW5rT8yU3x.1QHTW2b0PLSgvzfh'
+  - type: text
+    weight: 1
+    range:
+      - 25
+      - 25
+    drawn: false
+    _id: DY5Ce6pX32oqWevi
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Territorio - Nexo
+    name: ''
+    _key: '!tables.results!GMEs2qW5rT8yU3x.DY5Ce6pX32oqWevi'
+  - type: text
+    weight: 1
+    range:
+      - 26
+      - 26
+    drawn: false
+    _id: MJH7ZSYoWWK176JZ
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Rumor - Archivo
+    name: ''
+    _key: '!tables.results!GMEs2qW5rT8yU3x.MJH7ZSYoWWK176JZ'
+  - type: text
+    weight: 1
+    range:
+      - 27
+      - 27
+    drawn: false
+    _id: oxz8FjCRl62mTU5a
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Punto muerto - Ayuda
+    name: ''
+    _key: '!tables.results!GMEs2qW5rT8yU3x.oxz8FjCRl62mTU5a'
+  - type: text
+    weight: 1
+    range:
+      - 28
+      - 28
+    drawn: false
+    _id: fo2PqbwcpcTDQnMr
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Conflicto - Secreto
+    name: ''
+    _key: '!tables.results!GMEs2qW5rT8yU3x.fo2PqbwcpcTDQnMr'
+  - type: text
+    weight: 1
+    range:
+      - 29
+      - 29
+    drawn: false
+    _id: dPzrFz8hWqLdeXns
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Laberinto
+    name: ''
+    _key: '!tables.results!GMEs2qW5rT8yU3x.dPzrFz8hWqLdeXns'
+  - type: text
+    weight: 1
+    range:
+      - 30
+      - 30
+    drawn: false
+    _id: 7dkRmPUhHMGHEyQV
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Pacto - Engaño
+    name: ''
+    _key: '!tables.results!GMEs2qW5rT8yU3x.7dkRmPUhHMGHEyQV'
+  - type: text
+    weight: 1
+    range:
+      - 31
+      - 31
+    drawn: false
+    _id: TTJqhdp7bbRhko1r
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Dilema - Equipo
+    name: ''
+    _key: '!tables.results!GMEs2qW5rT8yU3x.TTJqhdp7bbRhko1r'
+  - type: text
+    weight: 1
+    range:
+      - 32
+      - 32
+    drawn: false
+    _id: Uj3HiA5GDALODxe0
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Tradición - Abismo
+    name: ''
+    _key: '!tables.results!GMEs2qW5rT8yU3x.Uj3HiA5GDALODxe0'
+  - type: text
+    weight: 1
+    range:
+      - 33
+      - 33
+    drawn: false
+    _id: psk3ZyM41oM9MdcM
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Bote - Misterio
+    name: ''
+    _key: '!tables.results!GMEs2qW5rT8yU3x.psk3ZyM41oM9MdcM'
+  - type: text
+    weight: 1
+    range:
+      - 34
+      - 34
+    drawn: false
+    _id: YG39vjKUaIr3NBnH
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Presagio - Muro
+    name: ''
+    _key: '!tables.results!GMEs2qW5rT8yU3x.YG39vjKUaIr3NBnH'
+  - type: text
+    weight: 1
+    range:
+      - 35
+      - 35
+    drawn: false
+    _id: YqWQpkeRsUGWxpGC
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Engaño - Pacto
+    name: ''
+    _key: '!tables.results!GMEs2qW5rT8yU3x.YqWQpkeRsUGWxpGC'
+  - type: text
+    weight: 1
+    range:
+      - 36
+      - 36
+    drawn: false
+    _id: 4CooDZ1I0aORl7Q7
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: null
+      systemVersion: null
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    description: Ilusión
+    name: ''
+    _key: '!tables.results!GMEs2qW5rT8yU3x.4CooDZ1I0aORl7Q7'
+replacement: true
+displayRoll: false
+folder: null
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '13.345'
+  systemId: grimwild
+  systemVersion: 0.1.0
+  createdTime: 1738000071000
+  modifiedTime: 1738000071000
+  lastModifiedBy: SzSkbfMxPopuu3Ec
+  exportSource: null
+formula: 1d36
+_id: GMEs2qW5rT8yU3x
+sort: 0
+ownership:
+  default: 0
+  SzSkbfMxPopuu3Ec: 3
+_key: '!tables!GMEs2qW5rT8yU3x'
