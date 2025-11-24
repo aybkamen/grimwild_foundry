@@ -1,0 +1,68 @@
+name: Crisol de Asentamientos
+type: script
+_id: SetCrucMacEs01
+author: Dl5Tvf37OuEHwdAh
+img: icons/svg/dice-target.svg
+scope: global
+command: >-
+  // Macro para tirar el Crisol de Asentamientos (dos tablas) y susurrar al GM
+
+
+  const compendiumName = "grimwild-action.crucibles";
+  const rolltable1Name = "Crisol de Asentamientos 1";
+  const rolltable2Name = "Crisol de Asentamientos 2";
+
+
+  async function rollTable(compendiumName, tableName) {
+    const compendium = game.packs.get(compendiumName);
+    if (!compendium) {
+      ui.notifications.error(`Compendio "${compendiumName}" no encontrado.`);
+      return;
+    }
+
+    await compendium.getIndex();
+
+    const tableEntry = compendium.index.find((e) => e.name === tableName);
+    if (!tableEntry) {
+      ui.notifications.error(`Tabla "${tableName}" no encontrada en "${compendiumName}".`);
+      return;
+    }
+
+    const table = await compendium.getDocument(tableEntry._id);
+    if (!table) {
+      ui.notifications.error(`No se pudo cargar la tabla "${tableName}".`);
+      return;
+    }
+
+    const rollResult = await table.roll();
+    return rollResult.results.map((r) => r.text).join(", ");
+  }
+
+
+  const result1 = await rollTable(compendiumName, rolltable1Name);
+  const result2 = await rollTable(compendiumName, rolltable2Name);
+
+  if (result1 && result2) {
+    const whisperTo = ChatMessage.getWhisperRecipients("GM").map((u) => u.id);
+    ChatMessage.create({
+      content: `<b>Crisol de Asentamientos</b><br><i>Tira una en cada tabla y combínalas</i><br><b>${result2}</b><br><b>${result1}</b>`,
+      whisper: whisperTo
+    });
+  }
+folder: null
+sort: 0
+ownership:
+  default: 0
+  Dl5Tvf37OuEHwdAh: 3
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '13.345'
+  systemId: grimwild
+  systemVersion: 0.1.0
+  createdTime: 1738000055000
+  modifiedTime: 1738000055000
+  lastModifiedBy: Dl5Tvf37OuEHwdAh
+  exportSource: null
+_key: '!macros!SetCrucMacEs01'
