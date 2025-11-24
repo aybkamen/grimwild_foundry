@@ -57,6 +57,43 @@
               <i class="fas fa-trash"></i>
             </a>
           </div>
+          <div class="quest-tooltip">
+            <div class="quest-tooltip-header">
+              <div class="quest-tooltip-title">{{ q.name }}</div>
+              <div class="quest-tooltip-progress">
+                <span class="label">Completed</span>
+                <span class="value">{{ q.completed }} / {{ q.total }}</span>
+              </div>
+            </div>
+            <div
+              v-if="q.description"
+              class="quest-tooltip-description"
+              v-html="q.description"
+            ></div>
+            <div v-else class="quest-tooltip-description muted">
+              No description provided.
+            </div>
+            <ul v-if="q.milestones.length" class="quest-tooltip-milestones">
+              <li
+                v-for="(m, i) in q.milestones"
+                :key="i"
+                :class="['milestone', { done: m.done, active: m.active }]"
+              >
+                <span class="milestone-marker" aria-hidden="true">
+                  <i v-if="m.done" class="fas fa-check"></i>
+                  <i v-else-if="m.active" class="fas fa-flag"></i>
+                  <i v-else class="far fa-circle"></i>
+                </span>
+                <span class="milestone-label">
+                  <strong class="milestone-index">M{{ i + 1 }}</strong>
+                  {{ m.label }}
+                </span>
+              </li>
+            </ul>
+            <div v-else class="quest-tooltip-empty">
+              No milestones added yet.
+            </div>
+          </div>
         </li>
       </ul>
     </fieldset>
@@ -92,13 +129,27 @@ const quests = computed(() => {
     }
 
     const completed = milestones.filter((m) => m?.done).length;
+    const descriptionKey = `items.${item.id}.system.description`;
+    const rawDescription = system.description || "";
+    const description =
+      context?.editors?.[descriptionKey]?.enriched ||
+      (foundry?.utils?.escapeHTML
+        ? foundry.utils.escapeHTML(rawDescription)
+        : rawDescription);
+    const milestoneDetails = milestones.map((m, idx) => ({
+      label: m?.label?.length ? m.label : `Milestone ${idx + 1}`,
+      done: !!m?.done,
+      active: idx === activeIndex
+    }));
 
     return {
       id: item.id,
       name: item.name,
       nextMilestone,
       completed,
-      total: milestones.length
+      total: milestones.length,
+      description,
+      milestones: milestoneDetails
     };
   });
 });
@@ -142,6 +193,7 @@ const quests = computed(() => {
   border-radius: 6px;
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid var(--gw-faint, rgba(255, 255, 255, 0.15));
+  position: relative;
 }
 
 .quest-main {
@@ -193,5 +245,121 @@ const quests = computed(() => {
 .empty-hint {
   opacity: 0.8;
   font-style: italic;
+}
+
+.quest-tooltip {
+  position: absolute;
+  left: 0;
+  top: calc(100% + 6px);
+  width: min(440px, 90vw);
+  padding: 10px 12px;
+  background: rgba(7, 6, 10, 0.94);
+  border: 1px solid var(--gw-faint, rgba(255, 255, 255, 0.25));
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  border-radius: 8px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-6px);
+  transition: opacity 160ms ease, transform 160ms ease;
+  z-index: 20;
+  color: inherit;
+  max-height: 420px;
+  overflow-y: auto;
+}
+
+body.theme-light .quest-tooltip {
+  background: #ffffff;
+  color: #1c1c1c;
+}
+
+.quest-row:hover .quest-tooltip,
+.quest-row:focus-within .quest-tooltip {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.quest-tooltip-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: baseline;
+  margin-bottom: 6px;
+}
+
+.quest-tooltip-title {
+  font-family: var(--font-display, inherit);
+  font-size: 1.05em;
+  font-weight: 700;
+}
+
+.quest-tooltip-progress .label {
+  font-style: italic;
+  opacity: 0.7;
+  margin-right: 4px;
+}
+
+.quest-tooltip-description {
+  line-height: 1.3;
+}
+
+.quest-tooltip-description.muted,
+.quest-tooltip-empty {
+  opacity: 0.75;
+  font-style: italic;
+}
+
+.quest-tooltip-milestones {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.quest-tooltip-milestones .milestone {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.quest-tooltip-empty {
+  margin-top: 10px;
+}
+
+.milestone-marker {
+  display: inline-flex;
+  width: 18px;
+  height: 18px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1px solid var(--gw-faint, rgba(255, 255, 255, 0.3));
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.milestone.done .milestone-marker {
+  background: var(--gw-success, #1b8a3b);
+  color: #fff;
+}
+
+.milestone.active .milestone-marker {
+  background: var(--gw-accent, #e38e3a);
+  color: #fff;
+  border-color: transparent;
+}
+
+.milestone-label {
+  flex: 1 1 auto;
+}
+
+.milestone-index {
+  margin-right: 6px;
+}
+
+.milestone.done .milestone-label {
+  opacity: 0.8;
+  text-decoration: line-through;
 }
 </style>
