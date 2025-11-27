@@ -130,6 +130,14 @@ packs:
     type: Macro
     path: packs/macros
     system: grimwild-action
+  - name: names
+    label: NPC Names
+    type: RollTable
+    path: packs/names
+    system: grimwild-action
+    ownership:
+      PLAYER: LIMITED
+      ASSISTANT: OWNER
   - name: rules
     label: Grimwild Rules
     type: JournalEntry

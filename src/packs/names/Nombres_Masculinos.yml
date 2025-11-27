@@ -1,0 +1,2401 @@
+name: Nombres Masculinos
+img: icons/svg/d20-grey.svg
+description: <p>Tabla de nombres masculinos.</p>
+results:
+  - type: text
+    text: Arfred
+    weight: 1
+    range:
+      - 1
+      - 1
+    drawn: false
+    _id: 0c92f8cccf484b06
+    img: icons/svg/d20-black.svg
+    documentCollection: null
+    documentId: null
+    resultId: null
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: grimwild
+      systemVersion: 0.1.0
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    rangeL: null
+    rangeH: null
+    collection: null
+    _key: '!tables.results!249618086fb64f57.0c92f8cccf484b06'
+  - type: text
+    text: Brom
+    weight: 1
+    range:
+      - 2
+      - 2
+    drawn: false
+    _id: 8c5f04c901734654
+    img: icons/svg/d20-black.svg
+    documentCollection: null
+    documentId: null
+    resultId: null
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: grimwild
+      systemVersion: 0.1.0
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    rangeL: null
+    rangeH: null
+    collection: null
+    _key: '!tables.results!249618086fb64f57.8c5f04c901734654'
+  - type: text
+    text: Bunk
+    weight: 1
+    range:
+      - 3
+      - 3
+    drawn: false
+    _id: 6a9ed688220f4f42
+    img: icons/svg/d20-black.svg
+    documentCollection: null
+    documentId: null
+    resultId: null
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: grimwild
+      systemVersion: 0.1.0
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    rangeL: null
+    rangeH: null
+    collection: null
+    _key: '!tables.results!249618086fb64f57.6a9ed688220f4f42'
+  - type: text
+    text: Chydewick
+    weight: 1
+    range:
+      - 4
+      - 4
+    drawn: false
+    _id: 84e0bbd6b70c455e
+    img: icons/svg/d20-black.svg
+    documentCollection: null
+    documentId: null
+    resultId: null
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: grimwild
+      systemVersion: 0.1.0
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    rangeL: null
+    rangeH: null
+    collection: null
+    _key: '!tables.results!249618086fb64f57.84e0bbd6b70c455e'
+  - type: text
+    text: Crump
+    weight: 1
+    range:
+      - 5
+      - 5
+    drawn: false
+    _id: 04c3fdfe38444c9d
+    img: icons/svg/d20-black.svg
+    documentCollection: null
+    documentId: null
+    resultId: null
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: grimwild
+      systemVersion: 0.1.0
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    rangeL: null
+    rangeH: null
+    collection: null
+    _key: '!tables.results!249618086fb64f57.04c3fdfe38444c9d'
+  - type: text
+    text: Dimothy
+    weight: 1
+    range:
+      - 6
+      - 6
+    drawn: false
+    _id: ef4c3da3dd3a4490
+    img: icons/svg/d20-black.svg
+    documentCollection: null
+    documentId: null
+    resultId: null
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: grimwild
+      systemVersion: 0.1.0
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    rangeL: null
+    rangeH: null
+    collection: null
+    _key: '!tables.results!249618086fb64f57.ef4c3da3dd3a4490'
+  - type: text
+    text: Guillem
+    weight: 1
+    range:
+      - 7
+      - 7
+    drawn: false
+    _id: aea83084558e4a93
+    img: icons/svg/d20-black.svg
+    documentCollection: null
+    documentId: null
+    resultId: null
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: grimwild
+      systemVersion: 0.1.0
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    rangeL: null
+    rangeH: null
+    collection: null
+    _key: '!tables.results!249618086fb64f57.aea83084558e4a93'
+  - type: text
+    text: Henrick
+    weight: 1
+    range:
+      - 8
+      - 8
+    drawn: false
+    _id: 868385a3b8684a74
+    img: icons/svg/d20-black.svg
+    documentCollection: null
+    documentId: null
+    resultId: null
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: grimwild
+      systemVersion: 0.1.0
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    rangeL: null
+    rangeH: null
+    collection: null
+    _key: '!tables.results!249618086fb64f57.868385a3b8684a74'
+  - type: text
+    text: Hogrid
+    weight: 1
+    range:
+      - 9
+      - 9
+    drawn: false
+    _id: 308fb91cd56a4cec
+    img: icons/svg/d20-black.svg
+    documentCollection: null
+    documentId: null
+    resultId: null
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: grimwild
+      systemVersion: 0.1.0
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    rangeL: null
+    rangeH: null
+    collection: null
+    _key: '!tables.results!249618086fb64f57.308fb91cd56a4cec'
+  - type: text
+    text: Jappser
+    weight: 1
+    range:
+      - 10
+      - 10
+    drawn: false
+    _id: 0eeeaba32ca546ac
+    img: icons/svg/d20-black.svg
+    documentCollection: null
+    documentId: null
+    resultId: null
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: grimwild
+      systemVersion: 0.1.0
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    rangeL: null
+    rangeH: null
+    collection: null
+    _key: '!tables.results!249618086fb64f57.0eeeaba32ca546ac'
+  - type: text
+    text: Joremey
+    weight: 1
+    range:
+      - 11
+      - 11
+    drawn: false
+    _id: c7b2dd24856c4841
+    img: icons/svg/d20-black.svg
+    documentCollection: null
+    documentId: null
+    resultId: null
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: grimwild
+      systemVersion: 0.1.0
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    rangeL: null
+    rangeH: null
+    collection: null
+    _key: '!tables.results!249618086fb64f57.c7b2dd24856c4841'
+  - type: text
+    text: Josprey
+    weight: 1
+    range:
+      - 12
+      - 12
+    drawn: false
+    _id: b4a2924f502a45d2
+    img: icons/svg/d20-black.svg
+    documentCollection: null
+    documentId: null
+    resultId: null
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: grimwild
+      systemVersion: 0.1.0
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    rangeL: null
+    rangeH: null
+    collection: null
+    _key: '!tables.results!249618086fb64f57.b4a2924f502a45d2'
+  - type: text
+    text: Jymes
+    weight: 1
+    range:
+      - 13
+      - 13
+    drawn: false
+    _id: 8324b6fe515143c3
+    img: icons/svg/d20-black.svg
+    documentCollection: null
+    documentId: null
+    resultId: null
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: grimwild
+      systemVersion: 0.1.0
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    rangeL: null
+    rangeH: null
+    collection: null
+    _key: '!tables.results!249618086fb64f57.8324b6fe515143c3'
+  - type: text
+    text: Mollequip
+    weight: 1
+    range:
+      - 14
+      - 14
+    drawn: false
+    _id: ed614ffd753a400f
+    img: icons/svg/d20-black.svg
+    documentCollection: null
+    documentId: null
+    resultId: null
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: grimwild
+      systemVersion: 0.1.0
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    rangeL: null
+    rangeH: null
+    collection: null
+    _key: '!tables.results!249618086fb64f57.ed614ffd753a400f'
+  - type: text
+    text: Rodger
+    weight: 1
+    range:
+      - 15
+      - 15
+    drawn: false
+    _id: 1fed27d131404415
+    img: icons/svg/d20-black.svg
+    documentCollection: null
+    documentId: null
+    resultId: null
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: grimwild
+      systemVersion: 0.1.0
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    rangeL: null
+    rangeH: null
+    collection: null
+    _key: '!tables.results!249618086fb64f57.1fed27d131404415'
+  - type: text
+    text: Rogbert
+    weight: 1
+    range:
+      - 16
+      - 16
+    drawn: false
+    _id: 03bfa84196584dce
+    img: icons/svg/d20-black.svg
+    documentCollection: null
+    documentId: null
+    resultId: null
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: grimwild
+      systemVersion: 0.1.0
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    rangeL: null
+    rangeH: null
+    collection: null
+    _key: '!tables.results!249618086fb64f57.03bfa84196584dce'
+  - type: text
+    text: Samwise
+    weight: 1
+    range:
+      - 17
+      - 17
+    drawn: false
+    _id: a39b399fdf984349
+    img: icons/svg/d20-black.svg
+    documentCollection: null
+    documentId: null
+    resultId: null
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: grimwild
+      systemVersion: 0.1.0
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    rangeL: null
+    rangeH: null
+    collection: null
+    _key: '!tables.results!249618086fb64f57.a39b399fdf984349'
+  - type: text
+    text: Shadwell
+    weight: 1
+    range:
+      - 18
+      - 18
+    drawn: false
+    _id: 5b15e942cf1b43e8
+    img: icons/svg/d20-black.svg
+    documentCollection: null
+    documentId: null
+    resultId: null
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: grimwild
+      systemVersion: 0.1.0
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    rangeL: null
+    rangeH: null
+    collection: null
+    _key: '!tables.results!249618086fb64f57.5b15e942cf1b43e8'
+  - type: text
+    text: Shank
+    weight: 1
+    range:
+      - 19
+      - 19
+    drawn: false
+    _id: 142bed17f41e42ed
+    img: icons/svg/d20-black.svg
+    documentCollection: null
+    documentId: null
+    resultId: null
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: grimwild
+      systemVersion: 0.1.0
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    rangeL: null
+    rangeH: null
+    collection: null
+    _key: '!tables.results!249618086fb64f57.142bed17f41e42ed'
+  - type: text
+    text: Sidley
+    weight: 1
+    range:
+      - 20
+      - 20
+    drawn: false
+    _id: 9bdc779f836b4706
+    img: icons/svg/d20-black.svg
+    documentCollection: null
+    documentId: null
+    resultId: null
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: grimwild
+      systemVersion: 0.1.0
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    rangeL: null
+    rangeH: null
+    collection: null
+    _key: '!tables.results!249618086fb64f57.9bdc779f836b4706'
+  - type: text
+    text: Aldric
+    weight: 1
+    range:
+      - 21
+      - 21
+    drawn: false
+    _id: ec09647ec22742c1
+    img: icons/svg/d20-black.svg
+    documentCollection: null
+    documentId: null
+    resultId: null
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: grimwild
+      systemVersion: 0.1.0
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    rangeL: null
+    rangeH: null
+    collection: null
+    _key: '!tables.results!249618086fb64f57.ec09647ec22742c1'
+  - type: text
+    text: Barnaby
+    weight: 1
+    range:
+      - 22
+      - 22
+    drawn: false
+    _id: ac074321055a4df7
+    img: icons/svg/d20-black.svg
+    documentCollection: null
+    documentId: null
+    resultId: null
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: grimwild
+      systemVersion: 0.1.0
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    rangeL: null
+    rangeH: null
+    collection: null
+    _key: '!tables.results!249618086fb64f57.ac074321055a4df7'
+  - type: text
+    text: Beldon
+    weight: 1
+    range:
+      - 23
+      - 23
+    drawn: false
+    _id: 16e72b425b54412d
+    img: icons/svg/d20-black.svg
+    documentCollection: null
+    documentId: null
+    resultId: null
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: grimwild
+      systemVersion: 0.1.0
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    rangeL: null
+    rangeH: null
+    collection: null
+    _key: '!tables.results!249618086fb64f57.16e72b425b54412d'
+  - type: text
+    text: Bertram
+    weight: 1
+    range:
+      - 24
+      - 24
+    drawn: false
+    _id: 12df76e1e0174b48
+    img: icons/svg/d20-black.svg
+    documentCollection: null
+    documentId: null
+    resultId: null
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: grimwild
+      systemVersion: 0.1.0
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    rangeL: null
+    rangeH: null
+    collection: null
+    _key: '!tables.results!249618086fb64f57.12df76e1e0174b48'
+  - type: text
+    text: Brindle
+    weight: 1
+    range:
+      - 25
+      - 25
+    drawn: false
+    _id: ca48d097463f417b
+    img: icons/svg/d20-black.svg
+    documentCollection: null
+    documentId: null
+    resultId: null
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: grimwild
+      systemVersion: 0.1.0
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    rangeL: null
+    rangeH: null
+    collection: null
+    _key: '!tables.results!249618086fb64f57.ca48d097463f417b'
+  - type: text
+    text: Calder
+    weight: 1
+    range:
+      - 26
+      - 26
+    drawn: false
+    _id: 43fe70badb894eb0
+    img: icons/svg/d20-black.svg
+    documentCollection: null
+    documentId: null
+    resultId: null
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: grimwild
+      systemVersion: 0.1.0
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    rangeL: null
+    rangeH: null
+    collection: null
+    _key: '!tables.results!249618086fb64f57.43fe70badb894eb0'
+  - type: text
+    text: Cobbett
+    weight: 1
+    range:
+      - 27
+      - 27
+    drawn: false
+    _id: 0b5e56231dc347d3
+    img: icons/svg/d20-black.svg
+    documentCollection: null
+    documentId: null
+    resultId: null
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: grimwild
+      systemVersion: 0.1.0
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    rangeL: null
+    rangeH: null
+    collection: null
+    _key: '!tables.results!249618086fb64f57.0b5e56231dc347d3'
+  - type: text
+    text: Colwyn
+    weight: 1
+    range:
+      - 28
+      - 28
+    drawn: false
+    _id: c2309eaebc3e4c9d
+    img: icons/svg/d20-black.svg
+    documentCollection: null
+    documentId: null
+    resultId: null
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: grimwild
+      systemVersion: 0.1.0
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    rangeL: null
+    rangeH: null
+    collection: null
+    _key: '!tables.results!249618086fb64f57.c2309eaebc3e4c9d'
+  - type: text
+    text: Diggory
+    weight: 1
+    range:
+      - 29
+      - 29
+    drawn: false
+    _id: 13b42e128c424d31
+    img: icons/svg/d20-black.svg
+    documentCollection: null
+    documentId: null
+    resultId: null
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: grimwild
+      systemVersion: 0.1.0
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    rangeL: null
+    rangeH: null
+    collection: null
+    _key: '!tables.results!249618086fb64f57.13b42e128c424d31'
+  - type: text
+    text: Edric
+    weight: 1
+    range:
+      - 30
+      - 30
+    drawn: false
+    _id: e1e26f88192f4566
+    img: icons/svg/d20-black.svg
+    documentCollection: null
+    documentId: null
+    resultId: null
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: grimwild
+      systemVersion: 0.1.0
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    rangeL: null
+    rangeH: null
+    collection: null
+    _key: '!tables.results!249618086fb64f57.e1e26f88192f4566'
+  - type: text
+    text: Elmer
+    weight: 1
+    range:
+      - 31
+      - 31
+    drawn: false
+    _id: b1e855c66d764d4c
+    img: icons/svg/d20-black.svg
+    documentCollection: null
+    documentId: null
+    resultId: null
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: grimwild
+      systemVersion: 0.1.0
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    rangeL: null
+    rangeH: null
+    collection: null
+    _key: '!tables.results!249618086fb64f57.b1e855c66d764d4c'
+  - type: text
+    text: Fenn
+    weight: 1
+    range:
+      - 32
+      - 32
+    drawn: false
+    _id: b4ae2888f46c494c
+    img: icons/svg/d20-black.svg
+    documentCollection: null
+    documentId: null
+    resultId: null
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: grimwild
+      systemVersion: 0.1.0
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    rangeL: null
+    rangeH: null
+    collection: null
+    _key: '!tables.results!249618086fb64f57.b4ae2888f46c494c'
+  - type: text
+    text: Ferris
+    weight: 1
+    range:
+      - 33
+      - 33
+    drawn: false
+    _id: 01990bd32e16451c
+    img: icons/svg/d20-black.svg
+    documentCollection: null
+    documentId: null
+    resultId: null
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: grimwild
+      systemVersion: 0.1.0
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    rangeL: null
+    rangeH: null
+    collection: null
+    _key: '!tables.results!249618086fb64f57.01990bd32e16451c'
+  - type: text
+    text: Folbert
+    weight: 1
+    range:
+      - 34
+      - 34
+    drawn: false
+    _id: 772dc8f0820e4c57
+    img: icons/svg/d20-black.svg
+    documentCollection: null
+    documentId: null
+    resultId: null
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: grimwild
+      systemVersion: 0.1.0
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    rangeL: null
+    rangeH: null
+    collection: null
+    _key: '!tables.results!249618086fb64f57.772dc8f0820e4c57'
+  - type: text
+    text: Garrick
+    weight: 1
+    range:
+      - 35
+      - 35
+    drawn: false
+    _id: a33f4c0828c24255
+    img: icons/svg/d20-black.svg
+    documentCollection: null
+    documentId: null
+    resultId: null
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: grimwild
+      systemVersion: 0.1.0
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    rangeL: null
+    rangeH: null
+    collection: null
+    _key: '!tables.results!249618086fb64f57.a33f4c0828c24255'
+  - type: text
+    text: Giles
+    weight: 1
+    range:
+      - 36
+      - 36
+    drawn: false
+    _id: e7af1832bb874132
+    img: icons/svg/d20-black.svg
+    documentCollection: null
+    documentId: null
+    resultId: null
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: grimwild
+      systemVersion: 0.1.0
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    rangeL: null
+    rangeH: null
+    collection: null
+    _key: '!tables.results!249618086fb64f57.e7af1832bb874132'
+  - type: text
+    text: Grimble
+    weight: 1
+    range:
+      - 37
+      - 37
+    drawn: false
+    _id: 0a50d3826fb541b1
+    img: icons/svg/d20-black.svg
+    documentCollection: null
+    documentId: null
+    resultId: null
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: grimwild
+      systemVersion: 0.1.0
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    rangeL: null
+    rangeH: null
+    collection: null
+    _key: '!tables.results!249618086fb64f57.0a50d3826fb541b1'
+  - type: text
+    text: Haddock
+    weight: 1
+    range:
+      - 38
+      - 38
+    drawn: false
+    _id: 9f6a170bf5324826
+    img: icons/svg/d20-black.svg
+    documentCollection: null
+    documentId: null
+    resultId: null
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: grimwild
+      systemVersion: 0.1.0
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    rangeL: null
+    rangeH: null
+    collection: null
+    _key: '!tables.results!249618086fb64f57.9f6a170bf5324826'
+  - type: text
+    text: Halwyn
+    weight: 1
+    range:
+      - 39
+      - 39
+    drawn: false
+    _id: 832e85e4e7af490e
+    img: icons/svg/d20-black.svg
+    documentCollection: null
+    documentId: null
+    resultId: null
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: grimwild
+      systemVersion: 0.1.0
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    rangeL: null
+    rangeH: null
+    collection: null
+    _key: '!tables.results!249618086fb64f57.832e85e4e7af490e'
+  - type: text
+    text: Hobb
+    weight: 1
+    range:
+      - 40
+      - 40
+    drawn: false
+    _id: c8f85886061943f1
+    img: icons/svg/d20-black.svg
+    documentCollection: null
+    documentId: null
+    resultId: null
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: grimwild
+      systemVersion: 0.1.0
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    rangeL: null
+    rangeH: null
+    collection: null
+    _key: '!tables.results!249618086fb64f57.c8f85886061943f1'
+  - type: text
+    text: Ibbott
+    weight: 1
+    range:
+      - 41
+      - 41
+    drawn: false
+    _id: 8a13231af69348ae
+    img: icons/svg/d20-black.svg
+    documentCollection: null
+    documentId: null
+    resultId: null
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: grimwild
+      systemVersion: 0.1.0
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    rangeL: null
+    rangeH: null
+    collection: null
+    _key: '!tables.results!249618086fb64f57.8a13231af69348ae'
+  - type: text
+    text: Jorven
+    weight: 1
+    range:
+      - 42
+      - 42
+    drawn: false
+    _id: ac6fe6f559fb43c3
+    img: icons/svg/d20-black.svg
+    documentCollection: null
+    documentId: null
+    resultId: null
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: grimwild
+      systemVersion: 0.1.0
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    rangeL: null
+    rangeH: null
+    collection: null
+    _key: '!tables.results!249618086fb64f57.ac6fe6f559fb43c3'
+  - type: text
+    text: Kester
+    weight: 1
+    range:
+      - 43
+      - 43
+    drawn: false
+    _id: a098bb5ffcee48e1
+    img: icons/svg/d20-black.svg
+    documentCollection: null
+    documentId: null
+    resultId: null
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: grimwild
+      systemVersion: 0.1.0
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    rangeL: null
+    rangeH: null
+    collection: null
+    _key: '!tables.results!249618086fb64f57.a098bb5ffcee48e1'
+  - type: text
+    text: Loddin
+    weight: 1
+    range:
+      - 44
+      - 44
+    drawn: false
+    _id: 42d162fa36fb4c7d
+    img: icons/svg/d20-black.svg
+    documentCollection: null
+    documentId: null
+    resultId: null
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: grimwild
+      systemVersion: 0.1.0
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    rangeL: null
+    rangeH: null
+    collection: null
+    _key: '!tables.results!249618086fb64f57.42d162fa36fb4c7d'
+  - type: text
+    text: Lorkin
+    weight: 1
+    range:
+      - 45
+      - 45
+    drawn: false
+    _id: f7e4942593324cda
+    img: icons/svg/d20-black.svg
+    documentCollection: null
+    documentId: null
+    resultId: null
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: grimwild
+      systemVersion: 0.1.0
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    rangeL: null
+    rangeH: null
+    collection: null
+    _key: '!tables.results!249618086fb64f57.f7e4942593324cda'
+  - type: text
+    text: Morcant
+    weight: 1
+    range:
+      - 46
+      - 46
+    drawn: false
+    _id: ed88bdcba99c4241
+    img: icons/svg/d20-black.svg
+    documentCollection: null
+    documentId: null
+    resultId: null
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: grimwild
+      systemVersion: 0.1.0
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    rangeL: null
+    rangeH: null
+    collection: null
+    _key: '!tables.results!249618086fb64f57.ed88bdcba99c4241'
+  - type: text
+    text: Nevil
+    weight: 1
+    range:
+      - 47
+      - 47
+    drawn: false
+    _id: 98ddb6115ad64186
+    img: icons/svg/d20-black.svg
+    documentCollection: null
+    documentId: null
+    resultId: null
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: grimwild
+      systemVersion: 0.1.0
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    rangeL: null
+    rangeH: null
+    collection: null
+    _key: '!tables.results!249618086fb64f57.98ddb6115ad64186'
+  - type: text
+    text: Orrick
+    weight: 1
+    range:
+      - 48
+      - 48
+    drawn: false
+    _id: 07275a0b636f4f52
+    img: icons/svg/d20-black.svg
+    documentCollection: null
+    documentId: null
+    resultId: null
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: grimwild
+      systemVersion: 0.1.0
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    rangeL: null
+    rangeH: null
+    collection: null
+    _key: '!tables.results!249618086fb64f57.07275a0b636f4f52'
+  - type: text
+    text: Osbert
+    weight: 1
+    range:
+      - 49
+      - 49
+    drawn: false
+    _id: ef177dbbfd854769
+    img: icons/svg/d20-black.svg
+    documentCollection: null
+    documentId: null
+    resultId: null
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: grimwild
+      systemVersion: 0.1.0
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    rangeL: null
+    rangeH: null
+    collection: null
+    _key: '!tables.results!249618086fb64f57.ef177dbbfd854769'
+  - type: text
+    text: Pender
+    weight: 1
+    range:
+      - 50
+      - 50
+    drawn: false
+    _id: 50df6f2a447c42ac
+    img: icons/svg/d20-black.svg
+    documentCollection: null
+    documentId: null
+    resultId: null
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: grimwild
+      systemVersion: 0.1.0
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    rangeL: null
+    rangeH: null
+    collection: null
+    _key: '!tables.results!249618086fb64f57.50df6f2a447c42ac'
+  - type: text
+    text: Piers
+    weight: 1
+    range:
+      - 51
+      - 51
+    drawn: false
+    _id: 40be17f8d6cc4ea0
+    img: icons/svg/d20-black.svg
+    documentCollection: null
+    documentId: null
+    resultId: null
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: grimwild
+      systemVersion: 0.1.0
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    rangeL: null
+    rangeH: null
+    collection: null
+    _key: '!tables.results!249618086fb64f57.40be17f8d6cc4ea0'
+  - type: text
+    text: Quil
+    weight: 1
+    range:
+      - 52
+      - 52
+    drawn: false
+    _id: aa1ee51829c94bff
+    img: icons/svg/d20-black.svg
+    documentCollection: null
+    documentId: null
+    resultId: null
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: grimwild
+      systemVersion: 0.1.0
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    rangeL: null
+    rangeH: null
+    collection: null
+    _key: '!tables.results!249618086fb64f57.aa1ee51829c94bff'
+  - type: text
+    text: Radley
+    weight: 1
+    range:
+      - 53
+      - 53
+    drawn: false
+    _id: e6164e4bdf684435
+    img: icons/svg/d20-black.svg
+    documentCollection: null
+    documentId: null
+    resultId: null
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: grimwild
+      systemVersion: 0.1.0
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    rangeL: null
+    rangeH: null
+    collection: null
+    _key: '!tables.results!249618086fb64f57.e6164e4bdf684435'
+  - type: text
+    text: Rendell
+    weight: 1
+    range:
+      - 54
+      - 54
+    drawn: false
+    _id: 85462b7c1f4148b4
+    img: icons/svg/d20-black.svg
+    documentCollection: null
+    documentId: null
+    resultId: null
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: grimwild
+      systemVersion: 0.1.0
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    rangeL: null
+    rangeH: null
+    collection: null
+    _key: '!tables.results!249618086fb64f57.85462b7c1f4148b4'
+  - type: text
+    text: Rudge
+    weight: 1
+    range:
+      - 55
+      - 55
+    drawn: false
+    _id: 880eca05099e4887
+    img: icons/svg/d20-black.svg
+    documentCollection: null
+    documentId: null
+    resultId: null
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: grimwild
+      systemVersion: 0.1.0
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    rangeL: null
+    rangeH: null
+    collection: null
+    _key: '!tables.results!249618086fb64f57.880eca05099e4887'
+  - type: text
+    text: Silas
+    weight: 1
+    range:
+      - 56
+      - 56
+    drawn: false
+    _id: 8e96269f99de4001
+    img: icons/svg/d20-black.svg
+    documentCollection: null
+    documentId: null
+    resultId: null
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: grimwild
+      systemVersion: 0.1.0
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    rangeL: null
+    rangeH: null
+    collection: null
+    _key: '!tables.results!249618086fb64f57.8e96269f99de4001'
+  - type: text
+    text: Stowin
+    weight: 1
+    range:
+      - 57
+      - 57
+    drawn: false
+    _id: d37e5316e9dc4389
+    img: icons/svg/d20-black.svg
+    documentCollection: null
+    documentId: null
+    resultId: null
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: grimwild
+      systemVersion: 0.1.0
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    rangeL: null
+    rangeH: null
+    collection: null
+    _key: '!tables.results!249618086fb64f57.d37e5316e9dc4389'
+  - type: text
+    text: Tarl
+    weight: 1
+    range:
+      - 58
+      - 58
+    drawn: false
+    _id: 74441a8c74c442af
+    img: icons/svg/d20-black.svg
+    documentCollection: null
+    documentId: null
+    resultId: null
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: grimwild
+      systemVersion: 0.1.0
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    rangeL: null
+    rangeH: null
+    collection: null
+    _key: '!tables.results!249618086fb64f57.74441a8c74c442af'
+  - type: text
+    text: Tormund
+    weight: 1
+    range:
+      - 59
+      - 59
+    drawn: false
+    _id: 9dc57218acd647bd
+    img: icons/svg/d20-black.svg
+    documentCollection: null
+    documentId: null
+    resultId: null
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: grimwild
+      systemVersion: 0.1.0
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    rangeL: null
+    rangeH: null
+    collection: null
+    _key: '!tables.results!249618086fb64f57.9dc57218acd647bd'
+  - type: text
+    text: Ulfred
+    weight: 1
+    range:
+      - 60
+      - 60
+    drawn: false
+    _id: 96528c9078c942c9
+    img: icons/svg/d20-black.svg
+    documentCollection: null
+    documentId: null
+    resultId: null
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: grimwild
+      systemVersion: 0.1.0
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    rangeL: null
+    rangeH: null
+    collection: null
+    _key: '!tables.results!249618086fb64f57.96528c9078c942c9'
+  - type: text
+    text: Varric
+    weight: 1
+    range:
+      - 61
+      - 61
+    drawn: false
+    _id: 217e1939c3144c1c
+    img: icons/svg/d20-black.svg
+    documentCollection: null
+    documentId: null
+    resultId: null
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: grimwild
+      systemVersion: 0.1.0
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    rangeL: null
+    rangeH: null
+    collection: null
+    _key: '!tables.results!249618086fb64f57.217e1939c3144c1c'
+  - type: text
+    text: Wagstaff
+    weight: 1
+    range:
+      - 62
+      - 62
+    drawn: false
+    _id: 453fc4af25034375
+    img: icons/svg/d20-black.svg
+    documentCollection: null
+    documentId: null
+    resultId: null
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: grimwild
+      systemVersion: 0.1.0
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    rangeL: null
+    rangeH: null
+    collection: null
+    _key: '!tables.results!249618086fb64f57.453fc4af25034375'
+  - type: text
+    text: Wembly
+    weight: 1
+    range:
+      - 63
+      - 63
+    drawn: false
+    _id: 9d209831e0574756
+    img: icons/svg/d20-black.svg
+    documentCollection: null
+    documentId: null
+    resultId: null
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: grimwild
+      systemVersion: 0.1.0
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    rangeL: null
+    rangeH: null
+    collection: null
+    _key: '!tables.results!249618086fb64f57.9d209831e0574756'
+  - type: text
+    text: Willet
+    weight: 1
+    range:
+      - 64
+      - 64
+    drawn: false
+    _id: 7be05ea26fb64623
+    img: icons/svg/d20-black.svg
+    documentCollection: null
+    documentId: null
+    resultId: null
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: grimwild
+      systemVersion: 0.1.0
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    rangeL: null
+    rangeH: null
+    collection: null
+    _key: '!tables.results!249618086fb64f57.7be05ea26fb64623'
+  - type: text
+    text: Wilstan
+    weight: 1
+    range:
+      - 65
+      - 65
+    drawn: false
+    _id: 90c5f3ad958b4f0a
+    img: icons/svg/d20-black.svg
+    documentCollection: null
+    documentId: null
+    resultId: null
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: grimwild
+      systemVersion: 0.1.0
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    rangeL: null
+    rangeH: null
+    collection: null
+    _key: '!tables.results!249618086fb64f57.90c5f3ad958b4f0a'
+  - type: text
+    text: Wrinch
+    weight: 1
+    range:
+      - 66
+      - 66
+    drawn: false
+    _id: ec275fe894224282
+    img: icons/svg/d20-black.svg
+    documentCollection: null
+    documentId: null
+    resultId: null
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: grimwild
+      systemVersion: 0.1.0
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    rangeL: null
+    rangeH: null
+    collection: null
+    _key: '!tables.results!249618086fb64f57.ec275fe894224282'
+  - type: text
+    text: Yorrick
+    weight: 1
+    range:
+      - 67
+      - 67
+    drawn: false
+    _id: 05da58b660904940
+    img: icons/svg/d20-black.svg
+    documentCollection: null
+    documentId: null
+    resultId: null
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: grimwild
+      systemVersion: 0.1.0
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    rangeL: null
+    rangeH: null
+    collection: null
+    _key: '!tables.results!249618086fb64f57.05da58b660904940'
+  - type: text
+    text: Adelwin
+    weight: 1
+    range:
+      - 68
+      - 68
+    drawn: false
+    _id: 4a821161b9ae45b6
+    img: icons/svg/d20-black.svg
+    documentCollection: null
+    documentId: null
+    resultId: null
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: grimwild
+      systemVersion: 0.1.0
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    rangeL: null
+    rangeH: null
+    collection: null
+    _key: '!tables.results!249618086fb64f57.4a821161b9ae45b6'
+  - type: text
+    text: Bodrick
+    weight: 1
+    range:
+      - 69
+      - 69
+    drawn: false
+    _id: 6d2d6e8a96e34143
+    img: icons/svg/d20-black.svg
+    documentCollection: null
+    documentId: null
+    resultId: null
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: grimwild
+      systemVersion: 0.1.0
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    rangeL: null
+    rangeH: null
+    collection: null
+    _key: '!tables.results!249618086fb64f57.6d2d6e8a96e34143'
+  - type: text
+    text: Corven
+    weight: 1
+    range:
+      - 70
+      - 70
+    drawn: false
+    _id: 3cc781389b274b1c
+    img: icons/svg/d20-black.svg
+    documentCollection: null
+    documentId: null
+    resultId: null
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: grimwild
+      systemVersion: 0.1.0
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    rangeL: null
+    rangeH: null
+    collection: null
+    _key: '!tables.results!249618086fb64f57.3cc781389b274b1c'
+  - type: text
+    text: Dunric
+    weight: 1
+    range:
+      - 71
+      - 71
+    drawn: false
+    _id: c5b1e3d0303349df
+    img: icons/svg/d20-black.svg
+    documentCollection: null
+    documentId: null
+    resultId: null
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: grimwild
+      systemVersion: 0.1.0
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    rangeL: null
+    rangeH: null
+    collection: null
+    _key: '!tables.results!249618086fb64f57.c5b1e3d0303349df'
+  - type: text
+    text: Ellard
+    weight: 1
+    range:
+      - 72
+      - 72
+    drawn: false
+    _id: aaaf923c759e4d03
+    img: icons/svg/d20-black.svg
+    documentCollection: null
+    documentId: null
+    resultId: null
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: grimwild
+      systemVersion: 0.1.0
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    rangeL: null
+    rangeH: null
+    collection: null
+    _key: '!tables.results!249618086fb64f57.aaaf923c759e4d03'
+  - type: text
+    text: Fenwick
+    weight: 1
+    range:
+      - 73
+      - 73
+    drawn: false
+    _id: e7a0169f91e14e92
+    img: icons/svg/d20-black.svg
+    documentCollection: null
+    documentId: null
+    resultId: null
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: grimwild
+      systemVersion: 0.1.0
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    rangeL: null
+    rangeH: null
+    collection: null
+    _key: '!tables.results!249618086fb64f57.e7a0169f91e14e92'
+  - type: text
+    text: Godric
+    weight: 1
+    range:
+      - 74
+      - 74
+    drawn: false
+    _id: 5f98f4ffd1fb4537
+    img: icons/svg/d20-black.svg
+    documentCollection: null
+    documentId: null
+    resultId: null
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: grimwild
+      systemVersion: 0.1.0
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    rangeL: null
+    rangeH: null
+    collection: null
+    _key: '!tables.results!249618086fb64f57.5f98f4ffd1fb4537'
+  - type: text
+    text: Hadrian
+    weight: 1
+    range:
+      - 75
+      - 75
+    drawn: false
+    _id: 70287a3037104851
+    img: icons/svg/d20-black.svg
+    documentCollection: null
+    documentId: null
+    resultId: null
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: grimwild
+      systemVersion: 0.1.0
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    rangeL: null
+    rangeH: null
+    collection: null
+    _key: '!tables.results!249618086fb64f57.70287a3037104851'
+  - type: text
+    text: Isembert
+    weight: 1
+    range:
+      - 76
+      - 76
+    drawn: false
+    _id: 06deb2ef50ff46ef
+    img: icons/svg/d20-black.svg
+    documentCollection: null
+    documentId: null
+    resultId: null
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: grimwild
+      systemVersion: 0.1.0
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    rangeL: null
+    rangeH: null
+    collection: null
+    _key: '!tables.results!249618086fb64f57.06deb2ef50ff46ef'
+  - type: text
+    text: Jundel
+    weight: 1
+    range:
+      - 77
+      - 77
+    drawn: false
+    _id: 9ea44fb64f8a433f
+    img: icons/svg/d20-black.svg
+    documentCollection: null
+    documentId: null
+    resultId: null
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: grimwild
+      systemVersion: 0.1.0
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    rangeL: null
+    rangeH: null
+    collection: null
+    _key: '!tables.results!249618086fb64f57.9ea44fb64f8a433f'
+  - type: text
+    text: Kelrick
+    weight: 1
+    range:
+      - 78
+      - 78
+    drawn: false
+    _id: 706fd46a3e81447c
+    img: icons/svg/d20-black.svg
+    documentCollection: null
+    documentId: null
+    resultId: null
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: grimwild
+      systemVersion: 0.1.0
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    rangeL: null
+    rangeH: null
+    collection: null
+    _key: '!tables.results!249618086fb64f57.706fd46a3e81447c'
+  - type: text
+    text: Lormund
+    weight: 1
+    range:
+      - 79
+      - 79
+    drawn: false
+    _id: 8de4b30f94504dfb
+    img: icons/svg/d20-black.svg
+    documentCollection: null
+    documentId: null
+    resultId: null
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: grimwild
+      systemVersion: 0.1.0
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    rangeL: null
+    rangeH: null
+    collection: null
+    _key: '!tables.results!249618086fb64f57.8de4b30f94504dfb'
+  - type: text
+    text: Merric
+    weight: 1
+    range:
+      - 80
+      - 80
+    drawn: false
+    _id: 380d1504d72d44b8
+    img: icons/svg/d20-black.svg
+    documentCollection: null
+    documentId: null
+    resultId: null
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: grimwild
+      systemVersion: 0.1.0
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    rangeL: null
+    rangeH: null
+    collection: null
+    _key: '!tables.results!249618086fb64f57.380d1504d72d44b8'
+  - type: text
+    text: Norbit
+    weight: 1
+    range:
+      - 81
+      - 81
+    drawn: false
+    _id: 030a5e18247a485e
+    img: icons/svg/d20-black.svg
+    documentCollection: null
+    documentId: null
+    resultId: null
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: grimwild
+      systemVersion: 0.1.0
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    rangeL: null
+    rangeH: null
+    collection: null
+    _key: '!tables.results!249618086fb64f57.030a5e18247a485e'
+  - type: text
+    text: Olavan
+    weight: 1
+    range:
+      - 82
+      - 82
+    drawn: false
+    _id: c87e73b0c12d4d40
+    img: icons/svg/d20-black.svg
+    documentCollection: null
+    documentId: null
+    resultId: null
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: grimwild
+      systemVersion: 0.1.0
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    rangeL: null
+    rangeH: null
+    collection: null
+    _key: '!tables.results!249618086fb64f57.c87e73b0c12d4d40'
+  - type: text
+    text: Perdyn
+    weight: 1
+    range:
+      - 83
+      - 83
+    drawn: false
+    _id: 918d38ca9ce44e3e
+    img: icons/svg/d20-black.svg
+    documentCollection: null
+    documentId: null
+    resultId: null
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: grimwild
+      systemVersion: 0.1.0
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    rangeL: null
+    rangeH: null
+    collection: null
+    _key: '!tables.results!249618086fb64f57.918d38ca9ce44e3e'
+  - type: text
+    text: Quarrel
+    weight: 1
+    range:
+      - 84
+      - 84
+    drawn: false
+    _id: 1e10cbf2462341b7
+    img: icons/svg/d20-black.svg
+    documentCollection: null
+    documentId: null
+    resultId: null
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: grimwild
+      systemVersion: 0.1.0
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    rangeL: null
+    rangeH: null
+    collection: null
+    _key: '!tables.results!249618086fb64f57.1e10cbf2462341b7'
+  - type: text
+    text: Roswin
+    weight: 1
+    range:
+      - 85
+      - 85
+    drawn: false
+    _id: 8edb280929af41eb
+    img: icons/svg/d20-black.svg
+    documentCollection: null
+    documentId: null
+    resultId: null
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: grimwild
+      systemVersion: 0.1.0
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    rangeL: null
+    rangeH: null
+    collection: null
+    _key: '!tables.results!249618086fb64f57.8edb280929af41eb'
+  - type: text
+    text: Stend
+    weight: 1
+    range:
+      - 86
+      - 86
+    drawn: false
+    _id: e6c06443e22d4e46
+    img: icons/svg/d20-black.svg
+    documentCollection: null
+    documentId: null
+    resultId: null
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: grimwild
+      systemVersion: 0.1.0
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    rangeL: null
+    rangeH: null
+    collection: null
+    _key: '!tables.results!249618086fb64f57.e6c06443e22d4e46'
+  - type: text
+    text: Thain
+    weight: 1
+    range:
+      - 87
+      - 87
+    drawn: false
+    _id: c6ead6b95efa4f93
+    img: icons/svg/d20-black.svg
+    documentCollection: null
+    documentId: null
+    resultId: null
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: grimwild
+      systemVersion: 0.1.0
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    rangeL: null
+    rangeH: null
+    collection: null
+    _key: '!tables.results!249618086fb64f57.c6ead6b95efa4f93'
+  - type: text
+    text: Ubbard
+    weight: 1
+    range:
+      - 88
+      - 88
+    drawn: false
+    _id: 81ac32aebc2b4c64
+    img: icons/svg/d20-black.svg
+    documentCollection: null
+    documentId: null
+    resultId: null
+    flags: {}
+    _stats:
+      coreVersion: '13.345'
+      systemId: grimwild
+      systemVersion: 0.1.0
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+    rangeL: null
+    rangeH: null
+    collection: null
+    _key: '!tables.results!249618086fb64f57.81ac32aebc2b4c64'
+replacement: true
+displayRoll: false
+folder: null
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '13.345'
+  systemId: grimwild
+  systemVersion: 0.1.0
+  createdTime: 1764226330318
+  modifiedTime: 1764226330318
+  lastModifiedBy: Dl5Tvf37OuEHwdAh
+  exportSource: null
+formula: 1d88
+_id: 249618086fb64f57
+sort: 0
+ownership:
+  default: 0
+  Dl5Tvf37OuEHwdAh: 3
+_key: '!tables!249618086fb64f57'

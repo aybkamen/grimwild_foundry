@@ -1,0 +1,97 @@
+name: Generador de Nombres NPC
+type: script
+_id: NpcNameGen01
+author: Dl5Tvf37OuEHwdAh
+img: icons/svg/dice-target.svg
+scope: global
+command: |-
+  // Macro para generar nombres de NPC usando tablas de nombres y apellidos.
+  const compendiumKey = "grimwild-action.names";
+  const tableNames = {
+    male: "Nombres Masculinos",
+    female: "Nombres Femeninos",
+    unisex: "Nombres Unisex",
+    surname: "Apellidos"
+  };
+
+  const pack = game.packs.get(compendiumKey);
+  if (!pack) {
+    ui.notifications.error(`No se encontró el compendio "${compendiumKey}".`);
+    return;
+  }
+
+  await pack.getIndex();
+
+  async function rollFromTable(tableName) {
+    const entry = pack.index.find((e) => e.name === tableName);
+    if (!entry) {
+      ui.notifications.error(`No se encontró la tabla "${tableName}" en el compendio "${compendiumKey}".`);
+      return null;
+    }
+
+    const table = await pack.getDocument(entry._id);
+    const roll = await table?.roll();
+    const texts =
+      roll?.results
+        ?.map((r) => r.text ?? r.data?.text ?? r.description ?? r.result ?? "")
+        .filter(Boolean) ?? [];
+
+    return texts.join(" ").trim() || null;
+  }
+
+  function whisperGMs(content) {
+    const gmIds = ChatMessage.getWhisperRecipients("GM").map((u) => u.id);
+    ChatMessage.create({ content, whisper: gmIds });
+  }
+
+  const dialogContent = `
+    <form class="npc-name-generator">
+      <div class="form-group">
+        <label>Tipo de nombre</label>
+        <select name="nameType">
+          <option value="male">Masculino</option>
+          <option value="female">Femenino</option>
+          <option value="unisex" selected>Unisex</option>
+        </select>
+      </div>
+    </form>
+  `;
+
+  new Dialog({
+    title: "Generador de Nombres NPC",
+    content: dialogContent,
+    buttons: {
+      roll: {
+        label: "Generar",
+        callback: async (html) => {
+          const nameType = html.find('[name="nameType"]').val();
+          const firstName = await rollFromTable(tableNames[nameType]);
+          const surname = await rollFromTable(tableNames.surname);
+
+          if (!firstName || !surname) return;
+
+          const fullName = `${firstName} ${surname}`.trim();
+          whisperGMs(`<b>Nombre NPC:</b> ${fullName}`);
+        }
+      },
+      cancel: { label: "Cancelar" }
+    },
+    default: "roll"
+  }).render(true);
+folder: null
+sort: 0
+ownership:
+  default: 0
+  Dl5Tvf37OuEHwdAh: 3
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '13.345'
+  systemId: grimwild
+  systemVersion: 0.1.0
+  createdTime: 1737993600000
+  modifiedTime: 1737993600000
+  lastModifiedBy: Dl5Tvf37OuEHwdAh
+  exportSource: null
+_key: '!macros!NpcNameGen01'
