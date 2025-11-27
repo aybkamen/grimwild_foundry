@@ -1,0 +1,20 @@
+name: Monster Roles
+sorting: a
+folder: null
+type: Actor
+_id: 1WVyOCdYjQyAKy1g
+description: ''
+sort: 100000
+color: null
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '13.345'
+  systemId: grimwild
+  systemVersion: '0.2.1'
+  createdTime: 1764230158425
+  modifiedTime: 1764230158425
+  lastModifiedBy: jgipq2YBy9KMjQWt
+  exportSource: null
+_key: '!folders!1WVyOCdYjQyAKy1g'

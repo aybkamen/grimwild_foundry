@@ -1,0 +1,148 @@
+folder: 1WVyOCdYjQyAKy1g
+name: "Role: Tactician"
+type: monster
+img: icons/svg/mystery-man.svg
+system:
+  biography: >-
+    <p>Clever strategists who manipulate the battlefield, exploiting every
+    weakness they find. However, they struggle when their plans fall apart.</p>
+  notes: ''
+  role: tactician
+  tier: tough
+  traits:
+    - Always prepared
+    - Good under pressure
+    - Trusts in their plans
+  moves:
+    - Flanking Strike
+    - Tactical Retreat
+    - Create Weakness
+  desires:
+    - value: to outthink their foes.
+      are: false
+    - value: to be outmaneuvered.
+      are: false
+  sensories:
+    colors:
+      - name: Navy
+        color: '#233f5a'
+      - name: Slate
+        color: '#6b747c'
+      - name: Chalk
+        color: '#d7d7d0'
+    sights: markers on ground, calculated lines, shifting formations
+    sounds: sharp commands, quiet murmuring, hurried plans
+    smells: ink, wax seals
+  pool:
+    diceNum: 0
+    max: null
+  tables:
+    - name: When a Plan Fails
+      instructions: ''
+      table:
+        - - Redirects allies to regroup and recover.
+          - Focuses on a single target to salvage the situation.
+          - Orders a retreat to reevaluate the fight.
+          - Shifts their attention to a new opportunity.
+          - Sacrifices weaker assets to regain momentum.
+          - Lashes out in frustration, acting recklessly.
+prototypeToken:
+  name: "Role: Tactician"
+  displayName: 0
+  actorLink: false
+  appendNumber: false
+  prependAdjective: false
+  width: 1
+  height: 1
+  texture:
+    src: icons/svg/mystery-man.svg
+    anchorX: 0.5
+    anchorY: 0.5
+    offsetX: 0
+    offsetY: 0
+    fit: contain
+    scaleX: 1
+    scaleY: 1
+    rotation: 0
+    tint: '#ffffff'
+    alphaThreshold: 0.75
+  lockRotation: false
+  rotation: 0
+  alpha: 1
+  disposition: -1
+  displayBars: 0
+  bar1:
+    attribute: health
+  bar2:
+    attribute: power
+  light:
+    negative: false
+    priority: 0
+    alpha: 0.5
+    angle: 360
+    bright: 0
+    color: null
+    coloration: 1
+    dim: 0
+    attenuation: 0.5
+    luminosity: 0.5
+    saturation: 0
+    contrast: 0
+    shadows: 0
+    animation:
+      type: null
+      speed: 5
+      intensity: 5
+      reverse: false
+    darkness:
+      min: 0
+      max: 1
+  sight:
+    enabled: false
+    range: 0
+    angle: 360
+    visionMode: basic
+    color: null
+    attenuation: 0.1
+    brightness: 0
+    saturation: 0
+    contrast: 0
+  detectionModes: []
+  occludable:
+    radius: 0
+  ring:
+    enabled: false
+    colors:
+      ring: null
+      background: null
+    effects: 1
+    subject:
+      scale: 1
+      texture: null
+  flags: {}
+  randomImg: false
+  turnMarker:
+    mode: 1
+    animation: null
+    src: null
+    disposition: false
+  movementAction: null
+items: []
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.345'
+  systemId: grimwild
+  systemVersion: '0.2.1'
+  createdTime: 1764230158425
+  modifiedTime: 1764230158425
+  lastModifiedBy: jgipq2YBy9KMjQWt
+ownership:
+  default: 0
+  jgipq2YBy9KMjQWt: 3
+_id: giIMHSpsHK3Awe9f
+sort: 0
+_key: '!actors!giIMHSpsHK3Awe9f'

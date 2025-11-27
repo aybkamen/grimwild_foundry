@@ -1,0 +1,149 @@
+folder: 1WVyOCdYjQyAKy1g
+name: "Role: Marksman"
+type: monster
+img: icons/svg/mystery-man.svg
+system:
+  biography: >-
+    <p>Precise sharpshooters who excel at picking off targets from a distance.
+    However, they are vulnerable when caught in melee or forced to move
+    quickly.</p>
+  notes: ''
+  role: marksman
+  tier: tough
+  traits:
+    - Lethal precision
+    - Exceptional range
+    - Panics close up
+  moves:
+    - Piercing Shot
+    - Take Cover
+    - Spot Weakness
+  desires:
+    - value: to focus completely on the key threat.
+      are: false
+    - value: to shoot into chaotic situations.
+      are: false
+  sensories:
+    colors:
+      - name: Umber
+        color: '#7b5633'
+      - name: Pine
+        color: '#4a6a3d'
+      - name: Steel
+        color: '#c3c8cf'
+    sights: distant glint, taut bowstrings, perched nests
+    sounds: soft twang, measured breathing, whistling arrows
+    smells: resin, fletching glue
+  pool:
+    diceNum: 0
+    max: null
+  tables:
+    - name: When Under Pressure
+      instructions: ''
+      table:
+        - - Focuses on the closest threat for a critical shot.
+          - Dives into cover to avoid incoming attacks.
+          - Signals allies to draw enemy attention.
+          - Shifts to higher ground for a better vantage point.
+          - Takes a rapid, less accurate shot to disrupt foes.
+          - Retreats to reposition for the next attack.
+prototypeToken:
+  name: "Role: Marksman"
+  displayName: 0
+  actorLink: false
+  appendNumber: false
+  prependAdjective: false
+  width: 1
+  height: 1
+  texture:
+    src: icons/svg/mystery-man.svg
+    anchorX: 0.5
+    anchorY: 0.5
+    offsetX: 0
+    offsetY: 0
+    fit: contain
+    scaleX: 1
+    scaleY: 1
+    rotation: 0
+    tint: '#ffffff'
+    alphaThreshold: 0.75
+  lockRotation: false
+  rotation: 0
+  alpha: 1
+  disposition: -1
+  displayBars: 0
+  bar1:
+    attribute: health
+  bar2:
+    attribute: power
+  light:
+    negative: false
+    priority: 0
+    alpha: 0.5
+    angle: 360
+    bright: 0
+    color: null
+    coloration: 1
+    dim: 0
+    attenuation: 0.5
+    luminosity: 0.5
+    saturation: 0
+    contrast: 0
+    shadows: 0
+    animation:
+      type: null
+      speed: 5
+      intensity: 5
+      reverse: false
+    darkness:
+      min: 0
+      max: 1
+  sight:
+    enabled: false
+    range: 0
+    angle: 360
+    visionMode: basic
+    color: null
+    attenuation: 0.1
+    brightness: 0
+    saturation: 0
+    contrast: 0
+  detectionModes: []
+  occludable:
+    radius: 0
+  ring:
+    enabled: false
+    colors:
+      ring: null
+      background: null
+    effects: 1
+    subject:
+      scale: 1
+      texture: null
+  flags: {}
+  randomImg: false
+  turnMarker:
+    mode: 1
+    animation: null
+    src: null
+    disposition: false
+  movementAction: null
+items: []
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.345'
+  systemId: grimwild
+  systemVersion: '0.2.1'
+  createdTime: 1764230158425
+  modifiedTime: 1764230158425
+  lastModifiedBy: jgipq2YBy9KMjQWt
+ownership:
+  default: 0
+  jgipq2YBy9KMjQWt: 3
+_id: ZAthR5ZbwL9FzrT2
+sort: 0
+_key: '!actors!ZAthR5ZbwL9FzrT2'

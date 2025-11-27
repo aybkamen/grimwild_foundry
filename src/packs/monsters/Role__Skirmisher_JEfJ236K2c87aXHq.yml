@@ -1,0 +1,149 @@
+folder: 1WVyOCdYjQyAKy1g
+name: "Role: Skirmisher"
+type: monster
+img: icons/svg/mystery-man.svg
+system:
+  biography: >-
+    <p>Agile combatants who excel at hit-and-run tactics, harassing their foes
+    and striking from unexpected angles. However, they falter when pinned
+    down.</p>
+  notes: ''
+  role: skirmisher
+  tier: tough
+  traits:
+    - Exceptional mobility
+    - Quick reflexes
+    - Fragile
+  moves:
+    - Strike & Move
+    - Dodging Roll
+    - Force Back
+  desires:
+    - value: to frustrate the hell out of their foes.
+      are: false
+    - value: to face anything faster than them.
+      are: false
+  sensories:
+    colors:
+      - name: Teal
+        color: '#3f7f7f'
+      - name: Sand
+        color: '#c2a26b'
+      - name: Charcoal
+        color: '#444444'
+    sights: blurred motions, scattered dust, darting silhouettes
+    sounds: quick breaths, boot scuffs, rustling cloaks
+    smells: dust, leather straps
+  pool:
+    diceNum: 0
+    max: null
+  tables:
+    - name: When They Lose the Advantage
+      instructions: ''
+      table:
+        - - Retreats quickly to regroup and reassess.
+          - Strikes recklessly, hoping to create an opening.
+          - Dodges wildly to avoid being hit.
+          - Circles, searching for a weak point to exploit.
+          - Taunts, trying to bait enemies into a mistake.
+          - Disengages, vanishing into the fray.
+prototypeToken:
+  name: "Role: Skirmisher"
+  displayName: 0
+  actorLink: false
+  appendNumber: false
+  prependAdjective: false
+  width: 1
+  height: 1
+  texture:
+    src: icons/svg/mystery-man.svg
+    anchorX: 0.5
+    anchorY: 0.5
+    offsetX: 0
+    offsetY: 0
+    fit: contain
+    scaleX: 1
+    scaleY: 1
+    rotation: 0
+    tint: '#ffffff'
+    alphaThreshold: 0.75
+  lockRotation: false
+  rotation: 0
+  alpha: 1
+  disposition: -1
+  displayBars: 0
+  bar1:
+    attribute: health
+  bar2:
+    attribute: power
+  light:
+    negative: false
+    priority: 0
+    alpha: 0.5
+    angle: 360
+    bright: 0
+    color: null
+    coloration: 1
+    dim: 0
+    attenuation: 0.5
+    luminosity: 0.5
+    saturation: 0
+    contrast: 0
+    shadows: 0
+    animation:
+      type: null
+      speed: 5
+      intensity: 5
+      reverse: false
+    darkness:
+      min: 0
+      max: 1
+  sight:
+    enabled: false
+    range: 0
+    angle: 360
+    visionMode: basic
+    color: null
+    attenuation: 0.1
+    brightness: 0
+    saturation: 0
+    contrast: 0
+  detectionModes: []
+  occludable:
+    radius: 0
+  ring:
+    enabled: false
+    colors:
+      ring: null
+      background: null
+    effects: 1
+    subject:
+      scale: 1
+      texture: null
+  flags: {}
+  randomImg: false
+  turnMarker:
+    mode: 1
+    animation: null
+    src: null
+    disposition: false
+  movementAction: null
+items: []
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.345'
+  systemId: grimwild
+  systemVersion: '0.2.1'
+  createdTime: 1764230158425
+  modifiedTime: 1764230158425
+  lastModifiedBy: jgipq2YBy9KMjQWt
+ownership:
+  default: 0
+  jgipq2YBy9KMjQWt: 3
+_id: JEfJ236K2c87aXHq
+sort: 0
+_key: '!actors!JEfJ236K2c87aXHq'
