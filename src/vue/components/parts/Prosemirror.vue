@@ -36,20 +36,15 @@ function updateVisibility() {
   if (!wrapper.value || !props.field) return;
   const el = props.field.element;
   if (!el) return;
+  // Always keep the editor element in the DOM so form submissions capture its value.
+  if (!inserted) {
+    try { wrapper.value.appendChild(el); inserted = true; } catch (_) {}
+  }
   const open = isEditorOpen(el);
   if (previewDiv) previewDiv.style.display = open ? 'none' : '';
   if (editButton) editButton.style.display = open ? 'none' : '';
-  // Only attach the editor element when open; remove it when closed
-  if (open) {
-    if (!inserted) {
-      try { wrapper.value.appendChild(el); inserted = true; } catch (_) {}
-    }
-    el.style.display = '';
-  } else {
-    if (inserted) {
-      try { wrapper.value.removeChild(el); inserted = false; } catch (_) {}
-    }
-  }
+  // Keep the editor hidden instead of detaching when closed
+  el.style.display = open ? '' : 'none';
 }
 
 function attachObserver() {
