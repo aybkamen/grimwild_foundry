@@ -6,6 +6,11 @@
       <div class="section--main flexcol">
         <Tabs :tabs="tabs.primary" no-span="true"/>
         <section class="section--fields flexcol">
+          <!-- Summary -->
+          <Tab group="primary" :tab="tabs.primary.summary">
+            <StoryKitSummary :context="context" />
+          </Tab>
+
           <!-- Description -->
           <Tab group="primary" :tab="tabs.primary.description">
             <StoryKitDescription :context="context" />
@@ -68,6 +73,7 @@
 
 <script setup>
 import { Tabs, Tab, MonsterHeader, Prosemirror } from '@/components';
+import StoryKitSummary from '@/components/actor/storykit/StoryKitSummary.vue';
 import StoryKitDescription from '@/components/actor/storykit/StoryKitDescription.vue';
 import StoryKitChallenges from '@/components/actor/storykit/StoryKitChallenges.vue';
 import StoryKitSetups from '@/components/actor/storykit/StoryKitSetups.vue';

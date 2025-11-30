@@ -87,10 +87,15 @@ export class GrimwildActorStoryKitSheetVue extends GrimwildActorSheetVue {
 
     _prepareTabs(context) {
         context.tabs = { primary: {} };
+        context.tabs.primary.summary = {
+            key: "summary",
+            label: game.i18n.localize("GRIMWILD.Actor.Tabs.Summary"),
+            active: true
+        };
         context.tabs.primary.description = {
             key: "description",
             label: game.i18n.localize("GRIMWILD.Actor.Tabs.Description"),
-            active: true
+            active: false
         };
         context.tabs.primary.pressure = {
             key: "pressure",
