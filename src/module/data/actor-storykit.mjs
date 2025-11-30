@@ -12,7 +12,7 @@ export default class GrimwildStoryKit extends GrimwildActorBase {
 
         // Description tab
         schema.hooks = new fields.ArrayField(new fields.StringField({ blank: true }), {
-            initial: ["", "", ""]
+            initial: []
         });
         // Note: description uses base `biography`
 
@@ -43,10 +43,9 @@ export default class GrimwildStoryKit extends GrimwildActorBase {
      * @returns {object}       The migrated source
      */
     static migrateData(source) {
-        // Ensure hooks is an array of 3 strings.
-        if (!Array.isArray(source.hooks)) source.hooks = ["", "", ""];
+        // Ensure hooks is an array of strings (no forced length).
+        if (!Array.isArray(source.hooks)) source.hooks = [];
         source.hooks = source.hooks.map(h => (h ?? ""));
-        while (source.hooks.length < 3) source.hooks.push("");
 
         // Normalize Useful Pieces.
         // Older data or buggy updates may have left `undefined` entries
