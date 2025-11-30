@@ -1,5 +1,4 @@
 import { StoryKitSheetVue } from "../../vue/components.vue.es.mjs";
-import { StoryKitPieceDialog } from "../apps/storykit-piece-dialog.mjs";
 import { GrimwildActorSheetVue } from "./actor-sheet-vue.mjs";
 
 const { DOCUMENT_OWNERSHIP_LEVELS } = CONST;
@@ -19,31 +18,6 @@ export class GrimwildActorStoryKitSheetVue extends GrimwildActorSheetVue {
         }
     };
 
-    async _prepareContext(options) {
-        const context = await super._prepareContext(options);
-
-        // Add editors for pieces[].description
-        context.editors = context.editors || {};
-        const enrichmentOptions = {
-            secrets: this.document.isOwner,
-            rollData: this.actor.getRollData() ?? {},
-            relativeTo: this.actor
-        };
-        // We only need enriched HTML for the list preview.
-        // The live editor will be provided in a dialog when editing.
-        const pieces = this.document.system.pieces ?? [];
-        for (let i = 0; i < pieces.length; i++) {
-            const fieldPath = `system.pieces.${i}.description`;
-            const value = pieces[i]?.description ?? "";
-            context.editors[fieldPath] = {
-                enriched: await foundry.applications.ux.TextEditor.implementation.enrichHTML(value, enrichmentOptions),
-                element: null
-            };
-        }
-
-        return context;
-    }
-
     /** @override */
     static DEFAULT_OPTIONS = {
         classes: ["grimwild", "actor", "storykit"],
@@ -60,19 +34,16 @@ export class GrimwildActorStoryKitSheetVue extends GrimwildActorSheetVue {
             viewDoc: this._viewDoc,
             rollPool: this._rollPool,
             createArrayEntry: this._createArrayEntry,
-            deleteArrayEntry: this._deleteArrayEntry,
-            editPiece: this._editPiece
+            deleteArrayEntry: this._deleteArrayEntry
         },
         changeActions: {
             updateItemField: this._updateItemField,
             updateChallengePool: this._updateChallengePool
         },
         dragDrop: [{ dragSelector: "[data-drag]", dropSelector: null }],
-        // Disable submit-on-change so ProseMirror doesn't auto-save
-        // each keystroke; this lets the editor toolbar reflect dirty state
-        // and close after an explicit save. Still submit on close so
-        // simple fields (e.g., hooks) persist.
-        form: { submitOnChange: false, submitOnClose: true }
+        // Avoid auto-submit on every change; we handle critical fields manually
+        // and rely on submit-on-close for the rest.
+        form: { submitOnChange: true, submitOnClose: true }
     };
 
     _prepareTabs(context) {
@@ -145,19 +116,4 @@ export class GrimwildActorStoryKitSheetVue extends GrimwildActorSheetVue {
         await item.update({ "system.pool.diceNum": Number(target.value) });
     }
 
-    static async _editPiece(event, target) {
-        event.preventDefault();
-        if (!this.isEditable) return;
-        const key = Number(target.dataset.key);
-        const pieces = this.document.system.pieces ?? [];
-        const piece = pieces[key] ?? { title: "", description: "" };
-        const result = await StoryKitPieceDialog.open({ piece });
-        // Only proceed on an explicit Save result. DialogV2 may resolve
-        // with an empty object on cancel/close; require expected fields.
-        if (!result || typeof result !== 'object' || !('title' in result) || !('description' in result)) return;
-        const update = foundry.utils.duplicate(pieces);
-        update[key] = { title: result.title ?? "", description: result.description ?? "" };
-        await this.document.update({ "system.pieces": update }, { render: false });
-        this.render(true);
-    }
 }

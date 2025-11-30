@@ -443,6 +443,7 @@ export class GrimwildActorSheetVue extends VueRenderingMixin(GrimwildBaseVueActo
 			? this.document.system[field]
 			: foundry.utils.getProperty(this.document, field);
 		if (!Array.isArray(entries)) entries = [];
+		else entries = foundry.utils.duplicate(entries);
 
 		// Retrieve the schema.
 		const schema = this.document.system.schema.fields?.[schemaField];
@@ -615,6 +616,7 @@ export class GrimwildActorSheetVue extends VueRenderingMixin(GrimwildBaseVueActo
 			? this.document.system[field]
 			: foundry.utils.getProperty(this.document, field);
 		if (!Array.isArray(entries)) entries = [];
+		else entries = foundry.utils.duplicate(entries);
 		entries.splice(key, 1);
 
 		// Build our final update payload.

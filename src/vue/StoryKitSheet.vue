@@ -18,7 +18,6 @@
 
           <!-- Useful Pieces -->
           <Tab group="primary" :tab="tabs.primary.pieces">
-            <StoryKitPieces :context="context" />
           </Tab>
 
           <!-- Set it Up -->
@@ -33,7 +32,6 @@
 
           <!-- Mix it up -->
           <Tab group="primary" :tab="tabs.primary.mix">
-            <StoryKitMixItUp :context="context" />
           </Tab>
 
           <!-- Notes -->
@@ -53,13 +51,10 @@
 import { Tabs, Tab, MonsterHeader, Prosemirror } from '@/components';
 import StoryKitDescription from '@/components/actor/storykit/StoryKitDescription.vue';
 import StoryKitChallenges from '@/components/actor/storykit/StoryKitChallenges.vue';
-import StoryKitPieces from '@/components/actor/storykit/StoryKitPieces.vue';
 import StoryKitSetups from '@/components/actor/storykit/StoryKitSetups.vue';
-import StoryKitMixItUp from '@/components/actor/storykit/StoryKitMixItUp.vue';
 import { reactive, toRaw } from 'vue';
 
 const props = defineProps(['context']);
 const rawTabs = toRaw(props.context.tabs);
 const tabs = reactive({ ...rawTabs });
 </script>
-
