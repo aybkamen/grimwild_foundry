@@ -57,6 +57,40 @@
 	height: 100%;
 }
 
+.hooks-fieldset {
+	.hooks {
+		display: flex;
+		flex-direction: column;
+		gap: 6px;
+	}
+
+	.hook {
+		display: flex;
+		align-items: center;
+		gap: 8px;
+		width: 100%;
+
+		input[type="text"] {
+			flex: 1 1 95%; // leave ~5% for the delete button
+			max-width: 95%;
+			min-width: 0;
+		}
+
+		.hook-control {
+			flex: 0 0 auto;
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			width: 24px;
+			height: 24px;
+			line-height: 24px;
+			border: 1px solid;
+			border-radius: 4px;
+			background: rgba(0, 0, 0, 0.65);
+		}
+	}
+}
+
 // Prosemirror / rich text fields
 .fieldset-prose-mirror {
 	position: relative;
@@ -92,9 +126,16 @@
 	}
 
 	.prose-mirror-wrapper:hover .prosemirror-edit-button,
+	.fieldset-prose-mirror:hover .prosemirror-edit-button,
+	.fieldset-prose-mirror:focus-within .prosemirror-edit-button,
 	.prosemirror-edit-button:focus-visible {
 		opacity: 1;
 		pointer-events: auto;
+	}
+
+	// Give empty previews height so hover works even with no content
+	.prosemirror-preview {
+		min-height: 80px;
 	}
 }
 

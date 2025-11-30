@@ -59,6 +59,8 @@ export class GrimwildActorStoryKitSheetVue extends GrimwildActorSheetVue {
             deleteDoc: this._deleteDoc,
             viewDoc: this._viewDoc,
             rollPool: this._rollPool,
+            createArrayEntry: this._createArrayEntry,
+            deleteArrayEntry: this._deleteArrayEntry,
             editPiece: this._editPiece
         },
         changeActions: {
@@ -68,10 +70,9 @@ export class GrimwildActorStoryKitSheetVue extends GrimwildActorSheetVue {
         dragDrop: [{ dragSelector: "[data-drag]", dropSelector: null }],
         // Disable submit-on-change so ProseMirror doesn't auto-save
         // each keystroke; this lets the editor toolbar reflect dirty state
-        // and close after an explicit save.
-        // Changes for StoryKit pieces are applied directly via dialog
-        // updates; avoid form auto-submission overwriting arrays on close.
-        form: { submitOnChange: false, submitOnClose: false }
+        // and close after an explicit save. Still submit on close so
+        // simple fields (e.g., hooks) persist.
+        form: { submitOnChange: false, submitOnClose: true }
     };
 
     _prepareTabs(context) {

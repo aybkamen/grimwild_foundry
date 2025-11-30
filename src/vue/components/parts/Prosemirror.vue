@@ -10,7 +10,9 @@ const wrapper = ref(null);
 let previewDiv = null;
 let editButton = null;
 let observer = null;
+let detachEditorListeners = null;
 let inserted = false; // whether the editor element is in the DOM
+let enrichTimeout = null;
 
 function isEditorOpen(el) {
   if (!el) return false;
@@ -76,6 +78,7 @@ function renderContent() {
   if (!wrapper.value || !props.field) return;
   // Clear previous content and references
   wrapper.value.innerHTML = '';
+  if (detachEditorListeners) { detachEditorListeners(); detachEditorListeners = null; }
   previewDiv = document.createElement('div');
   previewDiv.className = 'prosemirror-preview';
   previewDiv.innerHTML = props.field.enriched ?? '';
@@ -98,6 +101,11 @@ function renderContent() {
     // Do not insert the editor element until opened by the user
     inserted = false;
     attachObserver();
+    // Force the editor to start closed even if the element requests open.
+    try {
+      const el = props.field.element;
+      el.dataset.startOpen = 'false';
+    } catch (_) {}
     // Force it to start closed regardless of its internal default
     try {
       const el = props.field.element;
@@ -108,6 +116,7 @@ function renderContent() {
     // Ensure preview shows and editor is not attached
     updateVisibility();
     nextTick(updateVisibility);
+    attachEditorListeners();
   } else {
     // Render enriched HTML when not editable
     previewDiv.innerHTML = props.field.enriched ?? '';
@@ -118,4 +127,29 @@ onMounted(renderContent);
 watch(() => [props.field, props.editable], renderContent);
 watch(() => props.field?.enriched, (v) => { if (previewDiv) previewDiv.innerHTML = v ?? ''; });
 onBeforeUnmount(() => { if (observer) observer.disconnect(); if (wrapper.value) wrapper.value.innerHTML = ''; inserted = false; });
+
+function attachEditorListeners() {
+  const el = props.field?.element;
+  if (!el) return;
+  if (detachEditorListeners) { detachEditorListeners(); detachEditorListeners = null; }
+  const updatePreview = () => {
+    if (enrichTimeout) { clearTimeout(enrichTimeout); enrichTimeout = null; }
+    // Debounce enrichment to avoid hammering while typing
+    enrichTimeout = setTimeout(async () => {
+      const raw = el.value ?? el.innerHTML ?? '';
+      try {
+        const enriched = await foundry.applications.ux.TextEditor.implementation.enrichHTML(raw, { async: true });
+        if (previewDiv) previewDiv.innerHTML = enriched ?? raw;
+      } catch (_) {
+        if (previewDiv) previewDiv.innerHTML = raw;
+      }
+    }, 120);
+  };
+  el.addEventListener('input', updatePreview);
+  el.addEventListener('change', updatePreview);
+  detachEditorListeners = () => {
+    el.removeEventListener('input', updatePreview);
+    el.removeEventListener('change', updatePreview);
+  };
+}
 </script>

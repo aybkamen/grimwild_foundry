@@ -417,6 +417,16 @@ export class GrimwildActorSheetVue extends VueRenderingMixin(GrimwildBaseVueActo
 			fieldType,
 			count
 		} = target.dataset;
+		const schemaField = field?.startsWith("system.") ? field.slice("system.".length) : field;
+
+		// StoryKits don't submit on change; commit current form values before
+		// mutating arrays so in-flight edits (e.g., hooks) aren't lost.
+		if (this.actor?.type === "storykit" || field === "system.hooks" || field === "hooks") {
+			try {
+				await this.submit({ preventRender: true });
+			}
+			catch (err) { /* ignore; continue with targeted update */ }
+		}
 
 		// Best-effort: commit in-flight changes only for Story Arcs,
 		// to avoid wiping them when other arrays (like advancements)
@@ -429,12 +439,13 @@ export class GrimwildActorSheetVue extends VueRenderingMixin(GrimwildBaseVueActo
 		}
 
 		// Retrieve the current field value.
-		const entries = !field.startsWith("system.")
+		let entries = !field.startsWith("system.")
 			? this.document.system[field]
 			: foundry.utils.getProperty(this.document, field);
+		if (!Array.isArray(entries)) entries = [];
 
 		// Retrieve the schema.
-		const schema = this.document.system.schema.fields?.[field];
+		const schema = this.document.system.schema.fields?.[schemaField];
 		const fieldConstructor = fieldType ?? schema?.element?.constructor?.name;
 		if (!fieldConstructor) return;
 
@@ -571,6 +582,15 @@ export class GrimwildActorSheetVue extends VueRenderingMixin(GrimwildBaseVueActo
 			key
 		} = target.dataset;
 
+		// StoryKits don't submit on change; commit current form values before
+		// mutating arrays so in-flight edits (e.g., hooks) aren't lost.
+		if (this.actor?.type === "storykit" || field === "system.hooks" || field === "hooks") {
+			try {
+				await this.submit({ preventRender: true });
+			}
+			catch (err) { /* ignore; continue with targeted update */ }
+		}
+
 		// Best-effort: commit in-flight changes only for Story Arcs,
 		// to avoid wiping them when other arrays (like advancements)
 		// are modified.
@@ -591,9 +611,10 @@ export class GrimwildActorSheetVue extends VueRenderingMixin(GrimwildBaseVueActo
 		}
 
 		// Retrieve the current field value.
-		const entries = !field.startsWith("system.")
+		let entries = !field.startsWith("system.")
 			? this.document.system[field]
 			: foundry.utils.getProperty(this.document, field);
+		if (!Array.isArray(entries)) entries = [];
 		entries.splice(key, 1);
 
 		// Build our final update payload.
