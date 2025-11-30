@@ -18,6 +18,7 @@
 
           <!-- Useful Pieces -->
           <Tab group="primary" :tab="tabs.primary.pieces">
+            <StoryKitPieces :context="context" />
           </Tab>
 
           <!-- Set it Up -->
@@ -70,6 +71,7 @@ import { Tabs, Tab, MonsterHeader, Prosemirror } from '@/components';
 import StoryKitDescription from '@/components/actor/storykit/StoryKitDescription.vue';
 import StoryKitChallenges from '@/components/actor/storykit/StoryKitChallenges.vue';
 import StoryKitSetups from '@/components/actor/storykit/StoryKitSetups.vue';
+import StoryKitPieces from '@/components/actor/storykit/StoryKitPieces.vue';
 import { reactive, toRaw, inject } from 'vue';
 
 const props = defineProps(['context']);

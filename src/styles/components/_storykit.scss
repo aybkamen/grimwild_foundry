@@ -54,6 +54,20 @@
   .storykit-pieces .piece-title { font-variant: small-caps; font-weight: 700; letter-spacing: 0.02em; }
   .storykit-setups .item-name { display: flex; gap: 6px; align-items: center; justify-content: space-between; }
   .storykit-pieces .item-description { margin-top: 4px; }
+  .storykit-pieces .item { min-height: 300px; position: relative; }
+  .storykit-pieces .item .item-controls {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 120ms ease-in-out;
+  }
+  .storykit-pieces .item:hover .item-controls {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .storykit-pieces .items-header .item-controls {
+    opacity: 1;
+    pointer-events: auto;
+  }
 
   // Pieces: card style and inner width
   .storykit-pieces .items-list > .item {

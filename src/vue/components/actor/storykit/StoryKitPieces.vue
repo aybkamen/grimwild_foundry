@@ -46,24 +46,32 @@ const addPiece = async () => {
   if (!canEdit.value) return;
   const { hooks, mixes, pieces } = buildArrays();
   pieces.push({ title: "", description: "" });
-  // Keep local context in sync to avoid stale submits overwriting pieces
-  props.context.system.pieces = pieces;
-  await actor.update({
-    "system.pieces": pieces,
-    "system.hooks": hooks,
-    "system.mixItUp": mixes
-  }, { render: true });
+  try {
+    const updated = await actor.update({
+      "system.pieces": pieces,
+      "system.hooks": hooks,
+      "system.mixItUp": mixes
+    }, { render: true });
+    // Sync context with authoritative data from the document
+    props.context.system.pieces = foundry.utils.duplicate(updated.system?.pieces ?? pieces);
+  } catch (err) {
+    console.error("Failed to add piece", err);
+  }
 };
 
 const removePiece = async (index) => {
   if (!canEdit.value) return;
   const { hooks, mixes, pieces } = buildArrays();
   pieces.splice(index, 1);
-  props.context.system.pieces = pieces;
-  await actor.update({
-    "system.pieces": pieces,
-    "system.hooks": hooks,
-    "system.mixItUp": mixes
-  }, { render: true });
+  try {
+    const updated = await actor.update({
+      "system.pieces": pieces,
+      "system.hooks": hooks,
+      "system.mixItUp": mixes
+    }, { render: true });
+    props.context.system.pieces = foundry.utils.duplicate(updated.system?.pieces ?? pieces);
+  } catch (err) {
+    console.error("Failed to remove piece", err);
+  }
 };
 </script>
