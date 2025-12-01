@@ -27,7 +27,10 @@ export class GrimwildActorPartySheetVue extends GrimwildActorSheetVue {
             deleteQuest: this._deleteQuest,
             viewDoc: this._viewDoc,
             removeMember: this._removeMember,
-            openMember: this._openMember
+            openMember: this._openMember,
+            createArrayEntry: this._createArrayEntry,
+            deleteArrayEntry: this._deleteArrayEntry,
+            rollPool: this._rollPool
         },
         dragDrop: [{ dragSelector: "[data-drag]", dropSelector: null }],
         form: { submitOnChange: true, submitOnClose: true }
@@ -39,6 +42,11 @@ export class GrimwildActorPartySheetVue extends GrimwildActorSheetVue {
             key: "members",
             label: game.i18n.localize("GRIMWILD.Actor.Tabs.GroupMembers"),
             active: true
+        };
+        context.tabs.primary.items = {
+            key: "items",
+            label: game.i18n.localize("GRIMWILD.Actor.Tabs.Items"),
+            active: false
         };
         context.tabs.primary.storyArcs = {
             key: "storyArcs",
