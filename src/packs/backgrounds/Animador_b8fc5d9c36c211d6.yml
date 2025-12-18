@@ -13,7 +13,9 @@ system:
       active: true
     - label: Presencia escénica
       active: true
-  flaws: []
+  flaws:
+    - label: Necesita público
+      active: true
   quests: []
 effects: []
 sort: 5000
@@ -27,8 +29,8 @@ _stats:
   coreVersion: '13.345'
   systemId: grimwild
   systemVersion: 0.1.0
-  createdTime: 1766065062187
-  modifiedTime: 1766065062187
+  createdTime: 1766066371264
+  modifiedTime: 1766066371264
   lastModifiedBy: Dl5Tvf37OuEHwdAh
   exportSource: null
 _key: '!items!b8fc5d9c36c211d6'
