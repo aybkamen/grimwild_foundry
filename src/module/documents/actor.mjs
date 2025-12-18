@@ -1,8 +1,33 @@
+const DEFAULT_ACTOR_IMAGES = {
+	character: "systems/grimwild-action/assets/actors/character.webp",
+	monster: "systems/grimwild-action/assets/actors/monster.webp",
+	linkedChallenge: "systems/grimwild-action/assets/actors/challenge.webp",
+	battleground: "systems/grimwild-action/assets/actors/battleground.webp",
+	faction: "systems/grimwild-action/assets/actors/faction.webp",
+	party: "systems/grimwild-action/assets/actors/party.webp",
+	storykit: "systems/grimwild-action/assets/actors/storykit.webp"
+};
+
 /**
  * Extend the base Actor document by defining a custom roll data structure which is ideal for the Simple system.
  * @extends {Actor}
  */
 export class GrimwildActor extends Actor {
+	/**
+	 * Provide default actor and token artwork per actor type.
+	 * @param {object} data Source data being created.
+	 * @returns {{img: string, prototypeToken: object}}
+	 */
+	static getDefaultArtwork(data) {
+		const img = DEFAULT_ACTOR_IMAGES[data?.type] ?? "icons/svg/mystery-man.svg";
+		return {
+			img,
+			prototypeToken: {
+				texture: { src: img }
+			}
+		};
+	}
+
 	/** @override */
 	prepareData() {
 		// Prepare data for the actor. Calling the super version of this executes
@@ -48,14 +73,39 @@ export class GrimwildActor extends Actor {
 	 * @inheritdoc
 	 */
 	async _preCreate(data, options, user) {
+		const defaults = this.constructor.getDefaultArtwork(data);
+		const updateData = {};
+
+		if (!data.img && defaults?.img) {
+			updateData.img = defaults.img;
+		}
+
+		// Start with the default prototype token (sets texture src), then merge in existing data.
+		let prototypeToken = foundry.utils.mergeObject(
+			defaults?.prototypeToken ?? {},
+			data.prototypeToken ?? {},
+			{ inplace: false }
+		);
+
+		// Preserve existing character token defaults.
 		if (this.type === "character") {
-			this.updateSource({
-				prototypeToken: {
+			prototypeToken = foundry.utils.mergeObject(
+				prototypeToken,
+				{
 					actorLink: true,
 					disposition: 1, // friendly
 					sight: { enabled: true }
-				}
-			});
+				},
+				{ inplace: false }
+			);
+		}
+
+		if (Object.keys(prototypeToken).length) {
+			updateData.prototypeToken = prototypeToken;
+		}
+
+		if (Object.keys(updateData).length) {
+			this.updateSource(updateData);
 		}
 	}
 
