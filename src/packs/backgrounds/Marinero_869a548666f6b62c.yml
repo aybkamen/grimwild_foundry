@@ -1,0 +1,34 @@
+folder: null
+name: Marinero
+type: background
+_id: 869a548666f6b62c
+img: icons/svg/book.svg
+system:
+  description: >-
+    <p>También conocido como: Corsario, Marinero.</p><p>Wises: Tradición náutica; Navegación marinera; Patrones climáticos.</p>
+  wises:
+    - label: Tradición náutica
+      active: true
+    - label: Navegación marinera
+      active: true
+    - label: Patrones climáticos
+      active: true
+  flaws: []
+  quests: []
+effects: []
+sort: 9000
+ownership:
+  default: 0
+  Dl5Tvf37OuEHwdAh: 3
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '13.345'
+  systemId: grimwild
+  systemVersion: 0.1.0
+  createdTime: 1766065062187
+  modifiedTime: 1766065062187
+  lastModifiedBy: Dl5Tvf37OuEHwdAh
+  exportSource: null
+_key: '!items!869a548666f6b62c'

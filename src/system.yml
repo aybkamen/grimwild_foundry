@@ -148,6 +148,11 @@ packs:
     type: JournalEntry
     path: packs/gm_toolkit
     system: grimwild-action
+  - name: backgrounds
+    label: Trasfondos
+    type: Item
+    path: packs/backgrounds
+    system: grimwild-action
   - name: talents
     label: Talents
     type: Item

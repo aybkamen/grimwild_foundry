@@ -1,0 +1,34 @@
+folder: null
+name: Errante
+type: background
+_id: e211d6c561ad7a66
+img: icons/svg/book.svg
+system:
+  description: >-
+    <p>También conocido como: Explorador, Vagabundo.</p><p>Wises: Encuentros fortuitos; Relatos lejanos; Trazas del terreno.</p>
+  wises:
+    - label: Encuentros fortuitos
+      active: true
+    - label: Relatos lejanos
+      active: true
+    - label: Trazas del terreno
+      active: true
+  flaws: []
+  quests: []
+effects: []
+sort: 4000
+ownership:
+  default: 0
+  Dl5Tvf37OuEHwdAh: 3
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '13.345'
+  systemId: grimwild
+  systemVersion: 0.1.0
+  createdTime: 1766065062187
+  modifiedTime: 1766065062187
+  lastModifiedBy: Dl5Tvf37OuEHwdAh
+  exportSource: null
+_key: '!items!e211d6c561ad7a66'

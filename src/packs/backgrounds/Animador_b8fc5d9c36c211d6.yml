@@ -1,0 +1,34 @@
+folder: null
+name: Animador
+type: background
+_id: b8fc5d9c36c211d6
+img: icons/svg/book.svg
+system:
+  description: >-
+    <p>También conocido como: Cuentacuentos, Juglar.</p><p>Wises: Leyendas y cuentos; Comportamiento de multitudes; Presencia escénica.</p>
+  wises:
+    - label: Leyendas y cuentos
+      active: true
+    - label: Comportamiento de multitudes
+      active: true
+    - label: Presencia escénica
+      active: true
+  flaws: []
+  quests: []
+effects: []
+sort: 5000
+ownership:
+  default: 0
+  Dl5Tvf37OuEHwdAh: 3
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '13.345'
+  systemId: grimwild
+  systemVersion: 0.1.0
+  createdTime: 1766065062187
+  modifiedTime: 1766065062187
+  lastModifiedBy: Dl5Tvf37OuEHwdAh
+  exportSource: null
+_key: '!items!b8fc5d9c36c211d6'

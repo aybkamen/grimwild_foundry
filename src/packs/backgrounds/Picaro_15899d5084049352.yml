@@ -1,0 +1,34 @@
+folder: null
+name: Pícaro
+type: background
+_id: 15899d5084049352
+img: icons/svg/book.svg
+system:
+  description: >-
+    <p>También conocido como: Carterista, Pilluelo.</p><p>Wises: Rutas ocultas; Rumores; Instinto callejero.</p>
+  wises:
+    - label: Rutas ocultas
+      active: true
+    - label: Rumores
+      active: true
+    - label: Instinto callejero
+      active: true
+  flaws: []
+  quests: []
+effects: []
+sort: 12000
+ownership:
+  default: 0
+  Dl5Tvf37OuEHwdAh: 3
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '13.345'
+  systemId: grimwild
+  systemVersion: 0.1.0
+  createdTime: 1766065062187
+  modifiedTime: 1766065062187
+  lastModifiedBy: Dl5Tvf37OuEHwdAh
+  exportSource: null
+_key: '!items!15899d5084049352'
