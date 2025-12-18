@@ -16,6 +16,8 @@ system:
   flaws:
     - label: Reputación de traidor
       active: true
+    - label: Nunca baja la guardia
+      active: false
   quests: []
 effects: []
 sort: 14000
@@ -29,8 +31,8 @@ _stats:
   coreVersion: '13.345'
   systemId: grimwild
   systemVersion: 0.1.0
-  createdTime: 1766066371264
-  modifiedTime: 1766066371264
+  createdTime: 1766066772163
+  modifiedTime: 1766066772163
   lastModifiedBy: Dl5Tvf37OuEHwdAh
   exportSource: null
 _key: '!items!4d6e1ea7f1d92bc9'

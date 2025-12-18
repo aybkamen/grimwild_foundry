@@ -16,6 +16,8 @@ system:
   flaws:
     - label: Mareo en tierra firme
       active: true
+    - label: Supersticiones del mar
+      active: false
   quests: []
 effects: []
 sort: 9000
@@ -29,8 +31,8 @@ _stats:
   coreVersion: '13.345'
   systemId: grimwild
   systemVersion: 0.1.0
-  createdTime: 1766066371264
-  modifiedTime: 1766066371264
+  createdTime: 1766066772163
+  modifiedTime: 1766066772163
   lastModifiedBy: Dl5Tvf37OuEHwdAh
   exportSource: null
 _key: '!items!869a548666f6b62c'
