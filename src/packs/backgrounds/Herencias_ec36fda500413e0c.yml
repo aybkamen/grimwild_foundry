@@ -1,0 +1,19 @@
+name: Herencias
+sorting: a
+folder: null
+type: Item
+_id: ec36fda500413e0c
+description: ''
+sort: 100000
+color: null
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '13.345'
+  systemId: grimwild
+  systemVersion: 0.1.0
+  createdTime: 1766067847983
+  modifiedTime: 1766067847983
+  lastModifiedBy: Dl5Tvf37OuEHwdAh
+_key: '!folders!ec36fda500413e0c'
