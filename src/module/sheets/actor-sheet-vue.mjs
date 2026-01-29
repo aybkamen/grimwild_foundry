@@ -130,6 +130,22 @@ export class GrimwildActorSheetVue extends VueRenderingMixin(GrimwildBaseVueActo
 		if (data.type === "Item") {
 			const quest = await this._onDropQuest(data);
 			if (quest) return quest;
+
+			// Handle general item drops (including compendium items like arcana).
+			try {
+				const item = await Item.implementation.fromDropData(data);
+				if (!item) return false;
+
+				// If the item already belongs to this actor, ignore the drop.
+				if (item.parent?.uuid === this.actor.uuid) return false;
+
+				const created = await this.actor.createEmbeddedDocuments("Item", [item]);
+				this.render();
+				return created;
+			} catch (err) {
+				console.warn("Failed to drop item onto character sheet", err);
+				return false;
+			}
 		}
 
 		return super._onDrop(event);
