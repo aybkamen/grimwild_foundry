@@ -14,7 +14,8 @@ export class DicePoolField extends fields.SchemaField {
 			}),
 			max: new fields.NumberField({
 				min: 0
-			})
+			}),
+			powerPool: new fields.BooleanField()
 		};
 		super(dpFields, options, context);
 	}

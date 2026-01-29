@@ -14,6 +14,14 @@
 							<option value="points">Points</option>
 						</select>
 					</div>
+					<div v-if="tracker.type === 'pool'" class="tracker-power-pool form-group stacked">
+						<label>Power Pool</label>
+						<input
+							type="checkbox"
+							:name="`system.trackers.${trackerKey}.pool.powerPool`"
+							v-model="tracker.pool.powerPool"
+						/>
+					</div>
 					<!-- Options -->
 					<div class="tracker-options form-group">
 						<!-- Label -->

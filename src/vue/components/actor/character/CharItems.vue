@@ -102,82 +102,14 @@
         </div>
       </fieldset>
 
-      <!-- Arcana (right column, bottom) -->
-      <fieldset class="arcana-fieldset">
-        <legend>Arcana</legend>
-        <div class="arcana-header">
-          <span class="arcana-col arcana-col-name">Name</span>
-          <span class="arcana-col arcana-col-formula">Formula</span>
-          <div class="arcana-col arcana-col-actions">
-            <button
-              v-if="context.editable"
-              class="item-control item-create"
-              type="button"
-              title="Create arcana"
-              data-action="createDoc"
-              data-document-class="Item"
-              data-type="arcana"
-            >
-              <i class="fas fa-plus"></i>
-            </button>
-          </div>
-        </div>
-        <div class="arcana-list">
-          <div
-            v-for="(item, idx) in arcana"
-            :key="item._id || idx"
-            class="arcana-row"
-            data-document-class="Item"
-            data-drag="true"
-            draggable="true"
-            :data-item-id="item._id"
-          >
-            <div class="arcana-name">
-              <a
-                class="arcana-roll rollable"
-                title="Roll arcana"
-                data-action="roll"
-                data-roll-type="item"
-              >
-                <i class="fas fa-dice-d6"></i>
-              </a>
-              <span class="arcana-title">{{ item.name }}</span>
-            </div>
-            <div class="arcana-formula">
-              {{ item.system?.formula || '-' }}
-            </div>
-            <div class="arcana-actions">
-              <a
-                class="item-control item-edit"
-                title="Open arcana"
-                data-action="viewDoc"
-              >
-                <i class="fas fa-edit"></i>
-              </a>
-              <a
-                v-if="context.editable"
-                class="item-control item-delete"
-                title="Delete arcana"
-                data-action="deleteDoc"
-              >
-                <i class="fas fa-trash"></i>
-              </a>
-            </div>
-          </div>
-          <p v-if="arcana.length === 0" class="arcana-empty">No arcana added yet.</p>
-        </div>
-      </fieldset>
     </div>
   </div>
   
 </template>
 
 <script setup>
-import { computed } from 'vue';
 import { RollPoolInput } from '@/components';
-const props = defineProps(['actor', 'context']);
-
-const arcana = computed(() => props.context?.itemTypes?.arcana ?? props.context?.arcana ?? []);
+defineProps(['actor', 'context']);
 </script>
 
 <style scoped>
@@ -261,86 +193,4 @@ const arcana = computed(() => props.context?.itemTypes?.arcana ?? props.context?
   justify-content: center;
 }
 
-.arcana-fieldset {
-  position: relative;
-}
-
-.arcana-header {
-  display: grid;
-  grid-template-columns: 1fr max-content max-content;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 6px;
-}
-
-.arcana-col {
-  font-variant: small-caps;
-  letter-spacing: 0.5px;
-}
-
-.arcana-col-actions {
-  justify-self: end;
-}
-
-.arcana-list {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.arcana-row {
-  display: grid;
-  grid-template-columns: 1fr max-content max-content;
-  align-items: center;
-  column-gap: 10px;
-  padding: 6px 8px;
-  border-radius: 6px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid var(--gw-faint, rgba(255, 255, 255, 0.15));
-}
-
-.arcana-name {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  min-width: 0;
-}
-
-.arcana-roll {
-  display: inline-flex;
-  width: 24px;
-  height: 24px;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid;
-  border-radius: 4px;
-  background: black;
-  font-size: 12px;
-  line-height: 1;
-}
-
-.arcana-title {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.arcana-formula {
-  font-family: var(--font-monospace, monospace);
-  font-size: 0.95em;
-  opacity: 0.9;
-}
-
-.arcana-actions {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  justify-self: end;
-}
-
-.arcana-empty {
-  opacity: 0.8;
-  font-style: italic;
-  margin: 0;
-}
 </style>

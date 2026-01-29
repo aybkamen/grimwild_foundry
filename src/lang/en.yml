@@ -28,6 +28,8 @@ GRIMWILD:
     softDangerDice:
       name: Enable soft danger dice
       hint: Danger dice only eliminate action dice showing 5-6 instead of 4-6.
+  UI:
+    details: Details
   Stat:
     bra:
       long: Brawn
@@ -258,6 +260,16 @@ GRIMWILD:
           label: Elements
     Arcana:
       FIELDS:
+        tier:
+          label: Tier
+        touchstones:
+          label: Touchstones
+        limitations:
+          label: Limitations
+        notes:
+          label: Notes
+        trackers:
+          label: Trackers
         rollFormula:
           label: Roll Formula
         numDice:

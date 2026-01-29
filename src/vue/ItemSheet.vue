@@ -17,7 +17,7 @@
 							<!-- Description -->
 							<ItemDescription :item="context.item" :context="context"/>
 							<!-- Notes -->
-							<fieldset v-if="context.item.type === 'talent'">
+							<fieldset v-if="context.system?.notes">
 								<legend>Notes</legend>
 								<div class="notes form-group stacked">
 									<label>Label</label>

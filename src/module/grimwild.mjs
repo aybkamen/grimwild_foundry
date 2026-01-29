@@ -151,7 +151,7 @@ Hooks.once("init", function () {
 	foundry.documents.collections.Items.registerSheet("grimwild", GrimwildItemSheetVue, {
 		makeDefault: true,
 		label: "Grimwild Vue Sheet",
-		types: ["talent", "challenge", "setup", "background", "quest"]
+		types: ["talent", "challenge", "arcana", "setup", "background", "quest"]
 	});
 
     // Handlebars utilities.

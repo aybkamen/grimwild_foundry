@@ -1,5 +1,6 @@
 <template>
-	<TalentTrackers v-if="context.item.type === 'talent'" :context="context"/>
+	<ArcanaDetails v-if="context.item.type === 'arcana'" :context="context" />
+	<TalentTrackers v-if="['talent', 'arcana'].includes(context.item.type)" :context="context"/>
 	<ChallengeTraitsMoves v-if="context.item.type === 'challenge'" :context="context" />
 	<SetupElements v-if="context.item.type === 'setup'" :context="context" />
     <BackgroundFields v-if="context.item.type === 'background'" :context="context" />
@@ -10,6 +11,7 @@
 import { inject } from 'vue';
 import {
 	TalentTrackers,
+	ArcanaDetails,
 	ChallengeTraitsMoves,
 	SetupElements,
     BackgroundFields,

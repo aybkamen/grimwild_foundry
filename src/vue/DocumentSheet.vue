@@ -105,11 +105,15 @@
 							<CharDetails :actor="context.actor" :context="context"/>
 						</Tab>
 				
-						<!-- Attack fields -->
+						<!-- Talents -->
 						<Tab v-if="context.actor.type === 'character'" group="primary" :tab="tabs.primary.talents">
 							<CharTalents :actor="context.actor" :context="context"/>
 						</Tab>
 
+						<!-- Arcana -->
+						<Tab v-if="context.actor.type === 'character'" group="primary" :tab="tabs.primary.arcana">
+							<CharArcana :actor="context.actor" :context="context"/>
+						</Tab>
 
 						<!-- Items fields -->
 						<Tab v-if="context.actor.type === 'character'" group="primary" :tab="tabs.primary.items">
@@ -137,6 +141,7 @@ import {
 	CharHeader,
 	CharDetails,
 	CharTalents,
+	CharArcana,
 	CharEffects,
 	CharItems,
 	CharStoryArcs,

@@ -21,6 +21,11 @@ export class GrimwildActorSheetVue extends VueRenderingMixin(GrimwildBaseVueActo
 			talent: [
 				"description",
 				"notes.description"
+			],
+			arcana: [
+				"description",
+				"notes.description",
+				"limitations"
 			]
 		}
 	};
@@ -57,11 +62,13 @@ export class GrimwildActorSheetVue extends VueRenderingMixin(GrimwildBaseVueActo
 			deleteArrayEntry: this._deleteArrayEntry,
 			changeXp: this._changeXp,
 			updateTalentTracker: this._updateTalentTracker,
+			updateItemTracker: this._updateItemTracker,
 			rollPool: this._rollPool,
 			roll: this._onRoll
 		},
 		changeActions: {
-			updateTalentTracker: this._updateTalentTracker
+			updateTalentTracker: this._updateTalentTracker,
+			updateItemTracker: this._updateItemTracker
 		},
 		// Custom property that's merged into `this.options`
 		dragDrop: [{ dragSelector: "[data-drag]", dropSelector: null }],
@@ -328,6 +335,12 @@ export class GrimwildActorSheetVue extends VueRenderingMixin(GrimwildBaseVueActo
 			context.tabs.primary.talents = {
 				key: "talents",
 				label: game.i18n.localize("GRIMWILD.Actor.Tabs.Talents"),
+				active: false
+			};
+
+			context.tabs.primary.arcana = {
+				key: "arcana",
+				label: game.i18n.localize("GRIMWILD.Actor.Tabs.Arcana"),
 				active: false
 			};
 
@@ -709,6 +722,17 @@ export class GrimwildActorSheetVue extends VueRenderingMixin(GrimwildBaseVueActo
 			trackers[trackerKey] = tracker;
 			await item.update({ "system.trackers": trackers });
 		}
+	}
+
+	/**
+	 * Handle updating item trackers (arcana/talents).
+	 *
+	 * @param {PointerEvent} event The originating click event
+	 * @param {HTMLElement} target The capturing HTML element which defined a [data-action]
+	 * @private
+	 */
+	static async _updateItemTracker(event, target) {
+		return this._updateTalentTracker(event, target);
 	}
 
 	/**
